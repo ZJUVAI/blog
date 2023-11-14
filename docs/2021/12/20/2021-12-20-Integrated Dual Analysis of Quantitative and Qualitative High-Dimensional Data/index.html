@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Integrated Dual Analysis of Quantitative and Qualitative High-Dimensional Data - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="toc-text">相关工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E7%BB%B4%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90"><span class="toc-text">高维数据分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E6%80%A7%E6%95%B0%E6%8D%AE%E7%BB%9F%E8%AE%A1"><span class="toc-text">定性数据统计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%9F%E8%AE%A1%E6%8C%87%E6%A0%87"><span class="toc-text">统计指标</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E8%A7%86%E5%88%86%E6%9E%90%E7%B3%BB%E7%BB%9F"><span class="toc-text">可视分析系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Integrated Dual Analysis of Quantitative and Qualitative High-Dimensional Data
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2021-12-20 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2021-12-20</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#钱中昊"
+                title="钱中昊">钱中昊</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Integrated Dual Analysis of Quantitative and Qualitative High-Dimensional Data</p>
+<p>作者：Juliane Muller , Laura Garrison , Philipp Ulbrich , Stefanie Schreiber, Stefan Bruckner , Helwig Hauser , and Steffen Oeltze-Jafra</p>
+<p>发表：IEEE VIS 2021</p>
+<p>本文通过为定性数据引入与定量数据统一的测度，改进了用于定量高维数据分析的Dual Analysis Framework。 用户可以同时从数据维度（列）和数据项（行）两个角度分析数据集，探索并验证数据维度间的相关性等。</p>
+<p><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/9346003">论文</a><br><a target="_blank" rel="noopener" href="https://github.com/JulianeMu/IntegratedDualAnalysisAproach_MDA">源码</a></p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>在高维数据的分析任务中，定性数据(qualitative/categorical)常用于变量分组等操作，很多常用于定量数据(quantitative/numerical)分析的<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Descriptive_statistics">描述统计</a>方法无法直接应用于定性数据。定量和定性数据的集成分析和相关性探索面临挑战</p>
+<p>本文是对<a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/6065027">Dual Analysis Framework</a>(TVCG 2011)的改进</p>
+<p>该框架支持用户通过交互的可视分析方法同时从<strong>数据维度</strong>(列)和<strong>数据项</strong>(行)两个角度分析高维数据，探索并验证数据维度间的相关性等，在 “wide and shallow” 类型数据的分析任务中尤其有效</p>
+<p>wide and shallow: many dimensions (columns in a table), few observations(rows), and often a high frequency of missing values</p>
+<p><img src="./image-1.png" alt="Dual Analysis Framework"></p>
+<p>本文以上图为例，具体说明<strong>Dual Analysis Framework</strong>的分析流程。散点图A中，每个点对应一个维度(如身高、体重等)的统计特征，横轴表示该维度的四分位差值，纵轴则表示其标准差。散点图B中，每个点对应一个数据项，横轴表示身高，纵轴表示体重。用户综合观察两个视图，获取数据集概览并生成假设。例如，容易发现身高、体重和BMI这三个维度的统计特征相似度较高，腰围的统计特征则具有明显差异。用户据此在B中框选身高大于1.8m的数据项子集进行探索，此时，系统将展示各维度统计特征的变化。如图C所示，体重和BMI这两个维度的统计特征发生了与身高维度类似的较大偏移(以偏移线表示，线的起点为整个数据集的统计特征，与A中各点一一对应，线的终点则对应用户所选数据子集的统计特征)，据此可推断身高、体重与BMI三个维度间存在一定的相关性</p>
+<p>不足：由于缺乏统一的统计指标，该方法只适用于定量数据，无法探索定性数据与定量数据间的相关性(如性别与身高等)</p>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><h3 id="高维数据分析"><a href="#高维数据分析" class="headerlink" title="高维数据分析"></a>高维数据分析</h3><p><a target="_blank" rel="noopener" href="https://www.ibm.com/cn-zh/analytics/spss-statistics-software">SPSS</a>等工具虽然提供了多种统计和可视化方法，但对交互式探索的支持较少</p>
+<p>在可视分析中(如Tableau/Polaris)，定性数据常用于数据集的筛选(dimensional filters/subset selectors)，定性和定量数据的集成分析面临挑战，此外，还有一些通过因果关系分析(causality analysis)和相关矩阵(correlation maps)探索维度间相关性的尝试</p>
+<h3 id="定性数据统计"><a href="#定性数据统计" class="headerlink" title="定性数据统计"></a>定性数据统计</h3><p>定量数据的统计指标大多不适用于定性数据，定性数据的统计指标主要关注数据的<strong>diversity</strong>(the variation around a measure of central tendency / pairwise differences between data items)</p>
+<p>文中介绍了<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Variation_ratio">variation ratio</a>, normed entropy, <a target="_blank" rel="noopener" href="https://www.thoughtco.com/index-of-qualitative-variation-iqv-3026700">index of qualitative variation</a>和coefficient of nominal variation等定性数据统计指标</p>
+<p>此外，生态学和社会科学等学科也有一些领域专用的统计指标</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p><img src="./image-2.png" alt="Conceptual Workflow"></p>
+<p>本文系统的整体分析流程与Dual Analysis Framework类似，主要区别在于维度空间的散点图将同时展示定量数据和定性数据的统计特征。如图所示，用户首先获取数据集概览，然后选择感兴趣的子集，跟踪各维度统计特征的变化，生成关于各维度间相关性的假设并综合各视图进行验证和进一步探索</p>
+<h3 id="统计指标"><a href="#统计指标" class="headerlink" title="统计指标"></a>统计指标</h3><p>本文在<strong>Dual Analysis Framework</strong>的基础上，通过为定性数据引入与定量数据相对应的统计指标，实现定性与定量两类数据的集成分析</p>
+<ul>
+<li>propotion of missing items(缺失值比例)</li>
+</ul>
+<p>可直接应用于定性和定量两类数据</p>
+<ul>
+<li>coefficient of unalikeability(不相似系数)</li>
+</ul>
+<p><img src="./image-3.png" alt="coefficient of unalikeability"></p>
+<p>若对于所有数据维度，公式中的“相似”(alike)均采用统一定义(如相等)，则定量数据的计算结果往往远大于定性数据。为使两类数据的不相似系数保持基本一致，确保其具有可比性，对于定性数据，公式中的“相似”可定义为相等，对于定量数据，则可按下式定义</p>
+<p><img src="./image-4.png" alt="definition"></p>
+<p>差值阈值可定义为该维度极差的5%等</p>
+<ul>
+<li>variation around the mean</li>
+</ul>
+<p>为了衡量数据相对于均值的偏离程度，对于定量数据，可直接采用方差/标准差</p>
+<p>对于定性数据，本文引入了Wilcox Indices在1967年的工作(详见<a target="_blank" rel="noopener" href="https://cran.r-project.org/web/packages/qualvar/vignettes/wilcox1973.html">Indices of Qualitative variation</a>)，数据归一化后，其方差可用下式模拟</p>
+<p><img src="./image-5.png" alt="VA"></p>
+<p>标准差则可用下式模拟</p>
+<p><img src="./image-6.png" alt="stDev"></p>
+<p>可以验证，方差的模拟值近似为标准差模拟值的平方</p>
+<ul>
+<li>modality</li>
+</ul>
+<p>对于定量数据，可采用<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Kernel_density_estimation">核密度估计</a>(Kernel density estimation)获取数据分布情况后统计其极大值个数，对于定性数据，则可以设置频率阈值，统计频率大于阈值的类别数等</p>
+<h2 id="可视分析系统"><a href="#可视分析系统" class="headerlink" title="可视分析系统"></a>可视分析系统</h2><p><img src="./image-7.png" alt="system"></p>
+<p>本文的可视分析系统包含3个视图，其中A，C视图描述数据集维度空间的性质，B展示数据集概况并支持数据筛选，与Dual Analysis Framework类似，本文系统的各视图间协调关联，并支持多种交互</p>
+<p>A视图展示所有维度的统计特征，用户可根据需要调整横纵坐标对应的统计指标(即上文介绍的不相似系数等)，选中某个维度后，系统将以雷达图形式在附近展示该维度的所有统计指标，定量、日期和定性三类数据维度分别用蓝色、黄色和红色编码(日期视为特殊的定量数据，常用于数据集筛选，很多统计指标没有意义)；</p>
+<p>B视图以平行坐标轴形式描述数据集概况，用户可按照不同的统计指标对维度进行排序，维度中的缺失值对应该坐标轴底部的特殊位置，右侧工具栏用于数据筛选，平行坐标轴会根据用户设置的筛选条件实时变化。与Dual Analysis Framework类似，A视图中也会以灰色偏移线形式展示子集筛选前后不同维度统计特征的偏移；</p>
+<p>C视图用于辅助观察子集筛选造成的各维度统计特征的变化，定量、定性和日期类数据各占一行，横轴表示综合各统计指标计算所得的维度整体偏移量大小，偏移量最大的维度与用于子集筛选的维度间很可能存在相关性；</p>
+<p>分析流程：用户综合观察A, B两视图，了解数据集概况，通过点选等交互方式探索感兴趣的维度，生成有关维度相关性的假设，再根据假设筛选数据，观察A, C视图中各维度统计特征在筛选前后的变化，重点关注整体偏移量最大的维度，并结合平行坐标轴提供的信息验证或改进假设</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>作者指出，SPSS等传统方法在验证已有假设时效果良好，但很难帮助用户发现新的数据模式(维度间的相关性等)</p>
+<p>本文为定性和定量两类数据引入统一的统计指标，并据此改进了Dual Analysis Framework，用户可从数据维度和数据项两个角度探索数据集，生成关于维度相关性的假设并结合视图验证或改进，具有良好的通用性</p>
+<p>不足：对于平均值等常用于定量数据的统计指标，作者没有找到适用于定性数据的模拟方法</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

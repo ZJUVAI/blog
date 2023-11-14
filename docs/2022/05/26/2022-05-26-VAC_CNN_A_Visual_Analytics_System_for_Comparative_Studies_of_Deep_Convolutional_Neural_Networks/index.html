@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        VAC-CNN: A Visual Analytics System for Comparative Studies of Deep Convolutional Neural Networks - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="toc-text">背景介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="toc-text">相关工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87"><span class="toc-text">设计目标</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%9B%BE%E7%94%9F%E6%88%90"><span class="toc-text">分布图生成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%A7%A3%E9%87%8A%E6%80%A7%E6%96%B9%E6%B3%95"><span class="toc-text">可解释性方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E4%BC%BC%E7%9F%A9%E9%98%B5%E7%94%9F%E6%88%90"><span class="toc-text">相似矩阵生成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E7%BB%9F%E8%AE%A1%E5%88%86%E6%9E%90"><span class="toc-text">图像统计分析</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%95%8C%E9%9D%A2"><span class="toc-text">系统界面</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B"><span class="toc-text">案例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%881%EF%BC%89-%E6%AF%94%E8%BE%83%E5%90%8C%E4%B8%80%E5%9B%BE%E5%83%8F%E4%B8%8A%E5%A4%9A%E4%B8%AA%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%A1%8C%E4%B8%BA"><span class="toc-text">（1） 比较同一图像上多个模型的行为</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%EF%BC%882%EF%BC%89%E7%A0%94%E7%A9%B6%E5%8D%95%E4%B8%AA%E6%A8%A1%E5%9E%8B%E5%9C%A8%E4%B8%8D%E5%90%8C%E5%9B%BE%E5%83%8F%E4%B8%8A%E7%9A%84%E8%A1%8C%E4%B8%BA"><span class="toc-text">（2）研究单个模型在不同图像上的行为</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%9D%E6%AD%A5%E8%AF%84%E4%BC%B0%E7%A0%94%E7%A9%B6"><span class="toc-text">初步评估研究</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1%E8%AE%BE%E8%AE%A1"><span class="toc-text">任务设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E8%AE%BE%E7%BD%AE%E5%92%8C%E7%A8%8B%E5%BA%8F"><span class="toc-text">研究设置和程序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C%E5%92%8C%E8%AE%A8%E8%AE%BA"><span class="toc-text">结果和讨论</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%99%90%E5%88%B6%E4%B8%8E%E6%9C%AA%E6%9D%A5%E5%B7%A5%E4%BD%9C"><span class="toc-text">限制与未来工作</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        VAC-CNN: A Visual Analytics System for Comparative Studies of Deep Convolutional Neural Networks
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2022-05-26 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2022-05-26</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#卢金璇"
+                title="卢金璇">卢金璇</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：VAC-CNN: A Visual Analytics System for Comparative Studies of Deep Convolutional Neural Networks</p>
+<p>作者：Xiwei Xuan, Xiaoyu Zhang, Oh-Hyun Kwon, and Kwan-Liu Ma</p>
+<p>发表：TVCG 2022</p>
+<p>近年来，卷积神经网络 (CNN) 的快速发展在许多机器学习 (ML) 应用中引发了重大突破。因此，理解和比较各种可用的 CNN 模型的能力至关重要。可视化每个模型的定量特征（例如分类精度和计算复杂度）的传统方法不足以更深入地理解和比较不同模型的行为。而且，现有的评估CNN行为的工具大多只支持两个模型之间的比较，缺乏根据用户需求定制分析任务的灵活性。本文介绍了一个可视分析系统 VAC-CNN，它支持对单个 CNN 模型的深入检查以及两个或多个模型的比较研究。比较大量（例如，数十个）模型的能力尤其将我们的系统与以前的系统区分开来。凭借精心设计的模型可视化和解释支持，VAC-CNN 促进了高度交互的工作流程，可在每个分析阶段迅速呈现定量和定性信息。我们通过两个用例和一项使用 ImageNet 数据集上的图像分类任务的初步评估研究证明了 VAC-CNN 在帮助新手 ML 从业者评估和比较多个 CNN 模型方面的有效性。</p>
+<p><a target="_blank" rel="noopener" href="https://www.computer.org/csdl/journal/tg/2022/06/09751204/1CnxO1uqCuQ">论文链接</a></p>
+<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>近年来，研究人员利用最先进的深度卷积神经网络 (CNN) 前所未有地突破了各个领域的边界。 在此过程中，许多具有不同知识背景的机器学习 (ML) 从业者都有理解和比较多个 CNN 的共同需求。这样的比较任务对于具有初级但不全面的 ML 知识背景的新手 ML 从业者来说是具有挑战性的，尤其是当比较的模型数量很大并且它们的特征变化很大时。 </p>
+<p>现有的用于比较多个 CNN 的传统方法通常侧重于调查模型架构或静态分析定量性能，但未能提供足够直观的信息或模型不同行为背后的原因。因此，为 ML 操作员开发了一种对新手友好的工具，可以提高模型的透明度。揭示模型差异。因此，通过了解模型在 CNN 比较研究中的行为来扩展模型的可用性至关重要。</p>
+<p>在本文中，我们介绍了一个可视化分析系统—VAC-CNN—支持对深度 CNN 进行可解释的比较研究。为了方便灵活的比较定制，VAC-CNN支持三种比较研究：</p>
+<ol>
+<li>对大量（例如数十个）模型进行高级筛选，</li>
+<li>模型的行为一致性评估，</li>
+<li>对单个模型的详细调查。</li>
+</ol>
+<p>本文的贡献有两点：</p>
+<ol>
+<li>一个可视分析系统，支持从单模型检查到多模比较研究的灵活 CNN 模型分析。</li>
+<li>一套增强的可视化解释方法，由高度交互的工作流程协调，用于有效和可解释的模型比较。</li>
+</ol>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><ul>
+<li><p>可解释 CNN 的可解释性方法 (Visual Explanation Methods for Interpretable CNN)</p>
+<ul>
+<li>为了提高深度 CNN 模型的透明度</li>
+<li>重点探索单一模型的内部运行机制，可视化特定模型内神经元和层的激活，例如 Feature Visualization 和 Deep Dream。但是该方法无法扩展以比较多个模型。</li>
+<li>表示整个模型的视图，它将模型的所有提取特征可视化，而不突出显示与决策相关的信息，例如 Guided Backpropogation， Deconvolution等。但是无法令人信服地解释模型的决策，因为它们模糊地代表了所有提取的信息。</li>
+<li>class-discriminative 可解释性，通过定位模型预测所必需的区域来解释模型决策，并且对不同的类别敏感，例如 Grad-CAM ，Score-CAM，BBMP等。</li>
+</ul>
+</li>
+<li><p>CNN模型比较 (CNN Model Comparison)</p>
+<ul>
+<li>满足CNN模型比较的需要</li>
+<li>根据准确性、内存占用、参数数量、操作计数、推理时间和功耗，对不同的CNN模型进行定量分析。</li>
+<li>关于模型参数关系的调查结果</li>
+<li>传统工作侧重于定量比较或结构分析，无法揭示模型性能的根本原因。</li>
+</ul>
+</li>
+<li><p>可解释的 CNN 比较的可视分析 (Visual Analytics for Interpretable CNN Comparison)</p>
+<ul>
+<li><p>专注于可视化和解释单个 CNN 模型的内部工作机制</p>
+</li>
+<li><p>手工量化参数，仅支持两个模型之间的比较</p>
+</li>
+<li><p>BEAMES ，是一个多模型转向系统，提供多维检查，以帮助领域专家进行模型选择。但是缺乏可解释性，因为它们主要使用 CNN 的数值特征。</p>
+</li>
+<li><p>DeepCompare ，应用了诸如链接模型结构实例等技术来比较两个二元分类器。</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="设计目标"><a href="#设计目标" class="headerlink" title="设计目标"></a>设计目标</h2><p>本文的设计需要支持灵活定制比较任务的CNN比较工具（例如，深入检查单个模型和比较研究多个模型）。此类工具还应集成XAI技术以协助模型解释。</p>
+<p>G1 : 新手友好的信息概述， 为了有助于初学者和专家深入了解模型的行为。</p>
+<p>G2 : 信息丰富的可视化解释 ， 将可解释性方法与量化测量相结合，以帮助用户在比较过程中获得更好的洞察力。</p>
+<p>G3 : 可扩展性和灵活性 ， 支持比较模型数量的可扩展性和自定义比较任务的灵活性。</p>
+<p>G4 : 实时交互， 足够高效，可以为用户提供响应式界面</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>VAC-CNN 建立在 13 个广泛使用的模型之上，涵盖各种最先进的架构，例如 AlexNet 、ResNet 、SqueezeNet 、DenseNet 、MobileNet、 和 ShuffleNet 。 这些模型在 ImageNet 本文的系统，该验证集包含 1,000 个图像类和 50,000 个图像。</p>
+<p>本文将 VAC-CNN 的比较分析过程建模为三阶段工作流程 ：</p>
+<ul>
+<li>第 1 阶段提供信息概览，帮助 ML 初学者大致了解模型性能和可解释性方法。</li>
+<li>第 2 阶段提供任务定制，以支持针对 CNN、ImageNet 类、可解释性方法和比较规则的灵活研究选项。 基于定制的比较要求。</li>
+<li>第 3 阶段为多模型比较或单模型调查提供协调的可视化和定性信息。</li>
+</ul>
+<p><img src=".\Pic2.PNG" alt=""></p>
+<h3 id="分布图生成"><a href="#分布图生成" class="headerlink" title="分布图生成"></a>分布图生成</h3><p>关于设计目标 G1，为用户提供全面且新手友好的信息概述，以了解模型的高级性能。这个方法主要研究从模型的预测中生成的类分布，并反映模型如何解释数据。</p>
+<p><img src=".\Pic3.PNG" alt=""></p>
+<h3 id="可解释性方法"><a href="#可解释性方法" class="headerlink" title="可解释性方法"></a>可解释性方法</h3><p>虽然class-discriminative 可以帮助ML新手理解CNN模型行为。用于CNN比较的大多数现有可视分析工具不包括任何可解释性方法。本文在VAC-CNN中包括了五种分类可解释性方法，包括梯度CAM、BBMP、Grad-CAM++、Smooth Grad-CAM++和Score-CAM。为了支持设计目标G2，我们的分析系统设计为可扩展的，因此可以轻松添加其他可视化解释方法。</p>
+<p>虽然呈现可解释性方法结果的传统方法是显示热力图，但它不提供任何直接的定量信息。在VAC-CNN中，我们添加了有关在热图上叠加多条轮廓线的可解释性方法的结果。根据生成的注意矩阵（注意力得分为[0,1]，0 表示“不注意”）。为了支持突出显示ROI，我们还为用户添加了一个可定制的阈值，以便相应地删除不太受关注的区域。</p>
+<p><img src=".\Pic4.PNG" alt=""></p>
+<h3 id="相似矩阵生成"><a href="#相似矩阵生成" class="headerlink" title="相似矩阵生成"></a>相似矩阵生成</h3><p>当比较基于单个图像的多个模型时，用户可以从相似度矩阵中受益，该矩阵直观地显示CNN模型的可解释性方法结果的相关性。从可解释性方法生成的显著图来计算相似度。使用的图像相似性度量，包括结构相似性指数（SSIM）、均方误差（MSE）、L1度量和哈希函数。为了直观地表示该值，使用seaborn生成生成的矩阵热图</p>
+<h3 id="图像统计分析"><a href="#图像统计分析" class="headerlink" title="图像统计分析"></a>图像统计分析</h3><p>当预测结果错误但定位正确时，可解释性方法无法解释模型做出错误决策的原因。为了解决这个问题，我们进一步分析了从模型引用的图像区域生成的信息。在VAC-CNN中，我们使用颜色强度直方图（CIHs）来测量图像信息，通常用于分析图像内容和评估图像相似性，可实时生成分析结果（G4）。CIH它还显示颜色中有多少像素是按强度显示的（颜色特征），不同色彩在整幅图像中所占的比例。作为可视解释的补充信息结果，颜色强度直方图可以帮助用户进一步分析模型从输入中提取的信息。</p>
+<p><img src=".\Pic7.PNG" alt=""></p>
+<h2 id="系统界面"><a href="#系统界面" class="headerlink" title="系统界面"></a>系统界面</h2><p><img src=".\Pic1.PNG" alt=""></p>
+<p>如图所示，系统界面包括五个主要视图：“总体信息视图”（A）、“分布图视图”（B）、“任务选择侧栏”（C）、“可视解释图”（D）和“补充视图”（E）。</p>
+<p>根据 VAC-CNN 的比较分析工作流程</p>
+<ol>
+<li><p>信息概览</p>
+<p>此阶段的分析需要来自视图（A）、（B）、（D）和（E）的信息。标记为（A1）的散点图表明了整个ImageNet验证集上每个模型的复杂性和总体精度，其中每个点表示一个CNN模型。</p>
+<p>标记为（A2）的雷达图显示了所选模型在八个根类上的精度性能。雷达图的每一行代表一个型号的性能，图表右侧的可选图例使用户可以删除不感兴趣的型号，只比较选定的型号。我们的交互式设计允许用户通过简单的点击来更改固定模型或固定根类，这可以更新图（A3）和（A4）所示的两个可缩放条形图，分别表示模型和根类的叶类精度信息，其中叶类按其精度的降序排列。分布图视图（B）显示1000个ImageNet类的分布。每个点表示单个图像类，颜色对应于八个根类。还支持用户交互，包括悬停、单击、缩放等。可视化解释视图（D）给出了多种可视化解释方法的示例结果。补充视图（E）为用户提供了补充信息</p>
+</li>
+<li><p>任务定制</p>
+<p>VAC-CNN还支持用户自定义比较研究（G3），任务选择侧栏位于系统界面的左下角（C）。根据不同的选择，可以在以下阶段执行多个子任务，包括比较特定图像类上的多个模型，调查单个模型在多个图像类上的行为，以及解释单个模型在特定类中图像上的行为。</p>
+</li>
+<li><p>模型调查与比较</p>
+<p>视图（D）和（E）将根据用户指定的比较任务（G3）的结果进行更新，以显示信息。</p>
+</li>
+</ol>
+<h2 id="案例"><a href="#案例" class="headerlink" title="案例"></a>案例</h2><h3 id="（1）-比较同一图像上多个模型的行为"><a href="#（1）-比较同一图像上多个模型的行为" class="headerlink" title="（1） 比较同一图像上多个模型的行为"></a>（1） 比较同一图像上多个模型的行为</h3><p>演示VAC-CNN如何支持多步骤模型比较，从13个模型的高级筛选到7个模型的深入可解释比较。</p>
+<p>用户：动物行为学硕士研究生</p>
+<p>目标： 使用VAC-CNN探索多个CNN模型在一组动物图像上的表现和行为</p>
+<p><img src=".\Pic5.PNG" alt=""></p>
+<p>最终确定了7个模型的模型比较任务目标：</p>
+<p>模型：resnet50、resnet101、resnet152、alexnet、shufflenet v2_x0_5、squeezenet1 1、mobilenet v2；</p>
+<p>ImageNet类别：124  crayfis；</p>
+<p>可解释性方法：Grad-CAM</p>
+<h3 id="（2）研究单个模型在不同图像上的行为"><a href="#（2）研究单个模型在不同图像上的行为" class="headerlink" title="（2）研究单个模型在不同图像上的行为"></a>（2）研究单个模型在不同图像上的行为</h3><p>展示我们提供的信息丰富的可解释性如何帮助用户。</p>
+<p>用户：计算机科学专业一年级博士生</p>
+<p>目标： 在他的应用程序中找到鸟类图像分类功能的最佳模型。</p>
+<p><img src=".\Pic6.PNG" alt=""></p>
+<p>Model: resnet152; </p>
+<p>ImageNet Class: 130 Flamingo; </p>
+<p>可解释性方法： Smooth Grad-CAM++.</p>
+<h2 id="初步评估研究"><a href="#初步评估研究" class="headerlink" title="初步评估研究"></a>初步评估研究</h2><p>本文通过目标设计评估在了解VAC-CNN在帮助用户方面是否有效</p>
+<p>参与者 ：12 （7名硕士生 , 5名博士生）</p>
+<p>参与者的知识背景</p>
+<ul>
+<li>Basic machine learning techniques: Md = 4.00, IQR = 2.25; </li>
+<li>CNNs: Md = 2.50, IQR = 1.25; </li>
+<li>Visual explanation methods: Md = 2.00, IQR = 1.25.</li>
+</ul>
+<p>从统计结果来看大部分人对CNN， 可解释方法都不是很了解。很符合系统的表人物</p>
+<h3 id="任务设计"><a href="#任务设计" class="headerlink" title="任务设计"></a>任务设计</h3><p>实验中，参与者需要完成三类任务：</p>
+<ul>
+<li><p>浏览高级信息</p>
+</li>
+<li><p>比较多个模型</p>
+</li>
+<li><p>调查单个模型</p>
+</li>
+</ul>
+<h3 id="研究设置和程序"><a href="#研究设置和程序" class="headerlink" title="研究设置和程序"></a>研究设置和程序</h3><p>在研究开始之前，我们要求每位参与者自我报告他们的知识背景和基本人口统计信息。在研究开始时，我们提供了一个5分钟的教程，介绍了VAC-CNN中构建的模型、数据集、可视组件和交互。30分钟完成任务。最后，参与者填写一份可用性问卷，并在5分钟的后续访谈中与VAC-CNN分享他们的经验反馈。</p>
+<h3 id="结果和讨论"><a href="#结果和讨论" class="headerlink" title="结果和讨论"></a>结果和讨论</h3><p>问卷包括两个定量问题 ：</p>
+<p><strong>系统的易用性</strong> ： Md=8，IQR=2.25 （大于60% 人给了大于等于8分）</p>
+<p><strong>系统的有用性</strong> ： Md = 6, IQR= 1.5 （大于75%人给了大于等于6分）</p>
+<p>系统的一些缺陷 : 分布图视图,很难识别模型行为。在某些情况下，CIH可能无法提供令人信服的结果。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><h4 id="限制与未来工作"><a href="#限制与未来工作" class="headerlink" title="限制与未来工作"></a>限制与未来工作</h4><ul>
+<li>图像统计分析 ： 表示取决于被研究对象的颜色，而忽略了其形状和纹理 。该尝试一种新的图像纹理分析方法</li>
+<li>集体模型评估。</li>
+<li>定性比较的精确评估：轮廓线可视化来量化解释结果，可能不是很精确。只是个观察。未来工作显示可解释性方法输出中的噪声量或突出显示区域的准确性。</li>
+<li>自动推荐系统 ： 根据用户需求推荐解释方法</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

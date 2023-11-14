@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        CrossCode: Multi-level Visualization of Program Execution - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="toc-text">背景介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BD%A2%E6%88%90%E6%80%A7%E7%A0%94%E7%A9%B6"><span class="toc-text">形成性研究</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E8%AE%BE%E8%AE%A1"><span class="toc-text">系统设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A7%E5%88%B6%E6%B5%81%E8%A7%86%E5%9B%BE%E8%AE%BE%E8%AE%A1"><span class="toc-text">控制流视图设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E8%A7%86%E5%9B%BE%E8%AE%BE%E8%AE%A1"><span class="toc-text">数据视图设计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A8%E8%AE%BA"><span class="toc-text">讨论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        CrossCode: Multi-level Visualization of Program Execution
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2023-05-04 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2023-05-04</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#温圳"
+                title="温圳">温圳</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：CrossCode: Multi-level Visualization of Program Execution</p>
+<p>作者：Devamardeep Hayatpur, Daniel Wigdor, Haijun Xia</p>
+<p>发表：CHI 2023</p>
+<p>程序可视化可形成用于描述程序执行的心理模型，有助于理解和调试代码。但是这些可视化具有固定的抽象层次，例如逐行显示。相较于此，程序员在检查程序行为时会在不同抽象层次之间切换。本文基于对现有手工设计的程序可视化的调研结果，设计了一个程序可视化系统 CrossCode。该系统利用程序语法、控制流和数据流中的结构线索，整合与引导跨越多个抽象层次的程序执行过程。在专家参与的探索性实验中，本文发现 CrossCode 能使用户在程序执行过程中保持位置感，有助于解释程序行为，并追踪程序状态的变化和更新。</p>
+<p><a target="_blank" rel="noopener" href="https://doi.org/10.1145/3544548.3581390">论文链接</a></p>
+<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>计算机程序的编写需要将人类意图转化为一系列计算机可执行的指令。编程过程中，不断确保预期程序行为、源代码和执行之间的一致性需要极多的认知努力，成为初学者的学习障碍和专家的生产力障碍。</p>
+<p>大量研究试图通过使用程序可视化来减少理解计算机程序的认知负担。现有的可视化程序可视化系统，如 Python Tutor 和 Projection Boxes 能够展示程序运行中每个具体步骤的状态，但缺乏对程序整体行为的呈现。<br>某些针对特定算法的可视化，可以传达整个算法的关键步骤和行为，但这类可视化并不通用，需要对每个算法做特定的设计。</p>
+<p><img src="./fig-1.png" alt=""></p>
+<p>因此，现有系统仅能提供适用于通用程序的低层次（low-level）的状态可视化，或需要针对特定程序专门设计的高层次（high-level）的行为可视化。而实际情况中，程序员和教育工作者需要灵活地使用不同层次的抽象来推理和传达程序。例如，通过打断点观察关键的程序状态，定位有问题的环节；同时，也使用手绘的流程图模拟并推理程序行为。本文的目标是填补现有的程序可视化工具之间的空隙，设计一个能够在不同的抽象层级之间切换的程序可视化系统。</p>
+<p>本文调研了 92 个来自知名教学媒体的程序可视化图表和动画，寻求统一的程序传达策略，总结出 3 个设计模式：聚合、简化和概览。</p>
+<p>基于调研结果，本文开发了 <strong>CrossCode</strong>，利用语法结构、控制流和数据流信息，提供灵活的程序表达，引导用户对程序进行多层次的探索。</p>
+<p><img src="./fig-2.png" alt=""></p>
+<p>本文贡献：</p>
+<ul>
+<li>现有程序行为可视化的设计模式总结</li>
+<li>可灵活生成程序可视化并支持多层次探索的原型系统</li>
+<li>系统的定量实验评估</li>
+</ul>
+<h2 id="形成性研究"><a href="#形成性研究" class="headerlink" title="形成性研究"></a>形成性研究</h2><p>本文从现有的程序可视化设计中总结出 3 个设计模式：</p>
+<p><strong>D1</strong> <strong>聚合</strong>：将分散的操作整合为一系列关键步骤。</p>
+<p><strong>D2</strong> <strong>简化</strong>：对重复的操作做缩写。</p>
+<p><strong>D3</strong> <strong>概览</strong>：从整体的层面表达程序的执行过程。</p>
+<p><img src="./fig-3.png" alt=""></p>
+<p>调研的结论重点反映了程序执行过程中高层次的可视化需求。</p>
+<h2 id="系统设计"><a href="#系统设计" class="headerlink" title="系统设计"></a>系统设计</h2><p><img src="./fig-4.png" alt=""></p>
+<p>系统界面由源代码、控制流视图和数据视图组成（从左至右）。</p>
+<h3 id="控制流视图设计"><a href="#控制流视图设计" class="headerlink" title="控制流视图设计"></a>控制流视图设计</h3><p>控制流视图用来展示程序结构，引导用户探索，利用动画和可视设计呈现程序过程中的各种行为。</p>
+<p><img src="./fig-5.png" style="zoom:50%;" /></p>
+<h3 id="数据视图设计"><a href="#数据视图设计" class="headerlink" title="数据视图设计"></a>数据视图设计</h3><p>数据视图利用颜色编码和过渡动画来展示程序状态及数据变化。</p>
+<p><img src="./fig-6.png" style="zoom:50%;" /></p>
+<h2 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h2><p>本文进行了一个专家实验，基于实验结果，可以得到一些启示：</p>
+<ul>
+<li>CrossCode 鼓励自顶向下的程序理解策略</li>
+<li>CrossCode 的理想化表达可以补充编程者的心理模型（上下文感知）</li>
+<li>CrossCode 的导航模型可以扩展到复杂的程序</li>
+</ul>
+<p><img src="./fig-7.png" alt=""></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p><strong>本文的价值</strong></p>
+<ul>
+<li>对于当前程序可视化设计模式的总结</li>
+<li>CrossCode 提供灵活的程序可视化，引导用户做多层次的探索和推理</li>
+<li>在程序运行过程中为用户提供位置感非常重要</li>
+</ul>
+<p><strong>未来方向</strong></p>
+<ul>
+<li>语法之外的聚合</li>
+<li>连接控制流和数据视图</li>
+<li>支持并行和多线程的控制流</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

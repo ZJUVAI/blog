@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Attribute-based Explanation of Non-Linear Embeddings of High-Dimensional Data - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%A1%E7%8C%AE"><span class="toc-text">贡献</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="toc-text">相关工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%9A%E7%BB%B4%E6%8A%95%E5%BD%B1%E7%9A%84%E6%89%A9%E5%85%85"><span class="toc-text">多维投影的扩充</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%94%B9%E8%BF%9B%E6%95%A3%E7%82%B9%E5%9B%BE"><span class="toc-text">改进散点图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%AB%98%E7%BB%B4%E6%95%B0%E6%8D%AE%E7%9A%84%E6%8B%93%E6%89%91%E6%96%B9%E6%B3%95"><span class="toc-text">高维数据的拓扑方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#WORKFLOW"><span class="toc-text">WORKFLOW</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B"><span class="toc-text">模型</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94%E6%96%B9%E6%B3%95"><span class="toc-text">对比方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BD%AE%E5%BB%93%E8%AE%A1%E7%AE%97"><span class="toc-text">轮廓计算</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%B8%89%E8%A7%92%E5%BD%A2%E8%BF%87%E6%BB%A4%E5%99%A8%E5%87%86%E5%88%99%E7%9A%84%E8%AE%A8%E8%AE%BA"><span class="toc-text">三角形过滤器准则的讨论</span></a></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F-case-studies"><span class="toc-text">系统 + case studies</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#OECD-Better-Life"><span class="toc-text">OECD Better Life</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Forest-Covertype"><span class="toc-text">Forest Covertype</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#Matrix-Completion-in-Thermodynamics"><span class="toc-text">Matrix Completion in Thermodynamics</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E9%99%90%E5%88%B6"><span class="toc-text">限制</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%AA%E4%BA%BA%E6%80%BB%E7%BB%93"><span class="toc-text">个人总结</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Attribute-based Explanation of Non-Linear Embeddings of High-Dimensional Data
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2021-10-09 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2021-10-09</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#卢金璇"
+                title="卢金璇">卢金璇</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Attribute-based Explanation of Non-Linear Embeddings of High-Dimensional Data</p>
+<p>作者：Jan-Tobias Sohns, Michaela Schmitt, Fabian Jirasek, Hans Hasse, and Heike Leitte</p>
+<p>发表： IEEE VIS 2021</p>
+<p>高维数据的嵌入广泛用于探索数据、验证分析结果和交流信息。它们的解释，特别是关于输入属性的解释，通常是困难的。对于非线性投影，需要基于属性的颜色编码等替代策略。在本文中提出了非线性嵌入测量器（NoLiES），它将一种新的投影数据增强策略（范围集）与小倍数环境下的交互式分析相结合。</p>
+<p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2108.08706.pdf">组会报告PDF链接</a></p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>降维是探索性数据分析原则的技术之一，它可以得出令人信服的原始数据图。在许多应用中，此原始数据图是使用线性投影（例如PCA）或非线性技术（例如多维缩放（MDS）或t分布随机邻居嵌入（t-SNE））嵌入高维数据。</p>
+<p><strong>线性技术</strong></p>
+<ul>
+<li><p>结果轴仍然有意义</p>
+</li>
+<li><p>无法在高维空间中发现复杂结构</p>
+</li>
+</ul>
+<p><strong>非线性技术</strong></p>
+<ul>
+<li>在高维空间中很好地揭示复杂结构</li>
+<li>不再提供投影空间的直接注释</li>
+</ul>
+<p>因此，为这些广泛使用的技术配备帮助用户正确读取投影数据并将原始数据属性与计算特征关联的机制至关重要。</p>
+<p>通过高维数据分析库和最新论文中的示例，从作者的观察已发现在高维数据分析中的示例<strong>颜色编码字形</strong>和基于<strong>2D插值的尺度场重建</strong>是这项任务的金标</p>
+<p><img src=".\image-1.JPG" alt="image-1"></p>
+<p>葡萄酒数据集的MDS嵌入增加了每个样本点的酒精水平。</p>
+<p><strong>颜色编码</strong>图(b)使用原始属性之一为每个投影数据点分配颜色（图b）。该技术易于实现和理解，但会受到遮挡和视觉杂波的影响，使异常点检测变得困难。</p>
+<p><strong>尺度场重建技术</strong>为给定属性重建2D标量函数，作为空间颜色编码的输入（图2D+2e）。这会产生容易看到的空间模式，但无法解释具有不同属性值的数据点投影到二维空间中相同位置的事实</p>
+<p>本文结合了这两个方向的优势。作者的目标是设计一种易于使用和理解的技术和系统，适用于所有类型的嵌入技术，可以直接集成到现有的分析管道中，并使用户能够快速正确地理解属性值分布 在嵌入的数据中。</p>
+<p>本文的目标不是解释投影，只有最终结果，即数据点在平面中的嵌入。</p>
+<h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
+<li>作者回顾了用于多元投影的最先进的直接增强技术，并强调了这些技术的优势和解释挑战。</li>
+<li>详细介绍了一种新颖的可视化技术（范围集）来增强嵌入。</li>
+<li>详细介绍了范围集与代数拓扑的联系，并提供了有关如何使用该理论进一步改进嵌入增强的第一步。</li>
+<li>提出了一个交互式分析系统，并详细说明了解释线性和非线性嵌入的分析工作流程，以及使用 ML 数据库和现实世界应用程序示例的几个案例研究。</li>
+</ul>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><h3 id="多维投影的扩充"><a href="#多维投影的扩充" class="headerlink" title="多维投影的扩充"></a>多维投影的扩充</h3><p>非线性降维技术广泛用于数据勘探。大部分工作围绕着寻找更好的投影、控制和传达错误以及自动检测和可视化特征。获得较少支持的一个关键方面是对预测数据的解释。直接技术通过基于属性的颜色和文本标签来增强嵌入，以提供附加信。spatially-structured enrichment （使用Voronoi图或树形图等技术划分空间，然后丰富这些区域。然而，这些应用程序中的大多数都以非重叠分区为目标，我们特别希望将其集成以正确反映数据的性质）</p>
+<p>这些空间技术直接避免了过度拼接和成组相干区域，但需要特殊的策略来处理投影模糊</p>
+<p>DataContextMap : 通过定位高属性值区域的附加数据点丰富嵌入，并通过基于重建标量场的附加属性等高线增强可视化<br>DimReader : 使用非线性网格线增强嵌入，Proline 显示非线性轴<br>t-viSNE系统 ： 提供了一种分析工具，用于探索t-SNE投影，该工具用于通过交互式探索增强彩色编码图示符。</p>
+<h3 id="改进散点图"><a href="#改进散点图" class="headerlink" title="改进散点图"></a>改进散点图</h3><p>散点图可视化和处理其挑战（如过度绘制和杂波）的方法已经独立进行了研究<br>将密度图与contours相结合的散点图，用于解决大量点的过度绘制问题，同时对异常值不可知。<br>本文希望进一步改进的挑战是局部密度不均匀</p>
+<h3 id="高维数据的拓扑方法"><a href="#高维数据的拓扑方法" class="headerlink" title="高维数据的拓扑方法"></a>高维数据的拓扑方法</h3><p>Delaunay三角剖分是一个简单的复合体，它的过滤使我们能够从代数拓扑的深入研究理论中汲取经验</p>
+<h2 id="WORKFLOW"><a href="#WORKFLOW" class="headerlink" title="WORKFLOW"></a>WORKFLOW</h2><p>NoLiES 支持降维方案的可视化解释（NoLiES主要建立在增强多维投影、改进散点图和高维数据拓扑分析的概念之上）</p>
+<p><img src=".\image-2.JPG" alt="image-2"></p>
+<p><strong>Step 1 – Jupyter Notebook</strong> </p>
+<p>用户指定数据加载和清理例程。 此外，它们可以提供自定义参数值和选择，例如考虑的数据属性、滑块范围、过滤器阈值或颜色图。 在多维投影部分，用户可以选择他们喜欢的降维方法，并将其与适当的控制机制相结合，如数据缩放和相关性检查。</p>
+<p><strong>Step 2 – NoLiES</strong></p>
+<p>一旦用户对数据预处理感到满意，他们就会在浏览器中切换到交互式 GUI 视图。在此视图中，只有笔记本中的图表元素可见，并且现在以交互方式链接。GUI 在散点图中显示嵌入的数据，并提供包含数据属性和属性值分布的概览</p>
+<p>Explore dimensions ： 在二维空间中的位置和原始数据属性之间提供了一个视觉链接，它解释了投影数据中的属性值分布</p>
+<p>Cluster-based analysis：提供绘图之间共享的小倍数和交互式选择</p>
+<p>Outlier analysis ：outlier highlighting</p>
+<p><strong>Step 3 – User in the loop</strong></p>
+<p>用户可以用获得的知识来扩充笔记本，以便在下一次运行中使用它并保留它以备将来分析。</p>
+<h2 id="模型"><a href="#模型" class="headerlink" title="模型"></a>模型</h2><h3 id="对比方法"><a href="#对比方法" class="headerlink" title="对比方法"></a>对比方法</h3><p>Glyph-based colorcoding ：易于实现并提供对值位置的直观感觉，并且在数据点数量有限的情况下效果很好，但存在遮挡和过度绘制的问题。 然而，评估组/颜色重叠的数量和快速检测异常值很困难</p>
+<p>scalar field ： 两种流行的方法是嵌套填充等值线和基于三角剖分的渲染。 虽然这两种技术都能很好地了解属性值分布，但它们在表示受投影模糊影响的区域方面存在困难<br>在这里，基于场的方法必须使用局部平均值（等值线）或创建许多小色块（三角剖分）。</p>
+<p>set-based visualizations：</p>
+<ul>
+<li>几何/代数方法 : 对单纯复形（图形或三角剖分）进行运算，并通过过滤或其他几何运算（如膨胀）从此构造推导出边界</li>
+<li>统计方法 : 依赖于绘制等值线的密度估计。带有有趣的概率概念，即点可能位于图的某个区域</li>
+</ul>
+<p>这两个方法都依赖控制异常值过滤的参数</p>
+<p>对于本文中提出的范围集，我们选择了基于几何集的方法，因为它利用了空间增强的优势，可以处理投影模糊性，并且可以直观地通过具有良好默认值启发式的单个距离参数进行控制。</p>
+<h3 id="轮廓计算"><a href="#轮廓计算" class="headerlink" title="轮廓计算"></a>轮廓计算</h3><p>范围集使用几何轮廓来直观地将具有相似值的数据点分组。</p>
+<p><img src=".\image-3.JPG" alt="image-3"></p>
+<ol>
+<li><p>选择一个属性箱</p>
+</li>
+<li><p>过滤相应范围内的数据点</p>
+</li>
+<li><p>计算过滤点的 Delaunay 三角剖分<sup><a href="#fn_1" id="reffn_1">1</a></sup></p>
+</li>
+<li><p>删除具有不需要属性的三角形</p>
+</li>
+<li><p>计算三角剖分的边界，找出当前范围内所有不属于轮廓的点进行高亮</p>
+</li>
+</ol>
+<p><strong>Delaunay triangulation</strong>是相当于 Voronoi 图中细胞神经的三角剖分。两个顶点 u 和 v 连接当且仅当它们的距离小于或等于选定的距离阈值 ε。</p>
+<p>非凸面或最小面积外壳具有紧密地包围了异常值的点，并允许过滤异常值。本文使用α-hulls<sup><a href="#fn_2" id="reffn_2">2</a></sup>来解决异常值问题。Alpha复合体是点集Delaunay三角剖分的子复合体。Delaunay三角剖分的每条边或三角形可能与一个特征半径相关联，即包含边或三角形的最小空圆的半径。对于每个实数α，给定点集的α-复形是由半径不超过-1/α的边和三角形集形成的单纯形复形。</p>
+<p><strong>找到一个好的 ε 值是算法的一个重要方面</strong></p>
+<p><img src=".\image-4.JPG" alt="image-4"></p>
+<p>本文使用MST<sup><a href="#fn_3" id="reffn_3">3</a></sup>为过滤器阈值 ε 提供默认值</p>
+<h5 id="三角形过滤器准则的讨论"><a href="#三角形过滤器准则的讨论" class="headerlink" title="三角形过滤器准则的讨论"></a>三角形过滤器准则的讨论</h5><ul>
+<li><p>控制三角剖分质量时广泛使用的三个局部标准是边长、三角形面积和内角。</p>
+</li>
+<li><p>通过 Delaunay 三角剖分已确保优化内角</p>
+</li>
+</ul>
+<h2 id="系统-case-studies"><a href="#系统-case-studies" class="headerlink" title="系统 + case studies"></a>系统 + case studies</h2><p><img src=".\image-5.JPG" alt="image-5"></p>
+<p>NoLiES 在 python 中使用面板库实现交互支持。NoLiES 的 GUI 由三个主要组件组成：</p>
+<ol>
+<li>一个属性视图，列出了原始数据中包含的所有属性、它们的范围以及用于分箱的选定子范围。</li>
+<li>嵌入将投影数据呈现为带有可选标签的点云。 用户可以交互地更改下拉菜单中显示的范围集。 图表的标题自动包括笔记本中定义的应用投影方法。</li>
+<li>小倍数视图提供了对所有选定属性分布的快速概览，并显示了分箱属性的直方图。 可以使用复选框在属性视图中以交互方式打开和关闭视图。</li>
+</ol>
+<p>属性滑块是交互式的，移动滑块时，轮廓和直方图会交互式更新。</p>
+<h4 id="OECD-Better-Life"><a href="#OECD-Better-Life" class="headerlink" title="OECD Better Life"></a>OECD Better Life</h4><p>数据集：经合组织美好生活  40个国家的25个属性（+OECD平均值）。<br>目标是了解哪些因素促进社会福祉</p>
+<p>可以观察到，生活满意度与2D嵌入中的视觉簇密切相关，红色和绿色类（非常高和非常低的幸福感）包含了大多数数据点。非常不愉快的国家（蓝点）分布在整个地块上。它们不在范围集等高线中分组，而是形成直方图中反映的所有异常值（零线下方的条形图）。</p>
+<p><img src=".\image-6.JPG" alt="image-6"></p>
+<h4 id="Forest-Covertype"><a href="#Forest-Covertype" class="headerlink" title="Forest Covertype"></a>Forest Covertype</h4><p>forest covertype 数据集涵盖581k个数据点和54个地形属性，如海拔、坡度和阴影。目标是仅使用这些属性预测森林类型（7类）。</p>
+<p><img src=".\image-7.JPG" alt="image-7"></p>
+<p>值得注意的是，t-SNE图的结构分析具有挑战性，可能容易导致误读。覆盖范围集有助于消除常见的误解。集群大小在t-SNE中毫无意义。使用基于属性的覆盖范围集，用户可以重建数据点之间的基本距离。</p>
+<p>覆盖范围集有助于消除常见的误解</p>
+<h4 id="Matrix-Completion-in-Thermodynamics"><a href="#Matrix-Completion-in-Thermodynamics" class="headerlink" title="Matrix Completion in Thermodynamics"></a>Matrix Completion in Thermodynamics</h4><p>数据驱动的矩阵补全方法（MCM）在预测流体性质方面表现出色，但它们并不直观，因此难以从物理角度理解。<br>这个case的任务是解释物理角度，使用字形着色和聚类无法传达潜在MCM特征和领域知识之间的任何关系。</p>
+<p><img src="D:\Paper-Projectt\Lab-meeting\Attribute-based Explanation of Non-Linear Embeddings of High-Dimensional Data\Image\image-8.JPG" alt="image-8"></p>
+<p>我们还观察到一些化学类别非常独特，例如酒精（右，浅绿色）、醛（右上，浅紫色）和腈（下，深棕色），<br>而其他化学类别的轮廓强烈重叠（主要位于中心）。还要注意的是，水和氧化氘（重水）表现为特殊的溶质（右下角，浅橄榄绿），这与它们特殊的宏观性质非常吻合。</p>
+<p>NoLiES为潜在MCM特征提供了令人兴奋的物理见解，这将作为MCM目标增强的基础，例如。<br>用于选择合适的物理描述符以支持数据驱动方法，或基于溶质的现成信息预测额外溶质的MCM特征</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本文设定的目标如下：设计一种技术和系统</p>
+<ol>
+<li>易于使用和理解，</li>
+<li>适用于所有类型的嵌入技术，</li>
+<li>可以直接集成到现有分析管道中</li>
+<li>使用户能够快速、正确地理解嵌入数据中的属性值分布</li>
+</ol>
+<h4 id="限制"><a href="#限制" class="headerlink" title="限制"></a>限制</h4><p>可伸缩性 : 随着数据点数量的增加，交互速度减慢</p>
+<p>可读性 :  阅读范围集在许多课程中变得很有挑战性</p>
+<h4 id="个人总结"><a href="#个人总结" class="headerlink" title="个人总结"></a>个人总结</h4><p>思路：简单有用<br>工作：case的内容丰富（有大数据集，小数据集）<br>写作：讨论问题很清楚，思路解释，结合实例介绍分析和已有工作的差别</p>
+<p>限制 ： 论文的技术缺乏准确性，如果有个基准可以量化评测高维轴的降维效果，会更好</p>
+<blockquote id="fn_1">
+<sup>1</sup>. M. De Berg, M. Van Kreveld, M. Overmars, and O. Schwarzkopf. Com- putational geometry. In Computational geometry, pp. 1–17. Springer, 1997.<a href="#reffn_1" title="Jump back to footnote [1] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_2">
+<sup>2</sup>. H. Edelsbrunner, D. Kirkpatrick, and R. Seidel. On the shape of a set of points in the plane. IEEE Trans. Inf. Theory, 29:551–558, 1981.<a href="#reffn_2" title="Jump back to footnote [2] in the text."> &#8617;</a>
+</blockquote>
+<blockquote id="fn_3">
+<sup>3</sup>. L. Wilkinson, A. Anand, and R. Grossman. Graph-theoretic scagnostics. In IEEE Symposium on Information Visualization, 2005. INFOVIS 2005., pp. 157–164. IEEE, 2005.<a href="#reffn_3" title="Jump back to footnote [3] in the text."> &#8617;</a>
+</blockquote>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

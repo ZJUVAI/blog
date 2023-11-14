@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Supporting Expressive and Faithful Pictorial Visualization Design with Visual Style Transfer  - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%A1%E7%8C%AE%E7%82%B9"><span class="toc-text">贡献点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9D%E6%AD%A5%E7%A0%94%E7%A9%B6"><span class="toc-text">初步研究</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E5%B8%88%E8%AE%BF%E8%B0%88"><span class="toc-text">设计师访谈</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E5%BD%A2%E5%8F%AF%E8%A7%86%E5%8C%96%E7%9A%84%E5%88%86%E6%9E%90"><span class="toc-text">图形可视化的分析</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DR1-%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="toc-text">DR1:设计模式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DR2-%E6%8F%90%E5%8F%96%E9%A3%8E%E6%A0%BC%E7%9B%B8%E5%85%B3%E7%9A%84%E5%85%B3%E9%94%AE%E5%85%83%E7%B4%A0"><span class="toc-text">DR2:提取风格相关的关键元素</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DR3-%E7%94%9F%E6%88%90"><span class="toc-text">DR3:生成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DR4-%E5%A4%9A%E5%A5%97%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%A1%88"><span class="toc-text">DR4:多套设计方案</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0"><span class="toc-text">评估</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A8%E8%AE%BA%E4%B8%8E%E7%A0%94%E7%A9%B6"><span class="toc-text">讨论与研究</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Supporting Expressive and Faithful Pictorial Visualization Design with Visual Style Transfer 
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2022-11-03 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2022-11-03</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#周姿含"
+                title="周姿含">周姿含</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Supporting Expressive and Faithful Pictorial Visualization Design with Visual Style Transfer</p>
+<p>作者：Yang Shi, Pei Liu, Siji Chen, Mengdi Sun, and Nan Cao</p>
+<p>发表：VIS 2022 (Honorable Mention Award)</p>
+<p>图形可视化用形象的信息描绘数据，并使观众接近可视化。以往的图形可视化研究已经开发了创作工具或生成系统，但其方法仅限于特定的可视化类型和模板。本文建议用视觉风格迁移来增强图形可视化创作，实现更可扩展的可视化设计方法。为探索这一点，本文提出Vistylist，一种设计支持工具，将源图像可视化的视觉风格与其内容分离开来，并将视觉风格转移到一个或多个预期的图像可视化中。我们通过对图形可视化示例的调查、用户研究和一系列专家访谈来评估Vistylist。评估结果表明，Vistylist有助于创建富有表现力和忠实的图形可视化。</p>
+<p><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/9903511">论文链接</a></p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p><strong>图形可视化</strong>(Pictorial Visualization):<br>作为数据的一种可视化表示，使用基于icon的语言来可视化抽象的数据点或数据事实，e.g.<br><img src="./1.png" style="zoom:80%;" /></p>
+<p><strong>挑战</strong>：如何创造表达丰富(expressive)并且忠实数据绑定(faithful)的图形可视化</p>
+<p><strong>相关工作-数据驱动的AI辅助设计工具</strong>：</p>
+<ol>
+<li>Text-to-Viz：针对比例数据，使用自然语言生成图像可视化；虽然该方法自动地为比例数据进行忠实的数据绑定，但在很大程度上忽略了信息呈现的表现力，即基于有限的预定义视觉风格。</li>
+<li>Retrive-Then-Adapt：通过从其示例库中检索适当的示例来生成比例相关的图形可视化。</li>
+<li>Extensive Timeline：从时间轴图像中提取可扩展的时间轴模板以生成新的时间轴信息图形。</li>
+</ol>
+<p><img src="./2.png" style="zoom:80%;" /></p>
+<p>上述的方法仅限于特定的数据类型，如比例或时间数据，这些数据类型适应特定的现实世界场景。此外，他们的方法限制了示例中使用的可视化类型与结果中使用的可视化类型相同。也就是说，如果用户试图设计时间线信息图，用户必须首先搜索时间线示例。这种方法可能会降低图形可视化设计的表现力和灵活性。</p>
+<h3 id="贡献点"><a href="#贡献点" class="headerlink" title="贡献点"></a>贡献点</h3><ul>
+<li>实现了设计工具Vistylist<ul>
+<li>通过将源图形可视化的视觉风格与其内容分离，然后将该风格转移到预期的图形可视化，从而促进图形可视化设计；</li>
+</ul>
+</li>
+<li>图形可视化的公开数据库<ul>
+<li>收集了一个包含1371个高质量图形可视化的数据集，并确定了一组设计模式；</li>
+<li>数据集：<a target="_blank" rel="noopener" href="https://idvxlab.com/vistylist/">https://idvxlab.com/vistylist/</a></li>
+</ul>
+</li>
+<li>评估<ul>
+<li>进行了调查、用户研究和一系列访谈；</li>
+<li>评估结果表明Vistylist可以增加创建忠实和富有表现力的图像可视化的可能性；</li>
+</ul>
+</li>
+</ul>
+<h3 id="初步研究"><a href="#初步研究" class="headerlink" title="初步研究"></a>初步研究</h3><h4 id="设计师访谈"><a href="#设计师访谈" class="headerlink" title="设计师访谈"></a>设计师访谈</h4><p>为了了解设计师在创建图形可视化时的当前做法和挑战，我们对四个领域专家进行了形成性访谈，包括两个信息设计师(D1, D2)，一个数据分析师(A1)和一个数据记者(J1)。所有参加者均有超过四年的专业经验，在信息设计上较为专业。</p>
+<p><strong>采访的问题</strong>：</p>
+<ol>
+<li>采用什么工作流程来创建图形可视化？</li>
+<li>工作流的哪些部分使用现有工具易于管理或难以管理?</li>
+<li>会建议现有工具使用哪些潜在功能来促进图形可视化创作?</li>
+</ol>
+<p><strong>总结的设计需求</strong>：<br><strong>DR1</strong>：确定通用的设计模式，分为可视化类型和数据绑定类型<br><strong>DR2</strong>：能从源图形可视化中提取描述视觉风格的关键元素<br><strong>DR3</strong>：生成时要考虑icon的使用要语义相关<br><strong>DR4</strong>：从相似性、美学和灵感的角度，提供多套替代设计</p>
+<h4 id="图形可视化的分析"><a href="#图形可视化的分析" class="headerlink" title="图形可视化的分析"></a>图形可视化的分析</h4><p><strong>数据库构建</strong></p>
+<ul>
+<li>初筛<ul>
+<li>相关研究之前总结的数据：anthropographics, infographics, data videos</li>
+<li>利用Text-To-Viz生成</li>
+<li>可视化社区: flowingdata, eagereyes</li>
+<li>模板创作工具: Canva, Visme</li>
+<li>谷歌搜索pictographs/pictorial visualizations/ pictograms…</li>
+</ul>
+</li>
+<li>规则筛选<ul>
+<li>排除timeline和flow chart</li>
+<li>确认是否数据驱动<ul>
+<li>数据确定信息和参数</li>
+<li>至少使用一种可视化方法</li>
+<li>使用了象形的icon</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>打标签<ul>
+<li>标签：可视化类型和数据绑定类型</li>
+<li>体系确定：<ul>
+<li>两人分别对其中25%的数据打上标签</li>
+<li>合并相似，讨论分歧，打完所有的标签➡️ Cohen’s Kappa=0.93</li>
+<li>对少数分歧重新讨论➡️100%意见一致</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="DR1-设计模式"><a href="#DR1-设计模式" class="headerlink" title="DR1:设计模式"></a>DR1:设计模式</h3><p>6种可视化类型，7种数据绑定类型:</p>
+<p><img src="./3.png" style="zoom:80%;" /> </p>
+<h3 id="DR2-提取风格相关的关键元素"><a href="#DR2-提取风格相关的关键元素" class="headerlink" title="DR2:提取风格相关的关键元素"></a>DR2:提取风格相关的关键元素</h3><p>作者确定<strong>颜色</strong>、<strong>字体</strong>和<strong>图标风格</strong>是需要提取的关键元素。<br>为了进行元素提取，文章应用了Lu等人提出的最先进的目标检测方法之一，该方法扩展了YOLO，能够区分文本、图标、索引和箭头四类信息图数据元素。从源图形可视化中分离出标识元素(文本和图标)之后，提取了它们的特征，如下所示：</p>
+<p><img src="./4.png" style="zoom:80%;" /> </p>
+<ul>
+<li>颜色<ul>
+<li>使用K-means聚类方法从源图形可视化中提取背景颜色、字体颜色和配色方案;</li>
+<li>使用Kita等人提出的调色板评级模型对提取的配色方案进行扩展，以匹配数据基数。比如提取了一个M-color调色板，同时提供了一个K-category数据属性，Vistylist会建议K-M个更和谐的颜色;</li>
+</ul>
+</li>
+<li>字体<ul>
+<li>使用DeepFont，利用了自适应的卷积神经网络(CNN)，可以识别英文文本行的字体；DeepFont能够识别150种字体，如AmericanaStd和HelveticaLTStd-Roma；</li>
+</ul>
+</li>
+<li>图标风格<ul>
+<li>首先从网上收集图标作为图标资产(iconfont等)，img-title对；</li>
+<li>形成了一个包含3,233个图标的集合，其示例类别包括人物、食物和城市；</li>
+<li>使用孪生神经网络(SNN)来衡量风格一致性：SNN将输入图标映射到256维特征空间，并比较图标对之间的欧氏距离。距离越近，两个图标之间的风格越一致；<br><img src="./5.png" style="zoom:80%;" /> </li>
+</ul>
+</li>
+</ul>
+<h3 id="DR3-生成"><a href="#DR3-生成" class="headerlink" title="DR3:生成"></a>DR3:生成</h3><ol>
+<li>之前总结的22种图表，用户选择一种可视化类型后，可建议对应的一种；</li>
+<li>用户建立属性-通道的对应后，自动得到语义相关的icon；</li>
+<li>将提取的视觉风格(颜色、字体、图标)转换为预期的图形可视化；</li>
+</ol>
+<p><img src="./6.png" style="zoom:80%;" /> </p>
+<h3 id="DR4-多套设计方案"><a href="#DR4-多套设计方案" class="headerlink" title="DR4:多套设计方案"></a>DR4:多套设计方案</h3><p>为了提出可供选择的图形可视化设计，考虑了三个不同的标准，包括<strong>相似性</strong>、<strong>美学</strong>和<strong>灵感</strong>，计算如下：</p>
+<ul>
+<li>相似性<ul>
+<li>为了评估源图形可视化和预期图形可视化之间的相似性，使用simhash（保持相似性的一种讲维方法）将源图像转换为高维特征向量，然后将特征向量转换为64位指纹。</li>
+<li>通过使用余弦距离比较源图像和预期图像的指纹，衡量它们之间的相似性。</li>
+</ul>
+</li>
+<li>美学<ul>
+<li>从颜色和布局两个角度来衡量图形可视化的美学。</li>
+<li>在颜色方面，提出了颜色和谐度和颜色区分度不佳度，分别衡量相邻颜色对视觉效果的影响和亮度的显著差异;</li>
+<li>在布局上，遵循两个设计原则，即留白和平衡；留白评估的是元素是否组织在稳定和常规的布局中，平衡要求元素在整个布局中均匀分布。</li>
+</ul>
+</li>
+<li>灵感<ul>
+<li>建议包括上图的22个设计模式，相对于用户最初指定的设计模式，反映不同设计模式的建议。</li>
+</ul>
+</li>
+</ul>
+<p><img src="./7.png" style="zoom:80%;" /></p>
+<h3 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h3><p>主要分为三部分：</p>
+<ol>
+<li>和Retrive-Then-Adapt的对比研究</li>
+<li>User Study</li>
+<li>Expert Interview</li>
+</ol>
+<p>具体内容不在此赘述。</p>
+<h3 id="讨论与研究"><a href="#讨论与研究" class="headerlink" title="讨论与研究"></a>讨论与研究</h3><ul>
+<li>讨论<ul>
+<li>动画</li>
+<li>探索跟情感相关的属性 embodiment-related properties</li>
+<li>伦理和抄袭的问题</li>
+</ul>
+</li>
+<li>局限<ul>
+<li>特征提取部分可能会产生令人不满意的结果，这取决于图像可视化的质量和内容。</li>
+<li>有问题的不匹配或原型图标检索。有参与者则担心设计不良的图标可能意味着性别不平等，如社会不平等和玻璃天花板。这些不令人满意的推荐可能会影响数据的忠实描述，或导致可视化设计，使有害的刻板印象永久化。</li>
+<li>颜色分配的组成部分采用了简单的策略，忽略了为可视化选择语义上共振的颜色。</li>
+</ul>
+</li>
+</ul>
+<p>AI的概念如何在可视化中使用：<br>  文章提到了AI的风格迁移，AI中风格可能和颜色、笔触等相关，而文章将风格定义为图形可视化中的颜色、字体、图标风格。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

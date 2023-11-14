@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Structure-aware Visualization Retrieval - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Abstract"><span class="toc-text">Abstract</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Introduction"><span class="toc-text">Introduction</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Related-Work"><span class="toc-text">Related Work</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Visualization-Retrieval"><span class="toc-text">Visualization Retrieval</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Visualization-Similarity"><span class="toc-text">Visualization Similarity</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Visualization-Format"><span class="toc-text">Visualization Format</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Background"><span class="toc-text">Background</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Structural-Information-in-SVGs"><span class="toc-text">Structural Information in SVGs</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Contrastive-Learning"><span class="toc-text">Contrastive Learning</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Graph-Neural-Networks"><span class="toc-text">Graph Neural Networks</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Preliminary-Study"><span class="toc-text">Preliminary Study</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Method"><span class="toc-text">Method</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Representation-Learning-of-Structural-Information"><span class="toc-text">Representation Learning of Structural Information</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Feature-Extraction"><span class="toc-text">Feature Extraction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Graph-Construction"><span class="toc-text">Graph Construction</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Representation-Learning-of-Visual-Information"><span class="toc-text">Representation Learning of Visual Information</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Visualization-Retrieval-1"><span class="toc-text">Visualization Retrieval</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Evaluation"><span class="toc-text">Evaluation</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Corpus"><span class="toc-text">Corpus</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Model-Settings"><span class="toc-text">Model Settings</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Quantitative-Evaluation"><span class="toc-text">Quantitative Evaluation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#User-Study"><span class="toc-text">User Study</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Case-Study"><span class="toc-text">Case Study</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Discussion"><span class="toc-text">Discussion</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Lessons"><span class="toc-text">Lessons</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Generalizability-and-Application-Scenarios"><span class="toc-text">Generalizability and Application Scenarios</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Limitations"><span class="toc-text">Limitations</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Conclusion"><span class="toc-text">Conclusion</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Thinking"><span class="toc-text">Thinking</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Structure-aware Visualization Retrieval
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2022-04-28 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2022-04-28</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#周杰辉"
+                title="周杰辉">周杰辉</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Structure-aware Visualization Retrieval</p>
+<p>作者：Haotian Li, Yong Wang, Aoyu Wu, Huan Wei, Huamin Qu</p>
+<p>发表：CHI 2022 (Honorable Mention)</p>
+<p>现有可视化检索方法主要关注可视化的视觉外观，而忽略了基于 SVG 的可视化中固有的结构信息，其描述了视觉元素之间的空间和层次关系。本文提出了一种结构感知的可视化检索方法，通过综合考虑视觉和结构信息来提高检索的性能。定量比较、用户研究和案例研究证明了该方法的有效性。</p>
+<p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2202.05960.pdf">论文 PDF 链接</a></p>
+<h1 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h1><p><strong>背景</strong>随着数据可视化的广泛使用，大量基于 Scalable Vector Graphic（SVG）的可视化被创建并在网上分享。</p>
+<p><strong>研究问题</strong>人们对从大型可视化语料库中检索出感知相似的可视化作品的探索兴趣越来越浓，因为它可以使各种下游应用（如可视化推荐）受益。</p>
+<p><strong>已有工作的不足</strong>现有的方法主要关注可视化的视觉外观，将其视为位图。然而忽略了基于 SVG 的可视化中固有的结构信息。这种结构信息可以勾勒出视觉元素之间的空间和层次关系，并从一个新的角度描述可视化的特征。</p>
+<p><strong>本文工作</strong>本文提出了一种结构感知的方法，通过综合考虑视觉和结构信息来提高可视化检索的性能。作者通过定量比较、用户研究和案例研究广泛地评估了提出的方法。结果证明该方法的有效性和它比现有方法的优势。</p>
+<h1 id="Introduction"><a href="#Introduction" class="headerlink" title="Introduction"></a>Introduction</h1><p><strong>背景</strong></p>
+<ul>
+<li>可视化很流行<ul>
+<li>原因：传递洞察，帮助决策</li>
+</ul>
+</li>
+<li>很多可视化基于 SVG<ul>
+<li>原因：支持交互和质量保持的放缩</li>
+<li>结果：广泛用于存储和展示可视化</li>
+</ul>
+</li>
+<li>可视化检索在工业界和学术界广受关注<ul>
+<li>原因：支持很多下游任务，例如创建可视化集合以及可视化推荐</li>
+</ul>
+</li>
+</ul>
+<p><strong>已有工作</strong></p>
+<ul>
+<li>可视化检索的核心问题是衡量可视化之间的相似性<ul>
+<li>数据相似性<ul>
+<li>概念：基于数据特征，例如数据分布</li>
+<li>局限性：数据可获取性受限</li>
+</ul>
+</li>
+<li>感知相似性<ul>
+<li>概念：从可视化中计算特征向量，再衡量向量之间的距离<ul>
+<li>基于像素的方法：颜色分布直方图</li>
+<li>深度学习的方法：基于位图自动提取特征</li>
+</ul>
+</li>
+<li>局限性：缺乏考虑 SVG 中的结构信息</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>结构信息</strong></p>
+<ul>
+<li>概念：可视元素之间的空间和层级关系的描述</li>
+</ul>
+<p><img src="./image.png" alt="image.png"></p>
+<ul>
+<li>重要性：举例论证（Figure1），结构信息在刻画感知相似性中起着重要的作用</li>
+<li>待解决的问题<ul>
+<li>可以提取什么样的基于结构的特征</li>
+<li>如何利用这些基于结构的特征来促进相似可视化的检索</li>
+</ul>
+</li>
+</ul>
+<p><strong>本文工作</strong></p>
+<ul>
+<li>一句话概括：利用结构和视觉信息来准确评估可视化之间的感知相似性</li>
+<li>具体工作<ul>
+<li>预实验<ul>
+<li>理解人们评估可视化感知相似性的准则，并识别其中最重要的三条准则<ul>
+<li>可视化类型</li>
+<li>可视元素数量</li>
+<li>可视化数据的整体趋势</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>模型<ul>
+<li>SVG 转化成 graph 和 bitmap image</li>
+<li>利用对比表征学习(自监督)将可视化表示成嵌入向量(包含结构和视觉信息)</li>
+<li>基于该向量进行相似可视化检索</li>
+</ul>
+</li>
+<li>评估<ul>
+<li>基于 VizML 数据集，通过众包用户实验进行评估</li>
+<li>案例分析</li>
+<li>定量比较</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><strong>贡献</strong></p>
+<ul>
+<li>一种新颖的结构感知的相似可视化检索方法<ul>
+<li>通过嵌入向量来描述可视化之间的感知相似性。</li>
+</ul>
+</li>
+<li>广泛的评估，结果证明了方法的有效性<ul>
+<li>包括 50 名参与者的众包用户研究</li>
+<li>多个案例研究</li>
+<li>与现有可视化检索方法的定量比较</li>
+</ul>
+</li>
+<li>经验总结</li>
+</ul>
+<h1 id="Related-Work"><a href="#Related-Work" class="headerlink" title="Related Work"></a>Related Work</h1><h2 id="Visualization-Retrieval"><a href="#Visualization-Retrieval" class="headerlink" title="Visualization Retrieval"></a>Visualization Retrieval</h2><p>根据查询的类别，现有方法可以分为两类</p>
+<ul>
+<li>基于定义的检索<ul>
+<li>通过编程语言或自然语言指定检索标准</li>
+</ul>
+</li>
+<li>基于样例的检索<ul>
+<li>使用现有的图表与草图进行搜索</li>
+</ul>
+</li>
+</ul>
+<p>与之前工作的联系</p>
+<ul>
+<li>本文的方法属于基于样例的检索，但同时考虑了结构和视觉信息。</li>
+</ul>
+<h2 id="Visualization-Similarity"><a href="#Visualization-Similarity" class="headerlink" title="Visualization Similarity"></a>Visualization Similarity</h2><p>计算可视化相似性可以支持很多下游任务（例如，探索式数据分析，可视化查询和可视化集合生成），现有工作可以分为两类</p>
+<ul>
+<li>数据相似性<ul>
+<li>直接获取原始数据，通过数据分布或趋势来定义相似性<ul>
+<li>局限性：数据受限</li>
+</ul>
+</li>
+<li>从可视化中提取数据<ul>
+<li>局限性：现有方法性能不佳，容易对检索结果造成影响</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>感知相似性<ul>
+<li>定义：通过人工设计或学习出来的视觉特征来计算相似性。</li>
+</ul>
+</li>
+</ul>
+<p>与已有工作的联系</p>
+<ul>
+<li>与数据方法相比，本文的方法不需要原始数据</li>
+<li>与感知方法相比，本文不仅考虑了像素层面的视觉信息，还考虑了不同可视元素之间的关系(结构信息)，更符合从众包实验中发现的准则</li>
+</ul>
+<h2 id="Visualization-Format"><a href="#Visualization-Format" class="headerlink" title="Visualization Format"></a>Visualization Format</h2><p>根据用途的不同，可视化可以被存储为多种形式（该分类来源于三作伍翱宇的 AI4VIS 的综述，Survey on Artificial Intelligence Approaches for Visualization Data）</p>
+<ul>
+<li>图像<ul>
+<li>栅格图：难以编辑，丢失可视化特有的信息(图表类型和可视编码)</li>
+<li>矢量图：可编辑，保留了部分可视化相关的信息，例如元素之间的关系<ul>
+<li>已有一些工作利用矢量图来实现可视化查询（可能是本文灵感来源）<ul>
+<li>基于 specification：Searching the Visual Style and Structure of D3 Visualizations</li>
+<li>基于可视化类型：Beagle: Automated Extraction and Interpretation of Visualizations from the Web</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>程序<ul>
+<li>D3, Vega-Lite, Plotly</li>
+<li>局限性：渲染需要额外的编译器</li>
+</ul>
+</li>
+<li>混合形式<ul>
+<li>将数据隐写至可视化，例如 Chartem, VisCode</li>
+</ul>
+</li>
+</ul>
+<p>与已有工作的联系考虑到 SVG 的普遍性，本文从 SVG 中提取了结构信息，从位图中提取了视觉信息，结合这两种信息有效刻画可视化相似性。</p>
+<h1 id="Background"><a href="#Background" class="headerlink" title="Background"></a>Background</h1><h2 id="Structural-Information-in-SVGs"><a href="#Structural-Information-in-SVGs" class="headerlink" title="Structural Information in SVGs"></a>Structural Information in SVGs</h2><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/SVG">https://developer.mozilla.org/en-US/docs/Web/SVG</a><strong>Scalable Vector Graphics (SVG)</strong> are an <a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/XML">XML</a>-based markup language for describing two-dimensional based <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Vector_graphics">vector graphics</a>.</p>
+<p>结构信息</p>
+<ul>
+<li>元素之间的层次和空间关系<ul>
+<li>层次：继承，分组<ul>
+<li>视觉通道使用情况</li>
+<li>原始数据的信息，例如数据项数目、属性数目</li>
+</ul>
+</li>
+<li>空间：元素的位置<ul>
+<li>反映元素的摆放情况和数据的大体趋势</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>元素的属性<ul>
+<li>类型：\<g\>, \<text\></li>
+<li>样式：color, stroke</li>
+<li>形状：”d” in \<path\></li>
+</ul>
+</li>
+</ul>
+<p>本文主要使用反映元素之间的层次和空间关系的结构信息，类型和样式等辅助信息也被用来区分不同的元素</p>
+<p><img src="./1650702329763-33154777-a3dc-4e84-a1f9-fb2711ebd611.png#clientId=u878c1faf-6bce-4&amp;crop=0&amp;crop=0&amp;crop=1&amp;crop=1&amp;from=paste&amp;height=562&amp;id=ue475003a&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=618&amp;originWidth=1553&amp;originalType=binary&amp;ratio=1&amp;rotation=0&amp;showTitle=false&amp;size=192871&amp;status=done&amp;style=none&amp;taskId=u8b5da74f-7d9e-49c9-8b62-6cc368038c6&amp;title=&amp;width=1411.8181512178476" alt="image.png"></p>
+<h2 id="Contrastive-Learning"><a href="#Contrastive-Learning" class="headerlink" title="Contrastive Learning"></a>Contrastive Learning</h2><p>自监督表征学习广受关注</p>
+<ul>
+<li>原因：高质量有标签的数据集获取困难</li>
+</ul>
+<p>对比学习是一种代表性的自监督学习方法 （Self-supervised Learning: Generative or Contrastive）</p>
+<ul>
+<li>目的：重构输入</li>
+<li>场景：大量无标签数据</li>
+</ul>
+<p>自监督学习可以进一步细分</p>
+<ul>
+<li>生成式自监督学习：训练编码器将输入 x 编码成显式向量 z，解码器从 z 重建 x，最小化重建误差</li>
+<li>对比式自监督学习（对比学习）：训练编码器将输入 x 编码成显式向量 z 以度量相似性（例如互信息最大化）</li>
+<li>生成式对比自监督学习（对抗学习）：训练编码器生成假样本和鉴别器来区分它们与真实样本（例如 GAN）</li>
+</ul>
+<p><img src="./1650804193652-9ccc34e3-8462-4261-a145-b62f502d1600.png" alt="image.png"></p>
+<p><img src="./1650705121721-d24e104e-9084-4b99-b15a-b024562b956e.png" alt="image.png"></p>
+<h2 id="Graph-Neural-Networks"><a href="#Graph-Neural-Networks" class="headerlink" title="Graph Neural Networks"></a>Graph Neural Networks</h2><p>类似 CNN 中的卷积，GNN 包含 feature propagation 和 aggregationSVG 是树形结构（也可以看成图），所以可以使用 GNN 将结构信息表示成向量。GNN 主要应用于三类任务：</p>
+<ul>
+<li>node-level: 节点分类</li>
+<li>edge-level: 边预测</li>
+<li>graph-level: 图分类<ul>
+<li>InfoGraph: Unsupervised and Semi-supervised Graph-Level Representation Learning via Mutual Information Maximization</li>
+</ul>
+</li>
+</ul>
+<h1 id="Preliminary-Study"><a href="#Preliminary-Study" class="headerlink" title="Preliminary Study"></a>Preliminary Study</h1><p>做用户实验的网站：<a target="_blank" rel="noopener" href="https://www.prolific.co/">https://www.prolific.co/</a></p>
+<ol>
+<li>展示 5 个查询的可视化，以及根据视觉信息检索出来的 top-5 的相似可视化</li>
+<li>给每一个检索出来的可视化一个分数（1：最不相似；5：最相似）</li>
+<li>写下打分的准则</li>
+<li>两个作者对用户的回复打标，得到相似性准则</li>
+</ol>
+<p><img src="./1650706094147-ab89a641-7962-4718-9dc7-170203831662.png" alt="image.png">与 An Automated Approach to Reasoning About Task-Oriented Insights in Responsive Visualization 工作中得出的结论一致</p>
+<h1 id="Method"><a href="#Method" class="headerlink" title="Method"></a>Method</h1><p><strong>what-why-how 的写作顺序</strong></p>
+<p>方法概览<img src="./1650706273329-be180197-e4e7-4fb0-bf91-75dbcfe69534.png" alt="image.png">之所以使用对比学习来训练 CNN 和 GNN 编码器，是因为其可以减少人标注数据的负担。接下来就分别介绍 GNN、CNN 和可视化检索</p>
+<h2 id="Representation-Learning-of-Structural-Information"><a href="#Representation-Learning-of-Structural-Information" class="headerlink" title="Representation Learning of Structural Information"></a>Representation Learning of Structural Information</h2><h3 id="Feature-Extraction"><a href="#Feature-Extraction" class="headerlink" title="Feature Extraction"></a>Feature Extraction</h3><p>type: one-hot encodingstyle: color, opacity, <del>stroke(infrequent)</del>shape:</p>
+<ul>
+<li>bar: area, center, height and width of its bounding box</li>
+<li>scatter: area, center, height and width of its bounding box</li>
+<li>line: the number of vertices in the line and the trend of the line(sample five points evenly)</li>
+<li>text: length</li>
+</ul>
+<p>relationship between positions:</p>
+<ul>
+<li>根据元素在横轴和纵轴的位置排序，位置之差作为一个特征</li>
+</ul>
+<p>对于没有特征的元素，例如<g>，使用 0 填充</p>
+<h3 id="Graph-Construction"><a href="#Graph-Construction" class="headerlink" title="Graph Construction"></a>Graph Construction</h3><p><img src="./1650765046289-51e4f0d2-fa89-498d-aa74-ec20801e471c.png" alt="image.png"></p>
+<ol>
+<li>将 SVG 中的元素树转变成双向图</li>
+<li>删除作为参考的元素（例如图例和网格线）</li>
+<li>删除具有 0 个或 1 个孩子的<g>元素</li>
+<li>增加自环和相邻元素的边来增广图（保证 feature propagation）<ol>
+<li>相邻的定义依据的是排序后的位置</li>
+</ol>
+</li>
+</ol>
+<p>使用 GNN 将结构信息表示成向量。</p>
+<ul>
+<li>原理：最大化整个图的 embedding 与子结构的 embedding 之间的互信息</li>
+</ul>
+<h2 id="Representation-Learning-of-Visual-Information"><a href="#Representation-Learning-of-Visual-Information" class="headerlink" title="Representation Learning of Visual Information"></a>Representation Learning of Visual Information</h2><p>受 ScatterNet 和 ChartNavigator 的启发。使用的模型是 SimSiam：孪生网络表征学习</p>
+<p><img src="./1650766416790-8c478032-741c-4996-a156-1c24f01ff52e.png" alt="image.png"></p>
+<p>SimSiam 的输入要求是正方形，因此使用 0 填充，不适用 resize 的原因是其会改变数据的趋势。现有针对图像的数据增广方式有 cropping and resizing, cutting out, flipping, rotating, blurring, applying noise or filter and distorting the colors，但不是所有的都适用于可视化，例如翻转会导致数据趋势不一致。<img src="./1650766817065-21d68912-b7c4-4562-9088-0d95e8ebc49d.png" alt="image.png"></p>
+<h2 id="Visualization-Retrieval-1"><a href="#Visualization-Retrieval-1" class="headerlink" title="Visualization Retrieval"></a>Visualization Retrieval</h2><p>直接将结构和视觉 embedding 进行归一化(normalize)，并连接(concatenate)起来。使用 cosine 相似度来衡量可视化之间的距离。</p>
+<h1 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h1><p>总分结构，在开头给出概述</p>
+<blockquote>
+<p>By using the large-scale SVG-bitmap visualization corpus (Section 6.1), we conducted extensive evaluations to assess our structureaware visualization retrieval approach including quantitative comparisons (Section 6.3), a user study (Section 6.4) and case studies (Section 6.5). We also introduce the model settings used in evaluations (Section 6.2). The results verify the effectiveness of our structure-aware visualization retrieval approach.</p>
+</blockquote>
+<h2 id="Corpus"><a href="#Corpus" class="headerlink" title="Corpus"></a>Corpus</h2><p>在<a target="_blank" rel="noopener" href="https://chart-studio.plotly.com/feed/">https://chart-studio.plotly.com/feed/</a>中爬取对应的数据。收集了 51037 个 SVG-bitmap 可视化对类型包括：</p>
+<ul>
+<li>bar charts</li>
+<li>box plots</li>
+<li>histograms</li>
+<li>line charts</li>
+<li>scatter plots</li>
+</ul>
+<p>由于 bar chart 和 histogram 仅仅区别于数据转换，所以作者将它们视作同一类。</p>
+<p><img src="./1650767843448-a08ce144-8dc9-46e5-addd-22a6f7fe3f28.png" alt="image.png">遵循 Screen2Vec 的实践，从每类可视化中采样 90%作为训练集，剩下的作为测试集。</p>
+<h2 id="Model-Settings"><a href="#Model-Settings" class="headerlink" title="Model Settings"></a>Model Settings</h2><p>用四种方法进行比较</p>
+<ul>
+<li>Visual Information by Histogram of Oriented Gradients (HOG)</li>
+<li>Visual Information by CNN<ul>
+<li>SimSiam with ResNet-50</li>
+</ul>
+</li>
+<li>Structural Information by GNN<ul>
+<li>InfoGraph with Graph Isomorphism Network</li>
+</ul>
+</li>
+<li>Structural and Visual Information Fusion<ul>
+<li>本文的方法</li>
+</ul>
+</li>
+</ul>
+<p>得到 embedding 后，计算可视化之间的相似性分数。</p>
+<h2 id="Quantitative-Evaluation"><a href="#Quantitative-Evaluation" class="headerlink" title="Quantitative Evaluation"></a>Quantitative Evaluation</h2><p>Metrics:由于可视化的类型不同，因此需要使用统一的指标根据预先实验，本文使用了两种简单的指标来衡量不同方法的性能</p>
+<ul>
+<li>visualization type consistency<ul>
+<li>计算在 top-k 查询中，检索到的可视化与原始可视化类型相同的数量</li>
+<li>然后将这种可视化的数量除以 𝑘，得到每个查询可视化的类型一致率(Type-Consistent Rate, TCR)。</li>
+<li>计算测试集中所有可视化的类型一致率的平均值和标准差，表示为 TCR_ave 和 TCR_std</li>
+</ul>
+</li>
+<li>difference of the numbers of visible visual elements<ul>
+<li>why：SVG 结构图中叶子节点是 visible visual elements，非叶节点主要用来编组或包含其他元素，并不直接可见，因此并不能被 V-CNN 和 V-HOG 直接观测到。为了使比较公平，所以只使用可见元素。</li>
+<li>跟 TCR 类似，也计算平均值 DVE_ave 和方差 DVE_std.</li>
+</ul>
+</li>
+</ul>
+<p>TCR_std，DVE_ave 和 DVE_std 越小越好：算法表现稳定、误差越小 TCR_ave 越大越好：检索出更多相同类型的可视化</p>
+<p>结果：<img src="./1650769589912-e7460012-8e7b-4c3b-b49b-b81c582a5838.png" alt="image.png">DVE_ave 的结果与 Evaluating ‘Graphical Perception’ with CNNs 相吻合(align)，显示了结构信息的重要性</p>
+<p>图 7 展示了 TCR_ave 的混淆矩阵.、</p>
+<p><img src="./1650769944155-98bf4222-dc56-439a-87ca-863d1beef326.png" alt="image.png">尽管 CNN 和 GNN 在 TCR_ave 整体上表现一致，但在不同可视化类型上表现存在差异。文中还解释了原因。同时也说明了同时考虑结构信息和视觉信息有助于改进可视化检索性能。<img src="./1650770075764-47344432-8f5d-44f4-876f-f5cf0d5719dc.png" alt="image.png"></p>
+<h2 id="User-Study"><a href="#User-Study" class="headerlink" title="User Study"></a>User Study</h2><p>从 Prolific 上招募了 50 名用户参与实验</p>
+<p><strong>数据集</strong>从测试集中采样了 40 个可视化，对于每一个样本，利用四种方法检索出 top-5 的相似可视化每个被试面临 5 个查询的可视化和对应的检索结果。网址：<a target="_blank" rel="noopener" href="https://structure-vis-retrieval.github.io/">https://structure-vis-retrieval.github.io/</a></p>
+<p><strong>程序</strong></p>
+<ol>
+<li>介绍实验，征求同意，检查是否具备可视化知识</li>
+<li>介绍在预实验中收集的可视化相似性度量，并强调可视化类别、数据趋势和可视元素的数目具有最高的优先级，并展示了若干例子<ol>
+<li>目的：校准参与者的判断，消除极端分数可能带来的影响</li>
+</ol>
+</li>
+<li>利用 5 分的李克特量表对检索出的 top-5 相似的可视化进行打分<ol>
+<li>1：最不相似，5：最相似</li>
+</ol>
+</li>
+</ol>
+<p><strong>结果</strong>平均相似性分数 S&amp;V-Fusion: 2.8607, V-CNN: 2.7707, S-GNN: 2.4833 and V-HOG: 2.002According to the results, S&amp;V-Fusion outperforms all other models with statistical significance (𝑝 &lt; 0.001) tested with Wilcoxon Signed-rank tests<img src="./1650775407936-9c01ea3d-34d3-48e3-aa92-4d35c5edc1e3.png" alt="image.png"></p>
+<h2 id="Case-Study"><a href="#Case-Study" class="headerlink" title="Case Study"></a>Case Study</h2><p>Case 是由用户找出来的<img src="./1650770075764-47344432-8f5d-44f4-876f-f5cf0d5719dc.png" alt="image.png"></p>
+<p><strong>可视化类型</strong>V-CNN 将相同趋势的散点图和折线图弄混了 V-CNN 对于一个 plain bar chart 的查询返回了很多 stacked bar charts</p>
+<p><strong>可视元素的个数</strong>查询的折线图有 3 条线，S-GNN 的结果大都有 3 条先，而 V-CNN 检测的结果大都只有一条线</p>
+<p><strong>数据的趋势</strong>S-GNN 检索出的结果与查询的可视化的数据趋势不一致，这种检测数据趋势的能力不如 V-CNN 而 S&amp;V-Fusion 可以检索出相似数据趋势的可视化，并且保持可视化类型以及可视元素的个数。</p>
+<h1 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h1><h2 id="Lessons"><a href="#Lessons" class="headerlink" title="Lessons"></a>Lessons</h2><p><strong>结构信息的必要性。</strong> 可视化与图像的区别（可视元素与像素）类比思考：(可视化)编程语言与自然语言的区别？结构信息可以理解为是粗粒度的信息，而像素层面的信息则更加细粒度</p>
+<p><strong>深度学习模型的定制。</strong></p>
+<ul>
+<li>数据增广。翻转不适用于可视化</li>
+<li>可视化中更关注形状而不是纹理（传统 CNN 模型关注的部分），因此需要对 CNN 进行调整以适应可视化</li>
+</ul>
+<h2 id="Generalizability-and-Application-Scenarios"><a href="#Generalizability-and-Application-Scenarios" class="headerlink" title="Generalizability and Application Scenarios"></a>Generalizability and Application Scenarios</h2><p><strong>其他库生成的可视化。</strong></p>
+<ul>
+<li>本文使用的是从 Plotly 上爬取的可视化，但本文的方法也可以扩展</li>
+<li>使用本文的方法的要求<ul>
+<li>a unified structure of visualizations<ul>
+<li>例如，grouping <path>s by data columns in Plotly</li>
+</ul>
+</li>
+<li>the consistent usage of SVG elements in the visualizations<ul>
+<li>all the bars in bar charts are plotted with <path>s.</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>使用规范（例如 Vega-Lite 和 Plotly）生成的可视化通常满足上述要求但对于使用 AI 或 D3 生成的可视化，通常其更加灵活，不一定满足 consistent usage。例如在 D3 中，不同可视化中的 bars 可以通过<path>,<rect>或<polygon>来生成。应对不同库生成的可视化也是一个未来的改进方向。</p>
+<p><strong>多视图可视化。</strong> 本文的方法可以通过考虑更多的因素，例如视图间的层次或空间关系，来捕捉多视图间的结构信息。</p>
+<p>应用场景。Vis as a data format. 提出可视化特定的方法来存储、查询和分析大量的可视化。</p>
+<ul>
+<li>本文的方法提供了一个新的思路来实现最近邻查询<ul>
+<li>促进可视化代码重用</li>
+</ul>
+</li>
+<li>允许把相似的可视化归类，进而分析用户对于可视设计上的偏好。</li>
+<li>帮助大规模可视化数据集的构建，更容易标注一些细粒度的标签（例如数据趋势）</li>
+</ul>
+<h2 id="Limitations"><a href="#Limitations" class="headerlink" title="Limitations"></a>Limitations</h2><p><strong>评估。</strong></p>
+<ul>
+<li>缺乏定量的指标来衡量数据趋势</li>
+<li>本文的方法相似性分数为 2.8607，还不算很好</li>
+<li>折线图和散点图之间的混淆可以进一步的减少<ul>
+<li>现在混淆的原因可能是由于折线图中数据点上有一个 circle，影响了相似性计算</li>
+</ul>
+</li>
+</ul>
+<p><strong>特征融合。</strong>本文的方法是直接将结构信息和视觉信息两个向量连接在一起，这一步会带来一些限制：</p>
+<ul>
+<li>占用额外的空间（废话）</li>
+<li>存在一些冗余的信息，例如颜色，导致计算相似度的时候存在 bias</li>
+<li>为了解决这个缺点，可能可以基于其他信息，例如交互记录（Screen2Vec 中有提到）来融合视觉和结构信息。但由于缺少可视化的数据集，作者将其作为未来工作。</li>
+</ul>
+<h1 id="Conclusion"><a href="#Conclusion" class="headerlink" title="Conclusion"></a>Conclusion</h1><p><strong>背景+问题</strong>基于可扩展矢量图（SVG）的可视化图像已被广泛使用并在网上分享。伴随着它们的流行，检索类似的基于 SVG 的可视化图像已成为一项关键任务。</p>
+<p><strong>本文工作</strong>在本文中，我们提出了一种结构感知的可视化检索方法，该方法基于我们在试点研究中调查的最常见的可视化感知相似性标准。</p>
+<p><strong>亮点</strong>除了先前研究中广泛使用的视觉信息外，我们的方法还进一步考虑了经常被忽视但至关重要的结构信息，以提高性能。</p>
+<p><strong>具体方法</strong></p>
+<ol>
+<li>为了考虑这两种类型的信息，我们将 SVG 转换为位图和网络，以用于提取视觉信息和结构信息。</li>
+<li>采用对比表征学习技术，分别生成视觉和结构信息的低维嵌入向量。</li>
+<li>相应的可视化由嵌入向量的连接表示，用于可视化检索。</li>
+</ol>
+<p><strong>评估</strong>我们进行了广泛的评估，包括与以前的方法进行定量比较，进行用户研究和多个案例研究，以证明我们的方法的有效性。</p>
+<p><strong>未来工作</strong>在未来，我们希望将我们的结构感知可视化检索方法扩展到更多的可视化类型，例如，多视图可视化。另一个有趣的方向是探索从基于位图的可视化中直接提取结构信息的可能性，并研究我们的方法如何在基于位图的可视化检索中发挥作用。</p>
+<h1 id="Thinking"><a href="#Thinking" class="headerlink" title="Thinking"></a>Thinking</h1><ul>
+<li>vis as a data format</li>
+<li>写作：what-why-how, overview + detail</li>
+<li>借鉴 Image Retrieval 中的自监督学习的方法</li>
+<li>与 ChartSeer 的区别</li>
+<li>latex 检索</li>
+<li>跨域可视化检索(text, design, code, visualization 之间的互相检索)</li>
+<li>稀有类别的分类推荐等</li>
+<li>投 CHI 的文章：idea 新颖，评估完善</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

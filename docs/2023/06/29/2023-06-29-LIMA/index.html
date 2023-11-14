@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        LIMA: Less Is More for Alignment - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/.css" src="/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%81%87%E8%AE%BE"><span class="toc-text">假设</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%87%86%E5%A4%87"><span class="toc-text">数据准备</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BE%E5%8C%BA%E8%AE%BA%E5%9D%9B"><span class="toc-text">社区论坛</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%BA%E5%B7%A5%E5%88%9B%E4%BD%9C"><span class="toc-text">人工创作</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C"><span class="toc-text">实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E5%87%86%E5%88%99"><span class="toc-text">评估准则</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%BA%BF%E6%A8%A1%E5%9E%8B"><span class="toc-text">基线模型</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E8%9E%8D%E5%AE%9E%E9%AA%8C"><span class="toc-text">消融实验</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%A4%9A%E8%BD%AE%E5%AF%B9%E8%AF%9D%E8%83%BD%E5%8A%9B"><span class="toc-text">多轮对话能力</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        LIMA: Less Is More for Alignment
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2023-06-29 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2023-06-29</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#杨兆瑞"
+                title="杨兆瑞">杨兆瑞</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：LIMA: Less Is More for Alignment</p>
+<p>作者：Chunting Zhou, Pengfei Liu, Puxin Xu, Srini Iyer, etc.</p>
+<p>发表：under review，posted on arXiv</p>
+<p>大模型的训练往往分为预训练和对齐两个阶段。本工作对这两个阶段对于模型能力的作用进行了研究。首先，作者团队假设模型在预训练阶段学习到几乎所有的能力，而对齐阶段使得模型学习到正确的交互风格，从而产生符合人类要求的输出。针对这一假设，作者团队精心设计了一个包含1000个样本的小数据集，并使用标准监督损失进行训练。实验结果表明，如此训练出来的模型表现良好，从而说明了在高质量的小规模数据集上微调模型的可能性，并验证了假设的正确性。</p>
+<p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2305.11206.pdf">论文链接</a></p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>现有的LLM训练通常包含两步：</p>
+<ol>
+<li>预训练。模型先在大语料库上进行无监督的预训练，以获得常规的语言理解和生成能力。</li>
+<li>对齐。在这一阶段，针对不同的目的，使用一些带标签的数据对模型进行微调。一般而言，在这一阶段使用的数据规模在百万级别。这一阶段使用的手段包括：<ul>
+<li>指令微调（Instruction Tuning）</li>
+<li>RLHF（Reinforcement Learning with Human Feedback）</li>
+</ul>
+</li>
+</ol>
+<p>LIMA 这个工作主要研究预训练和对齐这两步对模型的作用，及其相互之间的作用关系。</p>
+<h2 id="假设"><a href="#假设" class="headerlink" title="假设"></a>假设</h2><p>首先模型提出了<strong>Superficial Alignment Hypothesis</strong>假设，认为大模型在预训练阶段就学习到了<strong>几乎所有</strong>的知识和能力。而对齐阶段使模型学习与用户交互的方式或者风格，使得模型的能力能够正确展现出来。</p>
+<p>举个例子，预训练阶段就像画一个素描，而对齐阶段则是对这个素描进行上色。</p>
+<p>如果这个假设成立的话，由于对齐阶段并不承担学习大量新知识和能力的任务。那么也并不需要大量样本，通过高质量的少量样本微调应该也能达到对齐的目的。而这正是这个工作在实验阶段的验证内容。</p>
+<h2 id="数据准备"><a href="#数据准备" class="headerlink" title="数据准备"></a>数据准备</h2><p>针对上面提到的假设推论，作者们构建了一个包含了1000个样本的小数据集，使用标准的监督损失函数对LLaMa 65B进行训练。这些数据为prompt-response的结构，经过了精心构造，满足以下特点：</p>
+<ol>
+<li>prompt 多样，response 风格一致。</li>
+<li>prompt 模拟真实用户，回答质量高，且统一为<code>a helpful AI assistant</code>的口吻。</li>
+<li>在这1000个样本中，750个构造于三个社区论坛中，而剩余的250个为人工创作。</li>
+</ol>
+<h3 id="社区论坛"><a href="#社区论坛" class="headerlink" title="社区论坛"></a>社区论坛</h3><p>在这750个来源于社区论坛的样本中，作者们首先筛选出合适的原始样本，然后再经过一些预处理和后处理（比如统一第一人称的口吻，去除超链接、图片等）从而构成。来源的三个论坛情况：</p>
+<ul>
+<li>Stack Exchange. 这是一个由话题进行划分的社区，每个话题为一个exchange，其中最有名的当属Stack Overflow。作者们选取了75个核心exchange和99个其他exchange，并从中按照选取最高分的、且只包含标题的问题作为prompt，并选取最高分的回答作为相应的response。</li>
+<li>wikiHow. 这是一个问答社区。作者们先从19个种类中进行抽样，再从抽到的种类中抽取文章，从而保证多样性。使用标题作为prompt，而正文部分作为response。</li>
+<li>Pushshift Reddit Dataset. 选取<code>r/AskReddit</code>和<code>r/WritingPrompts</code>这两个子集中点赞数最多的推文。<code>r/AskReddit</code>中的问题作为测试集的prompt，而<code>r/WritingPrompts</code>中的加入训练集。</li>
+</ul>
+<h3 id="人工创作"><a href="#人工创作" class="headerlink" title="人工创作"></a>人工创作</h3><p>除了来自社区论坛的样本外，作者们还人工创作了250个样本。其中，200个为作者们自己创作的，而50个改写自Super-Natural Instructions。</p>
+<p>在创作200个样本的过程中，作者们使用了一致的口吻（a helpful AI assistant），并包含了少部分恶意prompt，并让response与之对抗。作者们发现，一致的口吻能够提升模型的表现，并认为一致的口吻类似<code>let&#39;s think step by step</code>的prompt，使模型形成了思维链（chain of thought）。</p>
+<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><p>在实验部分，作者将LIMA与其他大模型进行比较。</p>
+<h3 id="评估准则"><a href="#评估准则" class="headerlink" title="评估准则"></a>评估准则</h3><p>对于训练好的LIMA模型，为测试集中的每一个prompt生成一个回答，并通过两种方式进行评估：</p>
+<ol>
+<li>绝对评估。对每一个prompt生成的response的质量通过人工和GPT-4进行评判。根据response的质量，分为Fail, Pass及Excellent三种级别。</li>
+<li>将LIMA与其他模型进行两两比较：对于一个prompt，双方各自生成一个response，然后比较生成的response的质量。</li>
+</ol>
+<p>绝对评估的结果如下图所示：</p>
+<p><img src="./abs_evaluate.jpg" alt="绝对评估结果图"></p>
+<p>从图中可以看出，对于测试集中绝大部分的prompt，其response皆为Excellent 或者 Pass，说明LIMA的效果不错。</p>
+<h3 id="基线模型"><a href="#基线模型" class="headerlink" title="基线模型"></a>基线模型</h3><p>用于对比的其他大模型包括以下几个：</p>
+<ol>
+<li>Alpaca 65B：同样由LLaMa 65B进行微调，其在Alpaca 的含52000个样本的训练集上进行微调。</li>
+<li>OpenAI DaVinci003：使用了RLHF技术</li>
+<li>Google Bard </li>
+<li>Anthropic Claude</li>
+<li>OpenAI GPT-4</li>
+</ol>
+<p>LIMA与以上大模型进行两两比较的结果如下图所示：</p>
+<p><img src="./comparison.png" alt="相对比较结果"></p>
+<p>左边的子图代表人类偏好评估，而右边的子图代表GPT-4评估的结果。从结果可以看出，LIMA的效果优于Alpaca 65B及DaVinci003，尽管它们训练数据量远大于LIMA，且DaVinci003使用了RLHF进行微调。这个结果支持了上文中的<a href="#假设">假设</a>。</p>
+<h3 id="消融实验"><a href="#消融实验" class="headerlink" title="消融实验"></a>消融实验</h3><p>消融实验使用LLaMa 7B微调进行。对于每个prompt采样5个response，并让GPT-3.5 Turbo在1-6中打分，最后取平均。</p>
+<p>消融的维度有：</p>
+<ul>
+<li>多样性。由于来自wikiHow所有的prompt都是”how to”类问题，故其被认为是同质的。因此，用wikiHow数据 vs Stack Exchange数据分别训练就构成了多样性的对比。</li>
+<li>数据质量。使用质量或者风格筛选 vs 不筛选构成了一组对比。</li>
+<li>数据量。</li>
+</ul>
+<p>下图展现了消融实验的结果。</p>
+<p><img src="./ablation.png" alt="image-20230704162928912"></p>
+<p>纵轴是生成质量，越高越好。左边子图中，第一列和第三列构成了多样性的消融，而第二列和第三列构成了数据质量的消融。右边子图是数据量的消融结果。</p>
+<p>从结果可以看出，多样性和数据质量对模型效果的影响都非常大，而数据量的规模效应并不明显，这与常规理解有所出入。文中因而提出，过往结论中的规模效应可能是由于提升数据量的同时提升了多样性，而非数据量自身的影响。</p>
+<h2 id="多轮对话能力"><a href="#多轮对话能力" class="headerlink" title="多轮对话能力"></a>多轮对话能力</h2><p>先前提到的1000个样本均为单轮对话的，文中进一步对LIMA的多轮对话能力进行了测试。分别评估了由1000个训练出的LIMA，以及再经过30个多轮对话样本微调的新模型的多轮对话能力。下图为实验结果。</p>
+<p><img src="./multi_turn.png" alt="image-20230704164032868"></p>
+<p>可以看出，仅仅使用30个多轮对话样本就能大幅度提高模型的多轮对话能力，这进一步支持了上文中的<a href="#假设">假设</a>。</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>本工作通过精心构造高质量的小数据集对大模型进行微调，从而获得了以下几个结论：</p>
+<ol>
+<li>LLM 的几乎全部能力在预训练阶段获得</li>
+<li>微调使模型学习到交互的风格与方式</li>
+<li>可以通过小规模的<strong>优质</strong>数据进行高效对齐</li>
+</ol>
+<p>何为优质数据？</p>
+<ol>
+<li>prompt多样</li>
+<li>response风格统一</li>
+<li>prompt和response的回答文本质量高</li>
+</ol>
+<p>最后，文章还讨论了这种微调方式的不足之处。</p>
+<ol>
+<li>构造优质数据耗费心智，规模难以扩展</li>
+<li>健壮性未达到企业级标准</li>
+</ol>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

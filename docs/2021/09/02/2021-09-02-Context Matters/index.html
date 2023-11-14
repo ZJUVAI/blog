@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Context Matters: A Theory of Semantic Discriminability for Perceptual Encoding - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="toc-text">背景介绍</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%B4%A1%E7%8C%AE%E7%82%B9"><span class="toc-text">贡献点</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E7%9F%A5%E8%AF%86"><span class="toc-text">背景知识</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%9C%E8%89%B2-%E6%A6%82%E5%BF%B5%E7%9A%84%E5%85%B3%E8%81%94"><span class="toc-text">颜色-概念的关联</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9D%80%E8%89%B2%E6%80%A7%E5%88%86%E6%95%B0"><span class="toc-text">着色性分数</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%88%86%E9%85%8D%E6%8E%A8%E7%90%86"><span class="toc-text">分配推理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E8%BE%A8%E5%88%AB%E6%80%A7"><span class="toc-text">语义辨别性</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E8%BE%A8%E5%88%AB%E7%90%86%E8%AE%BA"><span class="toc-text">语义辨别理论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Notions"><span class="toc-text">Notions</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%89%B9%E5%BE%81-%E6%A6%82%E5%BF%B5%E5%85%B3%E8%81%94%E5%88%86%E5%B8%83"><span class="toc-text">特征-概念关联分布</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%89%B9%E5%BC%82%E6%80%A7"><span class="toc-text">特异性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%86%E5%B8%83%E5%B7%AE%E5%BC%82"><span class="toc-text">分布差异</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E8%BE%A8%E5%88%AB%E6%80%A7-1"><span class="toc-text">语义辨别性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E8%B7%9D%E7%A6%BB"><span class="toc-text">语义距离</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B9%BF%E4%B9%89%E7%9A%84%E8%AF%AD%E4%B9%89%E8%B7%9D%E7%A6%BB"><span class="toc-text">广义的语义距离</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%AD%E4%B9%89%E5%AF%B9%E6%AF%94"><span class="toc-text">语义对比</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E5%A4%A7%E8%83%BD%E5%8A%9B"><span class="toc-text">最大能力</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%90%86%E8%AE%BA"><span class="toc-text">理论</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C-1"><span class="toc-text">实验 1</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%AE%BE%E7%BD%AE"><span class="toc-text">实验设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C"><span class="toc-text">结果</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C-2"><span class="toc-text">实验 2</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E8%AE%BE%E7%BD%AE-1"><span class="toc-text">实验设置</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C-1"><span class="toc-text">结果</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Context Matters: A Theory of Semantic Discriminability for Perceptual Encoding
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2021-09-02 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2021-09-02</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#周姿含"
+                title="周姿含">周姿含</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Context Matters: A Theory of Semantic Discriminability for Perceptual Encoding</p>
+<p>作者：Kushin Mukherjee, Brian Yin, Brianne Sherman, Laurent Lessard, Karen Schloss</p>
+<p>发表：VIS 2021</p>
+<p>人们在颜色和概念之间的关联会影响他们在信息可视化中解释颜色含义的能力。以前的工作表明，这种影响仅限于与颜色具有强烈、特定关联的概念。然而，尽管一个概念可能与任何颜色都没有很强的关联，但它的映射可以在编码系统中的其他概念的上下文中消除歧义。我们在语义判别理论中阐明了这一观点，语义判别理论是一个用于理解确定人们何时可以从感知特征推断含义的条件的一般框架。语义辨别力是观察者可以推断出视觉特征和概念之间独特映射的程度。语义判别性理论认为，一组概念的语义判别能力受到集合中概念的特征-概念关联分布之间的差异的约束。我们定义了这个理论的形式属性，并在两个实验中测试了它的含义。结果表明，为概念集生成语义可区分颜色的能力确实受到颜色-概念关联分布之间的统计距离的限制（实验 1）。此外，人们可以解释条形图中颜色的含义，只要颜色在语义上是可区分的，即使对于以前被认为是“不可着色”的概念（实验 2）。结果表明，颜色对于视觉交流比以前认为的更强大。</p>
+<p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2108.03685">论文链接</a></p>
+<h1 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h1><p>香蕉-黄色，蓝莓-蓝色，哈密瓜-橙色。当这些可视化表示具有特定、强烈关联色彩的概念时，色彩的语义会影响大家解释可视化的能力（比如水果）。这样的可视化会更容易解释如果概念用强烈相关的颜色编码（比如香蕉编码黄色而不是蓝色）。</p>
+<p>现有的研究显示，人类从颜色推断含义的能力比我们之前认为的更鲁棒。特别是当颜色在语义上可区分时。</p>
+<blockquote>
+<p>semantic discriminability：能不能推断出颜色和概念之间的唯一映射</p>
+<p>semantic interpretability 语义可解释性：能不能解释颜色和概念之间的正确映射，在编码系统中指定</p>
+</blockquote>
+<p><strong>关键问题是，是什么决定了是否可能为一系列的概念选择语义上可区分的颜色？</strong></p>
+<p>我们提出了语义可区分性理论来解决这个问题，一种新的约束理论，用于为将感知特征映射到概念的编码系统生成语义可区分的感知特征。我们测试了从理论中提出的两个假设：</p>
+<ol>
+<li><ol>
+<li>为一系列概念创造语义可区分的调色板的能力，依赖于概念之间的颜色-概念的关联分布的差异，独立于孤立考虑概念的性质。——实验 1</li>
+<li>人们可以准确地解释颜色和之前被认为不可着色的概念之间的映射，在一定程度上颜色是语义可区分的。——实验 2</li>
+</ol>
+</li>
+</ol>
+<p>我们在这次研究中专注于颜色，但是更普遍地根据感知特征介绍这个理论，因为它有可能<strong>扩展到其他的可视特征</strong>上（比如形状，方向，视觉纹理）<strong>和其他感知模式中的特征</strong>（比如声音，气味，触觉）。</p>
+<h1 id="贡献点"><a href="#贡献点" class="headerlink" title="贡献点"></a>贡献点</h1><ul>
+<li>定义了语义辨别理论（semantic discriminability theory）<ul>
+<li>并在 2 个实验中分别检验了提出的 2 个假设；</li>
+</ul>
+</li>
+<li>定义了一个新的度量<ul>
+<li>用来计算两个以上概念集之间的分布差异；</li>
+<li>可以预测语义辨别能力（capacity for semantic discriminability）；</li>
+</ul>
+</li>
+</ul>
+<h1 id="背景知识"><a href="#背景知识" class="headerlink" title="背景知识"></a>背景知识</h1><h2 id="颜色-概念的关联"><a href="#颜色-概念的关联" class="headerlink" title="颜色-概念的关联"></a>颜色-概念的关联</h2><ul>
+<li><p>之前的工作 - 识别与概念关联最强的少数颜色</p>
+</li>
+<li><p>对颜色空间子采样，一维展示，按照色调和色度排列</p>
+</li>
+</ul>
+<p><img src="./1.png" alt="image-20210917141438942"></p>
+<h2 id="着色性分数"><a href="#着色性分数" class="headerlink" title="着色性分数"></a>着色性分数</h2><ul>
+<li><p>如何定义着色性？</p>
+<ul>
+<li>用着色性分数来定义</li>
+</ul>
+<p>​ - 参与者匹配颜色-概念，平均分生成着色性分数</p>
+<p>​ - 用 Google N-gram 确定概念-颜色在语料库出现的频率</p>
+<p><strong>局限</strong>：孤立地考虑颜色-概念的关联</p>
+</li>
+</ul>
+<h2 id="分配推理"><a href="#分配推理" class="headerlink" title="分配推理"></a>分配推理</h2><blockquote>
+<p>_K.B.Schloss, L.Lessard, C.S.Walmsley, and K.Foley. Color inference in visual communication: the meaning of colors in recycling. Cognitive Research: Principles and Implications, 3(1):5, 2018._</p>
+</blockquote>
+<ul>
+<li>isolated merit function $m_{ij}:=a_{ij}$</li>
+<li><p>balanced merit function <img src="./2.png" alt="image-20210917141909454" style="zoom:10%;" /></p>
+</li>
+<li><p>随机的，不同个体或同个体不同时间分配结果可能不一致</p>
+</li>
+</ul>
+<h2 id="语义辨别性"><a href="#语义辨别性" class="headerlink" title="语义辨别性"></a>语义辨别性</h2><ul>
+<li>即分配推理中分配的鲁棒性</li>
+</ul>
+<blockquote>
+<p>_K.B.Schloss, Z.Leggon, and L.Lessard. Semantic discriminability for visual communication. IEEE Transactions on Visualization and Computer Graphics, 27(2):1022–1031, 2021._</p>
+</blockquote>
+<h1 id="语义辨别理论"><a href="#语义辨别理论" class="headerlink" title="语义辨别理论"></a>语义辨别理论</h1><h2 id="Notions"><a href="#Notions" class="headerlink" title="Notions"></a>Notions</h2><ul>
+<li>特征源 – e.g. 色彩空间 CIELAB<ul>
+<li>特征库 – e.g. UW-71 colors<ul>
+<li>特征集 ————————————————— 概念集</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p>特征集是选择用来编码概念集的，也叫做调色盘，如果有 n 个概念，那么特征集就包含 n 个特征。</p>
+<h2 id="特征-概念关联分布"><a href="#特征-概念关联分布" class="headerlink" title="特征-概念关联分布"></a>特征-概念关联分布</h2><p>对概念 j 和特征库中的特征 i 之间的关联进行归一化：<img src="./3.png" alt="image-20210917142519370" style="zoom:50%;" /></p>
+<h3 id="特异性"><a href="#特异性" class="headerlink" title="特异性"></a>特异性</h3><ul>
+<li><p>分布中的“峰值”，用熵来量化一个概念的特异性。</p>
+<p><img src="./4.png" alt="image-20210917142611922" style="zoom:50%;" /></p>
+</li>
+</ul>
+<h3 id="分布差异"><a href="#分布差异" class="headerlink" title="分布差异"></a>分布差异</h3><ul>
+<li>量化概念之间的分布差异</li>
+</ul>
+<p><img src="./5.png" alt="image-20210917142712533" style="zoom:50%;" /></p>
+<h2 id="语义辨别性-1"><a href="#语义辨别性-1" class="headerlink" title="语义辨别性"></a>语义辨别性</h2><h3 id="语义距离"><a href="#语义距离" class="headerlink" title="语义距离"></a>语义距离</h3><ul>
+<li>语义辨别力的度量标准，是作者工作提出的，分布之间的距离<ul>
+<li>S 接近于 0 的时候，deltaX 是正是负的概率差不多的，所以分配是布鲁棒的，两种可能都有；</li>
+<li>S-1 时，说明 deltaX 要么总是正的要么总是负的，所以分配结果是鲁棒的。</li>
+</ul>
+</li>
+</ul>
+<p><img src="./6.png" alt="image-20210917142849095" style="zoom:50%;" /></p>
+<h3 id="广义的语义距离"><a href="#广义的语义距离" class="headerlink" title="广义的语义距离"></a>广义的语义距离</h3><ol>
+<li><p>采样$x_1,…,x_{n^2}$ ，得到分配问题的答案</p>
+</li>
+<li><p>大量重复步骤 1，得到 _p_ _–_ 最有可能发生的分配情况发生的比例，有$1/n!\leq p \leq1$</p>
+</li>
+<li><p>定义$\Delta S=\frac{n!p-1}{n!-1}$</p>
+</li>
+</ol>
+<h3 id="语义对比"><a href="#语义对比" class="headerlink" title="语义对比"></a>语义对比</h3><ul>
+<li>获得最优分配方案 + 广义语义距离 + 计算估计每个概念给分配最优特征的次数比例</li>
+</ul>
+<h3 id="最大能力"><a href="#最大能力" class="headerlink" title="最大能力"></a>最大能力</h3><ul>
+<li>给定特征库，返回对概念集来说语义辨别性最强的特征集之间的语义距离<ul>
+<li>high max capacity — 特征库中至少有一组特征集具有高语义辨别性</li>
+<li>low max capacity — 不存在特征集</li>
+</ul>
+</li>
+</ul>
+<h2 id="理论"><a href="#理论" class="headerlink" title="理论"></a>理论</h2><ul>
+<li><p>问题—是什么决定了是否可以为一组概念选择语义可辨别的特征</p>
+<p><strong>是整个特征库上特征-概念关联的分布差异</strong></p>
+</li>
+</ul>
+<p>一些特例：</p>
+<p><img src="./7.png" alt="image-20210917143400641" style="zoom:50%;" /></p>
+<p>这张图显示的是分布差异和特异性之间的区别，中等容量的概念（驾驶和舒适性）的特异性远低于低容量的概念（茄子和葡萄）;</p>
+<p><img src="./8.png" alt="image-20210917143413138" style="zoom:50%;" /></p>
+<p>这张图右上-即使 A 没有特异性，但它和 B 之间的分布的差异很大，他们的语义可辨别性就很高。左下角这个即使 A 和 B 都具有特异性，但是他们的分布差异很小，所以语义可辨别性就低。</p>
+<p>两张图中特定的例子表示，分布差异和特异性之间的关系的分离。这在之后的假设中会进行验证。</p>
+<h1 id="实验-1"><a href="#实验-1" class="headerlink" title="实验 1"></a>实验 1</h1><p><strong>假设 1:语义辨别能力是由分布差异预测的，与特异性无关；</strong></p>
+<h2 id="实验设置"><a href="#实验设置" class="headerlink" title="实验设置"></a>实验设置</h2><p>参与者：185 名本科生（去除 5 人）</p>
+<p>相关设置：四大类概念(上图) —- 参与者分成四组</p>
+<p>​ 2-conept：在 20 个概念中任选 2 个概念—190 种</p>
+<p>​ 4-concpet：在 20 个概念中任选 4 个概念—4845 种</p>
+<p><img src="./9.png" alt="image-20210913153948186"></p>
+<p>任务：每人判断 71 colors (UW-71 颜色库) * 5 concepts = 355 trials 颜色-概念的关联，拖动 slider 确认关联的强度</p>
+<h2 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h2><p><img src="./10.png" alt="image-20210913154652229"></p>
+<p>左图：分别计算分布差异（TV），平均特异性（每个集合的平均熵），和语义距离的关系画图。</p>
+<p>语义辨别能力和分布差异、平均特异性成正相关，但平均特异性的相关程度较弱。为了检查分布差异和平均特异性是否独立于语义辨别能力，用多元线性回归模型从这两个因素预测能力，（看表里的 t-显著性）显示结果符合假设。 —- <strong>分布差异是一个很强的显着预测因子</strong>，平均特异性不显着。因此，<strong>与平均特异性无关</strong>，平均特异性在考虑分布差异后没有贡献。</p>
+<h1 id="实验-2"><a href="#实验-2" class="headerlink" title="实验 2"></a>实验 2</h1><p><strong>假设 2：如果概念集有很强的语义辨别能力，就可以给一组概念分配人们可以准确理解的颜色；</strong></p>
+<h2 id="实验设置-1"><a href="#实验设置-1" class="headerlink" title="实验设置"></a>实验设置</h2><p>参与者：98 名（去除 catch trials 准确率不够的 8 人）</p>
+<p>catch trials：预实验，用户需准备完全正确匹配红焕蓝绿的概念和对应颜色的柱子</p>
+<p>分组设置：</p>
+<p><img src="./11.png" alt="image-20210917135600738" style="zoom: 50%;" /></p>
+<p>任务：正确匹配概念-颜色, 8 color-concept sets * 8 color positionings = 64 trials</p>
+<h2 id="结果-1"><a href="#结果-1" class="headerlink" title="结果"></a>结果</h2><p><img src="./12.png" alt="image-20210917135643046"></p>
+<p>纵坐标-准确性，横坐标-语义对比</p>
+<ul>
+<li><p>准确性随着语义对比而增加</p>
+</li>
+<li><p>足够的语义对比，任何概念都有可能使用颜色有意义的编码</p>
+</li>
+</ul>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li>定义了语义辨别理论<ul>
+<li>实验 1—语义辨别能力是由分布差异预测的，与特异性无关；</li>
+<li>实验 2-编码系统中特征的语义对比足够强，任何概念都可以用特征有意义地表示；</li>
+</ul>
+</li>
+<li>提出了产生支持足够的语义辨别能力的分布差异的准则<ul>
+<li>需要一些特异性</li>
+<li>需要特征库具有可变性</li>
+<li>需要足够大的特征库</li>
+</ul>
+</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

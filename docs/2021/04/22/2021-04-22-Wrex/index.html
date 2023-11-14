@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Wrex: A Unifed Programming-by-Example Interaction for Synthesizing Readable Code for Data Scientists - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E8%80%85"><span class="toc-text">作者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%91%E6%88%98"><span class="toc-text">挑战</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%A1%E7%8C%AE"><span class="toc-text">贡献</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">使用场景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%87%E8%AE%BF%E5%92%8C%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87"><span class="toc-text">采访和设计目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E6%96%BD"><span class="toc-text">实施</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%AF%BB%E6%80%A7%E4%BB%A3%E7%A0%81%E5%90%88%E6%88%90%E7%AE%97%E6%B3%95"><span class="toc-text">可读性代码合成算法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AE%97%E6%B3%95%E9%99%90%E5%88%B6"><span class="toc-text">算法限制</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0-%E5%AE%9E%E9%AA%8C"><span class="toc-text">评估-实验</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%BF%87%E7%A8%8B"><span class="toc-text">过程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%90%8E%E7%BB%AD"><span class="toc-text">后续</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%87%8F%E5%8C%96%E7%BB%93%E6%9E%9C"><span class="toc-text">量化结果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%8D%E9%A6%88"><span class="toc-text">反馈</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A8%E8%AE%BA"><span class="toc-text">讨论</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Wrex: A Unifed Programming-by-Example Interaction for Synthesizing Readable Code for Data Scientists
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2021-04-22 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2021-04-22</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#韩东明"
+                title="韩东明">韩东明</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h3 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h3><p><img src="https://i.loli.net/2021/04/24/Pm5e9o42JurFDYT.png" alt="Snipaste_2021-04-24_14-20-12.png"></p>
+<p>单位：加州大学圣地亚哥分校 Department of Cognitive Science，微软PROSE组。</p>
+<p>一作是博士生，三作是其导师</p>
+<p>二作是研究员，四作是首席研究员，五作是PROSE组的leader</p>
+<p><img src="https://i.loli.net/2021/04/24/bgkTn3fp8Qor6F4.png" alt="图片1.png"></p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><ul>
+<li><p>Data wrangling</p>
+<ul>
+<li>前期数据准备</li>
+<li>消耗大量时间</li>
+</ul>
+</li>
+<li><p>Computational notebook，数据科学家经常需要使用的环境</p>
+<ul>
+<li><p>一系列的“cell”用于input,output</p>
+</li>
+<li><p>Jupyter notebook</p>
+</li>
+<li><p>D3 Observable</p>
+<p><img src="https://i.loli.net/2021/04/24/lEPcYS8x6LiUvqI.png" alt="Snipaste_2021-04-24_15-06-56.png"></p>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="挑战"><a href="#挑战" class="headerlink" title="挑战"></a>挑战</h3><p>微软专家的正式访谈中进行总结，现有的工具和数据分析师现实中的工作环境的gap</p>
+<ol>
+<li>现有的data wrangling工具需要专家切换使用环境（notebook）</li>
+<li>现有的工具不能整合进专家的工作环境，来完成监控检测转换过程。</li>
+</ol>
+<p>现有的data wrangling 工具 需要专家切换使用环境 到其它的使用环境中</p>
+<p>专家不希望其它的工具以一种黑盒的形式来处理自己的数据，他们希望可以检测转换过程，同时希望可以使用自己更熟悉的Python or R。同时希望结合这些工具到自己的工作环境中，可以保留数据转换的代码，又可以容易复现。</p>
+<h3 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h3><ul>
+<li>混合交互模型<ul>
+<li>programming-by-example with readable code synthesis </li>
+<li>within the cell-based workflow of computational notebooks</li>
+</ul>
+</li>
+<li>程序合成<ul>
+<li>数据子集上进行代码合成，并应用到数据全局上</li>
+<li>合成的程序可以合并在现有的数据处理中</li>
+</ul>
+</li>
+<li>User Study<ul>
+<li>减少了用户数据转化函数使用中的查阅和回顾</li>
+<li>合成的代码可以验证是否符合他们的预期，增加可信度</li>
+<li>插入cell的形式很自然</li>
+</ul>
+</li>
+</ul>
+<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p>用户：专业的数据分析师<br>数据：911报警（经纬度，时间，标题等）<br>任务：开放式探索</p>
+<p><img src="https://i.loli.net/2021/04/24/Js5Sd3B2O9oYVeN.png" alt="Snipaste_2021-04-24_15-07-14.png"></p>
+<p><img src="https://i.loli.net/2021/04/24/FZYxBXp2zQW1t4y.png" alt="Snipaste_2021-04-24_15-07-25.png"></p>
+<p>在6,7中，用户可以指定要转换成的结果当做example，然后8中生成代码，并可以任意插入到cell中</p>
+<h3 id="采访和设计目标"><a href="#采访和设计目标" class="headerlink" title="采访和设计目标"></a>采访和设计目标</h3><ul>
+<li>7 位数据科学家，在微软频繁使用notebooks</li>
+<li>Design goal <ul>
+<li>过渡过多，数据来回切换-&gt;<br>数据清洗工具应该集成在数据科学家的工作中（notebooks）</li>
+<li>黑盒不透明，缺少自定义，不满足格式，需要额外学习，希望使用更熟悉的语言-&gt;<br>数据清洗工具应该可以生成数据科学家熟悉的代码，来进行监测和修订。</li>
+</ul>
+</li>
+</ul>
+<h3 id="实施"><a href="#实施" class="headerlink" title="实施"></a>实施</h3><ul>
+<li>前端：Qgrid+修改</li>
+</ul>
+<p><img src="https://i.loli.net/2021/04/24/ePyhITBWNzsgQJp.png" alt="图片2.png"></p>
+<ul>
+<li>后端：pandas</li>
+</ul>
+<h3 id="可读性代码合成算法"><a href="#可读性代码合成算法" class="headerlink" title="可读性代码合成算法"></a>可读性代码合成算法</h3><ul>
+<li><p>FlashFill toolkit （开源工具，最多的转换函数有30多行）</p>
+</li>
+<li><p>domain specifc languages：提供字符串转换，数值转换，日期转换，查阅转换，相互组合</p>
+<p><img src="https://i.loli.net/2021/04/24/7zwE6SCj9FDlV5m.png" alt="Snipaste_2021-04-24_15-07-50.png"></p>
+</li>
+</ul>
+<ol>
+<li>Standard Program：使用FlashFIll ranker来生成多可能的Program（代码片段）</li>
+<li>Readable Program：使用readability_ranker来挑选可读性强的Program</li>
+<li>Rewriting： 使用自定义规则来生成更容易理解的Program</li>
+<li>Translation to the Target Language：生成指定的语言，通过抽取语法树和DSL-Program，用映射及定制的format funtion，最后用autopep8来格式化代码</li>
+</ol>
+<p><img src="https://i.loli.net/2021/04/24/4EqdNZnOcwGFiWx.png" alt="图片3.png"></p>
+<h4 id="算法限制"><a href="#算法限制" class="headerlink" title="算法限制"></a>算法限制</h4><ul>
+<li>错误处理<ul>
+<li>指定复杂的约束：Traffic-&gt; TR, 尾随空格</li>
+<li>合成引擎不能识别</li>
+</ul>
+</li>
+<li>有些任务不适合<ul>
+<li>自然语言：“S.F.” to “San Francisco”</li>
+<li>求平均值等任务</li>
+</ul>
+</li>
+<li>采样问题<ul>
+<li>基于小样本数据做example，在全样本数据可能会有问题</li>
+</ul>
+</li>
+<li>实例提供<ul>
+<li>用户需要一直检查来确定是期望的清洗过程，有时更喜欢排名低的规则</li>
+</ul>
+</li>
+<li>有些用户就是喜欢在Excel，Tableau，等工具中切换。集成在单应用中不一定是必要的</li>
+</ul>
+<h3 id="评估-实验"><a href="#评估-实验" class="headerlink" title="评估-实验"></a>评估-实验</h3><ul>
+<li>用户：12名数据科学家</li>
+<li>数据集A：紧急呼救数据，包括日期，时间，经纬度，地理位置等<ul>
+<li>A1：使用位置信息，提取城市名字，首字母大写 (Horsham)</li>
+<li>A2：使用日期和时间，格式化为12小时制，并增加@分隔符符 (Friday@1pm)</li>
+<li>A3：使用经纬度，格式化为数组并四舍五入  [39.15,42.15]</li>
+</ul>
+</li>
+<li>数据集B：纽约城市噪音投诉数据，包括各种时间，各种位置<ul>
+<li>B1：创建日期列，并提取为2小时的时间区间（00:00-02:00）</li>
+<li>B2：使用地点类型和城市，组合成新的格式的title (Store/Commercial in New York, Manhattan).</li>
+<li>B3：使用经纬度，格式化为数组并五舍  [39.15,42.15]</li>
+</ul>
+</li>
+</ul>
+<h4 id="过程"><a href="#过程" class="headerlink" title="过程"></a>过程</h4><ul>
+<li>A和B被均分，任务打乱，参与者在Jupyter notebook手写代码（也可以查阅网站）</li>
+<li>完成后做5-point Likert scale评估这些任务的使用频率，并讨论难点</li>
+<li>之后介绍Wrex，然后做另一个数据集</li>
+<li>完成后做5-point Likert scale打分以及代码可接受度、是否可能被用于生产环境</li>
+<li>讨论反馈</li>
+</ul>
+<h4 id="后续"><a href="#后续" class="headerlink" title="后续"></a>后续</h4><ul>
+<li>根据建议直接修订合成的代码<ul>
+<li>去掉类，使用轻量级函数</li>
+<li>变量命名_0,_1替换为 s t 等简单的助记名</li>
+<li>删除了异常处理逻辑</li>
+</ul>
+</li>
+<li>更改后让参与者重新评估</li>
+</ul>
+<h3 id="量化结果"><a href="#量化结果" class="headerlink" title="量化结果"></a>量化结果</h3><ul>
+<li>手写代码完成任务（12/36）</li>
+<li>Wrex完成任务（36/36）</li>
+</ul>
+<p><img src="https://i.loli.net/2021/04/24/5gwNVFDir2XH1Pm.png" alt="图片4.png"></p>
+<p><img src="https://i.loli.net/2021/04/24/kF8bUWKqLasjI9N.png" alt="图片5.png"></p>
+<p><img src="https://i.loli.net/2021/04/24/gqEIOfBZChzpdo5.png" alt="图片6.png"></p>
+<h3 id="反馈"><a href="#反馈" class="headerlink" title="反馈"></a>反馈</h3><ul>
+<li><p>减少了数据清洗的障碍</p>
+<ul>
+<li>回顾函数和语法<ul>
+<li>问题：现在用太多的语法和函数，很难记得其中的细微差别，尽管有内嵌的文档，和自动补全等功能，但是还是不能直接帮助专家理解，需要哪些操作，以及如何使用它们。</li>
+<li>解决：programming-by-example，让专家更专注于要对数据的操作来生成代码</li>
+</ul>
+</li>
+<li>解决方案的搜索<ul>
+<li>问题：通常需要的解决方案只是众多网页上代码片段中的一小块，而有的时候这个问题的领域很小，没有人遇见，那么很难找到正确的解决方案</li>
+<li>解决：Wrex可以基于对数据的预期的输出来寻找到正确的解决方案。这可以让专家专注到自己的分析过程中，而不是网站上搜索或者代码存储库。</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>适配数据科学家的工作流</p>
+<ul>
+<li>熟悉的交互，减少了学习成本</li>
+<li>专家对其交互反馈很积极，只有些轻微的增强建议，右击上下文菜单和水平滚动</li>
+<li>赞成在工作流中集成此工具，可以在notebook中使用，而别的工具中，需要在结果之后重写代码，并需要往返迭代，而wrex很容易嵌入</li>
+</ul>
+</li>
+<li>数据科学家对合成代码的期望<ul>
+<li>可读性：可以分享，可以修改，而且和自己期望的差不多就行，短变量名就可以接受</li>
+<li>可信性：最显著的方法就是读代码，有的人希望可以有边界情况，简单的输出总结，代码注释和数据可视化。最重要的不是机制和框架，而是输出，如果wrex的代码可读性差，他们将不信任它</li>
+</ul>
+</li>
+</ul>
+<h3 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h3><ul>
+<li>数据科学家需要场内（In-situ）工具在他们的工作流中<ul>
+<li>数据清洗是数据分析的一部分，也会强化用户的分析任务</li>
+<li>不用离开工作流（notebook）去寻找解决方法</li>
+<li>不用导出数据到其它的工具，并重新导回数据</li>
+<li>减少挫败感，因为要来回搜索方法，复制粘贴</li>
+<li>生成的小代码片段和notebook cell很相似</li>
+<li>用户与代码的交互，通过不断的增加example来修正歧义</li>
+</ul>
+</li>
+<li>可读性的合成代码对于数据科学家的优先级<ul>
+<li>不应该是看起来像人类写的，而是专注于具有数据科学家需要的高优先级特性</li>
+</ul>
+</li>
+<li>代码与数据间替换交互<ul>
+<li>Excel查看数据是flexibility，Python IDES是usability， Wrex合并了两者。</li>
+<li>可以生成多种转换和交互方案，来进行比较和选择</li>
+</ul>
+</li>
+<li>合成的代码使数据科学更容易访问<ul>
+<li>不同编程水平的人都可以进行数据科学，他们直接可以用清洗后的数据去完成分析</li>
+<li>不用时刻跟上API的更新，可以利用wrex来使用和学习这些代码。未来适合教学</li>
+</ul>
+</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:dongminghan@zju.edu.cn"><code> ✉️ dongminghan@zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,355 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        DataParticles: Block-based and Language-oriented Authoring of Animated Unit Visualizations - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="toc-text">相关工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%A1%E7%8C%AE%E7%82%B9"><span class="toc-text">贡献点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BD%A2%E6%88%90%E6%80%A7%E7%A0%94%E7%A9%B6"><span class="toc-text">形成性研究</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E4%BD%9CAUVs%E7%9A%84%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-text">创作AUVs的工作流程</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%9B%E4%BD%9CAUVs%E7%9A%84%E6%8C%91%E6%88%98"><span class="toc-text">创作AUVs的挑战</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%86%85%E5%AE%B9%E5%88%86%E6%9E%90"><span class="toc-text">内容分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#DataParticles"><span class="toc-text">DataParticles</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%93%E5%AE%B6%E8%AF%84%E4%BC%B0"><span class="toc-text">专家评估</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%A8%E8%AE%BA"><span class="toc-text">讨论</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        DataParticles: Block-based and Language-oriented Authoring of Animated Unit Visualizations
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2023-04-27 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2023-04-27</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#周姿含"
+                title="周姿含">周姿含</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：DataParticles: Block-based and Language-oriented Authoring of Animated Unit Visualizations</p>
+<p>作者：Yining Cao, Jan L.E, Zhutian Chen, and Haijun Xia</p>
+<p>发表：CHI 2023 (Best Paper)</p>
+<p>单元可视化已广泛用于交互式文章和视频中的数据叙述。然而，编写包含动画单元可视化的数据故事是具有挑战性的，因为在编写叙述和配置附带的可视化和动画之间来回切换是一个冗长而耗时的过程。为了简化这一过程，我们提出了DataParticles，这是一个基于块的故事编辑器，它利用文本、数据和可视化之间的潜在联系，帮助创作者灵活地构建原型、探索和迭代故事叙事及其相应的可视化。为了为DataParticles的设计提供信息，我们采访了6位领域专家，并研究了44个现有动画单元可视化的数据集，以确定他们采用的叙事模式和一致性原则。一项由9位专家参与的用户研究表明，通过鼓励探索和支持快速原型，DataParticles可以显著简化使用动画单元可视化编写数据故事的过程。</p>
+<p><a target="_blank" rel="noopener" href="https://dl.acm.org/doi/10.1145/3544548.3581472">论文链接</a></p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p><strong>动画单元可视化</strong>(Animated Unit Visualization, AUV):<br>单元可视化(Unit Visualization)：每个数据项都表示为唯一的视觉单元，数据和视觉元素是一对一的映射，e.g.<br><img src="./1.png" style="zoom:80%;" /><br>在此基础上形成的AUVs适合于传达数据见解，因为它们以小块的形式传递信息，能顺利地引导观众。</p>
+<p><strong>挑战</strong>：<br>目前创作数据驱动的文章/视频的工作流分散、重复，<br>➡️ 使用AUV的数据故事更为复杂<br>➡️ 需要保持文字+可视化+动画+交互在语义和时序上的一致性</p>
+<h3 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h3><ul>
+<li><p>AUV创作</p>
+<ul>
+<li>通过关键帧和静态可视化之间的插值生成➡️手工</li>
+<li>通过排列数据事实来自动生成AUV➡️根据规则和模板，表达力有限</li>
+<li>DataParticles利用AUV的上下文推断动画</li>
+</ul>
+</li>
+<li><p>数据驱动的Storytelling</p>
+<ul>
+<li>大部分的storytelling是基于chart的<br>➡️ 很少关于在storytelling中如何使用单元可视化</li>
+</ul>
+</li>
+<li><p>使用NLI生成可视化</p>
+<ul>
+<li>类似CrossData、Kori, 使用可视元素和更随意的自然语言之间的理想映射</li>
+</ul>
+</li>
+<li><p>基于块的内容创建</p>
+<ul>
+<li>支持渐进式创作和即时视觉反馈, e.g., Jupter, Observable</li>
+<li>两栏式的脚本创作</li>
+</ul>
+</li>
+</ul>
+<h3 id="贡献点"><a href="#贡献点" class="headerlink" title="贡献点"></a>贡献点</h3><ul>
+<li>形成性研究<ul>
+<li>与6位专家创建者确定使用AUV创建数据驱动故事时存在的常见工作流程和痛点；</li>
+</ul>
+</li>
+<li>内容分析<ul>
+<li>从44个AUVs的故事中识别叙事结构、文本和可视元素之间的映射的共同模式；</li>
+</ul>
+</li>
+<li>DataParticles原型系统<ul>
+<li>使用文本和可视元素之间的映射，使用AUV为数据故事创建语言驱动的、基于块的创作体验；</li>
+</ul>
+</li>
+<li>专家评估<ul>
+<li>证实DataParticles的实用性和对未来设计原型的启示</li>
+</ul>
+</li>
+</ul>
+<h3 id="形成性研究"><a href="#形成性研究" class="headerlink" title="形成性研究"></a>形成性研究</h3><h4 id="创作AUVs的工作流程"><a href="#创作AUVs的工作流程" class="headerlink" title="创作AUVs的工作流程"></a>创作AUVs的工作流程</h4><ol>
+<li>确认数据故事的叙述逻辑；</li>
+<li>根据叙述规划生成可视化和动画；</li>
+<li>结合叙述和视觉元素；</li>
+</ol>
+<p>可以分为两类：</p>
+<ol>
+<li>数据驱动：从一般主题和现有数据集开始。然后，他们分析数据，收集摘录，并将摘录组织成一个连贯的故事；</li>
+<li>故事驱动：创造者从书面叙述和预先确定的呈现数据的顺序开始。然后，他们搜索与他们的故事一致的数据事实，并结合可视化来提供支持证据。重点是创造一个吸引人的故事；</li>
+</ol>
+<h4 id="创作AUVs的挑战"><a href="#创作AUVs的挑战" class="headerlink" title="创作AUVs的挑战"></a>创作AUVs的挑战</h4><ol>
+<li>🤯 设计和推进AUV原型的挑战<ul>
+<li>auv中元素外观是否连续、设计者的决策是否满足叙述要求…</li>
+</ul>
+</li>
+<li>🤯 繁琐和复杂的创作流程<ul>
+<li>处理分析数据、可视化、制作动画的工具都不同</li>
+</ul>
+</li>
+<li>🤯 不停地重复故事-可视化的一致性<ul>
+<li>调整动画时间、可视化布局、根据新的见解改变叙述…</li>
+</ul>
+</li>
+</ol>
+<h3 id="内容分析"><a href="#内容分析" class="headerlink" title="内容分析"></a>内容分析</h3><p>数据收集：<br>44 data stories (Vox, the Pudding, the New York Times, the Guardian) ➡️ 403 sections</p>
+<p>从叙述和组织结构和数据映射方式两个方面进行了总结：<br><img src="./2.png" style="zoom:80%;" /> </p>
+<h3 id="DataParticles"><a href="#DataParticles" class="headerlink" title="DataParticles"></a>DataParticles</h3><video src="https://www.youtube.com/watch?v=2yzP70KTeJo" controls>
+  你的浏览器不支持 <code>video</code> 标签。
+</video>
+
+
+
+<h3 id="专家评估"><a href="#专家评估" class="headerlink" title="专家评估"></a>专家评估</h3><ul>
+<li>📝 Language-Oriented Authoring<ul>
+<li>“使用自然语言来表达想法是一种更直接和自然的交流方式，特别是在故事创作的早期阶段，故事通常是由高层次的意图而不是特定的配置引导的”</li>
+</ul>
+</li>
+<li>📝 Block-based Editing – 支持</li>
+<li>📝 Workflows<ul>
+<li>相比于拖拽会破坏叙述，专家更喜欢添加块</li>
+</ul>
+</li>
+<li>🧩 局限<ul>
+<li>视觉效果和动画效果有限</li>
+<li>线性叙事的局限</li>
+<li>受限于DataParticles提供的数据探索</li>
+</ul>
+</li>
+</ul>
+<h3 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h3><ul>
+<li>支持完整的创作流程<ul>
+<li>更多low-level control</li>
+<li>🌟在整个创建过程中保持各种内容组件之间的内在关系</li>
+<li>2列扩展到n列 ?</li>
+</ul>
+</li>
+<li>支持可视推理<ul>
+<li>在构建故事时推理auv是否有意义</li>
+<li>auv和其他视觉元素的混合创造出更具有沉浸感和吸引力的叙述⬅️生成模型</li>
+</ul>
+</li>
+<li>除了单元可视化之外 ?<ul>
+<li>介于聚合可视化和粒子动画之间</li>
+<li>数据和视觉元素之间更灵活的映射</li>
+</ul>
+</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

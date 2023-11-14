@@ -1,0 +1,18 @@
+nav:
+    home: ⌨️ 小组博客
+    # mirror: 🌎 国内镜像
+    author: 👨‍🎓 作者存档
+    tags: 📌 博客标签
+    archives: 📅 时间存档
+    about: 🏠 小组主页
+    textbook: 📚 教材下载
+    search: 🔎 博客搜索
+
+post:
+    postTime: 发布于
+    tags: 标签
+    visit: 访问
+    donate: 赞赏
+
+search:
+    search: 搜索

@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Human-in-the-loop Extraction of Interpretable Concepts in Deep Learning Models - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BD%9C%E8%80%85"><span class="toc-text">作者</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%8E%B0%E6%9C%89%E5%B7%A5%E4%BD%9C"><span class="toc-text">现有工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%A1%E7%8C%AE"><span class="toc-text">贡献</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%A2%84%E5%A4%87%E7%9F%A5%E8%AF%86"><span class="toc-text">预备知识</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%BB%E5%8A%A8%E5%AD%A6%E4%B9%A0"><span class="toc-text">主动学习</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%B0%E9%9A%BE%E8%B4%9F%E6%A0%B7%E6%9C%AC"><span class="toc-text">困难负样本</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A6%82%E5%BF%B5%E6%B3%A8%E9%87%8A"><span class="toc-text">概念注释</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%9D%97-Image-patch"><span class="toc-text">图像块(Image patch)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1%E5%88%86%E6%9E%90"><span class="toc-text">任务分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%A5%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-text">工作流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E4%BB%8B%E7%BB%8D"><span class="toc-text">系统介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E5%9D%97%E8%A7%86%E5%9B%BE"><span class="toc-text">图像块视图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AE%AD%E7%BB%83%E8%A7%86%E5%9B%BE"><span class="toc-text">训练视图</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%A8%A1%E5%9E%8B%E5%88%86%E6%9E%90%E8%A7%86%E5%9B%BE"><span class="toc-text">模型分析视图</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E2%80%94%E2%80%94%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">评估——使用场景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E2%80%94%E2%80%94%E5%AE%9A%E9%87%8F%E5%AE%9E%E9%AA%8C"><span class="toc-text">评估——定量实验</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Human-in-the-loop Extraction of Interpretable Concepts in Deep Learning Models
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2021-09-27 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2021-09-27</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#魏雅婷"
+                title="魏雅婷">魏雅婷</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h2 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h2><p>Zhenge Zhao<sup>1</sup>, Panpan Xu<sup>2</sup>, Carlos Scheidegger<sup>1</sup>, Liu Ren<sup>3</sup></p>
+<p><img src="ConceptExtract_author.png" alt="author"></p>
+<p>本文是 <sup>1</sup>University of Arizona, <sup>2</sup>Amazon AWS AI 和 <sup>3</sup>Bosch Research North America 共同合作的工作。</p>
+<h2 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h2><p>随着深度学习的不断发展，模型越来越复杂，开发人员不再只是关注模型的准确性，逐渐开始关注模型可解释性。模型可解释性的好处体现在两个方面，第一，开发人员可以仔细检查机器学习模型做出的决策，提升模型决策的可信度；第二，提升模型可解释性可以帮助模型优化。模型可解释性是一个很大的课题，本文将问题聚焦在事后解释（Post-hoc Explanations）与基于概念的解释（Concept-based Explanations）。</p>
+<p>基于概念的解释中的概念（concept）指的是比单个特征、像素、字符等更容易被人类理解的单元。概念具有三个特征：</p>
+<ol>
+<li>有意义：一个概念的例子本身在语义上是有意义的。例如，在图像数据的情况下，单个像素可能不满足此属性，而包含纹理概念或对象部分概念的一组像素（一个图像片段）是有意义的。</li>
+<li>连贯性：一个概念的例子应该在感知上彼此相似，而与其他概念的例子不同。“黑白条纹”概念的例子都与黑白条纹相似。</li>
+<li>重要性：如果一个概念的存在对于该类中的样本的真实预测是必要的，那么该概念对于该类的预测是“重要的”。例如，在图像数据的情况下，预测存在的对象是必要的，而背景颜色则不是。</li>
+</ol>
+<p>下图中描绘了每个类别的前 2 个重要概念的三个随机选择的示例（每个示例都显示在其分割的原始图像上方）。例如，使用这个结果，我们可以看到网络使用车的轮胎和警察标志对警车进行分类。<br><img src="concept-example.png" alt="author"></p>
+<h2 id="现有工作"><a href="#现有工作" class="headerlink" title="现有工作"></a>现有工作</h2><ol>
+<li>TCAV (Testing with Concept Activation Vectors) 提出了 TCAV score 来定量解释每个概念对每个模型预测类的相对重要性。</li>
+<li>ACE 是 TCAV 进一步的工作，旨在了解模型用于预测不同图像标签的信号。它们为训练模型中的预测（例如预测为汽车）生成视觉概念（例如车轮、玻璃）的重要性度量。但是，自动聚类方法生成的概念可能与人类概念不匹配。</li>
+</ol>
+<h2 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h2><ol>
+<li>可视分析框架<br>支持基于人在循环、主动学习的方法来提取用于模型解释的视觉概念，并识别对模型性能产生负面影响的视觉概念。</li>
+<li>原型系统<br>实现了我们提出的人在回路工作流程，具有可扩展的图像补丁探索、视觉提示和交互式过滤器，用于主动学习以及一组丰富的模型诊断和比较分析可视化。</li>
+<li>两个案例研究<br>证明了将 ConceptExtract 用于各种机器学习任务和数据集的价值。</li>
+<li>定量实验<br>表明 ConceptExtract 比传统主动学习更快地产生概念，并且这些概念可以帮助开发数据增强策略以提高模型性能。</li>
+</ol>
+<h2 id="预备知识"><a href="#预备知识" class="headerlink" title="预备知识"></a>预备知识</h2><h4 id="主动学习"><a href="#主动学习" class="headerlink" title="主动学习"></a>主动学习</h4><p>不使用主动学习，意味着从样本中随机选择或者使用一些人工规则的方法来提供待标记的样本供人工进行标记，标注成本相对大。而使用主动学习，可以自动获取“难”分类的样本数据，然后人工确认和审核，再投入到训练模型中进行训练，这个过程可以降低标注成本。</p>
+<h4 id="困难负样本"><a href="#困难负样本" class="headerlink" title="困难负样本"></a>困难负样本</h4><p>困难负样本指容易被网络预测为正样本的样本，即假正例（false positive）。训练困难负样本对提升网络的分类性能具有极大帮助，相当于一个错题集。</p>
+<h4 id="概念注释"><a href="#概念注释" class="headerlink" title="概念注释"></a>概念注释</h4><p>概念注释与分类标签不同，一个图像可能允许多个概念注释。概念注释不用于任务训练网络，可以为模型解释提供必要的基础。</p>
+<h4 id="图像块-Image-patch"><a href="#图像块-Image-patch" class="headerlink" title="图像块(Image patch)"></a>图像块(Image patch)</h4><p>图像块是介于像素级别和图像级别的区域块。使用固定窗口大小或超像素分割算法可将图像分割成块。</p>
+<h2 id="任务分析"><a href="#任务分析" class="headerlink" title="任务分析"></a>任务分析</h2><ul>
+<li>总结模型行为</li>
+<li>浏览和探索图像补丁</li>
+<li>训练和评估概念提取模型</li>
+<li>分析视觉概念如何影响模型决策</li>
+<li>比较不同的模型</li>
+</ul>
+<h2 id="工作流程"><a href="#工作流程" class="headerlink" title="工作流程"></a>工作流程</h2><p><img src="workflow.png" alt="author"></p>
+<p>上图中展示了本文的工作流程，分为预处理阶段、视觉概念学习阶段和模型分析三个阶段。预处理阶段分为三步：1. 图像分割成块。2. 调整图像块大小喂给目标模型。3. 提取出目标模型选定层的潜在表示。视觉概念学习阶段，在潜在表示之上使用概念提取器网络来学习人类可理解的概念并检索包含这些概念的图像块以进行模型分析。这一阶段训练具有相同架构但不同权重的单个网络来识别不同的视觉概念。其主动学习网络结构非常简单，包含一个卷积层、一个最大池化层和 sigmoid 函数（获得介于 0 和 1 之间的概念置信度分数，以预测图像块是否包含指定的视觉概念），网络结构示意图如下图所示。<br><img src="structure.png" alt="author"><br>模型分析阶段，分析视觉概念和相应的图像块；使用 TCAV 分数和混淆矩阵进行模型解释、诊断和比较；可视化显示细粒度分析，包括每个视觉概念如何影响模型，以及模型在包含不同视觉概念的图像上的表现如何。</p>
+<h2 id="系统介绍"><a href="#系统介绍" class="headerlink" title="系统介绍"></a>系统介绍</h2><p><img src="interface.png" alt="author"></p>
+<p>界面分为几个大的模块：A. 图像块视图 C. 训练视图 D.模型分析视图。B E 视图提供信息的概览。</p>
+<h4 id="图像块视图"><a href="#图像块视图" class="headerlink" title="图像块视图"></a>图像块视图</h4><p>该视图提供了图像块的概览，以帮助用户快速探索数据集合并识别有趣的视觉概念。视图使用 t-SNE 布局图像块，这样做的问题是图像块重叠、视觉混乱。本文提出的解决方案是去杂乱算法。算法分为以下几步：1. 将画布区域划分为具有相同大小矩形的网格。2. 随机化图像块序列。3. 对于每个图像块，找到包含 2D 坐标的网格单元。如果网格为空，我们在网格上绘制图像块。如果网格已经被占用，布局算法将搜索最近的邻居网格来填充；当屏幕上没有可用的空网格时，图像补丁将被暂时隐藏。放大操作将增加可用网格单元的数量。</p>
+<p>视图顶部的控制面板，允许用户在图像块上叠加附加信息并过滤数据。当用户第一次探索数据时，可能不知道从哪里开始研究。 “集群”过滤器（b）为用户提供了在使用 k-means 等算法预先计算的选定集群中仅绘制图像块的选项。用户还可以在图像块上选择颜色叠加或边框高光，以显示真实情况、模型预测和模型精度等信息。范围滑块可以帮助用户根据当前正在训练的概念的每个图像块的概念置信度分数有效地过滤数据。</p>
+<h4 id="训练视图"><a href="#训练视图" class="headerlink" title="训练视图"></a>训练视图</h4><p>视图分为两部分，e: 用户分配概念标签的图像块的详细信息和交互区域。f: 显示所选图像及其训练状态的训练样本列表。<br>从图像块视图中选择的图像块将被放大，并显示图像块的来源等相关信息。用户可以直接将不包含该概念的块添加到负训练集中。要添加正样本，用户要么在包含概念的图像上裁剪一个矩形并丢弃其余像素，要么直接选择整个图像块作为正样本。所有选定的正样本负样本将显示在训练样本列表中。</p>
+<h4 id="模型分析视图"><a href="#模型分析视图" class="headerlink" title="模型分析视图"></a>模型分析视图</h4><p>模型分析视图支持细粒度的模型解释、诊断和比较。视图中显示概念的记录，如下图所示，</p>
+<div  align="center">
+<img src="concept-record.png" width = "300"/>
+</div>
+
+<p>条形图显示每个视觉概念的 TCAV 分数，每个条形的长度表示该概念对预测特定类别的重要性。<br>为了衡量正在分析的模型在概念方面的潜在弱点，本文根据概念置信度得分为每个概念选择前 50 个图像块，找到这些图像块的原始图像并将我们的目标模型的预测与使用混淆矩阵的真实情况。混淆矩阵中的每一行代表真实类别，每一列代表预测的类别。矩阵对角线上的值表示每个类中正确分类的数据样本的比例。本文使用顺序颜色来编码从 0 到 1 的比例。通过混淆矩阵，用户可以分析图像中某个视觉概念的存在是否会导致更多的模型错误。除此之外，混淆矩阵可以用于比较不同的模型。对于从列表中选择的两个模型，我们为每个视觉概念计算它们的混淆矩阵，然后直接计算它们之间的差异，其中红色表示矩阵中的负值，蓝色表示正值。如果第二个模型比第一个模型具有更好的性能，则对角线条目应在矩阵中显示更多正值（蓝色），反之亦然。例如，在下图中，我们在包含视觉概念天空的图像上比较了 DenseNet 和 ResNet。由于对角线上有更多红色条目，我们可以得出结论，DenseNet 在这组图像上的性能更差。这种比较揭示了每个模型的优势和劣势，并有助于确定使用模型集成来提高预测准确性的机会。</p>
+<div  align="center">
+<img src="matrix.png" width = "300"/>
+</div>
+
+<h2 id="评估——使用场景"><a href="#评估——使用场景" class="headerlink" title="评估——使用场景"></a>评估——使用场景</h2><p><img src="evaluation1.png" alt="author"><br>从 TCAV 分数中，我们可以确定人脸概念与预测 tench 的类型高度相关。<br>基于 TCAV 分数我们还可以观察到，虎猫、老虎和虎斑猫这三个频率混淆类都使用条纹作为视觉概念进行分类。混淆矩阵显示，在包含条纹的图像上，模型经常在三种猫科动物中出错。</p>
+<h2 id="评估——定量实验"><a href="#评估——定量实验" class="headerlink" title="评估——定量实验"></a>评估——定量实验</h2><p>为了研究人类知识是否真的可以产生更好的概念提取器，建立了一个基线模型。<br>基线模型模仿标准的主动学习方法，其中最混乱的图像将被标记并添加到下一次训练阶段。<br>上限模型，使用所有图像块作为训练数据并在单个阶段训练模型。<br>从下图中可以看到“bobby car”是一个更难提取的概念。即使使用所有数据，50 之后的顶部选择也低于 0.5。所有主动学习模型的表现都优于基线模型。</p>
+<div  align="center">
+<img src="evaluation2-1.png" width = "300"/>
+</div>
+
+<p>为了研究不同潜在表示的影响，本文使用 VGG-16 模型进行实验，通过该模型发送图像块并提取一组新的深度嵌入。<br>从下图的结果中可以看出这个 VGG-16 模型的分类任务的性能相当不错。<br>这个实验还验证了即使我们的概念提取网络的架构非常简单，它仍然可以从图像块中提取概念。它还表明，我们可以将提取网络无法提取概念与潜在空间中任务模型表示的质量联系起来。</p>
+<div  align="center">
+<img src="evaluation2-2.png" width = "300"/>
+</div>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

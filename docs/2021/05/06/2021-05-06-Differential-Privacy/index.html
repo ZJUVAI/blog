@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        An Introduction to the Differential Privacy - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B7%AE%E5%88%86%E9%9A%90%E7%A7%81%E7%9A%84%E5%8A%A8%E6%9C%BA%EF%BC%8C%E8%83%8C%E6%99%AF%E4%BB%A5%E5%8F%8A%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89"><span class="toc-text">差分隐私的动机，背景以及基本定义</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%9A%90%E7%A7%81%E7%9A%84%E5%9F%BA%E6%9C%AC%E5%AE%9A%E4%B9%89"><span class="toc-text">隐私的基本定义</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%AE%E5%88%86%E9%9A%90%E7%A7%81%E7%9A%84%E5%8A%A8%E6%9C%BA%E4%B8%8E%E5%9F%BA%E6%9C%AC%E5%BD%A2%E5%BC%8F"><span class="toc-text">差分隐私的动机与基本形式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%AE%E5%88%86%E9%9A%90%E7%A7%81%E7%9A%84%E7%9B%B4%E8%A7%82%E7%90%86%E8%A7%A3%EF%BC%9A%E5%81%87%E8%AE%BE%E6%A3%80%E9%AA%8C%E4%B8%8E%E6%95%88%E7%94%A8%E5%87%BD%E6%95%B0"><span class="toc-text">差分隐私的直观理解：假设检验与效用函数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%AE%E5%88%86%E9%9A%90%E7%A7%81%E7%9A%84%E5%9F%BA%E6%9C%AC%E6%80%A7%E8%B4%A8%EF%BC%9A%E4%BC%A0%E9%80%92%E6%80%A7%E4%B8%8E%E7%BE%A4%E4%BD%93%E9%9A%90%E7%A7%81"><span class="toc-text">差分隐私的基本性质：传递性与群体隐私</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%AE%E5%88%86%E9%9A%90%E7%A7%81%E7%9A%84%E4%BC%98%E5%8A%BF%E4%B8%8E%E5%B1%80%E9%99%90%E6%80%A7"><span class="toc-text">差分隐私的优势与局限性</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#References"><span class="toc-text">References</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        An Introduction to the Differential Privacy
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2021-05-06 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2021-05-06</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#冯浩哲"
+                title="冯浩哲">冯浩哲</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>数据是人工智能的燃料，优秀的深度学习模型需要依靠大量高质量数据集进行训练。然而，随着模型精度的不断提升，对于个人隐私的泄露现象也变得越发严重。此外，随着互联网企业的扩展，用户数据开始担任重要生产资料的角色，成为各大垄断企业的护城河。欧盟，作为反对互联网垄断的桥头堡，同时也作为隐私保护的急先锋，在2018年正式施行法案《通用数据保护条例》(General Data protection Regulation, GDPR)。GDPR主张个人对数据的四项权利，请求权，拒绝权，修正权和删除、遗忘权。请求权，即个人有权了解其个人数据是否被处理，哪些个人数据以怎样的方式被处理以及进行了哪些数据处理操作；拒绝权，即个人有令人信服的合法理由，可禁止进行某些数据处理操作，比如个人可拒绝以营销为目的的个人数据处理。遗忘权，即个人有权寻求删除其个人数据的影响，比如用个人的微博，抖音数据训练的推荐算法，能够把个人的影响给忘掉。此外，GDPR还对数据的传输有明确的要求，比如欧盟境内的数据不得在境外被使用。</p>
+<p>那么，一个自然的问题是，如何让人工智能模型的训练过程能够符合数据保护条例，保护个人隐私呢？依据GDPR的要求，首先数据的存储必须满足去中心化，而模型则需要在去中心化的数据库上进行分布式训练。联邦学习[1]是应对这种要求的解决方案，它允许模型在本地数据库上训练，并构建一个全局的调度器，通过对不同本地模型的更新进行汇总（即FedAvg算法），获得全局模型。得到的全局模型能够利用所有本地数据的信息，并得到更好的模型精度。其次，GDPR要求个人能够控制其数据对于模型的影响。人工智能模型是通过归纳所有数据信息构建的，它的输出结果是否会泄露个人隐私呢？差分隐私（Differential Privacy)[2]系统地探讨并解决了这一问题。在本篇Blog中，我们对应用于深度学习中的差分隐私技术进行入门式的介绍，包括差分隐私的动机与定义，满足差分隐私要求的梯度下降方法，以及如何对差分隐私的隐私保护程度进行计算。因为我们的主要目的是将差分隐私应用于隐私保护场景，而非对差分隐私进行研究，在本篇Blog中我们会略过一些数学证明的过程，将重心聚焦到差分隐私的应用上。</p>
+<h2 id="差分隐私的动机，背景以及基本定义"><a href="#差分隐私的动机，背景以及基本定义" class="headerlink" title="差分隐私的动机，背景以及基本定义"></a>差分隐私的动机，背景以及基本定义</h2><h3 id="隐私的基本定义"><a href="#隐私的基本定义" class="headerlink" title="隐私的基本定义"></a>隐私的基本定义</h3><p>在讨论差分隐私之前，我们先对“什么是隐私”这一问题进行讨论。在不同的考量下，隐私的定义也不一样。目前普遍比较接受的定义是：“单个用户的某一些属性” 可以被看做是隐私。注意该说法所强调的是“单个用户”，也就是说，如果是一群用户的某一些属性，那么可以不看做隐私。譬如，医院发布调查报告说，抽烟的人会有更高几率得肺癌，这个不泄露任何隐私。但是如果医生说，张三因为抽烟，所以有<script type="math/tex">x\%</script>的概率得肺癌，这就是个人隐私的泄露。如果我们拥有一个数据库，那么对精确的个体信息的查询与检索都会泄露隐私，因此对于个人数据的加密是最基本的保护隐私策略。然而，就算我们对个人数据进行了加密，对一群用户的某些属性的查询，以及对查询结果进行加工与建模，也就是“数据分析”，往往也会泄露个人隐私。而相比于数据加密，对数据分析的过程进行隐私保护因其不对称性更加具有难点，因为数据加密过程中，解密者与攻击者往往是两方，但是数据分析的过程中，分析师与“隐私攻击者”则是一方。</p>
+<p>我们先来举几个例子，看看什么样的数据分析行为会侵犯隐私，以及什么样的行为看似不会侵犯隐私，但是通过一连串叠加也会侵犯个人隐私。首先，在直觉上，如果查询的数据库特别大，而且我们规定只允许查询摘要形式的信息或者统计形式的信息，这种数据分析方法看起来保护了个人隐私。但是，如果我们知道某个个体的信息包含在数据库中，我们就可以利用一种叫差分攻击的方法得到个体的信息。比如，如果我们已知<strong>X</strong>的信息在某个大型医疗数据库中。那么我们可以查询：有多少人患血友病，以及条件查询，有多少个不叫<strong>X</strong>的人患白血病。这样经过差分，我们就得到了<strong>X</strong>是否患血友病的信息。对于这种情况，如果我们引入某种监督机制，比如有一个监督者禁止这种不安全的查询，或者有监督者在必要的时候对数据库进行匿名处理，似乎可以避免上述的差分攻击，是否有一个监督机制能保证数据分析过程中，隐私不被泄露吗？答案是没有，原因有二：(1) 禁止查询的决定本身也会带来隐私泄露。比如国家不公布第七次人口普查数据，或者从2006年开始不公布中国的基尼系数，这本身也有某些信息。(2) 可以将单次破坏隐私的查询拆分成一系列查询，而对于每次查询，很难判断是否破坏隐私。最后，由于数据分析师的先验知识背景非常多样，因此数据分析师的辅助信息也会将一些不破坏隐私的查询变得破坏隐私，这就带来了第二种隐私泄露的形式，即由于数据库之外的辅助信息带来的隐私泄露。比如我们知道邻居<strong>X</strong>在某一天去了医院，而我们得到的匿名医院数据库中，在这一天的数据条目特别少，那么<strong>X</strong>的个人信息也会以某种高概率泄露。比如作为<strong>X</strong>的邻居，我们发现他常常去买蛋糕。但是有一段时间他忽然开始买不含糖的面包了，如果我是一个医生，我可能会猜想他患了糖尿病，这就是辅助信息带来的隐私泄露。</p>
+<p>综上所述，差分攻击与辅助信息是数据分析过程中隐私泄露的主要诱因，而引入监管也不能保证隐私。针对这种状况，差分隐私提出了一种数据分析过程的隐私保护定义，即<strong>对于数据库数据的任何分析，以及根据分析结果与其他信息进行的进一步的合并加工，都不会泄露个人隐私。</strong></p>
+<h3 id="差分隐私的动机与基本形式"><a href="#差分隐私的动机与基本形式" class="headerlink" title="差分隐私的动机与基本形式"></a>差分隐私的动机与基本形式</h3><p>在上文中，我们对隐私进行了定性的定义。在应用过程中，隐私保护的目的则有更简单的具体描述：对于任何数据分析员，要求分析员在对数据库进行分析后，对数据库中每一个个体的了解不会超过其在分析开始之前的了解。那么，为了达成这种目的，我们需要对差分隐私提出两个疑问：对于一个数据分析过程，应当在什么时机，以什么方式引入并实现隐私保护机制呢？</p>
+<p>在第一节对于侵犯隐私行为的讨论中，我们知道引入实时的监督者并不能保障个人隐私安全，因此差分隐私的引入时机必然是在数据库发布后，到所有的数据分析工作开始之前。因此，我们沿用[2]中的描述，对差分隐私所扮演的角色进行描述：差分隐私相当于一个值得信赖的数据库管理员，它的目的是保护数据库中每一行记录，同时允许整个数据库能够被分析。这个管理员在数据库面向分析员发布前，对原始数据库进行一些操作：对数据库进行合成（例如，依据原始数据产生同分布的虚拟数据）、对某些统计结果进行汇总，或者自行清除数据库某些离群数据，然后发布新的数据库，销毁原始数据库。此后，差分隐私不再发挥作用，对于新的数据库，允许数据分析员进行自适应的查询，包括根据当前的查询结果，以及分析员的先验知识，自行决定下一次查询。差分隐私希望经过这种操作后，对于任何可能的查询，以及对查询结果的一系列加工都不会泄露个体隐私。</p>
+<p>那么，差分隐私将如何对原始数据库进行足以保护隐私的操作呢？[2]提出，要满足个体隐私保护的要求，引入随机性是必须的，因为如果每一次的查询都是精确查询，那么数据分析者可以通过差分查询，知道未知行中数据的价值。如何引入随机性呢？作为差分隐私的动机，[2]举了一个社会科学做敏感性问题调研的例子。假设我们想要调研一个敏感问题，如调查已婚人群中的出轨比率，那么让每一个被调研者如实回答问题必然导致个人隐私被侵犯。但是我们想要获取的是统计信息，而非每一个个体的信息，因此可以构建如下随机回答算法：令受访者自己抛一枚均匀硬币，如果正面朝上，那么如实回答问题，如果背面朝上，那么再抛一枚硬币，正面朝上回答是，背面朝上回答否。这样，对于受访者而言，无论他回答的结果如何都不会侵犯隐私，因为对于一个人而言至少有<script type="math/tex">\frac{1}{4}</script>的概率会回答“有出轨”，因此他的回答并不会透露真实的情况。而对于研究者而言，出轨比例<script type="math/tex">p</script>可以通过简单的计算得到：</p>
+<script type="math/tex; mode=display">
+q= \frac{\text{回答是的人数}}{\text{总人数}}=\frac{p*\frac{1}{2}*\text{总人数}+\frac{1}{4}*\text{总人数}}{\text{总人数}};\\
+p=2q-\frac{1}{2}</script><p>基于这种方案，差分隐私要求对于任何查询，其输出都是概率的。在给出差分隐私的精确定义前，我们需要对随机算法进行一些定义。</p>
+<p><strong>定义1. （概率单纯形）</strong> 给定一个数目有限的离散集<script type="math/tex">\mathcal{O}</script>，我们可以将看<script type="math/tex">\mathcal{O}</script>作是有限数量的互斥事件，定义<script type="math/tex">\mathcal{O}</script>上的概率单纯形为<script type="math/tex">\Delta(\mathcal{O})</script>，满足</p>
+<script type="math/tex; mode=display">
+\Delta(\mathcal{O})=\{\mathbf{x}\in\mathbb{R}^{\vert \mathcal{O}\vert}:x_i\geq0 \text{ and }\sum_{i=1}^{\vert \mathcal{O}\vert}x_i=1\}</script><p>概率单纯形其实就是在事件集<script type="math/tex">\mathcal{O}</script>上所有可能的概率分布的集合，而每一个元素<script type="math/tex">\mathbf{x}\in \Delta(\mathcal{O})</script>就是一种可能的概率分布。基于<strong>概率单纯形</strong>，我们可以对随机算法进行如下的形式化定义：</p>
+<p><strong>定义2.（随机算法）</strong> 记数据库中所有条目的集合为<script type="math/tex">\mathcal{X}</script>，则所有可能的子数据库构成的空间为<script type="math/tex">\mathbb{N}^{\vert \mathcal{X}\vert}</script>。随机算法<script type="math/tex">\mathcal{M}</script>将一个子数据库<script type="math/tex">D\in \mathbb{N}^{\vert \mathcal{X}\vert}</script>映射到离散集合<script type="math/tex">\mathcal{O}</script>的概率单纯形的一个可能分布上，即</p>
+<script type="math/tex; mode=display">
+\mathcal{M}:\mathbb{N}^{\vert \mathcal{X}\vert}\rightarrow \Delta(\mathcal{O})</script><p>我们也称<script type="math/tex">\mathcal{O}</script>为随机算法<script type="math/tex">\mathcal{M}</script>的 <strong>Range</strong>，即<script type="math/tex">\text{Range}(\mathcal{M})=\mathcal{O}</script>。其中对于每一个可能作为算法输入的数据库<script type="math/tex">D</script>，随机算法<script type="math/tex">\mathcal{M}</script>先将其映射到一个概率分布，即对于任意<script type="math/tex">D\in \mathbb{N}^{\vert \mathcal{X}\vert}</script>，以及任意的<script type="math/tex">o\in \mathcal{O}</script>，随机算法<script type="math/tex">\mathcal{M}(D)</script>以<script type="math/tex">(\mathcal{M}(D))_{o}</script>的概率输出结果为<script type="math/tex">o</script>。</p>
+<p>如何直观地理解<strong>随机算法</strong>呢？在数据分析过程中，<strong><script type="math/tex">\mathcal{M}</script>可以是某种模糊查询方法</strong>。比如查询一群人的平均工资范围（如<script type="math/tex">1k-2k,2k-3k,>3k</script>），直接查询方法对输入的数据进行加和求均值，然后输出该均值对应的范围，而随机算法则是对均值再加一个噪声，然后输出加噪后结果对应的范围，这样如果工资均值是<em>1900</em>,噪声服从<script type="math/tex">N(100,10)</script>的正态分布，那么其回答将会大概以<script type="math/tex">49.3\%</script>的概率回答<script type="math/tex">1k-2k</script>，以<script type="math/tex">50.7\%</script>的概率回答剩下的选项。<strong><script type="math/tex">\mathcal{M}</script>还可以是从原始数据库到合成数据库的映射</strong>，然后输出合成数据库中的查询结果，比如对原始数据库中的工资水平构建分布模型，然后从分布中采样生成相同大小的新数据库，并输出新数据库中的结果；<strong><script type="math/tex">\mathcal{M}</script>也可以是一系列输出为概率分布的机器学习算法</strong>，以机器学习中的图像分类问题为例，此时<script type="math/tex">\mathcal{M}</script>通过带标注的图像数据库<script type="math/tex">D</script>进行训练，并对未知的图像进行预测，预测结果为分类概率。</p>
+<p>有了随机算法，我们还需要定义数据库之间的距离。一般用<script type="math/tex">l_1\text{-norm}</script>表示数据库之间的距离。对于两个数据库 <script type="math/tex">D,D'\in \mathbb{N}^{\vert \mathcal{X}\vert}</script>，我们定义它们的<script type="math/tex">l_1</script>距离<script type="math/tex">\Vert D-D'\Vert _1</script>为两个<strong>Database</strong>中不同的记录的个数。如果<script type="math/tex">\Vert D-D'\Vert _1=1</script>，我们就称<script type="math/tex">D,D'</script>为相邻数据集（<strong>Neighboring Datasets</strong>），此时<script type="math/tex">D,D'</script>只相差一个记录。差分隐私可以直观理解为，对于两个相似的<strong>Database</strong>，要求随机算法<script type="math/tex">\mathcal{M}</script>在两个<strong>Database</strong>上的表现也相似，它的形式化定义如下：</p>
+<p><strong>定义3.（差分隐私）</strong> 我们称<script type="math/tex">\mathbb{N}^{\vert \mathcal{X}\vert}</script>上的随机算法<script type="math/tex">\mathcal{M}</script>满足<script type="math/tex">(\epsilon,\delta)\text{-differentially private}</script>，如果对于所有的随机事件<script type="math/tex">\mathcal{S}\subset \mathcal{O}</script>，以及对于所有的相邻数据库<script type="math/tex">D,D'\in \mathbb{N}^{\vert \mathcal{X}\vert}</script>，满足</p>
+<script type="math/tex; mode=display">
+\text{Pr}[\mathcal{M}(D)\in \mathcal{S}]\leq \exp(\epsilon)\text{Pr}[\mathcal{M}(D')\in \mathcal{S}]+\delta \tag{1}</script><p>其中，如果<script type="math/tex">\delta=0</script>，我们就称随机算法<script type="math/tex">\mathcal{M}</script>满足<script type="math/tex">\epsilon\text{-differentially private}</script>。</p>
+<h3 id="差分隐私的直观理解：假设检验与效用函数"><a href="#差分隐私的直观理解：假设检验与效用函数" class="headerlink" title="差分隐私的直观理解：假设检验与效用函数"></a>差分隐私的直观理解：假设检验与效用函数</h3><p>如何直观理解差分隐私呢？我们沿用文献[2,3]的思路，从假设检验与效用函数两个角度对差分隐私的定义进行分析。从式<script type="math/tex">(1)</script>中我们可以有一种印象，差分隐私要求每一条个人记录在所有的查询情况下，对于查询结果的影响都不能太大。换句话说，我们要求随机算法<script type="math/tex">\mathcal{M}</script>对于任意相邻数据集，都不能根据输出结果明确区分出这两个数据集，而这就是假设检验的方法。</p>
+<p>对于随机算法<script type="math/tex">\mathcal{M}</script>的任意输出<script type="math/tex">Y</script>，选择数据库<script type="math/tex">D</script>为原假设，选择<script type="math/tex">D'</script>为备择假设，我们可以将其进行形式化如下：</p>
+<script type="math/tex; mode=display">
+H_0:Y \text{ came from D, i.e. }Y=\mathcal{M}(D)\\
+H_1:Y \text{ came from D', i.e. }Y=\mathcal{M}(D')</script><p>将随机事件<script type="math/tex">\mathcal{S}\subset \mathcal{O}</script>看成是拒绝域，那么假设检验的第一类错误，即本应接受原假设但是拒绝的拒真错误（false alarm），其发生概率为<script type="math/tex">P_{\text{FA}}(D,D',\mathcal{M},\mathcal{S})=\text{Pr}[\mathcal{M}(D)\in \mathcal{S}]</script>，而假设检验的第二类错误，即本应拒绝原假设但是接受的存伪错误（missed detection)，其发生概率为<script type="math/tex">P_{\text{MD}}(D,D',\mathcal{M},\mathcal{S})=\text{Pr}[\mathcal{M}(D’)\in \mathcal{O}-\mathcal{S}]</script>（即如果拒绝原假设，那么实际上<script type="math/tex">Y=\mathcal{M}(D')</script>，而因为接受了原假设，说明该概率落在接受域<script type="math/tex">\mathcal{O}-\mathcal{S}</script>中）。利用第一类错误与第二类错误，我们可以得到如下差分隐私的等价假设检验形式：</p>
+<p><strong>定理1.（差分隐私的假设检验等价）</strong> <script type="math/tex">\forall \epsilon\geq 0,\delta\in[0,1]</script>,随机算法<script type="math/tex">\mathcal{M}</script>满足<script type="math/tex">(\epsilon,\delta)\text{-differentially private}</script>当且仅当对于所有相邻数据库<script type="math/tex">D,D'\in \mathbb{N}^{\vert \mathcal{X}\vert}</script>，以及任意拒绝域<script type="math/tex">\mathcal{S}\subset \mathcal{O}</script>，满足</p>
+<script type="math/tex; mode=display">
+P_{\text{FA}}(D,D',\mathcal{M},\mathcal{S})+\exp(\epsilon)P_{\text{MD}}(D,D',\mathcal{M},\mathcal{S})\geq1-\delta\\
+\exp(\epsilon)P_{\text{FA}}(D,D',\mathcal{M},\mathcal{S})+P_{\text{MD}}(D,D',\mathcal{M},\mathcal{S})\geq1-\delta</script><p>证明：</p>
+<p>用差分隐私的基本性质，写出下面四条等式即可。</p>
+<script type="math/tex; mode=display">
+\text{Pr}[\mathcal{M}(D)\in \mathcal{O}-\mathcal{S}]\leq e^{\epsilon}\text{Pr}[\mathcal{M}(D')\in \mathcal{O}-\mathcal{S}]+\delta\\
+\text{Pr}[\mathcal{M}(D')\in \mathcal{S}]\leq e^{\epsilon}\text{Pr}[\mathcal{M}(D)\in \mathcal{S}]+\delta\\
+\text{Pr}[\mathcal{M}(D)\in \mathcal{O}-\mathcal{S}]=1-P_{\text{FA}}(D,D',\mathcal{M},\mathcal{S})\\
+\text{Pr}[\mathcal{M}(D')\in \mathcal{S}]=1-P_{\text{MD}}(D,D',\mathcal{M},\mathcal{S})</script><p>利用该等价形式，我们可以分别以<script type="math/tex">P_{\text{FA}}</script>，<script type="math/tex">P_{\text{MD}}</script>为坐标轴，画出差分隐私的可行隐私域</p>
+<script type="math/tex; mode=display">
+\mathcal{R}(\epsilon,\delta)=\{(P_{\text{FA}},P_{\text{MD}})\vert P_{\text{FA}}(D,D',\mathcal{M},\mathcal{S})+e^{\epsilon}P_{\text{MD}}(D,D',\mathcal{M},\mathcal{S})\geq 1-\delta,\\e^{\epsilon}P_{\text{FA}}(D,D',\mathcal{M},\mathcal{S})+P_{\text{MD}}(D,D',\mathcal{M},\mathcal{S})\geq 1-\delta\}</script><p>如下图所示。</p>
+<p><img src="https://www.fenghz.xyz/images/dp/dp-1.png" alt="dp-1"></p>
+<p>通过以上等价形式的推导，我们从假设检验的角度对差分隐私进行了解释，得到了一个基本的直觉：差分隐私就是要求对于任意的相邻数据库，数据分析者无法仅通过输出结果对它们进行显著的区分。那么，这种“无法区分”的性质会带来什么好处呢？我们可以从效用函数的角度对该问题进行探讨。</p>
+<p>考虑数据库<script type="math/tex">D</script>中的某个个体<script type="math/tex">i</script>，我们记他在未来所有可能经历的事件集合为<script type="math/tex">\Omega</script>（譬如考研是否成功，就业是否顺利等），对于每一个事件，我们都可以认为该事件对于个体个体<script type="math/tex">i</script>具有某种可以量化的影响，也就是效用函数。我们记所有可能事件的效用函数为</p>
+<script type="math/tex; mode=display">
+u_i:\Omega\rightarrow \mathbb{R}_{\geq 0}</script><p>对于满足<script type="math/tex">(\epsilon,0)\text{-differentially private}</script>的随机算法<script type="math/tex">\mathcal{M}</script>，数据分析者可以用它进行一次分析行为，记为<script type="math/tex">\mathcal{M}(D)</script>，如果这种分析行为会影响到个体的信息，也就是泄露了隐私，那么就会对未来的事件产生影响。例如，如果某个犯罪记录数据库泄露了，那么对该数据库的查询就可能会影响个体事业，我们记由于随机算法的查询<script type="math/tex">\mathcal{M}(D)</script>所导致的事件分布为<script type="math/tex">f(\mathcal{M}(D))</script>，所对应的概率分布为<script type="math/tex">\text{Pr}_{f(\mathcal{M}(D))}[\omega],\omega\in \Omega</script>，此时个体<script type="math/tex">i</script>的期望效用为</p>
+<script type="math/tex; mode=display">
+\mathbb{E}_{\omega\sim f(\mathcal{M}(D))}[u_i(\omega)]=\sum_{\omega\in\Omega}u_i(\omega)\cdot\text{Pr}_{f(\mathcal{M}(D))}[\omega]</script><p>此外，我们记除去个体<script type="math/tex">i</script>后所得数据库为<script type="math/tex">D'</script>，在这种情况下，由于个体并未参加数据分析的过程，因此个人隐私并未泄露，我们可以以此时的效用函数作为零隐私泄露的基准。通过同样的方法，我们计算通过相邻数据库<script type="math/tex">D'</script>的分析对于个体<script type="math/tex">i</script>的期望效用如下</p>
+<script type="math/tex; mode=display">
+\mathbb{E}_{\omega\sim f(\mathcal{M}(D'))}[u_i(\omega)]==\sum_{\omega\in\Omega}u_i(\omega)\cdot\text{Pr}_{f(\mathcal{M}(D'))}[\omega]</script><p>利用差分隐私性质，我们有</p>
+<script type="math/tex; mode=display">
+\text{Pr}_{f(\mathcal{M}(D))}[\omega]\leq e^{\epsilon}\cdot\text{Pr}_{f(\mathcal{M}(D'))}[\omega]\\\text{Pr}_{f(\mathcal{M}(D'))}[\omega]\leq e^{\epsilon}\cdot\text{Pr}_{f(\mathcal{M}(D))}[\omega]</script><p>因此可以得到</p>
+<script type="math/tex; mode=display">
+e^{-\epsilon}\cdot \mathbb{E}_{\omega\sim f(\mathcal{M}(D'))}[u_i(\omega)] \leq\mathbb{E}_{\omega\sim f(\mathcal{M}(D))}[u_i(\omega)]\leq e^{\epsilon}\cdot \mathbb{E}_{\omega\sim f(\mathcal{M}(D'))}[u_i(\omega)]</script><p>当<script type="math/tex">\epsilon\rightarrow 0</script>，我们利用极限<script type="math/tex">e^\epsilon\approx (1+\epsilon)</script>，可以得到当个体<script type="math/tex">i</script>参与数据分析过程与从未参数数据分析过程的效用函数在差分隐私约束下的关系：</p>
+<script type="math/tex; mode=display">
+(1-\epsilon)\cdot \mathbb{E}_{\omega\sim f(\mathcal{M}(D'))}[u_i(\omega)] \leq\mathbb{E}_{\omega\sim f(\mathcal{M}(D))}[u_i(\omega)]\leq (1+\epsilon)\cdot \mathbb{E}_{\omega\sim f(\mathcal{M}(D'))}[u_i(\omega)] \tag{2}</script><p>通过<script type="math/tex">(2)</script>式，我们可以从效用函数的角度理解差分隐私：虽然贡献自己的数据可能确实会导致自己面临一些伤害，但差分隐私保证了这种伤害的后果是可控的，个人的效用函数不会因他们的数据参与分析而显著增加。这种性质是非常实用的，因为数据的提供者往往无法控制数据库的其他内容，如果我们对隐私保护不加限制，那么个人对于自己的数据信息对自己可能造成的结果是未知的。而有了差分隐私，任何数据分析师都可以保证，对于任意的效用函数，个体预期的未来效用不会受到超过<script type="math/tex">\epsilon</script>水平的损害。当个人决定是否贡献自己的数据用于数据分析时，他们可以根据<script type="math/tex">\epsilon</script>的值来量化可能的损失，通过比较分享数据获得的激励，可以决定是否共享数据。</p>
+<h3 id="差分隐私的基本性质：传递性与群体隐私"><a href="#差分隐私的基本性质：传递性与群体隐私" class="headerlink" title="差分隐私的基本性质：传递性与群体隐私"></a>差分隐私的基本性质：传递性与群体隐私</h3><p>差分隐私是一个强大的隐私保护工具，但是要实现强差分隐私约束（即<script type="math/tex">\epsilon,\delta\rightarrow 0</script>）往往需要增加大量噪声。一般而言，数据的分析包括多个环节，如果在每个环节上都满足差分隐私约束，势必会令数据分析结果失真。差分隐私的传递性给出了一个强有力的断言：只要在数据分析的任何一个环节，随机算法<script type="math/tex">\mathcal{M}</script>满足<script type="math/tex">(\epsilon,0)\text{-differentially private}</script>，那么在仅用该环节的结果作为输入的任意之后的数据处理过程都满足<script type="math/tex">(\epsilon,0)\text{-differentially private}</script>，这就是差分隐私的传递性（Post-Processing）。</p>
+<p><strong>引理1.（差分隐私的传递性）</strong>令<script type="math/tex">\mathcal{M}:\mathbb{N}^{\vert \mathcal{X}\vert}\rightarrow \Delta(\mathcal{O})</script>是一个满足<script type="math/tex">(\epsilon,\delta)\text{-differentially private}</script> 的随机算法，令<script type="math/tex">f:\Delta(\mathcal{O})\rightarrow \Delta(\mathcal{A})</script>是一个任意的随机映射，那么随机算法<script type="math/tex">f\circ \mathcal{M}:\mathbb{N}^{\vert \mathcal{X}\vert}\rightarrow \Delta(\mathcal{A})</script>也满足<script type="math/tex">(\epsilon,\delta)\text{-differentially private}</script>。</p>
+<p>证明过程很简单，选择一个子集<script type="math/tex">\mathcal{P}\subset \mathcal{A}</script>，令<script type="math/tex">\mathcal{T}=\{\mathcal{o}\in\mathcal{O}:f(\mathcal{o})\in P\}</script>是映射到该子集的所有事件，那么</p>
+<script type="math/tex; mode=display">
+\text{Pr}[f(\mathcal{M(D)})\in \mathcal{P}]=\text{Pr}[\mathcal{M(D)}\in \mathcal{T}]\\
+\leq e^{\epsilon}\cdot \text{Pr}[\mathcal{M(D')}\in \mathcal{T}]+\delta\\
+=e^{\epsilon}\cdot \text{Pr}[f(\mathcal{M(D')})\in \mathcal{P}]+\delta</script><p>此外，注意到在之前的差分隐私都要求相邻数据库，即数据库<script type="math/tex">D,D'</script>之间往往只相差一个条目。但是，实践过程中数据往往是呈团、簇结构，也就是具有<em>Data Group</em>的性质。此时，我们有以下定理：</p>
+<p><strong>定理2.（群差分隐私）</strong>令<script type="math/tex">\mathcal{M}:\mathbb{N}^{\vert \mathcal{X}\vert}\rightarrow \Delta(\mathcal{O})</script>是一个满足<script type="math/tex">(\epsilon,0)\text{-differentially private}</script> 的随机算法，令数据库<script type="math/tex">D,D'</script>仅仅相差<script type="math/tex">k</script>个条目，即<script type="math/tex">\Vert D-D'\Vert_1=k</script>，那么，对于这种<script type="math/tex">k</script>-相邻数据库，随机算法<script type="math/tex">\mathcal{M}</script>满足<script type="math/tex">(k\epsilon,0)\text{-differentially private}</script>。</p>
+<p>该定理的证明过程是显然的，特别地，对于<script type="math/tex">(\epsilon,0)\text{-differentially private}</script>，对于<script type="math/tex">k</script>-相邻数据库满足<script type="math/tex">(k\epsilon,ke^{(k-1)\epsilon}\delta)\text{-differentially private}</script>。</p>
+<h3 id="差分隐私的优势与局限性"><a href="#差分隐私的优势与局限性" class="headerlink" title="差分隐私的优势与局限性"></a>差分隐私的优势与局限性</h3><p>根据上文分析，我们可以总结差分隐私所具有的六大优势如下:</p>
+<ol>
+<li><p>对于任意先验知识风险的防范性。在上文中我们提到，由于数据分析师的先验知识背景非常多样，因此数据分析师的辅助信息也会将一些不破坏隐私的查询变得破坏隐私。但是差分隐私与先验知识完全无关，可以抵御所有依靠辅助信息所进行的攻击。</p>
+</li>
+<li><p>对于链式攻击的防范。将隐私攻击手段拆成多个问题，或者对数据集进行多次差分都不会泄露隐私。</p>
+</li>
+<li><p>传递性带来的隐私闭包。由于差分隐私的传递特性，数据分析师在没有其他有关私有数据库的知识的情况下，其所做的任何进一步处理也具有差分隐私特性。也就是说，数据分析师不能仅仅通过坐在角落里思考算法的输出，得到任何会泄露个人隐私的结论。</p>
+</li>
+<li><p>对隐私损失的量化。差分隐私利用<script type="math/tex">(\epsilon,\delta)</script>的大小对隐私损失进行度量。这就允许在不同技术之间进行比较：对于固定的隐私损失<script type="math/tex">(\epsilon,\delta)</script>，哪种技术可以提供更好的准确性？为了达到固定的精度，哪种技术可以提供更好的隐私保护？</p>
+</li>
+<li><p>对团体数据隐私的保护。差分隐私对于团体数据（例如家庭数据）所带来的隐私损失也进行了分析与控制。</p>
+</li>
+<li><p>对于数据分析Pipeline的组合（Composition）隐私进行度量。一般而言，数据分析师会用多种随机算法进行分析，而不同的随机算法会带来不同的隐私损失。例如，深度学习模型训练的过程中，每一个Epoch都会发布一个中间模型，随着获取的中间模型越来越多，我们需要度量所有中间模型所带来的隐私损失；又例如一个可视分析系统往往有多个视图，每个视图的底层算法也不一样（如t-sne和热力图）。对于一个由多种随机算法组合系统如何度量隐私，以及如何设计每一个模块的<script type="math/tex">(\epsilon,\delta)</script>使得整个系统的隐私损失最小，差分隐私给出了理论思路，能够通过多个简单差分隐私模块设计和分析复杂的差分隐私算法。</p>
+</li>
+</ol>
+<p>但是，差分隐私不是万能的，也有其局限性。正如上文在“吸烟引起癌症”示例中看到的，差分隐私不能保证参与人无条件不受伤害，换句话说，差异性隐私并不能保证人们认为属于自己的特性不因他人接受的调查所泄露，它只是确保不会透露自己参与了数据分析，也不会披露个体参与数据分析的任何细节。从群体调查中得出的统计结论很有可能反映出个体的统计信息，例如，通过他人数据训练的算法推荐给用户的视频往往是符合用户独特品味的，但这并不表示存在隐私权的侵害，因为用户数据甚至可能没有参加过模型训练。也就是说，差分隐私确保无论个人是否参加数据分析，都将以非常相似的概率符合统计结论性的结果。而如果分析结果告诉我们，某些特定的私有属性与公开可观察的属性密切相关，这并不违反差分隐私，因为这种相同的相关性将以几乎相同的概率被独立观察到，无论任意个体是否出现在分析所用的数据库中。</p>
+<h2 id="References"><a href="#References" class="headerlink" title="References"></a>References</h2><p>[1] Konečný J, McMahan B, Ramage D. Federated optimization: Distributed optimization beyond the datacenter[J]. arXiv preprint arXiv:1511.03575, 2015.</p>
+<p>[2] Dwork C, Roth A. The algorithmic foundations of differential privacy[J]. Foundations and Trends in Theoretical Computer Science, 2014, 9(3-4): 211-407.</p>
+<p>[3] Kairouz P, Oh S, Viswanath P. The composition theorem for differential privacy[C]//International conference on machine learning. PMLR, 2015: 1376-1385.</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:fenghz@zju.edu.cn"><code> ✉️ fenghz@zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

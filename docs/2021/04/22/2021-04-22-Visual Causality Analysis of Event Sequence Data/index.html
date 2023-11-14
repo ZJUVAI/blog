@@ -1,0 +1,351 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Visual Causality Analysis of Event Sequence Data - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%9C%E8%80%85"><span class="toc-text">作者</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BA%8B%E4%BB%B6%E5%BA%8F%E5%88%97%EF%BC%88event-sequences%EF%BC%89%E5%92%8C%E5%9B%A0%E6%9E%9C%E5%85%B3%E7%B3%BB%EF%BC%88Causality%EF%BC%89"><span class="toc-text">事件序列（event sequences）和因果关系（Causality）</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%8C%91%E6%88%98"><span class="toc-text">挑战</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E7%9B%AE%E6%A0%87"><span class="toc-text">研究目标</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E8%B4%A1%E7%8C%AE"><span class="toc-text">贡献</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#SeqCausal"><span class="toc-text">SeqCausal</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%A0%E6%9E%9C%E5%85%B3%E7%B3%BB%E7%9A%84%E7%AE%97%E6%B3%95%E6%B5%81%E7%A8%8B"><span class="toc-text">因果关系的算法流程</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Hawkes-Processes%E5%BB%BA%E6%A8%A1"><span class="toc-text">1. Hawkes Processes建模</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-%E5%A6%82%E4%BD%95%E8%AE%AD%E7%BB%83"><span class="toc-text">2. 如何训练</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-%E5%A6%82%E4%BD%95%E6%A0%B9%E6%8D%AE%E7%94%A8%E6%88%B7%E5%8F%8D%E9%A6%88refine%E6%A8%A1%E5%9E%8B"><span class="toc-text">3. 如何根据用户反馈refine模型</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%A7%86%E5%88%86%E6%9E%90%E7%B3%BB%E7%BB%9F"><span class="toc-text">可视分析系统</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#1-Causal-Exploration"><span class="toc-text">1. Causal Exploration</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E7%BC%96%E7%A0%81"><span class="toc-text">信息编码</span></a></li></ol></li><li class="toc-item toc-level-4"><a class="toc-link" href="#2-Causal-Verification"><span class="toc-text">2. Causal Verification</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#3-Causal-Comparison"><span class="toc-text">3. Causal Comparison</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#%E4%BF%A1%E6%81%AF%E7%BC%96%E7%A0%81-1"><span class="toc-text">信息编码</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Evaluation"><span class="toc-text">Evaluation</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93%E5%92%8C%E8%81%94%E6%83%B3"><span class="toc-text">总结和联想</span></a>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Visual Causality Analysis of Event Sequence Data
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2021-04-22 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2021-04-22</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#王智勇"
+                title="王智勇">王智勇</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h3 id="作者"><a href="#作者" class="headerlink" title="作者"></a>作者</h3><p><img src="https://wangzhiyong-files.oss-cn-shanghai.aliyuncs.com/markdown/1618901326843-c434512a-458e-46a9-9f61-6403f2c64fee.png" alt="image.png"><br>本文第一作者是同济大学曹楠老师组（<a target="_blank" rel="noopener" href="https://idvxlab.com/index.html">同济大学智能大数据可视化实验室</a>）的博士生金卓宸，通讯作者曹楠老师，二作是他们实验室的华师大访问博士生郭姝男，三作他们的硕士生。Daniel Weiskopf和David Gotz都是这篇文章的合作老师。</p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><h4 id="事件序列（event-sequences）和因果关系（Causality）"><a href="#事件序列（event-sequences）和因果关系（Causality）" class="headerlink" title="事件序列（event sequences）和因果关系（Causality）"></a>事件序列（event sequences）和因果关系（Causality）</h4><p><img src="https://wangzhiyong-files.oss-cn-shanghai.aliyuncs.com/markdown/1618902462772-6330558c-685c-47d9-812b-42e5a61c82a3.png#align=left&amp;display=inline&amp;height=295&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=590&amp;originWidth=1131&amp;size=220166&amp;status=done&amp;style=none&amp;width=565.5" alt="image.png"><br>事件序列以一系列带时间戳事件。真实世界中处处充满了事件序列，例如，张三中午十二点在吃饭，下午一点开会，晚上10点打王者荣耀。分析时间事件序列可以帮助分析人员提取事件之间的因果关系。比如临床事件之间的因果关系可以指导医生学习病因，并找到更有效的治疗方法。<br>在时间数据中，因果关系的发现通常基于格兰杰因果关系理论（Granger Causality）。Granger因果关系能够根据增量可预测性来描述时间数据中的因果关系：<br>如果事件A的出现增强了事件B的可预测性，则A Granger引起B。具体可以参考：<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1P54y1C7nt?from=search&amp;seid=10683392941931191364">格兰杰因果关系检验</a><br><img src="https://wangzhiyong-files.oss-cn-shanghai.aliyuncs.com/markdown/1618902952537-8d1b8276-c041-4c4b-92e9-5b4edb8507a0.png#align=left&amp;display=inline&amp;height=221&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=442&amp;originWidth=798&amp;size=100932&amp;status=done&amp;style=none&amp;width=399" alt="image.png"><br>本文的目的，就是从事件序列数据中，分析出格兰杰因果关系</p>
+<h4 id="挑战"><a href="#挑战" class="headerlink" title="挑战"></a>挑战</h4><p>过去，学者通过</p>
+<ol>
+<li><p>Graphical Medeling</p>
+<blockquote>
+<p>A. C. Lozano, N. Abe, Y. Liu, and S. Rosset. Grouped graphical granger modeling methods for temporal causal modeling. In ACM SIGKDD, pp. 577–586, 2009.</p>
+</blockquote>
+</li>
+<li><p>Hawkes Processes</p>
+<blockquote>
+<p>H. Xu, M. Farajtabar, and H. Zha. Learning granger causality for hawkes processes. In ICML, pp. 1717–1726, 2016</p>
+</blockquote>
+</li>
+<li><p>Deep Neural Networks</p>
+<blockquote>
+<p>M. Nauta, D. Bucur, and C. Seifert. Causal discovery with attentionbased convolutional neural networks. Machine Learning and Knowledge Extraction, 1(1):312–340, 2019.</p>
+</blockquote>
+</li>
+</ol>
+<p>这三类方法来建模，学习event sequences数据中的因果关系。但是，这些模型中的许多模型都依赖于数据分布的假设，这可能无法编码足够数量的特定领域知识。此外，因果模型的高度复杂性可能导致缺乏足够的可解释性来支持决策。<br>另一方面，事件序列数据还有如下特征会给因果分析带来更多挑战：</p>
+<ol>
+<li>高维度（high dimensionality）。事件序列数据集通常包含各种各样的事件类型。事件序列数据的高维度会显着增加因果分析结果的复杂性。</li>
+<li>高异质性（high heterogeneity）。以不同顺序发生的各种事件类型的序列导致个体之间的高度异质性。</li>
+</ol>
+<p>这导致因果分析结果难以解释和验证。<br><img src="https://wangzhiyong-files.oss-cn-shanghai.aliyuncs.com/markdown/1618904515412-4d25bd82-3bea-4f7b-89b1-14ea52353a6b.png#align=left&amp;display=inline&amp;height=215&amp;margin=%5Bobject%20Object%5D&amp;name=image-removebg-preview%20%283%29.png&amp;originHeight=215&amp;originWidth=844&amp;size=110094&amp;status=done&amp;style=none&amp;width=844" alt="image-removebg-preview (3).png"><br>总结一下，挑战有三块:</p>
+<ol>
+<li>缺乏人的domain knowledge</li>
+<li>缺乏可解释性</li>
+<li>因果分析中的时序复杂度<h4 id="研究目标"><a href="#研究目标" class="headerlink" title="研究目标"></a>研究目标</h4></li>
+</ol>
+<ul>
+<li>将人类知识纳入因果关系分析中</li>
+<li>增强可解释性</li>
+<li>解决事件序列数据中的时序复杂性（temporal complexity）</li>
+</ul>
+<h5 id="贡献"><a href="#贡献" class="headerlink" title="贡献"></a>贡献</h5><ol>
+<li>系统。bottom-up的探索方式解决挑战3，同时帮助解决挑战2</li>
+<li>算法。作者设计了user-feedback的机制来增强因果分析算法，从而解决挑战1</li>
+<li><p>可视化。作者针对因果关系的分析，提出一些新的可视化方法，来消解数据的复杂度，解决挑战3</p>
+<h1 id="SeqCausal"><a href="#SeqCausal" class="headerlink" title="SeqCausal"></a>SeqCausal</h1><p>作者提出一个交互式的可视分析系统，叫SeqCausal，来帮助用户通过人机结合的方式，分析事件序列数据中的因果关系。<br><img src="https://wangzhiyong-files.oss-cn-shanghai.aliyuncs.com/markdown/1618920491832-cf8c9d0c-d1be-42fa-a362-196376a64ef1.png#align=left&amp;display=inline&amp;height=513&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=1025&amp;originWidth=1766&amp;size=690728&amp;status=done&amp;style=none&amp;width=883" alt="image.png"><br>作者的工作可以从两大块来看：a. 发现事件序列中因果关系的算法流程；b. 可视化系统的设计。</p>
+<h3 id="因果关系的算法流程"><a href="#因果关系的算法流程" class="headerlink" title="因果关系的算法流程"></a>因果关系的算法流程</h3><p><img src="https://wangzhiyong-files.oss-cn-shanghai.aliyuncs.com/markdown/1618920906960-b837be0a-2889-43c2-9cbf-d3951f52e063.png#align=left&amp;display=inline&amp;height=296&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=591&amp;originWidth=1926&amp;size=224967&amp;status=done&amp;style=none&amp;width=963" alt="image.png"><br>因果分析算法的pipeline如上图，它分为三大步：</p>
+</li>
+<li><p>训练Hawkes process模型来拟合数据集</p>
+</li>
+<li>从模型参数中推断出因果关系</li>
+<li>结合用户的修改对模型做refine</li>
+</ol>
+<p>这三个步骤中涉及到几个难点：</p>
+<h4 id="1-Hawkes-Processes建模"><a href="#1-Hawkes-Processes建模" class="headerlink" title="1. Hawkes Processes建模"></a>1. Hawkes Processes建模</h4><p>本文使用Hawkes Processes模型对事件序列进行建模。<br>作者直接使用了2016年提出的Granger causality analysis method of Hawkes processes。假设有V种类型的事件，则事件v在t时刻发生的概率定义为：</p>
+<script type="math/tex; mode=display">\lambda_{v}(t)=\mu_{v}+\sum_{v^{\prime}=1}^{V} \int_{0}^{t} \phi_{v v^{\prime}}(r) \mathrm{d} N_{v^{\prime}}(t-r)</script><p>其中<script type="math/tex">\mu_{v}</script>是一个常量，<script type="math/tex">N_{v^{\prime}}(t-r)</script>表示事件v’在t-r之前发生的次数，<script type="math/tex">\phi_{v v^{\prime}}(r)</script>表示历史事件v’对事件v的影响，它的定义如下：</p>
+<script type="math/tex; mode=display">\phi_{v v^{\prime}}(t)=\sum_{z=1}^{Z} a_{v v^{\prime}}^{z} \kappa_{z}(\stackrel{}{t)}</script><p>这里用了Z个采样函数<script type="math/tex">\kappa_{z}(\stackrel{}{t)}</script>，本文使用了高斯函数作为采样函数（算法的原文中<script type="math/tex">\kappa_{z}(\stackrel{}{t)}</script>也可以是其他的采样函数）。<script type="math/tex">a_{v v^{\prime}}^{z}</script>就是每个采样函数前的系数。有点像核密度估计，用多个正态分布去拟合目标函数，这里是拟合两个事件之间随事件变化的影响。Z的选择也是根据核密度估计里的Silverman’s rule of thumb。<br>这里有个很关键的点：<strong>参数</strong><script type="math/tex">\boldsymbol{a}_{v v^{\prime}}=\left[a_{v v^{\prime}}^{1}, \ldots, a_{v v^{\prime}}^{Z}\right]^{\top}</script><strong>其实就是v’对v的影响因子，如果里面的每一项都是0，意味着v’的出现对v没有任何影响。作者将<script type="math/tex">\text { Strength }_{v v^{\prime}}=\frac{1}{Z} \sum_{z=1}^{Z} a_{v v^{\prime}}^{z}</script>作为v’事件对v的影响大小，也就是v’ -&gt; v因果关系的强弱。可视化系统中对因果关系的可视化使用的就是这个strangth。</strong><br>为什么可以这样做？因为这里<script type="math/tex">\kappa_{z}(\stackrel{}{t)}</script>是正太分布，一直是正的。<script type="math/tex">a_{v v^{\prime}}^{z}</script>越大，也就意味着v’的发生会更能增加v发生的概率，这和Granger Causality的含义是一致的。<br>**</p>
+<h4 id="2-如何训练"><a href="#2-如何训练" class="headerlink" title="2. 如何训练"></a>2. 如何训练</h4><p>上面的公式里，参数可以有两部分，常量<script type="math/tex">\boldsymbol{\mu}=\left[\mu_{v}\right]_{v=1, \ldots, V} \in \mathbb{R}^{V}</script>和影响系数<script type="math/tex">\boldsymbol{a}=\left[a_{v v^{\prime}}^{z}\right]_{v, v^{\prime}=1, \ldots, V}^{z=1, \ldots, Z} \in \mathbb{R}^{V \times V \times Z}</script>，作者将优化过程定义如下：</p>
+<script type="math/tex; mode=display">\operatorname{argmin}_{\boldsymbol{\mu}, \boldsymbol{a}} \quad-L+\alpha \sum_{v, v^{\prime}}\left\|\boldsymbol{a}_{v v^{\prime}}\right\|_{2}</script><p>前一项L其实是训练Hawkes process使用的似然函数，通过极大似然估计来优化模型（1971年提出的）<script type="math/tex">L=\sum_{i=1}^{I}\left\{\sum_{m=1}^{M_{i}} \log \lambda_{v_{m}^{i}}\left(t_{m}^{i}\right)-\sum_{v=1}^{V} \int_{0}^{T_{i}} \lambda_{v}(r) d r\right\}</script>。这里L前加了个符号作为loss的一部分。后一项是lasso正则化，主要用来约束<script type="math/tex">a_{v v^{\prime}}^{z}</script>的大小，后文中会有其他用途。</p>
+<h4 id="3-如何根据用户反馈refine模型"><a href="#3-如何根据用户反馈refine模型" class="headerlink" title="3. 如何根据用户反馈refine模型"></a>3. 如何根据用户反馈refine模型</h4><p>为了让可视化系统支持人机协作，还需要加入人的领域知识来优化模型。用户根据自己的知识，可以对模型给出的因果关系做两种操作：a. 用户认为A B之间没有因果关系，可以选择delete；b. 用户认为A B之间有因果关系，可以confirm。随后，模型会根据用户的操作，进一步优化模型。<br>模型是如何“记住”用户的操作的？作者主要在loss里做了手脚：</p>
+<ol>
+<li>当用户delete了一对事件的因果关系，模型中相应的<script type="math/tex">a_{v v^{\prime}}^{z}</script>会直接置为0，不再参与训练。</li>
+<li>当用户confirm了一对事件的因果关系，对应的<script type="math/tex">a_{v v^{\prime}}^{z}</script>将不再参与lasso正则化，这意味着<script type="math/tex">a_{v v^{\prime}}^{z}</script>的大小不再受正则化约束，更容易增大。</li>
+</ol>
+<p>以上就是因果关系的计算和优化过程，接下来着重介绍系统的设计。</p>
+<h3 id="可视分析系统"><a href="#可视分析系统" class="headerlink" title="可视分析系统"></a>可视分析系统</h3><p>作者将可视分析系统的界面分为三大部分：</p>
+<ul>
+<li>Causal Exploration</li>
+<li>Causal Verificatoin</li>
+<li>Causal Comparison</li>
+</ul>
+<p>我们来结合case study看。case study使用了MIMIC数据集，数据集包含四万多人的电子病历。作者针对肺炎数据，从中识别出120种事件，主要分为药治疗、体检指标。</p>
+<h4 id="1-Causal-Exploration"><a href="#1-Causal-Exploration" class="headerlink" title="1. Causal Exploration"></a>1. Causal Exploration</h4><p><img src="https://wangzhiyong-files.oss-cn-shanghai.aliyuncs.com/markdown/1618971502366-faa45597-ea42-48d4-99dd-e207fe7db540.png#align=left&amp;display=inline&amp;height=424&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=847&amp;originWidth=1893&amp;size=619130&amp;status=done&amp;style=none&amp;width=946.5" alt="image.png"><br>首先用户通过上图中的1对数据进行筛选，这里选择了肺炎数据，筛选了事件、性别、年龄。相应的数据会显示在2中。系统会根据当前选择的数据，训练hawkes process模型，从模型中的参数中提取出事件的因果关系，再将这些事件的因果关系通过下图node-link的方式绘制出来。为了让图布局效果更好，作者提出了一种基于Stress Majorization的布局算法。<br><img src="https://wangzhiyong-files.oss-cn-shanghai.aliyuncs.com/markdown/1618971841041-e7667ffe-f695-4d2f-95f2-0cedf6e81e7c.png#align=left&amp;display=inline&amp;height=377&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=753&amp;originWidth=1307&amp;size=262492&amp;status=done&amp;style=none&amp;width=653.5" alt="image.png"><br>具体到case中，如下图。最下面的O2A是O2含量上升，是肺炎好转的信号。向上推理可以看到CO2的降低（TCO2）是O2含量上升的直接原因。进一步向上寻因，可以发现Metr、Levo、Cafe、Aztr这四种治疗方法能够有效治疗肺炎。<br>医生进一步检查了pH值异常（PHA）的原因，并在包括TCO2，O2A和pH值在内的三个指标之间发现了循环因果关系。由于这种周期性的因果关系，患者的病情将不断恶化<br><img src="https://wangzhiyong-files.oss-cn-shanghai.aliyuncs.com/markdown/1618975996884-8b58be7e-6f64-4a26-8ba9-8f1bf60c2d12.png#align=left&amp;display=inline&amp;height=314&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=628&amp;originWidth=296&amp;size=67475&amp;status=done&amp;style=none&amp;width=148" alt="image.png"><br>在事件数量很多的情况下，图可能会很复杂。作者也提出了一种用户驱动的探索流程：</p>
+<ol>
+<li>用户通过点击右上角的加号，选择要关注的结果事件。系统会仅绘制出该事件。</li>
+</ol>
+<p><img src="https://wangzhiyong-files.oss-cn-shanghai.aliyuncs.com/markdown/1618972377606-cca40444-643c-4428-9ab0-debab24d588e.png#align=left&amp;display=inline&amp;height=52&amp;margin=%5Bobject%20Object%5D&amp;name=image-removebg-preview%20%284%29.png&amp;originHeight=52&amp;originWidth=147&amp;size=6892&amp;status=done&amp;style=none&amp;width=147" alt="image-removebg-preview (4).png"> -&gt; <img src="https://wangzhiyong-files.oss-cn-shanghai.aliyuncs.com/markdown/1618972515304-62c73ec4-728a-4b39-a080-ec009ac9fa18.png#align=left&amp;display=inline&amp;height=51&amp;margin=%5Bobject%20Object%5D&amp;name=image-removebg-preview%20%285%29.png&amp;originHeight=51&amp;originWidth=147&amp;size=6690&amp;status=done&amp;style=none&amp;width=147" alt="image-removebg-preview (5).png"></p>
+<ol>
+<li>用户双击感兴趣的事件，逐层展开相关的因果关系。</li>
+</ol>
+<h5 id="信息编码"><a href="#信息编码" class="headerlink" title="信息编码"></a>信息编码</h5><p>颜色深浅代表因果关系的强度，外环的弧长代表数据集中，因果关系中两个事件连续出现的比例。</p>
+<h4 id="2-Causal-Verification"><a href="#2-Causal-Verification" class="headerlink" title="2. Causal Verification"></a>2. Causal Verification</h4><p>为了帮助用户验证因果关系的有效性，作者设计了验证视图：<br><img src="https://wangzhiyong-files.oss-cn-shanghai.aliyuncs.com/markdown/1618975658287-31c1f47f-614a-4fdc-86f4-f75d65329d76.png#align=left&amp;display=inline&amp;height=207&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=414&amp;originWidth=896&amp;size=146335&amp;status=done&amp;style=none&amp;width=448" alt="image.png"><br>也就是图中的4。用户通过选择一对因果关系A-&gt;B来显示这个视图。图中最左边的白色条带表示因，最右边的灰色条带代表果。作者将与因果关系A-&gt;B相关的事件序列分成三类：</p>
+<ol>
+<li>序列经过原因A，但没有遇到结果B，即A-&gt;?，对应下图中的绿色</li>
+<li>同时包含A和B的序列，即序列中有A-&gt;B，对应下图中的橙色</li>
+<li>序列中包含结果B，但不存在原因A，即?-&gt;B，对应下图中的蓝色</li>
+</ol>
+<p><img src="https://wangzhiyong-files.oss-cn-shanghai.aliyuncs.com/markdown/1618980929582-991a0793-2c83-4cab-8545-fe080d26b5cb.png#align=left&amp;display=inline&amp;height=271&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=541&amp;originWidth=1407&amp;size=199519&amp;status=done&amp;style=none&amp;width=703.5" alt="image.png"><br>同时，上图中色带的高度与相应序列数据的个数成正比。<br><img src="https://wangzhiyong-files.oss-cn-shanghai.aliyuncs.com/markdown/1618982883371-cb14d20e-a8bf-4892-ab17-7b734b53c3eb.png#align=left&amp;display=inline&amp;height=325&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=649&amp;originWidth=1348&amp;size=110368&amp;status=done&amp;style=none&amp;width=674" alt="image.png"><br>除此之外，作者还在图中添加了其他的潜在原因。潜在原因按其平均发生时间从左到右垂直对齐并在水平方向上按顺序排列，并通过重排和聚合显示成上图c中的效果。<br>当用户对因果关系进行验证之后，可以回到因果关系的探索视图，对相应的边进行confirm或者delete操作，如下图<br><img src="https://yuque.zju.edu.cn/images/yuque/0/2021/gif/314/1618984205970-b29186ad-eaf9-43d8-aee1-d5f5ec53592d.gif#align=left&amp;display=inline&amp;height=808&amp;margin=%5Bobject%20Object%5D&amp;name=3333.gif&amp;originHeight=808&amp;originWidth=1400&amp;size=1114557&amp;status=done&amp;style=none&amp;width=1400" alt="3333.gif"><br>用户完成对因果关系的确认后，点击右上角的完成按钮更新模型。模型会按照上文算法流程中的feedback机制对模型做refine。<br>每次模型更新，系统会对模型的性能进行评估，评估的指标有三个：</p>
+<ol>
+<li>regression likelihood，即训练时loss里的L</li>
+<li>Bayesian Information Criterion（BIC）</li>
+<li>P-value</li>
+</ol>
+<p>这些指标在下图中的模型诊断面板中编码出来：</p>
+<ul>
+<li>圆圈代表某次模型更新</li>
+<li>x轴模型更新的次数</li>
+<li>y轴regression likelihood的大小</li>
+<li>圆圈上竖直的线表示regression likelihood的标准差</li>
+<li>圆圈的颜色编码BIC的变化，绿色表示增大，红色表示降低</li>
+</ul>
+<p><img src="https://wangzhiyong-files.oss-cn-shanghai.aliyuncs.com/markdown/1618984590032-1d4695b7-6ee0-403e-8d14-c45487b49616.png" alt="image.png"><br>回到MIMIC数据集上的case。医生在系统中分析时结合自己的领域知识，确认了pH异常会导致BUN值增加，确认了CO2，PHA和TCO2之间的循环关系。模型根据用户反馈进行更新，整体性能提升：<br><img src="https://wangzhiyong-files.oss-cn-shanghai.aliyuncs.com/markdown/1618985921686-292161e3-e951-4bd0-af23-8731c81ead1d.png#align=left&amp;display=inline&amp;height=169&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=338&amp;originWidth=582&amp;size=52495&amp;status=done&amp;style=none&amp;width=291" alt="image.png"></p>
+<h4 id="3-Causal-Comparison"><a href="#3-Causal-Comparison" class="headerlink" title="3. Causal Comparison"></a>3. Causal Comparison</h4><p>用户在对某个筛选条件下的数据子集探索后，可以将因果关系的结果保存到历史记录，即下图中的5。系统提供因果关系对比面板，来让用户对比两个不同数据自己的因果关系差异，如下图6。<br><img src="https://wangzhiyong-files.oss-cn-shanghai.aliyuncs.com/markdown/1618985976741-b46857f7-4b42-4449-8c97-5b883d02ce95.png#align=left&amp;display=inline&amp;height=508&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=1015&amp;originWidth=877&amp;size=219336&amp;status=done&amp;style=none&amp;width=438.5" alt="image.png"></p>
+<h5 id="信息编码-1"><a href="#信息编码-1" class="headerlink" title="信息编码"></a>信息编码</h5><p><img src="https://wangzhiyong-files.oss-cn-shanghai.aliyuncs.com/markdown/1618986362130-9d9eada3-2a51-4696-9594-4efd2bfa6241.png#align=left&amp;display=inline&amp;height=359&amp;margin=%5Bobject%20Object%5D&amp;name=image-removebg-preview%20%287%29.png&amp;originHeight=359&amp;originWidth=695&amp;size=117103&amp;status=done&amp;style=none&amp;width=695" alt="image-removebg-preview (7).png"><br>作者使用邻接矩阵来比较两组中所有因果关系的发生。矩阵的行表示因，而列表示果。每个单元划分为外部区域和内部区域，背景色饱和度分别代表第一组和第二组中的因果强度。</p>
+<p>在case里，医生通过对比面板发现，“Aztreonam治疗-&gt;TCO2下降”这个因果关系在老年人和中年人群体中有明显差异——中年人中这个因果关系要强于老年人。通过verification视图发现确实如此，医生推测可能Aztreonam治疗在老年人身上效果不好。<br><img src="https://wangzhiyong-files.oss-cn-shanghai.aliyuncs.com/markdown/1618986538469-d20513e6-9a51-4503-a7c5-43f53f40a3a9.png#align=left&amp;display=inline&amp;height=441&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=883&amp;originWidth=556&amp;size=130373&amp;status=done&amp;style=none&amp;width=278" alt="image.png"></p>
+<h1 id="Evaluation"><a href="#Evaluation" class="headerlink" title="Evaluation"></a>Evaluation</h1><p>除了穿插在上文中的case study，作者还做了针对user-feedback机制的性能评估。<br>作者使用了3个指标：</p>
+<ul>
+<li>negtive log-likelihood，即loss中的第一项</li>
+<li>BIC</li>
+<li>Area Under ROC，评估Accuracy</li>
+</ul>
+<p><img src="https://wangzhiyong-files.oss-cn-shanghai.aliyuncs.com/markdown/1618986988233-b7523a21-12c2-447c-8303-93348de68c60.png#align=left&amp;display=inline&amp;height=124&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=248&amp;originWidth=894&amp;size=74662&amp;status=done&amp;style=none&amp;width=447" alt="image.png"><br>该结果表明，用户反馈机制总体上提高了因果关系分析模型的拟合优度和分析结果的准确性。</p>
+<h1 id="总结和联想"><a href="#总结和联想" class="headerlink" title="总结和联想"></a>总结和联想</h1><p>针对事件序列数据，作者提出了user-feedback的算法机制，并设计了一套可视化系统，来将人的domain knowledge融入到因果分析中。实验表明，他们的成果成功地将专家经验融入到可视分析中，并提高了模型的准确度。<br>这篇是典型的将机器智能和人的智能结合在一起的文章。本工作是将机器学习模型的部分参数进行解释，然后可视化放进系统里，用户可以对参数进行修改。修改后，模型通过一些机制（如让用户给定的参数直接不参与训练），让模型在此基础上，进一步优化，从而达到人机协作。<br>之前我报告过一篇叫collaborative semantic inferrence（CSI）的文章，也是相似的做法，只是那篇里面是针对推理过程的：在模型里设置一些可解释的潜变量，模型在推理时，用户能够通过控制这些潜变量来决定模型的推理方式。<br>这两篇在实现人机协作时有一些共同点：</p>
+<ol>
+<li>模型中都有可解释的部分（人理解模型的前提）。本篇是对参数做可解释地解读，CSI是在模型中埋可解释的潜变量。</li>
+<li>通过对可解释的部分进行调节，反作用于模型。本篇是将可解释部分固定或释放，继续训练模型，CSI是通过改变潜变量直接影响模型推理。</li>
+</ol>
+<p>应该说很多机器学习模型（尤其是传统模型）都具备可解释的部分，按照这个思路，这些模型都可以做人机协作。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zerowangzy@zju.edu.cn"><code> ✉️ zerowangzy@zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

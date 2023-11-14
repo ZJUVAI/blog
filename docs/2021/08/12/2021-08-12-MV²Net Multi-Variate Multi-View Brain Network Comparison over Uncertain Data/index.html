@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        MV²Net: 多属性脑神经网络的多视图对比及不确定性处理 - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-text">引言</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%84%91%E7%A5%9E%E7%BB%8F%E7%BD%91%E7%BB%9C%E6%AF%94%E8%BE%83%E5%88%86%E6%9E%90"><span class="toc-text">脑神经网络比较分析</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E6%9E%90%E5%AF%B9%E8%B1%A1"><span class="toc-text">分析对象</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%9B%AE%E7%9A%84"><span class="toc-text">目的</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%8E%B0%E6%9C%89%E5%8F%AF%E8%A7%86%E5%88%86%E6%9E%90%E6%96%B9%E6%B3%95%E7%9A%84%E4%B8%8D%E8%B6%B3"><span class="toc-text">现有可视分析方法的不足</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%AC%E6%96%87%E8%B4%A1%E7%8C%AE"><span class="toc-text">本文贡献</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%88%86%E6%9E%90%E6%A1%86%E6%9E%B6"><span class="toc-text">分析框架</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8F%AF%E8%A7%86%E8%AE%BE%E8%AE%A1"><span class="toc-text">可视设计</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E5%AE%9E%E7%8E%B0%E5%8F%8A%E8%AF%84%E4%BC%B0"><span class="toc-text">系统实现及评估</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="toc-text">相关工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E4%BA%8E%E6%AF%94%E8%BE%83%E7%9A%84%E5%8F%AF%E8%A7%86%E5%8C%96%E6%96%B9%E6%B3%95"><span class="toc-text">用于比较的可视化方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E9%9C%80%E6%B1%82%E8%AE%BE%E8%AE%A1"><span class="toc-text">需求设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E5%A4%84%E7%90%86%E6%B5%81%E7%A8%8B"><span class="toc-text">数据处理流程</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%AF%E8%A7%86%E5%88%86%E6%9E%90%E7%B3%BB%E7%BB%9F"><span class="toc-text">可视分析系统</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0"><span class="toc-text">评估</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B%E5%88%86%E6%9E%90"><span class="toc-text">案例分析</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%8F%8D%E9%A6%88"><span class="toc-text">用户反馈</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%90%AF%E5%8F%91"><span class="toc-text">启发</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        MV²Net: 多属性脑神经网络的多视图对比及不确定性处理
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2021-08-12 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2021-08-12</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#钱中昊"
+                title="钱中昊">钱中昊</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：MV²Net: Multi-Variate Multi-View Brain Network Comparison over Uncertain Data</p>
+<p>作者：Lei Shi, Junnan Hu, Zhihao Tan, Jun Tao, Jiayan Ding, Yan Jin, Yanjun Wu, and Paul M. Thompson</p>
+<p>发表：IEEE Transactions on Visualization and Computer Graphics, 2021</p>
+<p>本文提出了用于人脑神经网络对比的可视分析系统MV²Net。系统支持用户对神经纤维的多种属性进行比较并综合多视图中的比较结果，从而发现网络间的显著差异。系统还引入了数据清洗机制。</p>
+<p><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=9492002">论文链接</a></p>
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><h3 id="脑神经网络比较分析"><a href="#脑神经网络比较分析" class="headerlink" title="脑神经网络比较分析"></a>脑神经网络比较分析</h3><h4 id="分析对象"><a href="#分析对象" class="headerlink" title="分析对象"></a>分析对象</h4><p>将脑部的多模式磁共振成像抽象为图结构，图的节点对应大脑皮层区域，边则对应区域间的神经纤维</p>
+<h4 id="目的"><a href="#目的" class="headerlink" title="目的"></a>目的</h4><p>比较两组脑神经网络间的差异，例如，患病网络和健康网络中差异显著的部分可能是疾病预防和治疗的关键</p>
+<h4 id="现有可视分析方法的不足"><a href="#现有可视分析方法的不足" class="headerlink" title="现有可视分析方法的不足"></a>现有可视分析方法的不足</h4><ul>
+<li>用边的权重表示神经纤维数量，缺乏对扩散特征和几何特征的描述</li>
+<li>只在单个视图中支持并列或叠加等简单的比较方法</li>
+<li>不支持数据筛选，无法排除脏数据对分析结果的影响<h3 id="本文贡献"><a href="#本文贡献" class="headerlink" title="本文贡献"></a>本文贡献</h3><h4 id="分析框架"><a href="#分析框架" class="headerlink" title="分析框架"></a>分析框架</h4></li>
+<li>除数量外，还支持神经纤维扩散特征和几何特征的比较</li>
+<li>引入数据清洗机制</li>
+<li>引入概率统计等方法，协助用户发现网络间的差异</li>
+</ul>
+<h4 id="可视设计"><a href="#可视设计" class="headerlink" title="可视设计"></a>可视设计</h4><ul>
+<li>多视图协调联动，支持多组数据和多种属性同时比较分析及比较结果的综合和细粒度探索</li>
+</ul>
+<h4 id="系统实现及评估"><a href="#系统实现及评估" class="headerlink" title="系统实现及评估"></a>系统实现及评估</h4><ul>
+<li>实验表明，本文系统能协助用户发现已有可视分析方法尚未发现的差异特征</li>
+</ul>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><h3 id="用于比较的可视化方法"><a href="#用于比较的可视化方法" class="headerlink" title="用于比较的可视化方法"></a>用于比较的可视化方法</h3><p>用于多对象比较的可视化方法主要包括三类：并置(juxtaposition)、叠加(superposition)和显式编码(explicit encodings)</p>
+<h2 id="需求设计"><a href="#需求设计" class="headerlink" title="需求设计"></a>需求设计</h2><p>本文作者通过与三位领域专家合作探讨，确定脑神经网络比较可视分析系统的需求</p>
+<ul>
+<li>排除脏数据的干扰</li>
+<li>支持从多个视角对神经纤维的多种属性进行分析比较</li>
+<li>支持以统计方法等协助发现差异特征</li>
+<li>支持迭代比较多组数据并综合比较结果</li>
+</ul>
+<h2 id="数据处理流程"><a href="#数据处理流程" class="headerlink" title="数据处理流程"></a>数据处理流程</h2><ol>
+<li>多属性脑神经网络构建。</li>
+</ol>
+<p>将输入的脑部磁共振成像用统一的模板抽象为图结构，并计算神经纤维的强度、扩散特征和几何特征</p>
+<ol>
+<li>数据质量分析</li>
+</ol>
+<p>前提：神经纤维的各属性值近似满足正态分布</p>
+<p>方法：系统通过 <strong>Grubb’s test</strong> 排除明显异常值后，根据每个属性的整体分布情况评估剩余属性值的质量(Quality for Comparison, QoC)并将结果表示为heatmap，用户可在系统中进一步交互地清洗数据</p>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E6%A0%BC%E9%B2%81%E5%B8%83%E6%96%AF%E6%A3%80%E9%AA%8C%E6%B3%95">Grubb’s test</a>: 用于检验单变量数据集内的离群值。本文将该算法独立地应用于神经纤维的各个属性</p>
+<ol>
+<li>差异特征发现</li>
+</ol>
+<p>单变量差异特征发现：使用 <strong>Student’s t-test</strong> 对两组数据的各属性逐一进行假设检验，当某属性的<em>p</em>-value不高于显著性水平时，认为该属性存在显著差异</p>
+<p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E5%8F%B8%E5%BE%92%E9%A0%93t%E6%AA%A2%E5%AE%9A">Student’s t-test</a>: 常用于检验一组来自正态分布总体独立样本的期望值是否为某一实数，或两组来自不同正态分布总体的独立样本的期望值之差是否为某一实数。</p>
+<p>多变量差异特征发现：特征选择算法 <strong>group lasso(GL)</strong> </p>
+<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Lasso_(statistics">group lasso</a>#Group_lasso): lasso(套索算法)是一种可以同时进行特征选择和正则化的回归分析方法，旨在增强统计模型的预测准确性和可解释性。本文采用的GL算法是lasso的扩展</p>
+<h2 id="可视分析系统"><a href="#可视分析系统" class="headerlink" title="可视分析系统"></a>可视分析系统</h2><p>系统概览如下</p>
+<p><img src="https://jackie-image.oss-cn-hangzhou.aliyuncs.com/2021-08-12-MV%C2%B2Net%20Multi-Variate%20Multi-View%20Brain%20Network%20Comparison%20over%20Uncertain%20Data-image-1.png" alt=""></p>
+<p>a: <strong>group selection</strong>, 用于选择分组方式和比较对象</p>
+<p>例如，图中将所有脑神经网络按健康/患eMCI/患lMCI/患AD分为四组(左下)，并选择健康/患AD这两组数据作为比较对象(Sunburst图)</p>
+<p>b: <strong>feature heatmap</strong>, 用于数据清洗</p>
+<p>每个heatmap表示一种属性值的数据质量</p>
+<p>x轴为神经纤维的编号，所有神经纤维按有效属性值的数量递减排序。y轴为该神经纤维所有通过 <strong>Grubb’s test</strong> 的属性值的质量(QoC)估算结果，两组待比较数据的质量以不同颜色编码，分别位于x轴上下两侧，质量越高的属性值对应的方格颜色越深，位置越接近x轴。点击方格时将在视图右上展示该方格中属性值的分布情况和两组数据的整体分布情况，用户可据此判断该方格中属性值的数据质量，并通过调整heatmap中的蓝色边框筛选有效属性值足够多(保证偶然性较小)的神经纤维和质量较高的属性值</p>
+<p>c: <strong>network comparison</strong>, 用于比较脑神经网络的多种属性</p>
+<p>每列的两张子视图对应一种属性值的比较结果，系统提供两种比较模式</p>
+<ol>
+<li>显式编码(explicit-coding)模式</li>
+</ol>
+<p>如图所示，每列的两张视图分别表示对应属性值的单变量差异特征和多变量差异特征</p>
+<p>颜色的种类代表两组数据的大小关系(如，紫色代表第一组数据的对应属性值较大)，颜色的深度编码差异的大小，颜色越深差异越大</p>
+<p>显式编码模式中子视图下方滑块用于调整 <strong>Student’s t-test</strong> 和 <strong>group lasso(GL)</strong> 算法的参数，进而调整视图中神经纤维的数量</p>
+<ol>
+<li>并置(side-by-side)模式</li>
+</ol>
+<p>每列的两张视图分别表示两组数据对应属性值的大小，并置模式中子视图下方滑块用于调整属性值的展示阈值，视图中只显示属性值高于阈值的关键神经纤维</p>
+<p>d: <strong>high-order composite</strong>, 用于综合多种属性的比较结果</p>
+<p>d视图中的神经纤维为显式编码模式下c视图中若干用户选择的子视图的交集，表示这些神经纤维的多种属性均具有显著差异，可能是疾病预防和治疗的关键</p>
+<p>神经纤维上的每个圆对应一种属性的比较结果，与c视图中类似，圆的颜色代表两组数据的大小关系，圆的大小则编码差异的大小</p>
+<p>e: <strong>fiber tract detail</strong>, 用于进一步探索关键神经纤维的细节</p>
+<p>用户在d视图中选择感兴趣的关键神经纤维后，e视图中以体绘制形式展示该神经纤维逐体素的比较结果等细节</p>
+<h2 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h2><h3 id="案例分析"><a href="#案例分析" class="headerlink" title="案例分析"></a>案例分析</h3><ul>
+<li>通过对比数据清洗前后的可视化结果，证明了数据清洗的必要性和有效性</li>
+<li>通过对比不同差异特征发现算法的结果，证明了本文算法的优越性</li>
+<li>通过综合多种属性的比较结果，发现了已有可视分析方法没有发现的差异特征，并且符合医学知识</li>
+</ul>
+<h3 id="用户反馈"><a href="#用户反馈" class="headerlink" title="用户反馈"></a>用户反馈</h3><p>优点：功能全面(comprehensive),可以方便地综合多种属性，多条神经纤维和多组数据的比较结果以发现新的差异特征</p>
+<p>缺点：自动化程度不高，系统不会自动推荐关键的神经纤维，需要用户手动查找；采用的概率统计等方法可能存在误差；支持的输入种类有限等</p>
+<h2 id="启发"><a href="#启发" class="headerlink" title="启发"></a>启发</h2><p>本文面向具体问题，设计了一个用于脑神经网络比较的可视分析系统，综合了科学可视化、信息可视化和可视分析等多方面的技术，并且引入了数据清洗机制</p>
+<p>该系统的设计思路和实现细节还可推广至其他多变量网络结构的比较</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
