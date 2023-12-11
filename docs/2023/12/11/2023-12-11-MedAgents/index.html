@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        MEDAGENTS: Large Language Models as Collaborators for Zero-shot Medical Reasoning - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%83%8C%E6%99%AF"><span class="toc-text">背景</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="toc-text">相关工作</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B4%A1%E7%8C%AE%E7%82%B9"><span class="toc-text">贡献点</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#MC%E6%A1%86%E6%9E%B6"><span class="toc-text">MC框架</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E5%AE%9E%E9%AA%8C"><span class="toc-text">评估实验</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        MEDAGENTS: Large Language Models as Collaborators for Zero-shot Medical Reasoning
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2023-12-11 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2023-12-11</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#周姿含"
+                title="周姿含">周姿含</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：MEDAGENTS: Large Language Models as Collaborators for Zero-shot Medical Reasoning</p>
+<p>作者：Xiangru Tang, Anni Zou, Zhuosheng Zhang, Yilun Zhao, Xingyao Zhang, Arman Cohan, Mark Gerstein</p>
+<p>大型语言模型(llm)尽管在各个通用领域取得了显著进展，但在医学和医疗保健领域遇到了重大障碍。该领域面临着独特的挑战，例如特定于领域的术语和对专业知识的推理。为了解决这些棘手的问题，我们为医学领域提出了一个新的多学科协作(MC)框架，该框架利用角色扮演的基于LLM的代理参与协作多轮讨论，从而提高LLM的熟练程度和推理能力。这个无需培训且可解释的框架包含五个关键步骤:收集领域专家，提出个人分析，将这些分析总结为报告，反复讨论直到达成共识，并最终做出决定。我们的工作特别侧重于零射击场景，我们在9个数据集(MedQA, MedMCQA, PubMedQA和MMLU的6个子任务)上的结果表明，我们提出的MC框架在挖掘和利用法学硕士的医学专业知识方面表现出色，并扩展了其推理能力。基于这些结果，我们进一步进行人工评估，以查明和分类我们方法中的常见错误，以及旨在了解各种因素对整体性能影响的消融研究。</p>
+<p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2311.10537">论文链接</a></p>
+<h3 id="背景"><a href="#背景" class="headerlink" title="背景"></a>背景</h3><p>随着LLM在通用领域的显著进步，LLMs向医疗领域的应用越来越受关注。<br>比如Google的产品，Med-PaLm1是第一个在USMLE上超过及格线的人工智能系统，Med-PaLm2在此基础上邀请合格的医疗专业人士开发指令数据以微调PaLM（基于指令的训练数据集，这些数据集通常由指令-输入-输出三元组组成，例如，指令-问题-答案）+提示词工程。</p>
+<p><strong>挑战</strong>：</p>
+<ol>
+<li>医疗领域的训练数据量和专属性有限；<ol>
+<li>在医疗领域获得高质量的指令调优数据是昂贵的，容易出现隐私问题；</li>
+<li>自我生成的指令数据往往缺乏足够的质量，可能需要进一步的人工验证；以及用自我生成的instruction训练有额外的cost，对黑盒LLMs来说又不可行；</li>
+</ol>
+</li>
+<li>医疗领域的高性能表现需要广泛的领域知识和复杂的推理能力；<ol>
+<li>对于模型来说通过简单直接的提示来理解或调用所需的医学专业知识仍然是不够的；</li>
+<li>由于医学知识中存在大量复杂的术语，LLMs在尝试浏览这些知识并对其进行推理时会面临更高的要求，从而可能导致其推理过程中出现错误。</li>
+</ol>
+</li>
+</ol>
+<h3 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h3><ul>
+<li><p>医疗领域的LLMs</p>
+<ul>
+<li>工具增强：GeneGPT(基因数据库NCBI), Almanac(医学指南&amp;web)…</li>
+<li>指令微调：LLaVA-Med(img-caption), MedChatZH(中医书籍&amp;med-mix-2M)</li>
+</ul>
+</li>
+<li><p>LLM的多Agent协作</p>
+<ul>
+<li>模拟人类活动，比如角色扮演和沟通交流</li>
+<li>一些应用：e.g. Solo Performance Prompting, Camel… </li>
+</ul>
+</li>
+</ul>
+<h3 id="贡献点"><a href="#贡献点" class="headerlink" title="贡献点"></a>贡献点</h3><ul>
+<li>提出了一个在医学领域问答任务上的多学科协作（Multi-disciplinary Collaboration, MC）框架。这种新的方法致力于揭示存在于LLMs中的内在临床专业知识，并增强他们的推理能力。</li>
+<li>在九个数据集上展示了实验结果。结果表明，MC框架具有广泛的有效性，并展示了我们所提出的MC框架在挖掘和利用LLMs中的医学专业知识上的优势</li>
+<li>通过严格的人类评估，识别并分类了我们方法中的常见错误类型，为未来的研究提供了启示。</li>
+</ul>
+<h3 id="MC框架"><a href="#MC框架" class="headerlink" title="MC框架"></a>MC框架</h3><p><img src="./1.png" style="zoom:80%;" /> </p>
+<p>专家收集：根据临床问题召集来自不同学科的专家；</p>
+<p>分析提议：每位专家利用其特定的学科知识提出分析建议；</p>
+<p>报告总结：基于先前的分析系列，编写总结报告；</p>
+<p>协作会诊：让专家对总结报告进行讨论。报告将通过多次迭代修订，最终获得所有专家达成一致的共识；</p>
+<p>决策制定：根据报告作出最终决定，反映所有专家的一致意见。</p>
+<h3 id="评估实验"><a href="#评估实验" class="headerlink" title="评估实验"></a>评估实验</h3><p><strong>数据集</strong>：<br>3 benchmark dataset(MedQA, MedMCQA, PubMedQA) + 6 subtasks from MMLU</p>
+<p><strong>实验设置</strong>：</p>
+<ol>
+<li>GPT-3.5-Turbo and GPT-4 from Azure OpenAI Service;</li>
+<li>zero-shot setting; temperature =1.0, top_p=1.0 for all generations;</li>
+<li>GPT-4 ➡️ 每个数据集上采样了100个问题;</li>
+</ol>
+<p><strong>结果</strong>：<br><img src="./2.png" style="zoom:80%;" /><br>MC框架在很大程度上优于所有的zero-shot baseline</p>
+<p><strong>错误分析</strong>：<br><img src="./3.png" style="zoom:40%;" /><br>整理了40个error cases的分类结果，经过人工总结：</p>
+<ul>
+<li>缺乏领域知识</li>
+<li>领域知识检索错误</li>
+<li>一致性错误</li>
+<li>思维脸错误</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        CoLadder: Supporting Programmers with Hierarchical Code Generation in Multi-Level Abstraction - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="toc-text">背景介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="toc-text">相关工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E8%BF%87%E7%A8%8B%E4%B8%8E%E7%9B%AE%E6%A0%87"><span class="toc-text">设计过程与目标</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8C%91%E6%88%98%E4%B8%8E%E7%AD%96%E7%95%A5"><span class="toc-text">挑战与策略</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87"><span class="toc-text">设计目标</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BD%BF%E7%94%A8%E5%9C%BA%E6%99%AF"><span class="toc-text">使用场景</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F"><span class="toc-text">系统</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E7%95%8C%E9%9D%A2"><span class="toc-text">系统界面</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%BB%E5%8A%A1%E7%BB%93%E6%9E%84%E5%88%B0%E4%BB%A3%E7%A0%81%E7%BB%93%E6%9E%84-DG1-amp-2"><span class="toc-text">任务结构到代码结构(DG1&amp;2)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%8Eprompt%E9%AA%8C%E8%AF%81%E7%BB%93%E6%9E%9C-DG3"><span class="toc-text">从prompt验证结果(DG3)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%8D%E5%90%8C%E5%B1%82%E7%BA%A7%E9%97%B4%E7%9A%84%E5%AF%BC%E8%88%AA-DG4"><span class="toc-text">不同层级间的导航(DG4)</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E5%AE%9E%E7%8E%B0"><span class="toc-text">系统实现</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0"><span class="toc-text">评估</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%A4%96%E5%8C%96%E5%BF%83%E6%99%BA%E6%A8%A1%E5%9E%8B%E7%9A%84%E8%BF%87%E7%A8%8B"><span class="toc-text">外化心智模型的过程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%80%E9%99%90"><span class="toc-text">局限</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A8%E8%AE%BA"><span class="toc-text">讨论</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        CoLadder: Supporting Programmers with Hierarchical Code Generation in Multi-Level Abstraction
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2023-12-04 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2023-12-04</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#刘亦晗"
+                title="刘亦晗">刘亦晗</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：CoLadder: Supporting Programmers with Hierarchical Code Generation in Multi-Level Abstraction</p>
+<p>作者：Ryan Yen, Jiawen Zhu, Sangho Suh, Haijun Xia, Jian Zhao</p>
+<p>程序员越来越依赖大语言模型（LLM）来生成代码。然而，在此过程中会遇到一些问题，如由于程序员的prompt和生成的代码不一致而导致在代码生成和验证之间的不断切换。当前 LLM 驱动的代码助手在prompt编写过程中提供的支持不足，无法帮助程序员应对新工作流程带来的挑战。本工作采用了迭代设计流程，以了解程序员在使用 LLM 编程时的策略。在此基础上，作者开发了 CoLadder 系统，该系统可在prompt编写过程中通过多层级任务分解、增量代码生成和结果验证的方式来帮助程序员。用户评估表明，CoLadder 能够有效地帮助程序员灵活地将思维模型外化，提高他们在不同抽象层级（从最初意图到最终代码实现）上浏览和编辑代码的能力。</p>
+<p><a target="_blank" rel="noopener" href="https://arxiv.org/abs/2310.08699">论文链接</a></p>
+<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>最近的研究表明，大型语言模型（LLMs）在代码助手领域有了显著进展，程序员可以使用自然语言提示生成高质量代码建议，从而不必深入了解低级代码实现的复杂性。虽然这一独特的特性可能使编程过程更加高效，但在这个过程中，程序员需要不断验证LLMs生成的大量代码。</p>
+<p>先前的技术尝试将复杂问题分解为预定义的抽象级别的子问题，虽然这些工具成功地帮助程序员了解如何使用LLMs将其意图转化为代码，但它们在两个关键方面的效果受到限制。首先，预定义的分解级别可能无法准确反映程序员心中的任务结构，而这通常也与生成的代码结构相一致。其次，由于每个程序员对解决编程任务都有独特的心智模型，这些技术难以适应并确定每个人最适合的任务分解级别。</p>
+<p>因此，本文旨在探索是否有机会使程序员能够根据其个体心智模型分解任务，并有效地将其意图转化为生成的代码。</p>
+<p>本文的贡献如下：</p>
+<ol>
+<li>通过访谈研究确定了编程人员在外化心理模型以及将意图转为代码时的策略与需求</li>
+<li>实现了交互式系统 CoLadder ，采用分层结构和基于块的设计，提供了在不同抽象层次下进行代码生成的功能，同时保持任务目标和代码结构的一致性</li>
+<li>用户评估表明，通过不同层级下的生成方式增强了可控性，并能使用户在prompt编写过程中验证结果，从而提高了可用性</li>
+</ol>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><ul>
+<li><p>编程者与LLM的交互</p>
+<ul>
+<li><p>对于验证过程的挑战，用户有不同的应对方式</p>
+</li>
+<li><p>Abstraction的匹配问题：概念层级的描述到类伪代码的描述</p>
+</li>
+</ul>
+</li>
+<li><p>改进基于LLM的代码生成</p>
+<ul>
+<li><p>技术策略：fine-tuning/prompt engineering</p>
+</li>
+<li><p>针对基于LLM的代码生成的系统与工具：新的编程语言、prompt串联、任务分解</p>
+</li>
+</ul>
+</li>
+<li><p>编程者对程序的心理模型</p>
+<ul>
+<li><p>心智模型：对代码、基本编程任务和程序整体结构的理解和解释</p>
+</li>
+<li><p>让程序员专注于规划代码和任务结构</p>
+</li>
+</ul>
+</li>
+<li><p>可视化编程工具</p>
+<ul>
+<li><p>Flow-based: 强调逻辑流程</p>
+</li>
+<li><p>Block-based: 对代码块精细的控制</p>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="设计过程与目标"><a href="#设计过程与目标" class="headerlink" title="设计过程与目标"></a>设计过程与目标</h2><ul>
+<li>与6位常使用LLM代码生成工具的编程者进行访谈，了解以下内容：</li>
+</ul>
+<ol>
+<li><p>将意图转为代码时的挑战(C)</p>
+</li>
+<li><p>为应对挑战采取的策略(S)</p>
+</li>
+<li><p>编写prompt过程中的需求</p>
+</li>
+</ol>
+<h3 id="挑战与策略"><a href="#挑战与策略" class="headerlink" title="挑战与策略"></a>挑战与策略</h3><ul>
+<li><p>C1: 非结构化prompt</p>
+<p>S1-S2 任务分解、层次化的结构组织任务</p>
+</li>
+<li><p>C2: 从意图到代码的过程难以控制</p>
+<p>S3-S6 增量生成、in-situ、重排列代码、替换代码</p>
+</li>
+<li><p>C3: 易打断的上下文切换</p>
+<p>S7 编写prompt时验证结果</p>
+</li>
+<li><p>C4: 从prompt到代码对应关系不明确</p>
+<p>S8-S9 prompt中加入代码、利用注释</p>
+</li>
+</ul>
+<h3 id="设计目标"><a href="#设计目标" class="headerlink" title="设计目标"></a>设计目标</h3><ul>
+<li><p>DG1 提供层次化的prompt结构 </p>
+</li>
+<li><p>DG2 直接操作prompt块修改代码</p>
+</li>
+<li><p>DG3 编写prompt时进行代码验证</p>
+</li>
+<li><p>DG4 协助多抽象层级下的intent-code的导航</p>
+</li>
+</ul>
+<h3 id="使用场景"><a href="#使用场景" class="headerlink" title="使用场景"></a>使用场景</h3><p><img src="./pic1.png" alt=""></p>
+<ul>
+<li><p><strong>使用层次化的任务分解进行提示创作(A-E)</strong></p>
+<p>A 高层级prompt<br>B 添加子任务<br>C 自动补全<br>D 代码语法prompt<br>E 对生成代码进行总结</p>
+</li>
+<li><p><strong>不同抽象层级下进行导航和验证(F)</strong></p>
+<p>F 语义高亮</p>
+</li>
+<li><p><strong>修改和基于块的操作(G-H)</strong></p>
+<p>G 补充<br>H 拖拽</p>
+</li>
+</ul>
+<h2 id="系统"><a href="#系统" class="headerlink" title="系统"></a>系统</h2><h3 id="系统界面"><a href="#系统界面" class="headerlink" title="系统界面"></a>系统界面</h3><p><img src="./pic2.png" alt=""></p>
+<p>(A) prompt树编辑器：将意图分解成为更小的prompt块</p>
+<p>(B) 代码编辑器：便于代码验证和编辑</p>
+<p>(C) prompt块：可以混合模式编写提示，既包含代码又包含自然语言</p>
+<p>(D) 执行结果面板：显示执行结果和任何相关的错误信息</p>
+<h3 id="任务结构到代码结构-DG1-amp-2"><a href="#任务结构到代码结构-DG1-amp-2" class="headerlink" title="任务结构到代码结构(DG1&amp;2)"></a>任务结构到代码结构(DG1&amp;2)</h3><p>A）prompt树编辑器</p>
+<ul>
+<li><p>不自动分解任务，自由构建符合心理模型的prompt</p>
+</li>
+<li><p>可折叠代码编辑器相对应的可折叠提示树</p>
+</li>
+</ul>
+<p>C）prompt块</p>
+<ul>
+<li><p>支持自然语言和代码</p>
+</li>
+<li><p>版本记录</p>
+</li>
+</ul>
+<p>此外，还有基于块的操作（添加、编辑、删除、复制、拖拽、补充）</p>
+<h3 id="从prompt验证结果-DG3"><a href="#从prompt验证结果-DG3" class="headerlink" title="从prompt验证结果(DG3)"></a>从prompt验证结果(DG3)</h3><p><img src="./pic4.png" alt=""></p>
+<p>步骤列举、自动补全（AB）、推荐（C）、中间结果（D）</p>
+<h3 id="不同层级间的导航-DG4"><a href="#不同层级间的导航-DG4" class="headerlink" title="不同层级间的导航(DG4)"></a>不同层级间的导航(DG4)</h3><p><img src="./pic3.png" alt=""></p>
+<ul>
+<li>展示相关代码</li>
+<li>语义高亮与相关度</li>
+<li>键盘操作</li>
+</ul>
+<h3 id="系统实现"><a href="#系统实现" class="headerlink" title="系统实现"></a>系统实现</h3><ul>
+<li>React Typescript, Monaco Editor, Pyodide, OpenAI GPT-4 API</li>
+<li><p>tree-based prompting</p>
+<p>使生成的程序与prompt结构相匹配</p>
+<p>提供prompt block and tree structure，自下而上构建</p>
+</li>
+<li><p>错误预防与纠正</p>
+<p>代码段之间不匹配的问题</p>
+<p>Propagate Changes 的提示模板，递归评估每个提示块中的相应代码</p>
+</li>
+</ul>
+<h2 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h2><ul>
+<li>12位经验丰富且常使用AI代码生成工具的程序员</li>
+<li>baseline：根据内联注释生成代码的代码编辑器</li>
+<li>分别使用两种工具完成Python编程任务</li>
+<li>定性分析和系统日志数据</li>
+<li>Usability / perceived cognitive load / Utility</li>
+</ul>
+<h3 id="外化心智模型的过程"><a href="#外化心智模型的过程" class="headerlink" title="外化心智模型的过程"></a>外化心智模型的过程</h3><p><img src="./pic5.png" alt=""></p>
+<p>BFS: 概述了所有主要任务，随后通过添加子任务深入研究了更多细节。</p>
+<p>DFS: 在进入下一个主要任务之前，先处理了主要任务中的所有子任务。事先有明确心智模型的参与者更倾向于采用这种方法。</p>
+<h3 id="局限"><a href="#局限" class="headerlink" title="局限"></a>局限</h3><ul>
+<li><p><strong>编程任务的多样性</strong></p>
+<p>对注重快速迭代的编程任务没有那么有效</p>
+<p>用户更多的关注在prompt编写上</p>
+<p>对生成过程的控制而非对程序本身</p>
+</li>
+<li><p><strong>提示树结构可能并不总是与实际代码结构一致</strong></p>
+<p>任务和代码结构可能会有很大偏差</p>
+<p>类图等可视化工具，以更好地表达程序结构以及类或组件之间的关系</p>
+</li>
+</ul>
+<h2 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h2><ul>
+<li><p><strong>心理模型的形成与构建</strong></p>
+<p>促进问题解决方法的动态调整</p>
+</li>
+<li><p><strong>过度依赖与程序理解</strong></p>
+<p>相比于baseline，利于对整体编程结构的深入理解</p>
+</li>
+<li><p><strong>经验与任务熟悉度</strong></p>
+<p>研究新手和经验丰富的程序员在解决编程任务时形成心理模型的差异</p>
+<p>深入了解先验知识如何影响他们与 CoLadder 等代码助手的交互</p>
+</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
