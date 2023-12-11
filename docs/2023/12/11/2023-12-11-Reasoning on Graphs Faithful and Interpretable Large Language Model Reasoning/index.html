@@ -1,0 +1,333 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Reasoning on Graphs: Faithful and Interpretable Large Language Model Reasoning - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E8%83%8C%E6%99%AF"><span class="toc-text">研究背景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#KG-enhanced-LLM"><span class="toc-text">KG enhanced LLM</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%B7%A5%E4%BD%9C"><span class="toc-text">主要工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Framework"><span class="toc-text">Framework</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Optimization"><span class="toc-text">Optimization</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#planning-optimization"><span class="toc-text">planning optimization</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#retrieval-reasoning-optimization"><span class="toc-text">retrieval-reasoning optimization</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C"><span class="toc-text">实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-text">数据集</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%83%A8%E7%BD%B2"><span class="toc-text">部署</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E6%9E%9C"><span class="toc-text">结果</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-text">结论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="toc-text">参考文献</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Reasoning on Graphs: Faithful and Interpretable Large Language Model Reasoning
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2023-12-11 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2023-12-11</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#沈健"
+                title="沈健">沈健</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Reasoning on Graphs: Faithful and Interpretable Large Language Model Reasoning</p>
+<p>作者：Linhao Luo, Yuan-Fang Li, Gholamreza Haffari, Shirui Pan</p>
+<p>发表：ICLR 2024</p>
+<p>大型语言模型（LLM）在复杂的任务中表现出令人印象深刻的推理能力。然而，它们在推理过程中缺乏最新的知识，并且存在幻觉现象，这可能导致推理过程不正确，并降低性能和可信度。知识图谱（KG）以结构化格式捕获大量事实，为推理提供了可靠的知识来源。然而，现有的基于 KG 的 LLM 推理方法仅将 KG 视为事实知识库，忽视了它们对推理的结构信息的重要性。在这篇论文中，我们提出了一种名为推理图（RoG）的新方法，它将 LLM 与 KG 协同作用，以实现忠实和可解释的推理。RoG 不仅从 KG 中提取知识，通过训练提高 LLM 的推理能力，而且在推理过程中允许与任意 LLM 无缝集成。</p>
+<h2 id="研究背景"><a href="#研究背景" class="headerlink" title="研究背景"></a>研究背景</h2><h3 id="KG-enhanced-LLM"><a href="#KG-enhanced-LLM" class="headerlink" title="KG enhanced LLM"></a>KG enhanced LLM</h3><p>尽管 LLM 能力出色，但 LLM 经常在知识密集型任务上遇到挑战，常见的问题有<strong>输出幻觉内容和知识实时性低</strong>。</p>
+<p>幻觉（Hallucination）：在生成事实文本时，生成的信息与现有来源相冲突（内在幻觉）或无法通过现有来源验证（外在幻觉）。 幻觉在现有的 LLM 中广泛存在，甚至包括 GPT-4 等最优秀的 LLM。本质上，LLM 似乎是“无意识地”在解决任务的过程中利用这些知识，缺乏对使用内部或外部知识精准控制的能力。为了缓解这个问题，现有的工作广泛使用了对齐调整策略（RLHF）。</p>
+<p>知识实时性：对于需要使用比训练数据更新的知识的任务时，LLM 在解决这些任务时会遇到困难。为了解决这个问题，一个直接的方法是定期用新数据更新 LLM 的知识。然而，微调 LLM 的成本非常昂贵的，而且增量训练 LLM 非常可能导致灾难性遗忘问题。</p>
+<p>可以通过引入外部知识的方式来缓解幻觉现象，并且引入新知识。一般来说，知识增强方法可以扩展到引入结构化数据，例如知识图谱、表格和数据库，我们的讨论关注于整合知识图谱来增强 LLM 。</p>
+<p>知识图谱（KG）以三元组形式 (头实体，关系，尾实体) 存储了大量知识。现有的KGs可以分为 4 类：</p>
+<ol>
+<li>百科 KG: Wikidata、Freebase 等典型的百科全书式知识图谱。</li>
+<li>常识 KG: ConceptNet 包含了广泛的常识性概念和关系，可以帮助计算机理解人们使用的单词的含义。</li>
+<li>领域特定 KG:  UMLS 是医学领域中的特定领域知识图谱，它包含生物医学概念及其关系。</li>
+<li>多模态 KG: IMGpedia、MMKG 和 Richpedia 将文本和图像信息合并到知识图谱中。这些知识图谱可用于各种多模态任务，如图像文本匹配、视觉问答和推荐。</li>
+</ol>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202312111053146.png" alt="image-20231209204143106" style="zoom: 80%;" /></p>
+<p>使用知识图谱提供精确的结构化的知识来提高 LLM 输出结果的质量，这类方法称为 <strong>KG enhanced LLM</strong>。现有增强方式可以划分为两类，即分别是在训练过程中注入知识和在推理过程中注入知识。</p>
+<ol>
+<li><p>训练过程中注入知识</p>
+<p>ERNIE 提出了一种文本知识双编码器架构其中 T-encoder 首先对输入句子进行编码，然后 K-encoder 处理知识图。ERNIE 将文本中提到的句子和相应实体输入 LLM，然后训练 LLM 预测文本标记和知识图谱中实体之间的<strong>对齐链接</strong>。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202312111053182.png" alt="image-20231209210514036" style="zoom:67%;" /></p>
+</li>
+</ol>
+<ol>
+<li><p>推理过程中注入知识（冻结 LLM 参数）</p>
+<p>LMExplainer 基于 LLM 、GNN 和 KG 构建模型。抽取问题和答案中的实体，在 KG 中检索相关实体，<strong>构建子图</strong>。使用 GCN 和 GAT 依次处理子图节点表征，GAT 的输出结合源问答文本的嵌入表征通过 MLP 做答案预测。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202312111053815.png" alt="image-20231205160436958" style="zoom:80%;" /></p>
+</li>
+</ol>
+<h2 id="主要工作"><a href="#主要工作" class="headerlink" title="主要工作"></a>主要工作</h2><h3 id="Framework"><a href="#Framework" class="headerlink" title="Framework"></a>Framework</h3><p>该论文提出了一种称为 RoG 的新颖方法，旨在协调 LLM 与 KG，将 KG 中的知识蒸馏进入 LLM 。从而输出可信且可解释的推理。 该方法的框架包含两部分: planning 和 retrieval-reasoning。 </p>
+<p>RoG 首先基于 KG 生成若干个<strong>关系路径</strong>作为可信的计划。 这些计划是从知识图谱中收集的关系序列，作为推理任务的蓝图。 </p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202312111053559.png" alt="image-20231209214412468"></p>
+<blockquote>
+<p>表示“Alice”与“Bob”结婚，“Bob”是“Charlie”的父亲。</p>
+</blockquote>
+<p>下一步是检索和推理，其中先前生成的路径用于从知识图谱中检索有效的<strong>推理链</strong>。 这些链条指导 LLM 忠实地输出推理结果和步骤。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202312111053922.png" alt="image-20231209214543633"></p>
+<p>简而言之，将 RoG 表述为一个优化问题，旨在通过生成关系路径 z 作为计划，最大化从知识图谱 G 与问题 q 推理答案出正确答案 a 的概率：</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202312111053906.png" alt="image-20231209215324610" style="zoom: 67%;" /></p>
+<blockquote>
+<p>其中 θ 表示 LLM 的参数，z 表示 LLM 生成的关系路径（计划），$\mathcal{Z}$ 表示可能的关系路径的集合。</p>
+</blockquote>
+<h3 id="Optimization"><a href="#Optimization" class="headerlink" title="Optimization"></a>Optimization</h3><p>尽管按照计划生成关系路径具有明显优势，但 LLM 并不了解知识图谱中包含的<strong>关系</strong>。因此，LLM 不能直接生成关系路径。此外， LLM 可能<strong>无法正确理解</strong>推理路径并据此进行推理。为了解决这些问题，作者设计了两个<strong>指令微调</strong>任务：</p>
+<p>1）planning optimization，将知识图谱中的知识蒸馏进入 LLM，从而可以生成可信的关系路径；</p>
+<p>2）retrieval-reasoning optimization，使 LLM 能够根据检索到的推理路径进行推理。</p>
+<p>通过<strong>最大化置信下界 (ELBO)</strong> 优化原等式。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202312111053967.png" alt="image-20231209215826151" style="zoom:67%;" /></p>
+<blockquote>
+<p>Q(z) 表示基于 KG 的可信关系路径的后验分布。</p>
+</blockquote>
+<p>后一项最小化了后验和先验之间的 KL 散度，这鼓励 LLM 生成忠实的关系路径（planning optimization）。前一项最大化了检索推理模块根据关系路径和 KG 生成正确答案的期望（retrieval-reasoning optimization）。</p>
+<h4 id="planning-optimization"><a href="#planning-optimization" class="headerlink" title="planning optimization"></a>planning optimization</h4><p>通过最小化 KL 散度实现将知识图谱中的知识蒸馏进入 LLM。</p>
+<p>给定问题 q 和答案 a，我们可以在 KG 中找到连接二者的路径实例 $w_z(e_q, e_a) = e_q \xrightarrow{r_1}  e_1 \xrightarrow{r_2} …\xrightarrow{r_l} e_a$ ，相应的关系路径为 $z = \{r_1, r_2, . . . , r_l\}$ 。后验分布可以近似表示为：</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202312111053456.png" alt="image-20231209220145689" style="zoom:67%;" /></p>
+<p>因此可以 KL 散度的计算可以简化为：</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202312111053589.png" alt="image-20231209220152604" style="zoom:67%;" /></p>
+<p>问题与 prompt template 一起输入 LLM 以生成关系路径 z。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202312111053504.png" alt="image-20231209221946267" style="zoom:67%;" /></p>
+<h4 id="retrieval-reasoning-optimization"><a href="#retrieval-reasoning-optimization" class="headerlink" title="retrieval-reasoning optimization"></a>retrieval-reasoning optimization</h4><p>尽管我们可以利用检索到的推理路径并通过多数投票直接获得答案。但是，检索到的推理路径<strong>可能充满噪音并且与问题无关</strong>，从而导致错误的答案。因此，我们提出了一个推理模块来探索 LLM <strong>识别重要推理路径</strong>并据此回答问题的能力。</p>
+<p>旨在使 LLM 能够根据检索到的推理路径进行推理。对于该模块，允许在多个检索推理路径上进行推理，表示为</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202312111054123.png" alt="image-20231209221359360" style="zoom:67%;" /></p>
+<p>因此损失函数可以表示为：</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202312111054289.png" alt="image-20231209221409567" style="zoom:67%;" /></p>
+<p>RoG 的最终目标函数是两个损失函数的结合，可以表示为：</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202312111054062.png" alt="image-20231209221415348" style="zoom:67%;" /></p>
+<p>基于计划模块输出的关系路径，在 KG 中检索得到路径实例 $w_z$。然后，推理模块根据问题 q 和路径实例 $w_z$ 来推理生成答案a。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202312111054834.png" alt="image-20231209222237062" style="zoom:67%;" /></p>
+<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><h3 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h3><p>两个benchmark KGQA 数据集：WebQuestionSP (WebQSP) 和 Complex WebQuestion（CWQ）。Freebase 是这两个数据集的背景知识图谱，包含大约 8800 万个实体、20000 个关系和 1.26 亿个三元组。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202312111054250.png" alt="image-20231210150116617" style="zoom:67%;" /></p>
+<h3 id="部署"><a href="#部署" class="headerlink" title="部署"></a>部署</h3><p>LLaMA2-Chat-7B 作为 LLM 主干，在 WebQSP 和 CWQ 以及 Freebase 的训练分割上进行了 <strong>3 个 epochs 的指令微调</strong>。使用 beam-search 为每个问题生成 3 个关系路径。在 2 块 A100-80G GPU 上进行 38 小时的训练。</p>
+<h3 id="结果"><a href="#结果" class="headerlink" title="结果"></a>结果</h3><p>RoG 输出样例。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202312111054061.png" alt="image-20231209214927719" style="zoom:67%;" /></p>
+<p>该方法在两个数据集的大多数指标上实现了 SOTA。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202312111054380.png" alt="image-20231210153519386" style="zoom:67%;" /></p>
+<blockquote>
+<p>Embedding: 基于 Embedding 方法将实体和关系嵌入表征空间，并设计特殊的模型架构来推理答案。</p>
+<p>Retrieval: 从知识图谱中检索相关事实以提高推理性能。</p>
+<p>Semantic Parsing: 将问题解析为结构查询（例如 SQL），查询引擎可以执行该查询来获取答案。</p>
+<p>LLMs: zero-shot</p>
+</blockquote>
+<p>消融实验。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202312111054278.png" alt="image-20231210151434572" style="zoom:67%;" /></p>
+<p>评估在推理过程中将 RoG 的 planning 模块与<strong>不同的 LLM 集成</strong>以提高其性能的有效性。具体来说，首先采用 RoG的 planning 模块来生成关系路径，并将检索到的推理路径实例作为上下文输入到不同的LLM中进行推理。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202312111054869.png" alt="image-20231210151910967" style="zoom:67%;" /></p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>Synergy-Augmented LLM——为了解决复杂的任务（例如，多跳问答），通常需要 LLM 按照系统的解决方案<strong>多次查询知识图谱</strong>。这个过程中，LLM 可以被视为一个 <strong>Agent</strong> ，它通过与 KG 环境的交互自动生成计划并执行。</p>
+<p>基于指令微调将来自 KG 的外部知识蒸馏进入模型的参数。提高了推理的准确性，而且使得整个过程变得可解释。</p>
+<p>相较于之前的 KG 增强的 LLM 方法，该模型在数学角度上，具备一定的可解释性。</p>
+<p>RoG 的 planning 模块可以与任何 LLM 无缝集成，使其灵活且适用范围广泛。</p>
+<p>基于训练的方式可能会导致灾难性遗忘。</p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li>REASONING ON GRAPHS: FAITHFUL AND INTERPRETABLE LARGE LANGUAGE MODEL REASONING</li>
+<li>Unifying Large Language Models and Knowledge Graphs: A Roadmap</li>
+<li>ERNIE: Enhanced language representation with informative entities</li>
+<li>LMExplainer: a Knowledge-Enhanced Explainer for Language Models</li>
+</ol>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

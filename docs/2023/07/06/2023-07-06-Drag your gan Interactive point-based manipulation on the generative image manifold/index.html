@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Drag Your GAN: Interactive Point-based Manipulation on the Generative Image Manifold - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E8%83%8C%E6%99%AF"><span class="toc-text">研究背景</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#GAN"><span class="toc-text">GAN</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9B%BE%E5%83%8F%E7%BC%96%E8%BE%91"><span class="toc-text">图像编辑</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%B7%A5%E4%BD%9C"><span class="toc-text">主要工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%BF%90%E5%8A%A8%E7%9B%91%E7%9D%A3-Motion-supervision"><span class="toc-text">运动监督 Motion supervision</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%82%B9%E8%BF%BD%E8%B8%AA-Point-Tracking"><span class="toc-text">点追踪 Point Tracking</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0"><span class="toc-text">评估</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#qualitative"><span class="toc-text">qualitative</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#quantitative"><span class="toc-text">quantitative</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%BD%A2%E5%8F%98%E8%83%BD%E5%8A%9B"><span class="toc-text">形变能力</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B7%9F%E8%B8%AA%E8%83%BD%E5%8A%9B"><span class="toc-text">跟踪能力</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A8%E8%AE%BA"><span class="toc-text">讨论</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8E%A9%E7%A0%81-Effects-of-mask"><span class="toc-text">掩码  Effects of mask</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%B6%85%E5%87%BA%E5%88%86%E5%B8%83-Out-of-distribution-manipulation"><span class="toc-text">超出分布  Out-of-distribution manipulation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%9C%9F%E5%AE%9E%E5%9B%BE%E7%89%87%E7%BC%96%E8%BE%91-Real-image-editing"><span class="toc-text">真实图片编辑 Real image editing</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B1%80%E9%99%90%E6%80%A7-Limitations"><span class="toc-text">局限性  Limitations</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%A4%BE%E4%BC%9A%E5%BD%B1%E5%93%8D-Social-impacts"><span class="toc-text">社会影响 Social impacts</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-text">结论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Reference"><span class="toc-text">Reference</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Drag Your GAN: Interactive Point-based Manipulation on the Generative Image Manifold
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2023-07-06 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2023-07-06</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#沈健"
+                title="沈健">沈健</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Drag Your GAN: Interactive Point-based Manipulation on the Generative Image Manifold</p>
+<p>作者：Xingang Pan, Ayush Tewari, Thomas Leimkühler, Lingjie Liu, Abhimitra Meka, Christian Theobalt</p>
+<p>发表：SIGGRAPH 2023</p>
+<p>生成满足用户需求的视觉内容，通常需要对生成对象的姿态、形状、表情和布局具有灵活而精确进行控制。现有的方法通过人工标注的训练数据或先前的 3D 模型来赋予生成对抗网络 (GANs) 可控性，这些方法通常缺乏灵活性、精确性和泛用性。在这项工作中，作者研究了一种功能强大但探索较少的控制 GAN 的方法，即以用户交互的方式“拖动”图像的任何点以精确到达目标点。为了实现这一目标，作者提出了 DragGAN ，它由两个主要部分组成：1) 基于特征的运动监督，驱动靶点向目标位置移动；2) 一种新的点跟踪方法，利用高区分度的生成器特征来保持靶点位置的局部化。借助 DragGAN ，任何人都可以通过精确控制像素的位置来变形图像，从而操纵姿势，形状，表情和各种类别的布局，如动物，汽车，人类，风景等。由于这些操作是在 GAN 学习的生成图像流形上执行的，因此即使对于具有挑战性的场景(例如遮挡的内容和遵循对象刚性的形变)，它们也倾向于产生逼真的输出。定性和定量比较都证明了 DragGAN 在图像处理和点跟踪任务方面优于先前的方法。作者还展示了通过GAN反演对真实图像的处理。</p>
+<h2 id="研究背景"><a href="#研究背景" class="headerlink" title="研究背景"></a>研究背景</h2><h3 id="GAN"><a href="#GAN" class="headerlink" title="GAN"></a>GAN</h3><p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202306291932146.png" alt="image-20230628204933545"></p>
+<h3 id="图像编辑"><a href="#图像编辑" class="headerlink" title="图像编辑"></a>图像编辑</h3><p>生成满足用户需求的视觉内容往往需要对生成对象的姿势、形状、表情和布局进行灵活和精确的控制。 现有方法通过手动注释的训练数据或先前的 3D 模型获得生成对抗网络 (GAN) 的可控性，这通常缺乏灵活性、精确性和通用性。</p>
+<p>Diffusion: 自然语言无法对图像的空间属性进行细粒度控制，因此，所有文本条件方法都仅限于高级语义编辑。</p>
+<p>理想的可控图像合成方法应具备以下特性： 1）灵活性：应能够控制生成的物体或动物的不同空间属性，包括位置、姿势、形状、表情和布局； 2）精确性：能够对空间属性进行高精度的控制； 3）通用性：应适用于不同的对象类别，但不限于某一类别。</p>
+<h2 id="主要工作"><a href="#主要工作" class="headerlink" title="主要工作"></a>主要工作</h2><p> 这项工作研究了一种强大但探索较少的控制 GAN 的方法，即以用户交互的方式“拖动”图像的任何点以精确到达目标点。 为实现这一目标，本文提出了 DragGAN，通过 DragGAN，任何人都可以通过精确控制像素的位置对图像进行变形，从而操纵动物、汽车、人类、风景等不同类别的姿势、形状、表情和布局。</p>
+<p>DragGAN 允许用户“拖动”任何 GAN 生成图像的内容。 用户只需点击图像上的几个 handle point（红色）和 target point（蓝色），就可以移动 handle point 以精确到达其对应的 target point。 用户可以选择绘制 mask，保持图像的其余部分固定。 </p>
+<p>DragGAN 的核心为以下两个组件：1）<strong>基于特征的运动监督（Motion supervision）</strong>，驱动 handle point 朝着 target point 移动。2）<strong>点跟踪（Point tracking）</strong>，利用高区分度的生成器的特征来保证 handle point 的位置。具体来说，<strong>运动监督是通过优化潜在编码（latent code）的偏移特征块损失来实现的。每个优化步骤都会使 handle point 更接近目标；点跟踪随后通过在特征空间中进行最近邻搜索来执行</strong>。整个优化过程会反复进行直到 handle point 和 target point 重合。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202306291933743.png" alt="image-20230628204203251"></p>
+<h3 id="运动监督-Motion-supervision"><a href="#运动监督-Motion-supervision" class="headerlink" title="运动监督 Motion supervision"></a>运动监督 Motion supervision</h3><p>DragGAN 基于 StyleGAN2 的模型架构。具体来说，作者考虑了 StyleGAN2 第 <strong>6</strong> 个块之后的特征图，这在所有层的特征图中表现最佳，因为它在分辨率和区分度之间有很好的平衡。作者观察到图像的空间属性主要受到前6层的 的影响，而剩下的层只影响外观。因此，只更新前6层的特征图，保持其他层不变以保留外观。这种选择性的优化导致图像内容的轻微移动，从而实现所期望的效果。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202306291634966.png" alt="img"></p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202306291634569.png" alt="img"></p>
+<p>具体来说，StyleGAN 中的特征图分辨率随着层数增加而增加，因此将第六层的特征图 F 进行双线性插值来调整大小，使其与输出图像大小一致。</p>
+<p> 运动监督是通过优化隐空间编码 (latent code) 的损失函数来实现的。 每个优化步骤都会使得 handle point 更接近 target point；重复此优化过程，直到二者重合。 DragGAN 还允许用户有选择地绘制 Mask 以执行特定区域的编辑。</p>
+<script type="math/tex; mode=display">
+\displaystyle \mathcal{L} = \sum_{𝑖=0}^n{\sum_{𝒒_𝑖\in \Omega_1(𝒑_𝑖, 𝑟_1)}{||F(𝒒_𝑖) − F(𝒒_𝑖 + 𝒅_𝑖)||_1 + \lambda||(F − F_0)(1 − M)||_1}}</script><p>其中，$F(q)$ 表示在特征图 F 中 q 位置的特征值，$d_i = \frac {t_i-P_i}{||t_i-P_i||_2}$ 是从 $p_𝑖$ 指向 $t_𝑖$ 的归一化向量，$F_0$ 初始图像对应的特征图。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202306291638577.png" alt="img"></p>
+<h3 id="点追踪-Point-Tracking"><a href="#点追踪-Point-Tracking" class="headerlink" title="点追踪 Point Tracking"></a>点追踪 Point Tracking</h3><p>运动监督得到了新的潜在编码 $w^{‘}$、新的特征图 $F^{‘}$ 和新的图像 $I^{‘}$。由于运动监督步骤并没有直接提供处理点的精确新位置，因此点追踪的目的是更新handle point 的位置，使其跟踪物体上对应的点。点追踪通常通过光流估计模型实现。然而，这些额外的模型会显著影响效率，并且在 GAN 中可能会出现累积误差。因此，作者提出了一种适用于 GAN 的新的点追踪方法。核心在于利用 GAN 的高辨识度特征空间。可以通过特征块中的最近邻搜索来有效地进行跟踪。具体而言，将初始处理点的特征表示为 $f_i=F_0(p_i)$ 。$p_i$ 周围的一定区域定义为 $\Omega_2(p_i, r_2) = \{(x, y)| |x - x_{p, i}| &lt; r_2,|y - y_{p, i}| &lt; r_2\}$。然后通过在 $Ω_2(p_i, r_2)$ 中搜索     $f_i$ 的最近邻来获得追踪点的位置。</p>
+<script type="math/tex; mode=display">
+\displaystyle 𝒑_𝑖 := \arg\min _{𝒒_𝑖 ∈\Omega_2(p_i, r_2)} ||F^{′} (𝒒_𝑖) − 𝒇_𝑖||_1</script><h2 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h2><p>由于 DragGAN 不依赖任何额外的网络，它实现了高效的操作，在大多数情况下，在比如单个 RTX 3090 GPU 上只需要几秒钟。 这允许进行实时的交互式编辑，用户可以在其中快速迭代不同的布局，直到获得所需的输出。 </p>
+<h3 id="qualitative"><a href="#qualitative" class="headerlink" title="qualitative"></a>qualitative</h3><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1La4y1g7AH/?spm_id_from=333.1007.top_right_bar_window_history.content.click&amp;vd_source=8bd334c4a9019e98f6b25c29e9dd492a">demo showcase</a></p>
+<p>与简单应用扭曲的传统形状变形方法不同 ，我们的变形是在 GAN 的学习图像流形上执行的，它往往遵循底层对象结构。例如，我们的方法可以产生被遮挡的内容，比如狮子嘴里的牙齿，并且可以随着物体的刚性而变形，比如马腿的弯曲。</p>
+<h3 id="quantitative"><a href="#quantitative" class="headerlink" title="quantitative"></a>quantitative</h3><h4 id="形变能力"><a href="#形变能力" class="headerlink" title="形变能力"></a>形变能力</h4><p>现有的 Face landmark 技术非常成熟，因此可以将其输出用作真实标签。具体来说，在 FFHQ 上训练的 StyleGAN 随机生成两张人脸图像并检测它们的 Face landmark 。目标是操纵第一幅图像的 landmark 以匹配第二幅图像的 landmark 。处理后，预测最终生成图像的 landmark 并计算到第二幅图像的 landmark 的平均距离（mean distance, MD）。最终的分数反映了该方法将 landmark 移动到目标位置的能力。在不同数量的 landmark（包括 1、5 和 68）的 3 种设置下进行评估。同时，使用编辑图像和初始图像之间的 FID 分数作为图像质量的指示。</p>
+<p>定性比较如图所示，本方法张开嘴并调整下巴的形状以匹配目标面部，而 UserControllableLT 则无法做到这一点。此外，本方法保留了更好的图像质量，如 FID 分数所示。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202306291935805.png" alt="image-20230628193212636"></p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202306291934488.png" alt="image-20230628193242659"></p>
+<h4 id="跟踪能力"><a href="#跟踪能力" class="headerlink" title="跟踪能力"></a>跟踪能力</h4><p>本方法实现了比 RAFT 和 PIP 更准确的操作。不准确的跟踪会导致过度操作，从而降低图像质量，如 FID 分数所示。尽管 UserControllableLT 速度更快，但本方法在很大程度上提高了此任务的上限，实现了更符合用户需求的操作，同时维持在适当的运行时间内。</p>
+<h2 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h2><h3 id="掩码-Effects-of-mask"><a href="#掩码-Effects-of-mask" class="headerlink" title="掩码  Effects of mask"></a>掩码  Effects of mask</h3><p>该方法允许用户输入一个可移动的二值区域掩码。如下图所示当给出一只狗头的掩码时，其他区域几乎保持不变，只有头部移动。如果没有掩码，操作将移动整个狗的身体。这也表明，基于点的操作通常有多个可能的解决方案，GAN将倾向于在从训练数据中学到的图像流形中找到最接近的解决方案。掩码方式可以帮助减少歧义并保持某些区域固定。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202306291936920.png" alt="img"></p>
+<h3 id="超出分布-Out-of-distribution-manipulation"><a href="#超出分布-Out-of-distribution-manipulation" class="headerlink" title="超出分布  Out-of-distribution manipulation"></a>超出分布  Out-of-distribution manipulation</h3><p><strong>DragGAN 具有一定的外推能力，可以创建超出训练图像分布的图像</strong>，例如狮子的极度张开的嘴和巨大的车轮。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202306291936563.png" alt="image-20230628172704922"></p>
+<h3 id="真实图片编辑-Real-image-editing"><a href="#真实图片编辑-Real-image-editing" class="headerlink" title="真实图片编辑 Real image editing"></a>真实图片编辑 Real image editing</h3><p>使用 GAN inversion 技术将真实图像嵌入 StyleGAN 潜在空间，进而使用本方法来操纵真实图像。执行一系列操作来编辑图像中面部的姿势、头发、形状和表情。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202306291937698.png" alt="image-20230628185029346"></p>
+<h3 id="局限性-Limitations"><a href="#局限性-Limitations" class="headerlink" title="局限性  Limitations"></a>局限性  Limitations</h3><ol>
+<li>尽管具有一定程度的外推能力，但生成图片的质量仍受训练数据的多样性影响。如下图所示，创建与训练分布偏离的人体姿势可能会产生扭曲。</li>
+</ol>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202306291934275.png" alt="image-20230628173217799" style="zoom:33%;" /></p>
+<ol>
+<li>标记于纹理较少区域的 handle point 更倾向于在跟踪中产生偏移，<strong>因此建议尽可能选择纹理丰富的处理点</strong>。</li>
+</ol>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202306291934822.png" alt="image-20230628173242621"></p>
+<ol>
+<li>难以处理包含多个物体的图片。</li>
+</ol>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202306291512499.jpeg" alt="David L. Ryan"></p>
+<h3 id="社会影响-Social-impacts"><a href="#社会影响-Social-impacts" class="headerlink" title="社会影响 Social impacts"></a>社会影响 Social impacts</h3><p>由于 GragGAN 可以改变图像的空间属性，它可能被滥用来创建具有虚假姿势、表情或形状的真实人物图像。因此，任何使用 GragGAN 的应用或研究都必须严格遵守人格权利和隐私法规。</p>
+<h2 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h2><p>在这项工作中，作者展示了在生成对抗网络生成的图像上进行点追踪可以在不使用额外神经网络的情况下实现。揭示了生成对抗网络的特征空间具有足够的区分能力，可以通过特征匹配简单实现追踪。这篇文章首次将基于点的编辑问题与高区分度的生成器的特征联系起来，并设计了具体的方法。摒弃额外的追踪模型使得该方法更高效。</p>
+<h2 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h2><p>[1] <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2305.10973"> Drag Your GAN: Interactive Point-based Manipulation on the Generative Image Manifold</a></p>
+<p>[2]  <a target="_blank" rel="noopener" href="https://github.com/XingangPan/DragGAN">XingangPan/DragGAN: Official Code for DragGAN (github) </a></p>
+<p>[3] <a target="_blank" rel="noopener" href="https://openxlab.org.cn/apps/detail/XingangPan/DragGAN">Online demo - OpenXLab</a></p>
+<p>[4] <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2106.05744">Pivotal Tuning for Latent-based Editing of Real Images</a></p>
+<p>[5] <a target="_blank" rel="noopener" href="https://arxiv.org/abs/1812.04948">A Style-Based Generator Architecture for Generative Adversarial Networks</a></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
