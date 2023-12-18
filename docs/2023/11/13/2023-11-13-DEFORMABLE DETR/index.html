@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Deformable DETR: Deformable Transformers for End-to-End Object Detection - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Deformable-DETR-Deformable-Transformers-for-End-to-End-Object-Detection"><span class="toc-text">Deformable DETR: Deformable Transformers for End-to-End Object Detection</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E8%83%8C%E6%99%AF"><span class="toc-text">研究背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%AC%E6%96%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">本文工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-text">方法</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C"><span class="toc-text">实验</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94%E5%AE%9E%E9%AA%8C"><span class="toc-text">对比实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B6%88%E8%9E%8D%E5%AE%9E%E9%AA%8C"><span class="toc-text">消融实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%B8%8ESTATE-OF-THE-ART-METHODS%E7%9A%84%E5%AF%B9%E6%AF%94%E5%AE%9E%E9%AA%8C"><span class="toc-text">与STATE-OF-THE-ART METHODS的对比实验</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%88%86%E6%9E%90%E4%B8%8E%E6%80%9D%E8%80%83"><span class="toc-text">分析与思考</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Deformable DETR: Deformable Transformers for End-to-End Object Detection
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2023-11-13 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2023-11-13</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#杨熠"
+                title="杨熠">杨熠</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h1 id="Deformable-DETR-Deformable-Transformers-for-End-to-End-Object-Detection"><a href="#Deformable-DETR-Deformable-Transformers-for-End-to-End-Object-Detection" class="headerlink" title="Deformable DETR: Deformable Transformers for End-to-End Object Detection"></a>Deformable DETR: Deformable Transformers for End-to-End Object Detection</h1><p>论文：Deformable DETR: Deformable Transformers for End-to-End Object Detection</p>
+<p>作者：Xizhou Zhu, Weijie Su, Lewei Lu, Bin Li, Xiaogang Wang, Jifeng Dai</p>
+<p>发表：ICLR 2021</p>
+<p>由于Transformer模块在处理图像特征图时的局限性，DETR存在收敛速度慢和特征空间分辨率有限的问题。Deformable DETR提出了deformable attention机制——每个特征像素不必与所有特征像素交互计算，只需要与部分基于采样获得的其它像素交互，并且这些采样点的位置是可学习的。这是一种局部(local)和稀疏(sparse)的高效注意力机制，能够解决DETR收敛慢与能够处理的特征分辨率受限的问题。</p>
+<h1 id="研究背景"><a href="#研究背景" class="headerlink" title="研究背景"></a><strong>研究背景</strong></h1><p>DETR 提出了Query Based的端到端目标检测算法，把目标检测看成了一个集合预测的问题，巧妙避开目标检测中常用的Anchor和NMS的方法，具有实现简单、拓展性强的优点。但同时DETR也存在一些问题：</p>
+<ul>
+<li>训练周期长，相比faster rcnn慢10-20倍。</li>
+<li>对小目标不友好。</li>
+</ul>
+<p>针对DETR所存在的上述两个问题，分析其原因如下：</p>
+<ul>
+<li>Transformer最大的问题在初始化时对于特征图上每个像素的权重几乎都是一样的，而且都非常小，这导致很长的训练周期。实际上只需要关注少数有意义的点即可。</li>
+<li>小目标的识别效果很差。Transformer在计算注意力权重时，伴随着高计算量与空间复杂度。如果提高特征图的分辨率会使计算复杂度呈平方倍上升。</li>
+</ul>
+<h1 id="本文工作"><a href="#本文工作" class="headerlink" title="本文工作"></a><strong>本文工作</strong></h1><p>Deformable DETR改进如下：</p>
+<ul>
+<li>采用Deformable Attention，将可变形卷积与Transformer结合，使得注意力机制在小范围中采样，只考虑最有价值的几个点，以降低计算量，加快收敛速度。</li>
+<li>采用多尺度Deformable Attention。在多尺度特征图上做Deformable Attention，在提高对小目标检测效率的同时，有效控制了参数数量。</li>
+</ul>
+<p>Deformable DETR的核心思想：</p>
+<p>它的注意模块只关注一个目标周围的一小部分关键采样点。Deformable DETR可以获得比DETR更好的性能，( 特别是在小物体上 ) ，并且训练时间少10×。</p>
+<h1 id="方法"><a href="#方法" class="headerlink" title="方法"></a><strong>方法</strong></h1><p>Deformable DETR的整体架构还是与DETR的整体架构是相同的：</p>
+<ul>
+<li>提取特征</li>
+<li>然后经过encoder、decoder</li>
+<li>最后是分类头得到相应的结果。</li>
+</ul>
+<p>Deformable DETR的主要贡献：</p>
+<ul>
+<li>Multi-Scale Features &amp; Scale-Level Embedding</li>
+<li>Deformable Attention(&amp; Multi-Scale)</li>
+<li><p>Deformable Transformer</p>
+<p>  <img src="./image.png" alt="image.png"></p>
+</li>
+</ul>
+<p>Multi-Scale Features &amp; Scale-Level Embedding是在backbone部分提取了不同层级的特征，总共有4层：</p>
+<ul>
+<li>C3~C5 来自ResNet，下采样率对应为8、16、32</li>
+<li>C6由C5经过步长为2的3x3卷积得到</li>
+</ul>
+<p><img src="./image1.png" alt="image1.png"></p>
+<p>Deformable Attention(&amp; Multi-Scale) ：</p>
+<ul>
+<li>query不是和全局每个像素点位置的 key 都计算注意力权重，而是对于每个 query 仅与采样点位置的 key 做计算，并且value 也是基于这些位置进行采样插值得到的，最后将这个局部&amp;稀疏的注意力权重施加在对应的value上。 Deformable Attention与传统Attention的计算公式对比如公式（1）-（3）所示。</li>
+<li>不需要像Transformer 先从全局位置开始学习再逐渐过渡到局部的、真正有意义的位置。</li>
+</ul>
+<p><img src="./image3.png" alt="image3.png"></p>
+<p><img src="./image2.png" alt="image2.png"></p>
+<p>Deformable Transformer</p>
+<p>这里的 Transformer 和 DETR 中的大体过程一致，最主要的区别是：</p>
+<ul>
+<li>Deformable attention 替代了 Encoder 中的 self-attention</li>
+<li>Decoder中的交叉注意力 cross-attention 的deformable cross-attention</li>
+</ul>
+<p><img src="./image4.png" alt="image4.png"></p>
+<h1 id="实验"><a href="#实验" class="headerlink" title="实验"></a><strong>实验</strong></h1><p>Dataset：COCO2017</p>
+<h2 id="对比实验"><a href="#对比实验" class="headerlink" title="对比实验"></a><strong>对比实验</strong></h2><p>与DETR 和 Sparse R-CNN (稀疏交互机制 &amp; No RPN &amp; No NMS) 做对比实验</p>
+<p>以下列出了仅出现在 Deformable DETR 中而没出现在 DETR / Sparse R-CNN：</p>
+<p>i). vs DETR</p>
+<ol>
+<li><p>多尺度特征；</p>
+</li>
+<li><p>新增scale-level embedding，用于区分不同特征层</p>
+</li>
+<li><p>使用了multi-scale deformable attention替代Encoder中的自注意力和Decoder中的cross-attention；</p>
+</li>
+<li><p>引入了参考点，某种程度上起到先验的作用；</p>
+</li>
+<li><p>为自己开发了“高配”版：iterative bounding box refinement 和 两阶段模式；</p>
+</li>
+<li><p>检测头部的回归分支预测的是边界框偏移量而非绝对坐标值</p>
+</li>
+</ol>
+<p>ii). vs Sparse R-CNN</p>
+<ol>
+<li><p>没有使用FPN；</p>
+</li>
+<li><p>使用了位置嵌入；</p>
+</li>
+<li><p>2-stage时，proposals是predicted的（而非Sparse R-CNN直接使用learnable embedding）；</p>
+</li>
+<li><p>使用了Transformer；</p>
+</li>
+<li><p>注意力机制是one-to-many iteraction，Sparse R-CNN是彻底的sparse，是one-to-one实例级别的交互；</p>
+</li>
+<li><p>检测头部的回归分支预测的是bbox偏移量而非绝对坐标值。</p>
+</li>
+</ol>
+<p>与DETR 和 Sparse R-CNN (稀疏交互机制 &amp; No RPN &amp; No NMS) 做对比实验</p>
+<ul>
+<li>与 Faster R-CNN FPN 相比，DETR 需要更多的训练时间才能收敛，而且在检测小物体方面性能较差。与 DETR 相比，Deformable DETR 在减少 10 倍训练时间的情况下取得了更好的性能（尤其是在小物体上）。</li>
+<li>Deformable DETR 与 Faster R-CNN + FPN 和 DETR-DC5 的 FLOPs 相当。但运行速度比 DETR-DC5 快得多（1.6 倍），只比 Faster R-CNN + FPN 慢 25%。</li>
+</ul>
+<p>下图是Deformable DETR 与 DETR 在 COCO 2017 val set的对比实验结果. DETR-DC5+ 代表DETR-DC5 with Focal Loss and 300 object queries。</p>
+<p><img src="./image5.png" alt="image5.png"></p>
+<p>下图是Deformable DETR和DETR-DC5在COCO 2017 val set的收敛曲线</p>
+<p><img src="./image6.png" alt="image6.png"></p>
+<h2 id="消融实验"><a href="#消融实验" class="headerlink" title="消融实验"></a><strong>消融实验</strong></h2><p>消融实验对以下方面进行了验证：</p>
+<ul>
+<li>使用多尺度输入而不是单尺度输入可以有效提高检测精度，AP 为 1.7%，尤其是在检测小物体时，APS 为 2.9%。</li>
+<li>增加采样点 K 可以进一步提高 0.9% 的 AP。</li>
+<li>使用多尺度可变形关注，允许在不同尺度级别之间交换信息，可以使 AP 提高 1.5%。</li>
+<li>由于已经采用了跨尺度特征交换，因此添加 FPN 不会提高性能。</li>
+<li>当不使用多尺度注意力且 K = 1 时，（多尺度）可变形注意力模块会退化为可变形卷积，从而明显降低精度。</li>
+</ul>
+<p>以下是deformable attention在COCO 2017 val set上的一些消融实验结果：</p>
+<p><img src="./image7.png" alt="image7.png"></p>
+<h2 id="与STATE-OF-THE-ART-METHODS的对比实验"><a href="#与STATE-OF-THE-ART-METHODS的对比实验" class="headerlink" title="与STATE-OF-THE-ART METHODS的对比实验"></a><strong>与STATE-OF-THE-ART METHODS的对比实验</strong></h2><p>本文方法的设定以及与STATE-OF-THE-ART METHODS的对比实验结果：</p>
+<ul>
+<li>表中本文的模型均采用了iterative bounding box refinement 和两阶段机制。</li>
+<li>使用 ResNet-101 和 ResNeXt-101，本文的方法在不增加任何额外功能的情况下分别实现了 48.7 AP 和 49.0 AP。</li>
+<li>通过使用带有 DCN 的 ResNeXt-101，准确率上升到 50.1 AP。</li>
+<li>通过额外的测试时间增强，所提出的方法达到了 52.3 AP。</li>
+</ul>
+<p><img src="./image8.png" alt="image8.png"></p>
+<h1 id="分析与思考"><a href="#分析与思考" class="headerlink" title="分析与思考"></a><strong>分析与思考</strong></h1><p>Deformable DETR实例显著性点所存在的问题：</p>
+<ul>
+<li>采样点相关度高和相关度低的点集中在图像相同区域，没有明显界限</li>
+<li>采样点的相关性分布比较混乱，不利于对实例关注度的解释</li>
+<li>参考点以及采样点的分布效果不稳定</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:yang-yi@zju.edu.cn"><code> ✉️ yang-yi@zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
