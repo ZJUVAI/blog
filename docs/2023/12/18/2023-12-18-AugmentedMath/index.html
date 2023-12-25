@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Augmented Math: Authoring AR-Based Explorable Explanations by Augmenting Static Math Textbooks - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="toc-text">背景介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E7%AD%96%E7%95%A5"><span class="toc-text">设计策略</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%96%E7%95%A5-%E2%85%A0-%E5%85%B7%E4%BD%93%E6%95%B0%E5%80%BC%E4%B8%BE%E4%BE%8B"><span class="toc-text">策略 Ⅰ - 具体数值举例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%96%E7%95%A5-%E2%85%A1-%E2%80%93-%E5%8A%A8%E6%80%81%E5%9B%BE%E5%BD%A2%E5%91%88%E7%8E%B0"><span class="toc-text">策略 Ⅱ – 动态图形呈现</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E7%AD%96%E7%95%A5-%E2%85%A2-%E2%80%93-%E6%8F%90%E7%A4%BA%E7%BB%83%E4%B9%A0%E6%8C%87%E5%AF%BC"><span class="toc-text">策略 Ⅲ – 提示练习指导</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Augmented-Math-%E8%AE%BE%E8%AE%A1"><span class="toc-text">Augmented Math 设计</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%9B%E4%BD%9C%E6%B5%81%E7%A8%8B"><span class="toc-text">创作流程</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8A%9F%E8%83%BD%E8%AE%BE%E8%AE%A1"><span class="toc-text">功能设计</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0"><span class="toc-text">评估</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%8A%80%E6%9C%AF%E8%AF%84%E4%BC%B0"><span class="toc-text">技术评估</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%94%A8%E6%88%B7%E5%AE%9E%E9%AA%8C"><span class="toc-text">用户实验</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A8%E8%AE%BA"><span class="toc-text">讨论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Augmented Math: Authoring AR-Based Explorable Explanations by Augmenting Static Math Textbooks
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2023-12-18 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2023-12-18</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#温圳"
+                title="温圳">温圳</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Augmented Math: Authoring AR-Based Explorable Explanations by Augmenting Static Math Textbooks</p>
+<p>作者：Neil Chulpongsatorn, Mille Skovhus Lunding, Nishan Soni, Ryo Suzuki</p>
+<p>发表：UIST 2023</p>
+<p>本文介绍了一种基于机器学习的”增强数学”方法，无需编程即可为静态的数学教材创作AR增强的可探索式解释。为了增强静态文档，该方法首先使用OCR和计算机视觉技术从给定文档中提取数学公式和图形。通过绑定和操作这些提取的内容，用户可以通过移动AR界面看到叠加在文档上的交互式动画。这使得非技术用户，如教师或学生，能够将现有的数学教材和讲义转化为按需和个性化的可探索解释。在设计该方法时，本文首先分析了现有的可探索式数学解释，确定常见的设计策略。基于这些发现，本文设计了一套可以根据提取的内容自动生成的数学增强技术，包括：1）动态值，2）交互式图形，3）关系高亮，4）具体示例，以及5）逐步提示。为评估该方法，本文进行了用户测试和专家访谈。研究结果表明，该方法为学习数学概念提供了更具吸引力的体验。</p>
+<p><a target="_blank" rel="noopener" href="https://doi.org/10.1145/3586183.3606827">论文链接</a></p>
+<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>如今的教科书，无论是数字形式还是实体形式，都主要由静态解释组成，只允许读者被动地读取信息。</p>
+<p><img src="./1.png" alt=""></p>
+<p>而可探索式解释是一种新型的教程范式，这种范式将文本转变为可用于思考的交互式媒介，而不仅仅是一种可供读取的信息来源。这种动态和交互式的解释作为学习辅助工具具有巨大的潜力，因为它们通过引人入胜和有趣的探索促进对抽象概念的更深入理解，而这是仅通过静态教科书很难实现的。然而，创建这些可探索式解释通常需要大量的时间和精力，以及充足的编程专业知识。因此，非技术用户，例如教师和学生，往往只能被动地利用互联网上现有的交互式内容，而他们自己的大部分教科书仍然是静态的。</p>
+<p><img src="./2.png" alt=""></p>
+<p>为解决上述问题，本文提出了一种利用机器学习方法增强静态数学教科书，从而自动创建可探索式数学解释的方法。该方法对静态文本进行信息识别与提取，支持用户绑定与操控交互元素，并以AR或桌面界面呈现。</p>
+<p><img src="./3.png" alt=""></p>
+<p>为设计系统，本文首先分析并总结了常见的交互式数学解释的设计策略。然后，根据总结出的设计策略，实现了包含5种数学增强技术的原型系统。最后，组织普通用户和专家实验证明了系统可用性并评估其教学效果。</p>
+<p>总的来说，这篇工作主要有三个贡献:</p>
+<ul>
+<li>基于机器学习的新方法，通过增强静态数学教科书来创建可探索式解释</li>
+<li>通过对现有实例的分类分析，设计并实现的一系列增强数学功能实现</li>
+<li>用户实验和专家访谈的结果和见解</li>
+</ul>
+<h2 id="设计策略"><a href="#设计策略" class="headerlink" title="设计策略"></a>设计策略</h2><p>首先，本文从互联网上的各种网站收集了 43 例现有的交互式数学解释，总结出三大类常见的设计策略：</p>
+<p><img src="./4.png" alt=""></p>
+<h4 id="策略-Ⅰ-具体数值举例"><a href="#策略-Ⅰ-具体数值举例" class="headerlink" title="策略 Ⅰ - 具体数值举例"></a>策略 Ⅰ - 具体数值举例</h4><p>第一个策略是用具体值来举例说明抽象和符号数学表示。<br>大多数网站允许用户使用滑块或文本输入等交互式组件动态更新这些值。<br>该策略的另一个重要方面是，当用户改变这些值时，相应的方程也会根据动态计算和模拟而改变。</p>
+<h4 id="策略-Ⅱ-–-动态图形呈现"><a href="#策略-Ⅱ-–-动态图形呈现" class="headerlink" title="策略 Ⅱ – 动态图形呈现"></a>策略 Ⅱ – 动态图形呈现</h4><p>第一种策略主要关注文本表示，而另一种常见策略则利用动态视觉表示，包括响应式图表和图形动画。</p>
+<h4 id="策略-Ⅲ-–-提示练习指导"><a href="#策略-Ⅲ-–-提示练习指导" class="headerlink" title="策略 Ⅲ – 提示练习指导"></a>策略 Ⅲ – 提示练习指导</h4><p>这类策略包括上下文提示和交互式练习。示例包括引用定义来提醒上下文或通过分步说明分解复杂的解决方案。将练习直接纳入解释中可以让用户积极参与内容。</p>
+<h2 id="Augmented-Math-设计"><a href="#Augmented-Math-设计" class="headerlink" title="Augmented Math 设计"></a>Augmented Math 设计</h2><h3 id="创作流程"><a href="#创作流程" class="headerlink" title="创作流程"></a>创作流程</h3><p>Augmented Math 的创作流程包含4个步骤：</p>
+<ol>
+<li>扫描&amp;提取：扫描并提取数学教科书或讲义<br><img src="./5.png" alt=""></li>
+<li>选择&amp;绑定：选择方程并将其绑定到图形<br><img src="./6.gif" alt=""></li>
+<li>操作：拖动以更改变量值<br><img src="./7.gif" alt=""></li>
+<li>更新：使用变量和图之间的双向绑定<br><img src="./8.gif" alt=""></li>
+</ol>
+<h3 id="功能设计"><a href="#功能设计" class="headerlink" title="功能设计"></a>功能设计</h3><p>为了促进数学教程的多样化互动探索，本文开发了 5 种增强技术：</p>
+<p><img src="./9.png" alt=""></p>
+<ol>
+<li><strong>动态数值</strong>：动态值允许用户插入和操作文档中提取的符号和变量的具体值。</li>
+<li><strong>交互式图形</strong>：交互式图形为用户提供了通过可探索的视觉表示来理解概念的机会。</li>
+<li><strong>关系高亮</strong>：关系突出显示使用户能够可视化不同变量和视觉参考之间的联系。</li>
+<li><strong>具体实例</strong>：具体示例通过具体实例说明抽象概念来帮助用户。</li>
+<li><strong>逐步提示</strong>：系统通过执行算术运算、简化和分解来自动计算公式的分解。分步提示通过将复杂的数学问题或方程分解为一系列分步说明和解决方案来提供上下文帮助。</li>
+</ol>
+<h2 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h2><h3 id="技术评估"><a href="#技术评估" class="headerlink" title="技术评估"></a>技术评估</h3><ol>
+<li><p><strong>公式识别</strong>：OCR + CnSTD (基于 YoloV7) - 准确率：75%</p>
+</li>
+<li><p><strong>图形识别</strong>：轮廓线识别 + 规则判断 - 准确率：40-76%</p>
+</li>
+</ol>
+<p><img src="./10.png" alt=""></p>
+<h3 id="用户实验"><a href="#用户实验" class="headerlink" title="用户实验"></a>用户实验</h3><p><strong>实验设置</strong></p>
+<ul>
+<li><p>11位参与者（社区人员）</p>
+</li>
+<li><p>对比系统：AR - Web - 静态教科书</p>
+</li>
+</ul>
+<p><strong>评估目标</strong></p>
+<ol>
+<li>移动 AR 界面和 Web 界面的可用性</li>
+<li>移动AR、桌面、静态教科书三者对比</li>
+<li>功能实用性</li>
+</ol>
+<p><img src="./11.png" alt=""><br><img src="./12.png" alt=""></p>
+<p><strong>专家访谈</strong></p>
+<ul>
+<li>通过交互增加学习参与感</li>
+<li>减少创作负担</li>
+<li>支持自适应内容</li>
+<li>激发自主学习</li>
+</ul>
+<h2 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h2><ul>
+<li><strong>实验</strong>：自由使用和真实教学场景评估</li>
+<li><strong>系统</strong>：支持更多功能、优化交互设计</li>
+<li><strong>泛化</strong>：适应更多主题和教育场景、基于LLM的公式推理、其他AR界面</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><ul>
+<li>对于当前教学用途的数学公式的设计策略的总结</li>
+<li>Augmented Math 提供自动的可探索式数学解释生成方法</li>
+<li>实验证明交互增强的数学解释有效提升学习的参与度和体验感</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
