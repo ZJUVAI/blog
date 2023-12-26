@@ -1,12 +1,12 @@
 ---
-title: "Misleading Beyond Visual Tricks:How People Actually Lie with Charts"
+title: "Misleading Beyond Visual Tricks: How People Actually Lie with Charts"
 tags: ["论文评述", "报告"]
 date: 2023-09-04
 author: 张天圣
 mathjax: true
 ---
 
-论文：Misleading Beyond Visual Tricks:How People Actually Lie with Charts
+论文：Misleading Beyond Visual Tricks: How People Actually Lie with Charts
 
 作者：Maxim Lisnic, Cole Polychronis, Alexander Lex, Marina Kogan
 

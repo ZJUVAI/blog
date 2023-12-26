@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        A Unified Interactive Model Evaluation for Classification, Object Detection, and Instance Segmentation in Computer Vision - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="toc-text">背景介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="toc-text">相关工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%B3%BB%E7%BB%9F%E6%A1%86%E6%9E%B6"><span class="toc-text">系统框架</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%8F%AF%E8%A7%86%E5%8C%96%E8%AE%BE%E8%AE%A1"><span class="toc-text">可视化设计</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B%E7%A0%94%E7%A9%B6"><span class="toc-text">案例研究</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%93%E5%AE%B6%E5%8F%8D%E9%A6%88"><span class="toc-text">专家反馈</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AA%E6%9D%A5%E5%B7%A5%E4%BD%9C"><span class="toc-text">未来工作</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        A Unified Interactive Model Evaluation for Classification, Object Detection, and Instance Segmentation in Computer Vision
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2023-11-06 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2023-11-06</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#张天圣"
+                title="张天圣">张天圣</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：A Unified Interactive Model Evaluation for Classification, Object Detection, and Instance Segmentation in Computer Vision</p>
+<p>作者：Changjian Chen, Yukai Guo, Fengyuan Tian, Shilong Liu, Weikai Yang,Zhaowei Wang, Jing Wu, Hang Su, Hanspeter Pfister, and Shixia Liu</p>
+<p>发表：VIS 2023</p>
+<p>在现有的视觉模型评估工具中，主要侧重于评估分类模型，这导致了在评估更复杂模型（如目标检测）时存在一定的空白。在本文，我们开发了一个开源的视觉分析工具——Uni-Evaluator，用于支持计算机视觉中分类、目标检测和实例分割的统一模型评估。我们方法的关键思想是将不同任务中的离散和连续预测形式化为统一的概率分布。基于这些分布，我们开发了以下内容：1）基于矩阵的可视化，提供模型性能的概览；2）基于表格的可视化，识别模型表现不佳的问题数据子集；3）基于网格的可视化，展示感兴趣的样本。这些可视化方法共同作用，从全局概览到个别样本，促进了模型评估的进行。两个案例研究展示了 Uni-Evaluator 在评估模型性能并做出改进方面的有效性。</p>
+<p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2308.05168.pdf">论文链接</a></p>
+<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>模型评估是评估机器学习模型性能并帮助识别性能不佳原因以进一步改进的过程。这是机器学习模型开发中的关键步骤。例如，机器学习实践者通常会评估使用不同参数生成的模型，并选择最佳模型进行部署。目前，评估模型最广泛使用的方式是使用性能指标，例如准确率和 mAP（平均精度均值）。然而，仅使用这些指标有时可能会产生误导。为了更好地理解模型性能，需要更细粒度的评估。因此，混淆矩阵被提出，它提供了在类别级别上的评估，展示了类别之间的混淆情况。然而，它们只关注分类任务，其中样本分类的准确性是关注的焦点。此外，像目标检测这样的任务中，有时会同时考虑多个任务。尽管我们可以为不同任务开发不同的细粒度模型评估方法，但这会增加用户在不同方法之间切换时的学习成本和认知负荷。因此，需要一种适用于计算机视觉中不同任务的统一模型评估方法。</p>
+<p>本文的贡献有三点：</p>
+<ol>
+<li>协调的可视化，以解释不同级别的模型性能，包括基于矩阵的可视化，具有三种评估模式，由基于频繁模式挖掘的搜索支持的表格可视化，以及网格可视化。</li>
+<li>一种统一的概率分布方法，用于联合建模离散和连续预测，以评估一个工具中不同模型的性能。</li>
+<li>一个开源的可视化分析工具，将概率分布与协调的可视化相结合，以支持计算机视觉任务的统一模型评估。</li>
+</ol>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><ul>
+<li>Model Evaluation in Computer Vision<ul>
+<li>《TIDE: A General Toolbox for Identifying Object Detection Errors》将目标检测任务分为 6 种不同类型。</li>
+</ul>
+</li>
+<li>Model Evaluation in Visualization<ul>
+<li>《Neo: Generalizing Confusion Matrix Visualization to Hierarchical and Multi-Output Labels》采用概率分布来表示混淆矩阵。这些分布将传统的混淆矩阵推广到支持层次结构和多输出标签。</li>
+</ul>
+</li>
+</ul>
+<h2 id="系统框架"><a href="#系统框架" class="headerlink" title="系统框架"></a>系统框架</h2><p><img src="./1.png" alt=""></p>
+<p>（a）给定包含离散和连续变量的数据样本和模型预测</p>
+<p>（b）统一的表达模块通过概率分布对它们进行建模</p>
+<p>（c）可视化模块解释不同层次上的模型性能</p>
+<h3 id="可视化设计"><a href="#可视化设计" class="headerlink" title="可视化设计"></a>可视化设计</h3><p>Uni-Evaluator 的主要可视化设计包括：</p>
+<ul>
+<li><p><strong>矩阵可视化</strong></p>
+<ul>
+<li>confusion mode：在混淆模式下，单元格表示分类任务中的样本数量以及检测/分割任务中的物体数量。在每个单元格中，通过填充颜色来编码在类别之间混淆的样本/物体的频率，颜色从白色到蓝色渐变。单元格颜色越深，表示相关类别之间的混淆越严重。</li>
+<li>size mode：利用一个有三个扇区的饼图来总结每个单元格中预测物体的大小。灰色扇区代表预测大小准确的物体，而黄色/绿色扇区代表与地面真相相比更大/更小的物体。</li>
+<li>direction mode：用八个箭头表示方向。每个箭头的长度表示在该方向上移动的预测物体的数量。中间添加了一个圆圈，代表预测位置准确的物体。其半径表示这类物体的数量。<br><img src="./2.png" alt="Alt text"></li>
+</ul>
+</li>
+<li><p><strong>表格可视化</strong>：为了帮助用户识别有问题的子集，开发了基于频繁模式挖掘的搜索方法来挖掘候选子集。然后采用表格可视化来传达这些子集的属性。用户可以按照一个属性或多个属性的组合对这些子集进行排名，以找到有问题的子集。<br><img src="./3.png" alt="Alt text"></p>
+</li>
+<li><p><strong>网格可视化</strong>：网格的单元格显示了所选样本及其预测结果。<br><img src="./4.png" alt="Alt text"></p>
+</li>
+</ul>
+<h3 id="案例研究"><a href="#案例研究" class="headerlink" title="案例研究"></a>案例研究</h3><p><strong>数据集</strong>：COCO 数据集</p>
+<p><strong>使用过程</strong>：专家首先通过基于矩阵的可视化来分析整体性能。该矩阵最初处于混淆模式，并进行了行归一化，显示了 12 个超类之间的混淆情况。大多数非对角线单元格的颜色都非常浅（见图 5A），这表明模型在对不同超类的对象进行分类时具有很高的准确性。</p>
+<p>为了调查预测中潜在的尺寸误差，将其切换到尺寸模式。在矩阵中，他观察到所有具有大绿色和黄色扇区的大饼状图都位于对角线上。这表明许多对象被正确分类，但其尺寸存在误差。为了调查尺寸问题的原因，E1 决定深入研究这些对角线单元格。其中尺寸误差最多的对角线单元格，即“室外”超类（图 5A），被选为例子来说明这个想法。其他对角线单元格可以以类似的方式进行分析。</p>
+<p>为了找出“室外”超类中哪些类别导致了尺寸误差，他将这个单元格扩展为一个子矩阵（图 5C）。在子矩阵中，他发现“红绿灯”对尺寸误差做出了主要贡献（图 5B）。然而，在网格可视化中，与相关对象的预测并未显示出这些尺寸误差的明显原因（图 5D）。他随后转向表格可视化，以分析该单元格中不同子集的性能。</p>
+<p>为了在表格可视化中找到有问题的子集，他按照召回率得分升序对子集进行排序，确定了许多召回率得分较低的子集（图 6A）。他选择了召回率得分最低的子集（图 6A），然后转向矩阵。在矩阵中，他点击了饼状图中的绿色/黄色扇区（图 6B），以检查在网格可视化中尺寸比地面实况更小/更大的预测。</p>
+<p>通过检查尺寸较小的预测，他发现大多数这样的预测存在于模糊的图像中（图 6B）。E1 检查了训练样本，发现只有少数这样模糊的图像。他得出结论，这是模型在这些模糊图像上表现不佳的主要原因。为了解决这个问题，E1 对含有红绿灯的 4139 个训练样本应用了高斯噪声数据增强。在使用增强样本进行微调后，“红绿灯”的平均精度值从 32.7%提高到 33.1%。</p>
+<p><img src="./5.png" alt="Alt text"><br><img src="./6.png" alt="Alt text"></p>
+<h3 id="专家反馈"><a href="#专家反馈" class="headerlink" title="专家反馈"></a>专家反馈</h3><ul>
+<li>对其余视觉任务也有帮助<ul>
+<li>图像生成</li>
+<li>语义分割</li>
+</ul>
+</li>
+<li>在诊断表现不佳原因时很有帮助</li>
+</ul>
+<h2 id="未来工作"><a href="#未来工作" class="headerlink" title="未来工作"></a>未来工作</h2><ul>
+<li>通过语义属性选择子集。</li>
+<li>支持多模型比较。</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
