@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Large Language Models are Visual Reasoning Coordinators  - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%AE%80%E4%BB%8B%EF%BC%9A"><span class="toc-text">简介：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%EF%BC%9A"><span class="toc-text">背景：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C%EF%BC%9A"><span class="toc-text">相关工作：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%B4%A1%E7%8C%AE%E7%82%B9%EF%BC%9A"><span class="toc-text">贡献点：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%EF%BC%9A"><span class="toc-text">实验：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E6%80%A7%E5%AE%9E%E4%BE%8B%EF%BC%9A"><span class="toc-text">定性实例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9A%E9%87%8F%E5%AE%9E%E9%AA%8C%EF%BC%9A"><span class="toc-text">定量实验：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%B6%88%E8%9E%8D%E5%AE%9E%E9%AA%8C%EF%BC%9A"><span class="toc-text">消融实验：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A8%E8%AE%BA%EF%BC%9A"><span class="toc-text">讨论：</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Large Language Models are Visual Reasoning Coordinators 
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2023-11-26 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2023-11-26</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#王鑫阳"
+                title="王鑫阳">王鑫阳</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Large Language Models are Visual Reasoning Coordinators </p>
+<p>作者：Chen, Liangyu, Bo Li, Sheng Shen, Jingkang Yang, Chunyuan Li, Kurt Keutzer, Trevor Darrell, and Ziwei Liu</p>
+<p>发表：NeurIPS 2023</p>
+<h2 id="简介："><a href="#简介：" class="headerlink" title="简介："></a>简介：</h2><p>视觉推理需要多模态感知和对世界的常识认知。最近，人们提出了多种视觉语言模型（VLM），它们在不同领域都具有出色的常识推理能力。</p>
+<p>然而，如何利用这些互补视觉语言模型的集体力量却鲜有人问津。现有的方法（如集合）仍难以将这些模型与所需的高阶通信聚合在一起。本文提出了一种协调多个 VLM 进行视觉推理的新范式—Cola。大型语言模型（LLM）可以通过促进自然语言交流来有效协调多个 VLM，从而利用它们各自不同的互补能力。</p>
+<p>实验证明，指令微调变体 Cola-FT 在视觉问题解答 (VQA)等一系列推理任务上取得了SOTA。此外还证明了上下文学习变体 Cola-Zero，在不进行微调的情况下，也表现出了极具竞争力的性能。</p>
+<p><img src="Picture1.png" alt=""></p>
+<h2 id="背景："><a href="#背景：" class="headerlink" title="背景："></a>背景：</h2><p>文章本身非常简单，文章引起的讨论最后可以多聊一会，首先说到visual reasoning 大家想到的第一个任务是visual question answering。</p>
+<p>像这个就是一个VQA — how many vehicles have headlights on? 这样一种简单的以问题-图片还有回答，三个要素构成一个提问的形式就是VQA 视觉问答。这篇文章的任务就是以VQA为代表的一类视觉问答任务</p>
+<p>虽然语言模型在做决策表现出色，但在处理文本以外的输入方面存在局限。它们无法直接处理图像、声音等其他模态信息。这篇文章第一次尝试用llm和多个vlm之间进行沟通，一起解决visual reasoning。</p>
+<p><img src="Picture2.png" alt=""></p>
+<p>它设计了一个新的范式：假如有一个语言模型和两个视觉模型。语言模型充当的角色就是当作一个coordinater去最终决定答案（这里有一个点就是，cola是会对answer进行回传的，也就是有ft的过程）。</p>
+<p>然后作者说新的范式在一些下游任务上取得了SOTA，因为这篇文章是今年4/5月，估计现在不是SOTA了（Llama2的发布）。</p>
+<h2 id="相关工作："><a href="#相关工作：" class="headerlink" title="相关工作："></a>相关工作：</h2><p>类似将 LLM 作为Coordinator/Controller的思想在先前已经有体现。</p>
+<p>与HuggingGPT不同点:</p>
+<ul>
+<li><p>通过LLM进行任务分配</p>
+</li>
+<li><p>不同的AI models 承担不同的工作 (heterogeneous models)</p>
+</li>
+<li><p>根据社区里(HuggingFace, Azure…)的模型描述进行模型的挑选</p>
+</li>
+</ul>
+<p><img src="Picture3.png" alt=""></p>
+<h2 id="贡献点："><a href="#贡献点：" class="headerlink" title="贡献点："></a>贡献点：</h2><ul>
+<li>Cola：一种新颖的范例，利用语言模型作为多个视觉语言模型之间的协调者，整合它们各自的优势进行视觉推理。</li>
+<li>最先进的性能： Cola在一系列具有挑战性的视觉推理任务和数据集上达到了SOTA。</li>
+<li>系统分析：通过实验揭示了Cola如何理解指令内容，然后协调这些内容来捕捉令人印象深刻的视觉推理能力。</li>
+</ul>
+<h2 id="实验："><a href="#实验：" class="headerlink" title="实验："></a>实验：</h2><h3 id="定性实例："><a href="#定性实例：" class="headerlink" title="定性实例："></a>定性实例：</h3><p>语言模型有知人善用的能力，比如假设在体育这个类型问题上语言模型偏爱BLIP这个模型。</p>
+<p>作者做了个简单的验证，将视觉模型给出的说明或者答案打乱，比如OFA给出的答案写成BLIP给出的答案，发现语言模型还是选择了BLIP的答案。</p>
+<p><img src="Picture4.png" alt=""></p>
+<h3 id="定量实验："><a href="#定量实验：" class="headerlink" title="定量实验："></a>定量实验：</h3><p>可以看到 Cola-FT 在四个数据集（A-OKVQA、OK-VQA、e-SNLI-VE、VSR）上实现了最先进的（SOTA）性能，只需1个epoch的指令调整和一个中等大小的语言模型。</p>
+<p><img src="Picture5.png" alt=""></p>
+<h3 id="消融实验："><a href="#消融实验：" class="headerlink" title="消融实验："></a>消融实验：</h3><p>消融实验结果验证了Cola模型在协调多个视觉语言模型（VLMs）方面的有效性。</p>
+<p>在A-OKVQA验证集上，单个VLM（没有FLAN-T5的情况下）的性能为BLIP为50.83%，OFA为54.75%。为了验证多个VLM协作的效果，首先通过剔除Cola-FT的单个VLM变体，即#1（只有OFA，没有BLIP）和#2（只有BLIP，没有OFA），结果显示它们在性能上明显落后于Cola-FT。</p>
+<p>随后的实验中，作者剔除了VLM的标题和合理答案，以及通过扰动标题标签等方式进行了关键验证步骤。实验证明，合理的答案对于帮助语言模型回答视觉问题更为重要。通过扰动VLM标题标签，作者验证了这些标签对Cola-FT性能的影响，结果显示VLM标题标签的变化会降低Cola-FT的性能。总体而言，作者强调Cola模型性能的提升主要来自于BLIP和OFA之间的协作，而非语言模型FLAN-T5的强大推理能力。</p>
+<p><img src="Picture6.png" alt=""></p>
+<h2 id="讨论："><a href="#讨论：" class="headerlink" title="讨论："></a>讨论：</h2><ul>
+<li><p>作者只finetune了语言模型</p>
+</li>
+<li><p>Meta-segment anything 厉害的一个点，做了一个大的数据库 很多lable靠它的模型去自动标注，以后是不是有可能用lm去校准或者扩展一下vlm的数据label。用强模型输出好的结果，去ft弱模型。</p>
+</li>
+<li><p>把数据集用自动化的模式标注，在ft的时候，把vlm也ft一下，获得一些提高</p>
+</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Why Change My Design: Explaining Poorly Constructed Visualization Designs with Explorable Explanations - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="toc-text">背景介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%9C%AC%E6%96%87%E8%B4%A1%E7%8C%AE"><span class="toc-text">本文贡献</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="toc-text">相关工作</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%AF%E5%AF%BC%E6%80%A7%E5%8F%AF%E8%A7%86%E5%8C%96%E7%A0%94%E7%A9%B6"><span class="toc-text">误导性可视化研究</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%87%AA%E5%8A%A8%E6%A3%80%E6%B5%8B%E5%92%8C%E8%AF%AF%E5%AF%BC%E6%80%A7%E5%8F%AF%E8%A7%86%E5%8C%96%E7%9A%84%E8%A7%A3%E9%87%8A%E6%8A%80%E6%9C%AF"><span class="toc-text">自动检测和误导性可视化的解释技术</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%E6%96%B9%E6%B3%95"><span class="toc-text">解释方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%E8%AE%BE%E8%AE%A1"><span class="toc-text">解释设计</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%9E%84%E5%BB%BA%E8%AF%AF%E5%AF%BC%E6%80%A7%E5%8F%AF%E8%A7%86%E5%8C%96%E5%AE%9E%E4%BE%8B"><span class="toc-text">构建误导性可视化实例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%A7%A3%E9%87%8A%E6%96%B9%E6%B3%95-1"><span class="toc-text">解释方法</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E5%AE%9E%E9%AA%8C"><span class="toc-text">评估实验</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%B8%80%EF%BC%9A%E8%A7%A3%E9%87%8A%E7%9A%84%E5%AD%A6%E4%B9%A0%E6%9C%89%E6%95%88%E6%80%A7"><span class="toc-text">实验一：解释的学习有效性</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%BA%8C%EF%BC%9A%E8%A7%A3%E9%87%8A%E7%9A%84%E8%AF%B4%E6%9C%8D%E6%9C%89%E6%95%88%E6%80%A7"><span class="toc-text">实验二：解释的说服有效性</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A8%E8%AE%BA"><span class="toc-text">讨论</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Why Change My Design: Explaining Poorly Constructed Visualization Designs with Explorable Explanations
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2023-09-24 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2023-09-24</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#陈俊旭"
+                title="陈俊旭">陈俊旭</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Why Change My Design: Explaining Poorly Constructed Visualization Designs with Explorable Explanations</p>
+<p>作者：Leo Yu-Ho Lo, Yifan Cao, Leni Yang, Huamin Qu</p>
+<p>发表：VIS 2023</p>
+<p>尽管可视化工具广泛可用且易于获取，但并非所有人都了解如何创建准确且诚实的数据视觉表示的最佳实践和指导方针。已有大量的书籍和文章被编写出来，揭示了构建不良图表的误导潜力，并教导人们如何避免被它们欺骗或犯自己的错误。这些读物使用各种修辞手段向读者解释概念。在我们对一系列书籍、在线材料和设计研讨会的分析中，本文确定了六种常见的解释方法。为了评估这些方法的有效性，本文进行了两项众包研究（每项研究参与者N = 125），以评估它们教导和说服人们进行设计更改的能力。除了这些现有的方法，本文引入了可探索性解释的概念，这使读者可以尝试不同的图表设置，并观察更改如何在可视化中反映出来。尽管本文没有发现解释方法之间存在显著差异，但本文的实验结果表明，接触解释后，参与者在识别欺骗性图表方面的熟练度有所提高，对可视化设计的改动建议更加接受。本文发现参与者愿意接受超过60%的说服性评估中提出的调整。然而，本文没有发现不同解释方法在说服参与者接受修改方面存在显著差异。  </p>
+<p><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/10299537">论文链接</a></p>
+<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>现存有不少用于解释误导性可视化的方法，但缺乏全面的整理以及针对其有效性的评估，目前学术界是存在相关的自动可视化推荐和矫正系统，它们主要有两个特点：</p>
+<ol>
+<li>基于目前可视化社区存在的指导规则</li>
+<li>提供自动错误可视化实例的检测，及更正推荐</li>
+</ol>
+<p>同时这类系统也存在一些问题：缺乏”交流“层面的技术，也就是没有向用户解释为什么某种可视化实例存在错误或者隐患</p>
+<h2 id="本文贡献"><a href="#本文贡献" class="headerlink" title="本文贡献"></a>本文贡献</h2><p>• 编译整理了目前存在的针对误导性可视化的解释方法在现有解释方法的基础上，添加了探索性解释</p>
+<p>• 针对这些解释方法的有效性，做了两方面的评估实现</p>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><h4 id="误导性可视化研究"><a href="#误导性可视化研究" class="headerlink" title="误导性可视化研究"></a>误导性可视化研究</h4><ol>
+<li>Huff’s “How to Lie with Statistics”</li>
+<li>Tuffe’s “The Visual Display of Quantitative Information”</li>
+</ol>
+<h4 id="自动检测和误导性可视化的解释技术"><a href="#自动检测和误导性可视化的解释技术" class="headerlink" title="自动检测和误导性可视化的解释技术"></a>自动检测和误导性可视化的解释技术</h4><p><strong>文本提示：</strong></p>
+<ol>
+<li>基于预定义的规则</li>
+<li>无需预定规则</li>
+</ol>
+<p><strong>可视提示：</strong></p>
+<ol>
+<li>依赖专家指导</li>
+<li>高计算开销</li>
+</ol>
+<p><strong>探索性解释</strong></p>
+<h2 id="解释方法"><a href="#解释方法" class="headerlink" title="解释方法"></a>解释方法</h2><p>本文通过互联网、查阅文献、组织研讨会三个途径，搜寻汇总了六类对可视化实例的解释方法，并分为了文本和可视两大类，可视类又分为标记和对比两个子类</p>
+<p>六类解释性方法分别是：</p>
+<ol>
+<li>Short Text: 用简短的句子对图表上的问题作出解释</li>
+<li>Long Text: 提供详细的解释，一般会有多个段落</li>
+<li>Correction: 在原始的图表上做修改</li>
+<li>Redraw:  直接重新创造一个不同类型的图表</li>
+<li>Highlighting：在原始图表上的特定区域做高亮，以引起读者的注意</li>
+<li>Annotation：更加突出的展示图表上的问题，并添加注解</li>
+</ol>
+<p><img src="./method-example.png" alt=""></p>
+<h2 id="解释设计"><a href="#解释设计" class="headerlink" title="解释设计"></a>解释设计</h2><h4 id="构建误导性可视化实例"><a href="#构建误导性可视化实例" class="headerlink" title="构建误导性可视化实例"></a>构建误导性可视化实例</h4><p>三个设计问题：</p>
+<ol>
+<li><p>Truncated Axis</p>
+</li>
+<li><p>Inappropriate Axis Range</p>
+</li>
+<li><p>Inappropriate Use of Line Chart</p>
+</li>
+</ol>
+<p>两个感知问题：</p>
+<ol>
+<li><p>Ineffective Colour Scheme</p>
+</li>
+<li><p>3D Pie Chart</p>
+</li>
+</ol>
+<p><img src="./visual-instance.png" alt=""></p>
+<h4 id="解释方法-1"><a href="#解释方法-1" class="headerlink" title="解释方法"></a>解释方法</h4><p>方法选择：</p>
+<ol>
+<li>Short Text</li>
+<li>Correction or Redraw</li>
+<li>Highlighting</li>
+<li>Annotation</li>
+<li>Exploration Explanation</li>
+</ol>
+<p><img src="./selected-methods.png" alt=""></p>
+<h2 id="评估实验"><a href="#评估实验" class="headerlink" title="评估实验"></a>评估实验</h2><h4 id="实验一：解释的学习有效性"><a href="#实验一：解释的学习有效性" class="headerlink" title="实验一：解释的学习有效性"></a>实验一：解释的学习有效性</h4><p>解释方法选择：</p>
+<ol>
+<li>Short Text(baseline)</li>
+<li>Short Text + Highlighting</li>
+<li>Short Text + Annotation</li>
+<li>Short Text + Correction</li>
+<li>Short Text + Correction + Exploration Explanation</li>
+</ol>
+<p>实验步骤：</p>
+<ol>
+<li>pre-intervention test</li>
+<li>intervention</li>
+<li>post-intervention test</li>
+</ol>
+<p>参与者：</p>
+<p>全部来自Prolific平台，每类解释方法均参与25人，共125人</p>
+<p>假设：</p>
+<p>假设一：干预后的正确率高于干预前的正确率</p>
+<p>假设二：探索性解释对干预后测试的正确率有更大的影响</p>
+<p><img src="./validity.png" alt=""></p>
+<p>结果分析：</p>
+<p>正确率中位数：</p>
+<p>干预前：19/30</p>
+<p>干预后：27/30</p>
+<p>ANOVA test:  F(1,248) = 288, p &lt; 0.0001</p>
+<p><img src="./result1.png" alt=""></p>
+<p>假设一：接受</p>
+<p>假设二：拒绝</p>
+<h4 id="实验二：解释的说服有效性"><a href="#实验二：解释的说服有效性" class="headerlink" title="实验二：解释的说服有效性"></a>实验二：解释的说服有效性</h4><p><img src="./experiment2.png" alt=""></p>
+<p>结果分析：</p>
+<p>Truncated Axis, Inappropriate Colour Scheme, 3D pie charts</p>
+<p>t-tests with Bonferroni correction: </p>
+<p>a) vs. Inappropriate Colour Scheme (p : 0.007)</p>
+<p>b) vs. 3D pie charts (p : 0.046)</p>
+<p><img src="./result2.png" alt=""></p>
+<p>假设一：拒绝</p>
+<p>假设二：接受</p>
+<p>假设三：拒绝</p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>• 对误导性图表给出解释的确能帮助读者更好地识别错误图表，但探索性解释并未明显由于其他解释方法</p>
+<p>• 对误导性图表给出解释的确更能使读者接受更改建议（60%接受率），但各个解释方法之间的差异并不明显，且不同的图表问题得到的建议接受率不同</p>
+<h2 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h2><p>• 公认的可视化设计准则在特定问题不一定适用</p>
+<p>• 单独的文本性解释是否足以解释误导性可视化尚不清楚</p>
+<p>• 探索性解释没有对两项实验的结果产生明显影响，但其潜力很大</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

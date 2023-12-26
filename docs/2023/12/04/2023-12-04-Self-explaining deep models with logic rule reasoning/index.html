@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Self-explaining deep models with logic rule reasoning - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="toc-text">背景介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="toc-text">相关工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E6%96%B9%E6%B3%95%EF%BC%9ASELOR"><span class="toc-text">设计方法：SELOR</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Self-explaining"><span class="toc-text">Self-explaining</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Logic-rule-reasoning"><span class="toc-text">Logic rule reasoning</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0%E6%A1%86%E6%9E%B6"><span class="toc-text">具体实现框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C"><span class="toc-text">实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AF%B9%E4%BA%BA%E7%B2%BE%E5%BA%A6"><span class="toc-text">对人精度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E9%A2%84%E6%B5%8B%E8%A1%A8%E7%8E%B0%E5%92%8C%E9%B2%81%E6%A3%92%E6%80%A7"><span class="toc-text">预测表现和鲁棒性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%88%E7%8E%87%E5%8F%8A%E5%85%B6%E4%BB%96"><span class="toc-text">效率及其他</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%B1%80%E9%99%90%E6%80%A7%E5%92%8C%E6%9C%AA%E6%9D%A5%E5%B7%A5%E4%BD%9C%E8%AE%A8%E8%AE%BA"><span class="toc-text">局限性和未来工作讨论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Self-explaining deep models with logic rule reasoning
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2023-12-04 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2023-12-04</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#刘兴宇"
+                title="刘兴宇">刘兴宇</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Self-explaining deep models with logic rule reasoning</p>
+<p>作者：Seungeon Lee, Xiting Wang, Sungwon Han, Xiaoyuan Yi, Xing Xie, and Meeyoung Cha</p>
+<p>发表：NeurIPS 2022</p>
+<p>如何保证解释和人类推理过程一致，或解释对人精度（Human Precision）高，是可解释人工智能领域重要、困难却经常被忽视的问题。高的Human Precision要求人看到解释以后，认为人工智能的解释合理，能根据人工智能的解释自然而然地猜出模型的预测结果。它会影响用户的信任，并允许用户与模型密切协作。基于此，我们提出了SELOR，这是一个将自解释功能集成到给定深度模型中的框架，以实现高预测性能和高human precision。大量实验表明，我们的方法比其他方法给出的解释更接近人类决策逻辑，同时保持了深度学习模型的性能。</p>
+<p><a target="_blank" rel="noopener" href="https://www.microsoft.com/en-us/research/publication/self-explaining-deep-models-with-logic-rule-reasoning/">论文链接</a></p>
+<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>深度学习在广泛的任务中显示出很高的预测准确性，但其内部工作机制被复杂的模型设计所掩盖。这就提出了一个重要的问题，即深度模型是否合乎道德、值得信赖，或者是否能够在各种条件下按预期执行。目前有不少的事后可解释方法的相关工作，但其提供的解释只是一种近似，而自可解释模型本身具备可解释能力，并且由于解释是模型自身提供，所以可信度较高，但仍然存在解释对人精度不高的问题。</p>
+<p>本文中提出了达到高对人精度的两个条件，说明了逻辑规则形式的解释天然能够满足这两个条件。基于此，微软亚洲研究院的研究员们提出了一个基于逻辑规则的自可解释深度学习框架。此框架的优点如下：</p>
+<p>1）模型无关：能够将给定的深度模型升级成为以逻辑规则推理的自可解释深度模型</p>
+<p>2）对人精度高：用户实验表明本文提出的自可解释模型的解释与人推理逻辑相似性，相较于现有方法有显著提高</p>
+<p>3）预测准确性高：升级后的自可解释模型的准确性和原模型没有显著差别</p>
+<p>4）鲁棒性高：升级后的自可解释模型比原始黑盒模型对噪音更加鲁棒</p>
+<p>5）容易融入用户反馈：不需要重新训练模型，用户就能够修改模型的预测逻辑</p>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><ul>
+<li>Post-Hoc Explanations</li>
+</ul>
+<h2 id="设计方法：SELOR"><a href="#设计方法：SELOR" class="headerlink" title="设计方法：SELOR"></a>设计方法：SELOR</h2><p>SELOR是<strong>S</strong>elf-<strong>E</strong>xplaining with <strong>LO</strong>gic rule <strong>R</strong>easoning的简称,通过将给定的深度模型升级为可自我解释的版本，提高了解释的可信任度，再通过逻辑规则推理，使得规则具有高对人精度。下面分成两个部分介绍。</p>
+<h3 id="Self-explaining"><a href="#Self-explaining" class="headerlink" title="Self-explaining"></a>Self-explaining</h3><p>首先，本文对黑盒模型进行了一个升级，变成了一个自可解释的版本。这个自可解释的方法的好处有：</p>
+<ul>
+<li>我们可以信任模型的解释，因为解释是自己给出的，不是第三方方法近似给出。</li>
+<li>它可以很好地融入用户的反馈，融入模型内部的解释提供了一个把手，让我们可以去操纵这个模型。</li>
+</ul>
+<p>但是如果只有self-explaining，模型会倾向从本身的角度给出解释，而不能让其以人类容易理解的形式给出。即低具有较低的human precision。例如 一篇 NeurIPS 18年的论文介绍的SENN，作者进行用户调查后发现有超过30%的解释，人们在看到解释的时候不能正确地猜到模型的预测结果。</p>
+<h3 id="Logic-rule-reasoning"><a href="#Logic-rule-reasoning" class="headerlink" title="Logic rule reasoning"></a>Logic rule reasoning</h3><p>为了解决低对人精确度的问题，作者提出用逻辑规则推理的方法给出解释。</p>
+<p>Logic rules主要由基本的解释单元和逻辑连接部分构成。使用logic rule是因为其和人类的决策逻辑类似，而且在很多场景中被使用来代替模型进行决策。人类在这个过程中只需要定义逻辑规则的形式，比如基础单元是词，逻辑连接部分包括and和or，最大规则长度是4等等。给出信息后模型从所有可能的逻辑规则中进行自动的挑选，选出预测准确性和对人精度都很高的一些规则。</p>
+<h2 id="具体实现框架"><a href="#具体实现框架" class="headerlink" title="具体实现框架"></a>具体实现框架</h2><p>首先，黑盒模型的情况下，用户输入一个句子，然后用深度学习模型得到这个句子的embedding，最后用一个预测层把隐向量映射到预测结果。本文会将黑盒模型的预测层换成一个规则前提生成器（antecedent generator），它会在所有可能的规则的前提中挑选一个作为对预测结果的解释。</p>
+<p><img src="./antecedent generator.jpg" alt="antecedent generator"></p>
+<p>然后，通过consequent estimator即可得到该解释对应的最终结果。具体过程如图所示，得到了antecedent以后，会找到所有符合这个antecedent的实例，然后去看一下他们的标签，发现它们百分之90都是正面情感，因此得到结论，是正面情感，有90%的概率。</p>
+<p><img src="./consequent estimator.jpg" alt="antecedent generator"></p>
+<p>这里对应的antecedent 和consequent组合在一起就得到了最终的logic rule。</p>
+<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><p>本文通过多次实验，与两种自解释模型SENN和RCN在准确性、鲁棒性、可解释性和效率方面进行了比较。与LIME和Anchor两种事后可解释方法比较了可解释性和效率。</p>
+<h3 id="对人精度"><a href="#对人精度" class="headerlink" title="对人精度"></a>对人精度</h3><p>实验设置：招募多名英语母语人士，随机选择50条Yelp评论和50个adult样本，并为每个评论及样本提供了从不同可解释方法获得的五种解释，每个参与者来评判这个解释是否良好，或者是否是最佳解释。</p>
+<p>实验结果：</p>
+<p><img src="./实验1.png" alt="antecedent generator"></p>
+<p>可以看到，SELOR的良好解释比例最高，被选为最好的解释的频率也是最高的。</p>
+<h3 id="预测表现和鲁棒性"><a href="#预测表现和鲁棒性" class="headerlink" title="预测表现和鲁棒性"></a>预测表现和鲁棒性</h3><p>实验设置：NLP数据集中使用BERT和RoBERTa作为骨干网络，而表格数据集中使用3层DNN，使用PR-AUC的值来评估预测表现。通过对数据集随机20%的样本进行标签的反转设置噪声，使用F1 score的值对鲁棒性进行评估。</p>
+<p>实验结果：</p>
+<p><img src="./实验2.jpg" alt="antecedent generator"></p>
+<p>这里的Base是一种不可解释的模型。通常来说不可解释模型的预测准确性最高，但这里可以看到SELOR实现了与不可解释基础模型相当的平均性能。说明logic rule没有限制能力，只把模型做决策的范围限定到更合理的空间。</p>
+<p>SELOR对噪声标签也具有更好的鲁棒性，F1 score会比黑盒模型高10%。  </p>
+<h3 id="效率及其他"><a href="#效率及其他" class="headerlink" title="效率及其他"></a>效率及其他</h3><p>实验设置：与其他几种方法比较模型训练时间，以及与自解释模型比较生成解释的时长。</p>
+<p>实验结果：<img src="./实验3.png" alt="antecedent generator"></p>
+<p>SELOR的训练时间是比普通黑盒模型多了16%，而且随着深度学习模型变得复杂，和黑盒模型的差距会越来越小。但是该方法需要额外的时间训练neural consequent estimator，不过对于每个数据集只需要进行一次训练并且可以被重用。salor生成解释的速度也会比事后可解释方法快很多。</p>
+<p>此外，Selor可以不经过模型的重新训练就进行修改和控制，比如删除一些有偏见错误的规则解释，模型就会重新选择其他的规则，预测结果也会进行相应的改变，也就是能及时通过用户的反馈进行调整。</p>
+<h2 id="局限性和未来工作讨论"><a href="#局限性和未来工作讨论" class="headerlink" title="局限性和未来工作讨论"></a>局限性和未来工作讨论</h2><ul>
+<li><p>适用性：</p>
+<p>1.论文实验只使用了表格和自然语言数据集。</p>
+<p>2.但也可以用于graphs，如果数据集中有很明确的解释基本单元，如词，点，边。如果用于image的数据，每一个pixel作为一个解释，其意义也不太清晰。  </p>
+<p>3.对于更复杂的场景比如推荐系统，在feature特别多的情况下，就不一定能抽取出具有代表性的规则 。所以需要进行feature learning，自己获取解释的基本单元，而不是让人指定。</p>
+</li>
+<li><p>规则的种类：</p>
+<p>1.当前使用的逻辑简单，只涉及最底层的一些逻辑单元和他们的基本组合。比如not and good推出negative sentiment，  就不会深层次的推理出认为not是作为一个否定词，起到让good取反的效果，</p>
+<p>2.逻辑规则的覆盖是比较低的，比如在Yepl数据集中，awesome AND tasty =&gt; positive sentiment只能在0.37%的样本中使用。所以未来可以研究使用更高级别的逻辑推理的规则，比如first-order logic一阶逻辑，模型可能就会直接找到高级规则模式，比如“a negation word AND a positive sentiment word” =&gt; negative sentiment。而不是列出具体的not和good。</p>
+</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这篇文章提出的框架主要针对于解决模型的可解释能力的一些局限性 ，除了提高解释的精确度以外，还发现了其他同类论文中的方法的缺点，来提出一个对人精度这样一个概念，并且通过融入逻辑规则来实现了生成解释的一个高对人精度。在实验部分，也比较了多种类型的模型以及方法，除了基础的黑盒模型以外，也和几种常见的可解释模型和事后可解释方法在各自擅长的特性上进行了比较，得到了很有说服力的结论。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
