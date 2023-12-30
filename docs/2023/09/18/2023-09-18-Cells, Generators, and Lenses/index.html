@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Cells, Generators, and Lenses: Design Framework for Object-Oriented Interaction with Large Language Models - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="toc-text">背景介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="toc-text">相关工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%A1%86%E6%9E%B6%E5%86%85%E5%AE%B9"><span class="toc-text">框架内容</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Cells"><span class="toc-text">Cells</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Generators"><span class="toc-text">Generators</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Lenses"><span class="toc-text">Lenses</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%95%8C%E9%9D%A2%E8%AE%BE%E8%AE%A1"><span class="toc-text">界面设计</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E5%AE%9E%E9%AA%8C"><span class="toc-text">评估实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Cells, Generators, and Lenses: Design Framework for Object-Oriented Interaction with Large Language Models
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2023-09-18 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2023-09-18</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#陈治彰"
+                title="陈治彰">陈治彰</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Cells, Generators, and Lenses: Design Framework for Object-Oriented Interaction with Large Language Models</p>
+<p>作者：Tae Soo Kim, Yoonjoo Lee, Minsuk Chang∗, Juho Kim</p>
+<p>发表：UIST 2023</p>
+<p>大型语言模型（LLMs）已成为许多写作界面的支柱。虽然LLMs减少了手动写作的工作量，但最终用户可能需要尝试和迭代各种生成配置（例如输入和模型参数），直到结果符合他们的目标。然而现有的界面设计未设计用于实验和迭代，并且可能限制最终用户如何跟踪、比较和组合配置。因此文章提出“多单元、多生成器、多镜头”的框架，用于设计支持交互对象的界面。为了展示框架如何推广到不同的写作任务，作者重新设计了三个不同的界面，并且为了证明设计界面对最终用户的支持效果，作者进行了一项比较研究（N=18）。最后通过与设计师（N=3）进行研讨，作者观察到文章提供的框架在设计过程中不仅起到了引导作用，同时也提供了设计灵感。</p>
+<p><a target="_blank" rel="noopener" href="https://kixlab.github.io/website-files/2023/uist2023-llmobjects-paper.pdf">论文链接</a> </p>
+<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>大型语言模型（LLMs）已经使用户能够在不实际进行写作的情况下进行写作。然而，当使用这些模型时，用户面临着一个新的任务：手动配置模型的生成过程以产生期望的输出。用户需要构成模型的输（如提示工程）并调整模型的参数（如增加温度以生成更多样的文本）。此外，用户可能希望根据他们的目标和任务配置如何查看和探索生成的输出。如，使用列表仔细阅读特定编辑，或者使用空间可视化快速比较草稿之间的相似性。因此，为了实现用户使用LLM进行文本生成任务，用户需要配置整个生成过程——输入、模型和输出。</p>
+<p>然而，由于LLMs的黑匣子和非确定性特性，用户可能难以解释模型生成特定输出的原因以及如何“纠正”。用户可能需要反复尝试不同的生成配置来理解它们的影响，在创造性任务中，迭代（即反复发展一个想法）和实验（即列举和测试各种想法）对于理解和探索设计空间至关重要。</p>
+<p>但是传统的LLM写作界面通常只提供一个文本输入区域，这个区域经常与输出共用，并提供一个控制面板用于配置全局参数。在这种类型的界面中测试不同的输入和参数，用户必须逐一尝试每个配置，同时覆盖之前的配置。由于配置被覆盖，最终用户无法保存以前的配置，以便在未来的迭代中如果没有产生令人满意的输出时可以返回之前配置。此外，这些界面不允许最终用户并行比较多个配置，这将会对配置的各个方面组合进行进一步迭代和实验造成障碍。这些限制要求界面摆脱传统文本编辑器的设计，并朝着一个专注于促进最终用户配置LLM行为的新范式发展。</p>
+<p>在这项工作中，作者介绍了一个设计框架，用于支持通过单元、生成器和镜头与LLMs进行面向对象的交互。与现有界面不同，最终用户在其中与一个输入区域、参数设置和输出空间进行交互。在这个框架内，每个对象都可以单独配置，最终用户可以在其中进行实验和迭代，而不会影响他们创建的其他配置。此外，我们的框架描述了界面如何支持最终用户灵活地将这些对象组装成各种并行配置，支持并行原型设计和在配置之间进行混合和匹配。界面设计师可以使用该框架来创建支持他们目标写作任务中最终用户迭代和实验的界面。</p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/33613431/1703848563050-c1233634-5dcd-46c0-aae1-4944026a11fe.png?x-oss-process=image%2Fresize%2Cw_1625%2Climit_0" alt=""></p>
+<center style="font-size:14px;color:#C0C0C0;">图1 单元、生成器、镜头</center>
+
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><ul>
+<li><p><strong>生成模型的交互</strong></p>
+</li>
+<li><p><strong>大型语言模型的界面</strong></p>
+</li>
+<li><p><strong>人工智能写作支持工具</strong></p>
+</li>
+</ul>
+<h2 id="框架内容"><a href="#框架内容" class="headerlink" title="框架内容"></a>框架内容</h2><h3 id="Cells"><a href="#Cells" class="headerlink" title="Cells"></a>Cells</h3><p><strong>Cell 单元，它是输入内容的对象表示</strong></p>
+<p>单元表示离散的文本片段，它有以下特点</p>
+<ol>
+<li><p>离散输入单元：单元表示文本片段，如句子、短语或单词。它们可以作为LLM的输入。</p>
+</li>
+<li><p>多功能性：单元不仅可以表示文本片段，还可以表示指令行（如规范）或预期行为的示例。这增加了单元的灵活性和适用性。</p>
+</li>
+<li><p>可编辑和调整：用户可以对单元进行编辑和调整，以满足他们的需求。他们可以创建新的单元、修改现有的单元，并对单元进行组合以形成更复杂的输入。</p>
+</li>
+</ol>
+<p>除了单元的基本特性以外，文章还说明了设计师在设计视图应该支持单元的两种基本交互，即单元的创建和组装</p>
+<ul>
+<li>创建：用户可以创建新的单元，填充不同的输入，或者复制现有的单元并编辑它们成为同一输入的各种版本。</li>
+<li>组装：单元以被组装成生成输入（如，将句子组装成一篇文章），这使用户可以快速组装输入的变体，或者混合和匹配这些变体</li>
+</ul>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/33613431/1703850461274-092737b0-031e-4e82-9b8d-c1998c494af7.png" alt=""></p>
+<center style="font-size:14px;color:#C0C0C0;">图2 单元示意图</center>
+
+
+
+<h3 id="Generators"><a href="#Generators" class="headerlink" title="Generators"></a>Generators</h3><p><strong>生成器是模型设置的对象表示（即LLM的类型和参数值）</strong></p>
+<p>文章提到设计师应该支持生成器的三种交互方式</p>
+<p>创建：</p>
+<ol>
+<li><p>通过生成器，用户可以创建多个模型实例，并分别修改每个实例的模型类型和参数，以实验它们的效果。</p>
+</li>
+<li><p>用户可以同时维护多个模型实例，解决不同的子任务或需求</p>
+</li>
+<li><p>界面应该促进参数调整，因为以往的研究表明，不同的参数设置可以实现不同的写作目标</p>
+</li>
+</ol>
+<p>连接：</p>
+<ol>
+<li><p>生成器可以自由地与不同的单元或单元集合连接起来，以产生输出。这些连接可以是多对多的，以帮助用户测试不同输入和模型参数的各种组合。</p>
+</li>
+<li><p>设计师可以创建明确显示连接过程的界面，用户通过拖放操作在单元和生成器之间创建连接，像是图中展示的这种形式就是显式连接，通过线条显式的将单元可生成器的连接展示出来,同时也可以创建隐式的界面，用户选择要用作输入的单元，然后点击一个生成器来使用其配置进行生成。</p>
+</li>
+</ol>
+<p>追踪：</p>
+<ol>
+<li><p>由于LLMs的黑盒和非确定性性质，配置更改的效果无法完全预测。因此，用户需要迭代地测试不同的配置，并且在迭代过程中可能希望返回先前测试过的配置。</p>
+</li>
+<li><p>生成器作为对象要跟踪参数变化的历史记录包括输入文本、参数设置和生成的输出数组。通过追踪这些事件，用户可以检查和探索他们的迭代过程以了解参数如何影响生成的输出结果。</p>
+</li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/33613431/1703851285681-c0f9c1bb-f2dd-44d8-bbbd-4fb22e6540f3.png?x-oss-process=image%2Fresize%2Cw_1045%2Climit_0" alt=""></p>
+<center style="font-size:14px;color:#C0C0C0;">图3 生成器示意图</center>
+
+
+
+
+
+<h3 id="Lenses"><a href="#Lenses" class="headerlink" title="Lenses"></a>Lenses</h3><p>镜头将LLM的输出转化为用户可以理解的不同的视图，以辅助用户的创作过程</p>
+<p>是表示和可视化生成内容的对象表示</p>
+<p>例如，列表、散点图或实时置信度可视化。</p>
+<p>文章提到设计师应该要支持镜头的两种基本交互</p>
+<p>连接：</p>
+<ol>
+<li><p>通过将生成器与镜头连接起来，用户可以以多种方式表示生成的输出。有效的生成表示可以帮助用户对生成结果进行探索和感知模型能力。</p>
+</li>
+<li><p>最有效的表示形式可能依赖于用户需求，比如用户可以根据构思情节时的需求使用可视化生成的故事线，而在选择下一句时，生成列表可以让用户具体比较它们。因此文章的框架建议在界面中包括各种镜头，以帮助用户自定义如何可视化和探索生成结果。</p>
+</li>
+</ol>
+<p>组装：</p>
+<ol>
+<li><p>镜头还可以组装在一起，通过多种表示方式查看相同的生成输出。例如，可以将列表镜头和情感散点图镜头（即，预测文本情感）连接起来，</p>
+</li>
+<li><p>让用户同时探索生成文本的内容和情感。当用户在理解生成结果时考虑各种特征或指标时，允许他们组装镜头可以支持更全面的理解。</p>
+</li>
+</ol>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/33613431/1703851407892-753282df-af6a-4e64-9078-b53eeaa2f29d.png" alt=""></p>
+<center style="font-size:14px;color:#C0C0C0;">图4 镜头示意图</center>
+
+<h2 id="界面设计"><a href="#界面设计" class="headerlink" title="界面设计"></a>界面设计</h2><p><strong>文章撰写界面</strong></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/33613431/1703851476999-b8db42f5-f79d-478b-aad1-b3766e9b3ad3.png?x-oss-process=image%2Fresize%2Cw_1470%2Climit_0" alt=""></p>
+<center style="font-size:14px;color:#C0C0C0;">图5 框架应用-文章撰写界面</center>
+
+<p>用户可以在表单中指定所需广告的要求（例如语气、受众），然后语言模型会尝试生成相应的广告。</p>
+<p>a. 用户通过在提示区域创建和编辑单元格来撰写他们所期望的广告的规范（例如产品描述、语气、关键词）。<strong>(Cells)</strong></p>
+<p>b. 在输入框的下方，界面显示生成器列表，最终用户可以在其中创建、复制和维护模型参数的多个设置。<strong>（Generators）</strong></p>
+<p>c-1. 用户看到列表视图，它将生成物呈现为文本条目列表（方便对比分析），这些条目在两个级别上进行分组：使用的输入和使用的参数。<strong>（Lens）</strong></p>
+<p>c-2.  根据生成之间的相似性和差异性来进行探索，用户可以切换到空间视图，在此视图下，输出被呈现为二维空间中的点，更接近的点代表语义上更相似的输出。<strong>（Lens）</strong></p>
+<p>d-1. 最终用户可以创建多个生成器并修改它们的参数。（b视图的拓展）</p>
+<p>d-2. 为了回顾每个生成器的参数是如何变化的以及它生成了什么输出，最终用户还可以浏览每个生成器的历史记录。（b视图的拓展）</p>
+<p>e. 如果最终用户喜欢某个生成的广告，可以点击它将其复制到文本编辑器（e）中，然后可以编辑并与其他生成文本进行组合。<strong>（Lens）</strong></p>
+<p><strong>电子邮件撰写界面</strong></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/33613431/1703851641493-715c7bb3-dc2d-46ac-af08-195dd106d530.png?x-oss-process=image%2Fresize%2Cw_1125%2Climit_0" alt=""></p>
+<center style="font-size:14px;color:#C0C0C0;">图6 框架应用-电子邮件撰写界面</center>
+
+<p>在撰写电子邮件时，最终用户经常已经有明确的写作想法，因此LLM可以帮助他们如何写作（例如改变语气、改写）。</p>
+<p>a. 文本编辑界面</p>
+<p>b. 用户可以创建和管理LLM驱动的笔刷</p>
+<p>c. 类似文案撰写系统，用户通过使用单元格来表示单独的规范来配置笔刷的输入<strong>（Cells）</strong></p>
+<p>d. 每个笔刷可以容纳几个生成器（d），其功能类似于文案撰写界面中的生成器<strong>（Generators）</strong></p>
+<p>e-1.通过设置每个轴要使用的类别，用户可以选择他们喜欢的“指标”来探索生成的输出<strong>（Lens）</strong></p>
+<p>e-2. 情绪镜头将生成文本呈现为散点图中的点，其中轴代表输出在情感或情绪类别上的得分<strong>（Lens）</strong></p>
+<p>e-3. 文本镜头和散点情绪镜头的切换</p>
+<p><strong>故事撰写界面</strong></p>
+<p><img src="https://cdn.nlark.com/yuque/0/2023/png/33613431/1703851704956-cc766758-c376-4b37-b143-aeffc9947a83.png?x-oss-process=image%2Fresize%2Cw_1125%2Climit_0" alt=""></p>
+<center style="font-size:14px;color:#C0C0C0;">图7 框架应用-故事撰写界面</center>
+
+<p>a.  要在编辑器中查看和编辑情节线的文本（a），用户可以点击树中的单元格，以整合所有向下的单元格直到所选的单元格。用户可以通过在编辑器中输入延续、复制单元格或将单元格连接到彼此来添加更多单元格，从而创建更多分支路径</p>
+<p>b. 每个单元格代表一个句子，仅显示从其内容中提取的关键词，以防止屏幕变得过于繁忙。树状结构中的路径代表一系列句子<strong>（Cells）</strong></p>
+<p>c.用户可以通过拖放操作将一个或多个生成器链接到单元格<strong>（Generators）</strong></p>
+<p>d.列表视图（d-1）、空间视图（图d-2）或窥视视图（图d-3）。窥视视图会自动通过定期生成新的句子来扩展与链接单元格相关的故事，直到用户再次点击生成器以停止它。</p>
+<h2 id="评估实验"><a href="#评估实验" class="headerlink" title="评估实验"></a>评估实验</h2><p>因为本文提出的是一个设计框架，对框架的评估分成两部分</p>
+<p>一部分是最终用户对框架设计结果的评估，另一部分则通过设计师视角对框架进行评估</p>
+<p><strong>用户评估</strong></p>
+<p>为了对比体现出该框架下设计出的界面的优势。</p>
+<p>作者招募了18名参与者使用该框架设计出的界面进行创作，对比的baseline Model 在每行中只能有一个输入选择，一个模型参数设置，并且只提供了输出的列表表示。</p>
+<p>文章通过下面三个角度对框架进行评估</p>
+<ol>
+<li><p>框架能否促进用户对各种生成配置的实验和迭代</p>
+</li>
+<li><p>框架的存在如何影响用户的生成过程</p>
+</li>
+<li><p>框架如何影响用户对生成模型和最终结果的感知</p>
+</li>
+</ol>
+<p>参与者被要求为两个产品撰写广告：植物基肉干和便携式空调</p>
+<p>参与者被要求使用7分Likert量表（1：非常不同意 — 7：非常同意）对下列陈述进行评分</p>
+<ol>
+<li><p>帮助性：“我觉得人工智能很有帮助。”； </p>
+</li>
+<li><p>易用性：“我觉得写广告很容易。”； </p>
+</li>
+<li><p>实验性：“我觉得我尝试了各种不同的想法并生成了不同的选择。”； </p>
+</li>
+<li><p>迭代性：“我觉得我对想法和生成过程进行了多次迭代。”； </p>
+</li>
+<li><p>自豪感：“我对最终的广告感到自豪。”； </p>
+</li>
+<li><p>独特性：“我写的广告感觉很独特。”；</p>
+</li>
+</ol>
+<p>最后用BLUE分数用于评估最终文本和参考文本之间的相似度来判断AI在文本生成任务中的参与度</p>
+<p><strong>用户评估结果</strong></p>
+<p>生成更多且使用更多输入</p>
+<ul>
+<li><p>生成数量 实验组（M=9.78，SD=3.07） 对照组（M=6.33，SD=3.77）</p>
+</li>
+<li><p>使用唯一输入 实验组（M=5.89，SD=1.66） 对照组（M=3.06，SD=2.17）</p>
+</li>
+</ul>
+<p>修改和输入障碍（差异不大）</p>
+<ul>
+<li>使用唯一参数数目 实验组（M=4.17，SD=2.93） 对照组（M=3.04，SD=2.50）</li>
+</ul>
+<p>生成输出采纳率更高</p>
+<ul>
+<li><p>广告和生成结果相似度 实验组（M=0.884，SD=0.125） 对照组（M=0.768，SD=0.196）</p>
+</li>
+<li><p>Self – BLUE（差异不大） 实验组（M=0.712，SD=0.119 ） 对照组（M=0.680，SD=0.139）</p>
+</li>
+</ul>
+<p>主观感知（差异不大）</p>
+<ul>
+<li><p>两组参与者对LLM的帮助性和他们的最终广告（即自豪感和独特性）都表达了积极的看法</p>
+</li>
+<li><p>两组参与者都认为任务相对容易（平均分接近6分）</p>
+</li>
+<li><p>随着生成内容增多，尽管有多镜头浏览输出，但参与者主要依赖列表镜头以确保不会忽视希望的输出</p>
+</li>
+<li><p>虽然实验组参与人员生成了更多独特性的输出，但与对照组在实验和迭代感知上没有显著差异</p>
+</li>
+</ul>
+<p><strong>设计师评估</strong></p>
+<p>3名参与者（工业设计专业， 2硕士，1博士）</p>
+<p>研究过程包括以下步骤：</p>
+<ol>
+<li><p>向参与者介绍研讨会内容，包括语言模型和设计框架的解释</p>
+</li>
+<li><p>参与者选择要重新设计的基于人工智能的写作界面</p>
+</li>
+<li><p>参与者通过应用框架，设计一个新的界面</p>
+</li>
+<li><p>设计完成后，进行小组访谈，参与者描述他们的设计、使用框架的经验</p>
+</li>
+</ol>
+<p><strong>设计师评估结果</strong></p>
+<p>设计师能够成功应用框架设计基于语言模型的写作界面</p>
+<ul>
+<li><p>框架为设计师提供了交互对象作为设计材料</p>
+</li>
+<li><p>框架鼓励设计设计师进一步模块化用户的生成过程</p>
+</li>
+<li><p>框架使得设计师能够将单元、生成器、视图以不同的方式形成界面</p>
+</li>
+<li><p>设计师们能够应用框架设计支持迭代和实验的LLM驱动的写作界面</p>
+</li>
+</ul>
+<p>不足之处</p>
+<ul>
+<li>设计师表示视图的设置以及如何设置概念比较模糊，需要更多时间将视图纳入到设计中去</li>
+</ul>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>这篇论文提出了单元、生成器、视图的支持面向对象交互的LLM设计框架</p>
+<p>并且通过三个维度对框架进行了评估</p>
+<ul>
+<li><p>通用性：设计了三个现有的写作界面，以此来说明该框架如何应用到不同的任务</p>
+</li>
+<li><p>有效性：最终用户可以使用交互式对象创建、组合和比较来生成更加多样的文本，并在写作中广泛使用</p>
+</li>
+<li><p>可用性：与设计师的研讨最终揭示了框架如何通过具体手段帮助设计师促进用户对LLM的配置</p>
+</li>
+</ul>
+<p>三个维度的评估结果展示了多单元、多生成器、多镜头框架的优势</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
