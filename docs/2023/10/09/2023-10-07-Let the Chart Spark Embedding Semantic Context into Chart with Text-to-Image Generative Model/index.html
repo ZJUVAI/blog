@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Let the Chart Spark Embedding Semantic Context into Chart with Text-to-Image Generative Model - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="toc-text">背景介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="toc-text">相关工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%89%8D%E6%9C%9F%E8%B0%83%E7%A0%94"><span class="toc-text">前期调研</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87-amp-%E4%BB%BB%E5%8A%A1"><span class="toc-text">设计目标 &amp; 任务</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E6%96%B9%E6%B3%95"><span class="toc-text">具体方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C"><span class="toc-text">实验</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Let the Chart Spark Embedding Semantic Context into Chart with Text-to-Image Generative Model
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2023-10-09 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2023-10-09</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#严凡"
+                title="严凡">严凡</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Let the Chart Spark Embedding Semantic Context into Chart with Text-to-Image Generative Model</p>
+<p>作者：Shishi Xiao, Suizi Huang, Yue Lin, Yilin Ye, Wei Zeng</p>
+<p>发表：VIS 2023</p>
+<p>这篇论文提出了一个名为ChartSpark的新系统，使用文本到图像的生成模型来创建富有语义上下文的图表。该系统解决了传统图像可视化工具在数据完整性和适用性方面的局限性。ChartSpark能够根据文本输入生成图像，并包括一个交互式界面，该界面集成了文本分析、编辑和评估模块。这使用户能够更灵活地生成和修改图像可视化。该工具的可用性通过实验得到了证明，展示了文本到图像生成模型与交互式界面结合使用在可视化设计方面的潜力。</p>
+<p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2304.14630.pdf">论文链接</a></p>
+<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>在当今数据丰富的世界中，可视化技术对于有效展示复杂数据至关重要。图像化可视化尤为宝贵，提供了增强记忆回忆、用户参与度以及高效信息获取等好处。尽管其在各个领域得到了广泛应用，但创建有效的可视化需要设计专业知识，这对新手来说常常是个挑战。为此，已经开发了一些辅助用户的创作工具，通常分为基于规则的和基于示例的两大类。但这两种方法都有其局限性，如僵化或需要大量示例。</p>
+<p>最近在可视化方面的进展聚焦于通过检索和编辑过程将数据与图形元素结合。然而，挑战依然存在，比如需要高质量的图像库和绑定数据与视觉元素对新手来说的难度。语言模型已被探索用于自动生成图表，但它们存在限制，如只能识别特定的数据类型。</p>
+<p>我们介绍了ChartSpark，这是一个新的工具，它将文本到图像的生成模型整合用于创建图像化可视化。它从文本中提取可视化对象，并根据用户提供的描述指导生成。ChartSpark将对象分为前景和背景，并提供条件和非条件的生成方法。这种方法简化了可视化过程，相比传统方法在易用性、灵活性以及将语义信息与视觉数据自然结合方面具有优势。</p>
+<p>本文的贡献有两点：</p>
+<ol>
+<li>基于生成模型的图像化可视化创造</li>
+<li>构建辅助用户创作的界面</li>
+<li>案例研究和专家访谈证明了方法的有效性</li>
+</ol>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><ul>
+<li>Pictorial Visualization</li>
+<li>Text-guided Image Generation</li>
+</ul>
+<h2 id="前期调研"><a href="#前期调研" class="headerlink" title="前期调研"></a>前期调研</h2><p>本文进行了一项初步研究，以了解制作图形表示的设计过程。从形成性访谈中，收到了总结为设计要求的担忧和期望。</p>
+<p><img src="./Picture1.png" alt=""></p>
+<h3 id="设计目标-amp-任务"><a href="#设计目标-amp-任务" class="headerlink" title="设计目标 &amp; 任务"></a>设计目标 &amp; 任务</h3><ul>
+<li><p><strong>预览数据和主题</strong></p>
+</li>
+<li><p><strong>个性化视觉元素</strong></p>
+</li>
+<li><p><strong>将语义上下文嵌入图表</strong></p>
+</li>
+<li><p><strong>效果评估</strong></p>
+</li>
+</ul>
+<h2 id="具体方法"><a href="#具体方法" class="headerlink" title="具体方法"></a>具体方法</h2><p>ChartSpark 的 3 阶段框架。提取阶段为用户提供数据特征和语义上下文。生成阶段通过输入提示和选定的方法生成视觉元素，并进行最终优化。评估阶段根据失真评估生成的可视化效果。<br><img src="./Picture2.png" alt=""><br><img src="./Picture3.png" alt=""><br><img src="./Picture4.png" alt=""></p>
+<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><p>为了全面评估 ChartSpark 的功效，本文进行了三种不同的分析，包括示例应用、用户研究和专家访谈。</p>
+<p>实验中，参与者首先了解基本概念，包括嵌入对象（前景和背景）和嵌入技术（条件和无条件）。<br>接下来，向参与者展示了界面并介绍了功能。<br>然后，作者指导参与者逐步完成创建图形可视化的过程。<br>最后，作者鼓励他们独立探索创作工具10分钟，以进一步熟悉。<br>之后，参与者被要求根据给定的数据文档进行图形可视化。<br>作者仔细观察了他们的创作过程，并记录了他们的询问和评论。<br>完成创建后，作者开始调查，参与者回答了四个关于可用性和有效性的 5 点李克特量表问题。<br>调查结束后进行了简短的采访，以收集更多反馈。每项研究持续约50分钟。参与者在完成研究后获得了 10 美元的礼物</p>
+<p><img src="./Picture5.png" alt=""></p>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>创新的框架设计：ChartSpark作为一种新颖的框架，其利用文本到图像的生成模型创造图像化可视化是一种创新。这种方法能够有效整合语义内容和图表信息，从而产生既丰富又精确的可视化输出。</p>
+<p>灵活性与多功能性：ChartSpark的一个显著特点是其灵活性和多功能性。它能够适用于条件和非条件方法，融合语义上下文与图表，并且既适用于前景也适用于背景的可视化设计。这种灵活性使其成为一个适用于多种应用场景的工具。</p>
+<p>用户友好的界面：该框架还包含一个集成了特征提取、生成和评估的用户界面，这使得创建过程更为便捷和直观。这表明作者不仅关注技术创新，还重视用户体验的优化。</p>
+<p>实际应用和评估：通过展示覆盖图像化可视化四大主要形式的案例，作者有效地评估了ChartSpark的实用性。用户研究和专家访谈的反馈提供了实证支持，证明了这个框架的有效性。</p>
+<p>开源共享：作者将模型和界面的源代码以及图像化可视化语料库发布在GitHub上，这体现了开放科学的精神，并为后续的研究工作提供了宝贵的资源。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
