@@ -1,7 +1,7 @@
 ---
 title: "VISAtlas: An Image-based Exploration and Query System for Large Visualization Collections via Neural Image Embedding"
 tags: ["论文评述", "报告"]
-date: 2023-09-04
+date: 2024-05-13
 author: 张天圣
 mathjax: true
 ---
