@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        VISAtlas: An Image-based Exploration and Query System for Large Visualization Collections via Neural Image Embedding - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="toc-text">背景介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%A1%88%E4%BE%8B%E7%A0%94%E7%A9%B6"><span class="toc-text">案例研究</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        VISAtlas: An Image-based Exploration and Query System for Large Visualization Collections via Neural Image Embedding
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2023-09-04 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2023-09-04</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#张天圣"
+                title="张天圣">张天圣</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：VISAtlas: An Image-based Exploration and Query System for Large Visualization Collections via Neural Image Embedding</p>
+<p>作者：Yilin Ye, Rong Huang, and Wei Zeng</p>
+<p>发表：VIS 2023</p>
+<p>这篇论文介绍了 VISAtlas，这是一种基于图像的方法，利用神经图像嵌入技术，以促进对可视化集合的探索和查询。为了提高嵌入的准确性，作者创建了一套包括合成和真实世界可视化的数据集，并使用它来训练一个带有三元损失的卷积神经网络（CNN）模型，用于对可视化进行分类。接下来，作者设计了一个协调多视图（CMV）系统，该系统可以基于可视化嵌入进行多角度的探索和设计检索。作者在三个案例研究和一个用户研究中展示了 VISAtlas 在支持可视化集合的比较分析、复合可视化的探索以及基于图像的可视化设计检索方面的有效性。这些研究表明，真实世界的可视化集合（例如 Beagle 和 VIS30K）比合成集合（例如 Data2Vis）在可视化设计上更为丰富和多样，真实世界集合中包含更多的复合可视化，并且不同来源的可视化中存在着不同的设计模式。</p>
+<p><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&amp;arnumber=9984953&amp;tag=1">论文链接</a></p>
+<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p>近年来，很多可视化图片集被创建用于各种各样的任务，例如可视化参考系统、机器学习、设计空间研究、由数据驱动的可视化设计等。这些集合对于不同的用户是非常由帮助的，例如可视化新手可以通过探索这些集合来学习不同类型的可视化、可视化机器学习研究者可以用这些集合来训练和测试模型、设计师可以从中获取设计灵感。然而，面对如此多不同的可视化集合他们可能会遇到一些问题，比如该使用那个集合？给出一个示例如何在不同集合中找到相似的结果？以及如何改进缺少某类特定任务数据的集合？这些问题都有待进一步研究。</p>
+<p>本文主要解决如何更有效的对各种可视化集合进行探索的问题，挑战主要有数据和图像嵌入两方面。数据方面，很多不同的集合其元数据各不相同。一些集合会有很丰富的元数据比如作者、分类甚至可视化代码，但也有很多集合不包含这些元数据，这使得很难用传统的关键字检索系统来探索不同的可视化集合。其次大量的可视化图像为高效的可视化探索和浏览带来了困难。不管是特征工程还是深度神经网络提取出的底层图像特征都难以解释，常用的降维方法像 t-SNE 是非常依赖于数据的。这意味着不同的数据会生成完全不同的布局，这使得不同集合间很难保持一个稳定的可解释的布局。</p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>为解决这些问题，本文提出了针对可视化集合探索的图像嵌入模型。他用在合成和真实可视化数据集上训练的 CNN 模型对可视化图片分类来生成可解释的图像嵌入，然后通过对图像嵌入上下文投影来生成一个在不同集合间稳定的可解释的布局。</p>
+<p><img src="./1.png" alt="Alt text"></p>
+<p>作者首先收集了真实以及合成的不同类型可视化图片，用这些数据训练了一个基于 CNN 的可视化图片分类模型，模型使用 resnet 结构以及三元损失函数来帮助其更好的区分不同类型的可视化。</p>
+<p><img src="./2.png" alt="Alt text"></p>
+<p>然后，由图像嵌入模型预测出的多维图像嵌入向量通过上下文投影法可视化到二维平面上。</p>
+<p><img src="./3.png" alt="Alt text"></p>
+<p>对于上下文投影，先使用 Radvis 方法，将每个结果点投影到圆盘上每个维度对应一个可视化类型。然而，因为可视化集合数量庞大会导致点过于密集，为解决这个问题，作者采用了密度图和点采样相结合的方式，这样既能看到总体的分布趋势也能探索各种类型的点。</p>
+<p><img src="./4.png" alt="Alt text"></p>
+<p>基于该方法，作者开发了一个可视化界面用于探索这些可视化集合。系统主要由三个视图组成，embedding overiew、embedding histogram 和 visualization gallery。中间 A 的这块区域为 embedding overview,展示可视化集合中图像嵌入及其上下文投影后的结果。B 区域是 Embedding histogram 展示了整个数据集不同类型的得分。C 区域是 visualization grallery 展示了与用户所选的投影点或上传图片相近的图片结果。</p>
+<p><img src="./5.png" alt="Alt text"></p>
+<h3 id="案例研究"><a href="#案例研究" class="headerlink" title="案例研究"></a>案例研究</h3><p><strong>案例 1</strong>：不同集合中的分布概览</p>
+<p>案例 1 比较了不同可视化集合，Beagle 大部分来源于网络，VIS30K 则收集自期刊，Data2Vis 则是通过 AI 合成的可视化作品。通过 embedding overiew 可以发现，Data2Vis 的可视化类别明显少于另外两个集合，Beagle 中则侧重于在包含柱、线、圆等基础元素的可视化。VIS30K 则包含更加复杂的可视化类型如科学可视化、流图等，这也可能是因为 VIS30K 收集了很多科学可视化领域期刊中的图表。</p>
+<p><img src="./6.png" alt="Alt text"></p>
+<p><strong>案例 2</strong>：复合可视化</p>
+<p>案例 2 演示了系统如何探索复合可视化，可以对 embedding overview 和 embedding histograms 进行交叉过滤选择出特定范围内的点。然后在 embedding histograms 中选择另一类型靠中间概率的范围。案例演示中将集合锁定在了矩阵和和表格两种类型，可以看到结果主要由热力图组成，包含了颜色编码矩阵和具体数字。</p>
+<p><img src="./7.png" alt="Alt text"></p>
+<p><strong>案例 3</strong>：设计检索</p>
+<p>案例 3 演示了系统如何基于输入图像从不同的可视化集合中检索可视化设计。图片中，系统接受草图和示例图片作为输入，然后可以发现不同可视化集合中的风格差异。例如最下行中散点图，右边 Beagle 的可视化较为简单，而 VIS30K 的散点图要复杂得多并且包含多组比较。并且 Beagle 中可视化背景颜色比较多样，如蓝色和黑色，这很少会出现于论文中。</p>
+<p><img src="./8.png" alt="Alt text"></p>
+<h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>最后可以对本文贡献进行一个总结。在数据建模方面，基于图片的探索可以对基于关键字检索系统进行补充，使其能在不同集合间进行比较和设计检索。<br>可视化层面，本文提出了将采样点和密度图相结合的上下文投影方式，为不同规模的不同分布集合提供了可解释和可扩展你的可视化方法。<br>从案例研究中发现可视化合成模型需要从更加多样化的真实世界可视化数据中学习，因为其先前训练集的可视化类别要明显少于真实世界中的数据集。</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
