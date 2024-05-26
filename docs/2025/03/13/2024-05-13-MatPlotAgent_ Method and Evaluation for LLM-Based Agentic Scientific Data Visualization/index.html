@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        MatPlotAgent: Method and Evaluation for LLM-Based Agentic Scientific Data Visualization - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#05-13-MatPlotAgent-Method-and-Evaluation-for-LLM-Based-Agentic-Scientific-Data-Visualization"><span class="toc-text">05.13 MatPlotAgent: Method and Evaluation for LLM-Based Agentic Scientific Data Visualization</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E8%83%8C%E6%99%AF"><span class="toc-text">研究背景</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="toc-text">相关工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%AC%E6%96%87%E5%B7%A5%E4%BD%9C"><span class="toc-text">本文工作</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A7%91%E5%AD%A6%E6%95%B0%E6%8D%AE%E5%8F%AF%E8%A7%86%E5%8C%96%E4%BB%BB%E5%8A%A1"><span class="toc-text">科学数据可视化任务</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MatPlotBench"><span class="toc-text">MatPlotBench</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#MatPlotAgent"><span class="toc-text">MatPlotAgent</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C"><span class="toc-text">实验</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%80%BB%E7%BB%93"><span class="toc-text">总结</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#Limitations"><span class="toc-text">Limitations</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        MatPlotAgent: Method and Evaluation for LLM-Based Agentic Scientific Data Visualization
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2025-03-13 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2025-03-13</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#杨熠"
+                title="杨熠">杨熠</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h1 id="05-13-MatPlotAgent-Method-and-Evaluation-for-LLM-Based-Agentic-Scientific-Data-Visualization"><a href="#05-13-MatPlotAgent-Method-and-Evaluation-for-LLM-Based-Agentic-Scientific-Data-Visualization" class="headerlink" title="05.13 MatPlotAgent: Method and Evaluation for LLM-Based Agentic Scientific Data Visualization"></a>05.13 MatPlotAgent: Method and Evaluation for LLM-Based Agentic Scientific Data Visualization</h1><p>科学数据可视化在研究中起着至关重要的作用，它能够直接显示复杂信息并帮助研究人员识别隐性模式。尽管大型语言模型 （LLM） 很重要，但使用大型语言模型 （LLM） 进行科学数据可视化仍未得到探索。此篇论文介绍了MatPlotAgent，这是一个高效的模型无关LLM代理框架，旨在自动执行科学数据可视化任务。MatPlotAgent利用代码LLM和多模态LLM的能力，由query理解、迭代调试的代码生成和纠错的可视化反馈机制三个核心模块组成。为了解决该领域缺乏基准的问题，本篇论文还提出了 MatPlotBench，这是一个由 100 个人工验证的测试用例组成的高质量基准测试。此外，本文还介绍了一种利用 GPT-4V 进行自动评估的评分方法。实验结果表明，MatPlotAgent 可以提高各种 LLM 的性能，包括商业模型和开源模型。此外，所提出的评估方法与人工注释的分数具有很强的相关性。</p>
+<h1 id="研究背景"><a href="#研究背景" class="headerlink" title="研究背景"></a>研究背景</h1><p>•数据可视化：原始数据 ➡️ 信息丰富且易于理解的数据<br>•存在的问题：<br>•Time-consuming<br>•Labor-intensive<br>•本文提出的MatPlotAgent利用了LLMs和multi-modal LLMs在保证精度的同时提高数据可视化的效率。<br>•MatPlotAgent包含三个模块：<br>•query understanding：理解用户提供的需求<br>•code generation module ：用代码对原始数据进行精确预处理并生成图表<br>•visual feedback module：发现绘制草稿中的错误，并向代码生成模块提供视觉反馈以纠正错误</p>
+<h1 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h1><ul>
+<li>Code LLMs<ul>
+<li>SantaCoder</li>
+<li>StarCoder</li>
+<li>Code Llama</li>
+<li>DeepSeekCoder</li>
+<li>Magicoder</li>
+</ul>
+</li>
+<li><p>LLM Agents</p>
+<ul>
+<li>OpenAgents  </li>
+<li>Voyager</li>
+<li>ChatDev<h1 id="本文工作"><a href="#本文工作" class="headerlink" title="本文工作"></a>本文工作</h1></li>
+</ul>
+</li>
+<li><p>本文贡献：</p>
+<ul>
+<li>MatPlotBench：实现对科学数据可视化的AI方法的自动定量评估。</li>
+<li>MatPlotAgent：基于本文提出的可视化反馈机制提高各种LLM的性能</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://yuque.zju.edu.cn/images/yuque/0/2024/png/30961/1716190242695-f907b67b-3fea-46b1-a804-025b2d3bebc3.png#align=left&amp;display=inline&amp;height=287&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=574&amp;originWidth=1160&amp;size=473741&amp;status=done&amp;style=none&amp;width=580" alt="image.png"></p>
+<h1 id="科学数据可视化任务"><a href="#科学数据可视化任务" class="headerlink" title="科学数据可视化任务"></a>科学数据可视化任务</h1><ul>
+<li>输入：<ul>
+<li>User query x：可视化要求，包括可视化类型、要绘制的数据、单个元素或整个绘图的结构或空间要求以及美学偏好</li>
+<li>DataD：数据点 {d，…，d}的集合。</li>
+</ul>
+</li>
+<li>AI 系统 f 应输出一个可以满足用户需求的图 V：</li>
+</ul>
+<p>V = f(x, D)</p>
+<h1 id="MatPlotBench"><a href="#MatPlotBench" class="headerlink" title="MatPlotBench"></a>MatPlotBench</h1><p><strong>Data Collection</strong></p>
+<ul>
+<li>Principles：<ul>
+<li>（1）涵盖多种类型：包括广泛的图表类型，不仅包括最常用的，还包括稀有但有用的;</li>
+<li>（2）包含代表性实例：确保测试实例反映科学数据可视化的代表性特征，如数据复杂度的多样性;</li>
+<li>（3）平衡简单和具有挑战性的问题：在基准测试中包括不同难度的问题。</li>
+</ul>
+</li>
+<li>Selecting Original Examples ：<ul>
+<li>Matplotlib Gallery（75 examples）：bars, lines, markers, pie charts, polar plots, contour plots, statistics plots, 3D plots, text annotations, radar charts, shapes, scales, axes, spines, subplots…</li>
+<li>OriginLab GraphGallery（25 examples）：Sankey diagrams, sunburst charts, radial plots, chord diagrams, streamplots…</li>
+</ul>
+</li>
+<li>Preliminary Query Generation ：<ul>
+<li>Matplotlib Gallery ：使用 GPT-4 将每个原始示例中的代码转换为preliminary queries</li>
+<li>OriginLab GraphGallery（只有图像）：使用 GPT-4V 将每个图像转换为preliminary queries</li>
+</ul>
+</li>
+<li>Data Replacement：<ul>
+<li>对 Matplotlib 库中的示例进行数据替换，将原始数据点替换为新生成的数据点，同时保持其他因素（如绘图类型）不变。</li>
+</ul>
+</li>
+<li>Human Modification：<ul>
+<li>注释者的任务是纠正错误、消除歧义并添加任何遗漏的基本信息。</li>
+</ul>
+</li>
+<li>Updating Ground-Truth Figures：<ul>
+<li>手动编写代码来绘制 Matplotlib 示例的ground truth</li>
+</ul>
+</li>
+<li>Human Verification：<ul>
+<li>检查用户查询和ground truth是否一致</li>
+<li>纠正描述不当的要素和缺少的说明</li>
+<li>删除冗余和不正确的描述</li>
+<li>产生最终的benchmark：100 个高质量（query、原始数据、ground truth数据）三元组</li>
+</ul>
+</li>
+</ul>
+<p><strong>Automatic Quantitative Evaluation  </strong></p>
+<ul>
+<li>Correlation with Human Evaluation ：<ul>
+<li>从总benchmark中迭代采样一个由 𝑛 个示例组成的子集</li>
+<li>使用 GPT-3.5 和 GPT-4 在 MatPlotBench 上生成图表</li>
+<li>对生成的图表进行自动和人工评估</li>
+<li>这个过程重复 k 次，得到每种评估类型的 k 个数据点：<ul>
+<li>自动评分：𝐴 = {a,  · · ·,  𝑎}  </li>
+<li>人工评分：𝐻 = {ℎ,  · · ·,  ℎ}  </li>
+</ul>
+</li>
+</ul>
+</li>
+<li>利用 𝑠𝑐𝑖𝑝𝑦 提供的统计函数来计算 Pearson 相关系数 𝑟 和 p-value 𝑝：<ul>
+<li>GPT-4：𝑟=0.876 和 𝑝=7.41𝑒−33</li>
+<li>GPT-3.5： 𝑟=0.836 和 𝑝=2.67𝑒−27</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://yuque.zju.edu.cn/images/yuque/0/2024/png/30961/1716190768094-d641252e-c6a9-4fdf-89f4-88874087d23f.png#align=left&amp;display=inline&amp;height=215&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=430&amp;originWidth=588&amp;size=71986&amp;status=done&amp;style=none&amp;width=294" alt="image1.png"></p>
+<h1 id="MatPlotAgent"><a href="#MatPlotAgent" class="headerlink" title="MatPlotAgent"></a>MatPlotAgent</h1><ul>
+<li>MatPlotAgent由三个模块组成：<ul>
+<li>Query Expansion Module</li>
+<li>Code Agent</li>
+<li>Visual Agent</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://yuque.zju.edu.cn/images/yuque/0/2024/png/30961/1716190828003-2acc3421-10b0-4f37-913e-e691c5e7bf07.png#align=left&amp;display=inline&amp;height=341&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=682&amp;originWidth=1224&amp;size=415312&amp;status=done&amp;style=none&amp;width=612" alt="image2.png"></p>
+<ul>
+<li>Query Expansion Module<ul>
+<li>User Query ➡️ 一系列清楚、详细的指令</li>
+<li>基于LLM制定了一个生成图表的完整计划<ul>
+<li>调用什么库函数</li>
+<li>如何正确设置每个函数中的参数</li>
+<li>如何准备数据</li>
+<li>如何操作数据</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://yuque.zju.edu.cn/images/yuque/0/2024/png/30961/1716190893348-133ab930-568e-47a4-8290-b0275acf1630.png#align=left&amp;display=inline&amp;height=176&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=352&amp;originWidth=1864&amp;size=306880&amp;status=done&amp;style=none&amp;width=932" alt="image3.png"></p>
+<ul>
+<li>Code Agent<ul>
+<li>详细指令 ➡️ 绘制图表的代码</li>
+<li>Code Generation：使用适当的库和函数生成代码</li>
+<li>Self-Debugging：<ul>
+<li>Code LLM 迭代识别和纠正代码中的错误</li>
+<li>multi-modal LLMs提供可以更好满足用户需求的图表改进建议</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://yuque.zju.edu.cn/images/yuque/0/2024/png/30961/1716190958432-48e392d0-f30d-4ff6-a07e-56a8c71ca700.png#align=left&amp;display=inline&amp;height=221&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=442&amp;originWidth=1190&amp;size=255257&amp;status=done&amp;style=none&amp;width=595" alt="image4.png"></p>
+<ul>
+<li><p>Visual Agent</p>
+<ul>
+<li>采用了multi-modal LLMs</li>
+<li>Principles<ul>
+<li>Match Type and Data：保证图表与提供的数据一致</li>
+<li>Customize：增强颜色或标签以提高图表的信息量</li>
+<li>Adjust and Improve:生成一些优化图表的建议反馈到Code Agent<h1 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h1></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>Setup</p>
+</li>
+<li>Models<ul>
+<li>code LLMs：GPT-4, GPT-3.5, Magicoder-SDS-6.7B, Deepseek-coder-6.7Binstruct, Deepseek-coder-33Binstruct, WizardCoder-Python33B-V1.1 和 CodeLlama-34BInstruct</li>
+<li>Visual Agent：GPT-4V 和 Gemini Pro Vision</li>
+</ul>
+</li>
+<li>Evaluation<ul>
+<li>MatPlotBench 用 GPT-4V 进行 Automatic Evaluation</li>
+<li>code LLM Evaluetion：<ul>
+<li>Direct decoding：给定query，模型直接生成绘图代码</li>
+<li>Zero-Shot Chain-of-thought：模型使用零样本 CoT 机制进行推理</li>
+<li>MatPlotAgent：用MatPlotAgent 框架驱动query expansion module 和 code agent</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Main Results<ul>
+<li>不同 LLM 在 MatPlotBench 上的性能<ul>
+<li>Direct decoding</li>
+<li>Zero-Shot CoT</li>
+<li>MatPlotAgent</li>
+</ul>
+</li>
+<li>GPT-4 和 GPT-3.5使用 Gemini Pro Vision 作为 visual agent 的结果</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://yuque.zju.edu.cn/images/yuque/0/2024/png/30961/1716191116690-add063a3-a6fe-400c-b428-9f3524dd7a59.png#align=left&amp;display=inline&amp;height=237&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=474&amp;originWidth=1222&amp;size=146858&amp;status=done&amp;style=none&amp;width=611" alt="image5.png"><br><img src="https://yuque.zju.edu.cn/images/yuque/0/2024/png/30961/1716191122580-3668091d-18f1-4945-b530-79d3282f021e.png#align=left&amp;display=inline&amp;height=159&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=318&amp;originWidth=688&amp;size=68101&amp;status=done&amp;style=none&amp;width=344" alt="image6.png"></p>
+<ul>
+<li>Results on Qwen-Agent Code Interpreter Benchmark<ul>
+<li>GPT-4  </li>
+<li>GPT-4 + MatPlotAgent</li>
+<li>GPT-4 + MatPlotAgent - Visual Feedback</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://yuque.zju.edu.cn/images/yuque/0/2024/png/30961/1716191165067-eead6b04-10b6-461b-838f-6c1841cd95fc.png#align=left&amp;display=inline&amp;height=151&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=302&amp;originWidth=1178&amp;size=86270&amp;status=done&amp;style=none&amp;width=589" alt="image7.png"></p>
+<ul>
+<li>Ablation Study<ul>
+<li>视觉反馈机制的影响<ul>
+<li>定性分析（图 4）</li>
+<li>定量分析（表 4）</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://yuque.zju.edu.cn/images/yuque/0/2024/png/30961/1716191210574-e6564d21-aa14-49a5-b863-b804003f269d.png#align=left&amp;display=inline&amp;height=440&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=880&amp;originWidth=1220&amp;size=758714&amp;status=done&amp;style=none&amp;width=610" alt="image8.png"><br><img src="https://yuque.zju.edu.cn/images/yuque/0/2024/png/30961/1716191218594-7604509f-6150-4749-bd01-d28b437b0a7a.png#align=left&amp;display=inline&amp;height=157&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=314&amp;originWidth=646&amp;size=57756&amp;status=done&amp;style=none&amp;width=323" alt="image9.png"></p>
+<ul>
+<li>Case Study<ul>
+<li>展示了 GPT-4，GPT-3.5 和 Magicoder-S-DS-6.7B在三个难度递增case上的效果</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://yuque.zju.edu.cn/images/yuque/0/2024/png/30961/1716191282021-7dd137e5-9b52-4d6d-970a-193c4cb4e27b.png#align=left&amp;display=inline&amp;height=419&amp;margin=%5Bobject%20Object%5D&amp;name=image.png&amp;originHeight=838&amp;originWidth=1202&amp;size=451513&amp;status=done&amp;style=none&amp;width=601" alt="image10.png"></p>
+<h1 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h1><ul>
+<li><p>本文提出评估和增强LLM在科学数据可视化方面的能力：</p>
+<ul>
+<li>MatPlotBench是一个严格的基准测试，支持与人工评估高度一致的自动定量评估</li>
+<li>MatPlotAgent是一种与模型无关的机制，采用视觉反馈来增强LLM的绘图能力<h1 id="Limitations"><a href="#Limitations" class="headerlink" title="Limitations"></a>Limitations</h1></li>
+</ul>
+</li>
+<li><p>科学数据可视化的需求在不同学科之间可能会有很大差异：</p>
+<ul>
+<li>MatPlotBench是为一般科学数据可视化而开发的</li>
+<li>MatPlotBench无法涵盖所有特定领域的要求，从而可能限制其对某些领域的适用性</li>
+</ul>
+</li>
+</ul>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:yang-yi@zju.edu.cn"><code> ✉️ yang-yi@zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+
+
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
