@@ -11,18 +11,18 @@
 
     <title>
         
-        
+        UFO : A UI-Focused Agent for Windows OS Interaction - undefined
         
     </title>
 
     <!-- Custom CSS -->
     
 <link rel="stylesheet" href="/blog/css/aircloud.css">
-<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/.js">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/.js">
 
     
 <link rel="stylesheet" href="/blog/css/gitment.css">
-<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/.js">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/.js">
 
     <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
     <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
@@ -148,23 +148,35 @@
         <!-- Main Content -->
         <div class="post-container">
     <div class="post-title">
-        
+        UFO : A UI-Focused Agent for Windows OS Interaction
     </div>
 
     <div class="post-meta">
         <!-- <span
-            class="attr">发布于：<span>2024-06-05 22:45:30</span></span> -->
-        <span class="attr">发布于：<span>2024-06-05</span></span>
-        <span class="attr"><a class="tag" href="/blog/author/#undefined"
-                title="undefined">undefined</a></span>
+            class="attr">发布于：<span>2024-04-29 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2024-04-29</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#沈健"
+                title="沈健">沈健</a></span>
         
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
         </span>
         <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
         </span>
         </span>
     </div>
     <div class="post-content ">
-        <h1 id="UFO-A-UI-Focused-Agent-for-Windows-OS-Interaction"><a href="#UFO-A-UI-Focused-Agent-for-Windows-OS-Interaction" class="headerlink" title="UFO: A UI-Focused Agent for Windows OS Interaction"></a>UFO: A UI-Focused Agent for Windows OS Interaction</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: &quot;UFO : A UI-Focused Agent for Windows OS Interaction&quot;</span><br><span class="line">tags: [&quot;论文评述&quot;, &quot;报告&quot;]</span><br><span class="line">date: 2024-04-29</span><br><span class="line">author: 沈健</span><br><span class="line">mathjax: true</span><br></pre></td></tr></table></figure>
+        <h1 id="UFO-A-UI-Focused-Agent-for-Windows-OS-Interaction"><a href="#UFO-A-UI-Focused-Agent-for-Windows-OS-Interaction" class="headerlink" title="UFO: A UI-Focused Agent for Windows OS Interaction"></a>UFO: A UI-Focused Agent for Windows OS Interaction</h1><p>论文：UFO: A UI-Focused Agent for Windows OS Interaction</p>
+<p>作者：Chaoyun Zhang, Liqun Li, Shilin He, Xu Zhang, Bo Qiao, Si Qin, Minghua Ma, Yu Kang, Qingwei Lin, Saravan Rajmohan, Dongmei Zhang &amp; Qi Zhang</p>
+<p>发表：arXiv 2024.05</p>
+<p>本文提出了 UFO，一种创新的以用户界面为中心（UI-Focused）的智能体，旨在满足 Windows 操作系统上应用程序的用户请求。UFO 采用双代理框架，精细地观察和分析 Windows 应用程序的图形用户界面和控制信息。这使得智能体能够无缝地在单个应用程序内部及其之间导航和操作，以满足用户请求。该框架还包含一个控制交互模块，使得智能体的行为无需人工干预就可以落地，并实现了完全自动化执行。因此，UFO 将繁琐且耗时的过程转变为仅通过自然语言命令就可实现的简单任务。我们对 UFO 进行了包含 9 个主流 Windows 应用程序的测试，涵盖了反映用户日常使用情况的各种场景。从定量指标和真实案例研究得出的结果强调了 UFO 在满足用户请求方面的卓越有效性。据我们所知，UFO 是第一个专门为 Windows OS 环境完成任务而设计的 UI 智能体。</p>
 <h1 id="研究背景"><a href="#研究背景" class="headerlink" title="研究背景"></a>研究背景</h1><h2 id="智能体"><a href="#智能体" class="headerlink" title="智能体"></a>智能体</h2><p>近来，大型语言模型的应用不断涌现并蓬勃发展。其中，智能体的出现显著扩展了 LLM 的能力。智能体通过观察、规划、记忆和反应等能力进行行动。例如，AutoAgents能够根据不同的任务，自适应地生成和协调多个智能体，构建一个多智能体协作团队。</p>
 <p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202406051908613.png" alt="Untitled"></p>
 <h2 id="基于-LLM-的-GUI-智能"><a href="#基于-LLM-的-GUI-智能" class="headerlink" title="基于 LLM 的 GUI 智能"></a>基于 LLM 的 GUI 智能</h2><p>一个值得注意的应用方向是基于视觉大型语言模型（VLM）构建智能体，并与软件的用户界面（UI）或图形化用户界面（GUI）互动。用户可以用自然语言表达请求，智能体能够将其落实到物理设备中。这促使了大语言模型转变为大行动模型（Large Action Models）。使智能体的决策能够体现在物理行动中，并产生切实的现实世界影响。已有多篇工作将基于LLM 的智能体应用在手机端UI上自动完成用户命令。</p>
@@ -306,7 +318,7 @@
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 
 <script src="/blog/js/index.js"></script>
-<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/.js"></script>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
