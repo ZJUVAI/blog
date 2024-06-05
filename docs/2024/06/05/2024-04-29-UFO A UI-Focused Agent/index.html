@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#UFO-A-UI-Focused-Agent-for-Windows-OS-Interaction"><span class="toc-text">UFO: A UI-Focused Agent for Windows OS Interaction</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A0%94%E7%A9%B6%E8%83%8C%E6%99%AF"><span class="toc-text">研究背景</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%99%BA%E8%83%BD%E4%BD%93"><span class="toc-text">智能体</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E-LLM-%E7%9A%84-GUI-%E6%99%BA%E8%83%BD"><span class="toc-text">基于 LLM 的 GUI 智能</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E4%B8%BB%E8%A6%81%E5%B7%A5%E4%BD%9C"><span class="toc-text">主要工作</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Overview"><span class="toc-text">Overview</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#AppAgent"><span class="toc-text">AppAgent</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#ActAgent"><span class="toc-text">ActAgent</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Control-Interaction"><span class="toc-text">Control Interaction</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Special-Design-Consideration"><span class="toc-text">Special Design Consideration</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Interactive-Mode"><span class="toc-text">Interactive Mode</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Action-Customization"><span class="toc-text">Action Customization</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Control-Filtering"><span class="toc-text">Control Filtering</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Plan-Reflection"><span class="toc-text">Plan Reflection</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Safeguard"><span class="toc-text">Safeguard</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0"><span class="toc-text">评估</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Benchmark-amp-Baselines"><span class="toc-text">Benchmark &amp; Baselines</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E9%87%8F%E7%BB%93%E6%9E%9C"><span class="toc-text">定量结果</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9A%E6%80%A7%E7%BB%93%E6%9E%9C"><span class="toc-text">定性结果</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%BB%93%E8%AE%BA"><span class="toc-text">结论</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A8%E8%AE%BA"><span class="toc-text">讨论</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-text">结语</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83"><span class="toc-text">参考</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2024-06-05 22:45:30</span></span> -->
+        <span class="attr">发布于：<span>2024-06-05</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#undefined"
+                title="undefined">undefined</a></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h1 id="UFO-A-UI-Focused-Agent-for-Windows-OS-Interaction"><a href="#UFO-A-UI-Focused-Agent-for-Windows-OS-Interaction" class="headerlink" title="UFO: A UI-Focused Agent for Windows OS Interaction"></a>UFO: A UI-Focused Agent for Windows OS Interaction</h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">title: &quot;UFO : A UI-Focused Agent for Windows OS Interaction&quot;</span><br><span class="line">tags: [&quot;论文评述&quot;, &quot;报告&quot;]</span><br><span class="line">date: 2024-04-29</span><br><span class="line">author: 沈健</span><br><span class="line">mathjax: true</span><br></pre></td></tr></table></figure>
+<h1 id="研究背景"><a href="#研究背景" class="headerlink" title="研究背景"></a>研究背景</h1><h2 id="智能体"><a href="#智能体" class="headerlink" title="智能体"></a>智能体</h2><p>近来，大型语言模型的应用不断涌现并蓬勃发展。其中，智能体的出现显著扩展了 LLM 的能力。智能体通过观察、规划、记忆和反应等能力进行行动。例如，AutoAgents能够根据不同的任务，自适应地生成和协调多个智能体，构建一个多智能体协作团队。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202406051908613.png" alt="Untitled"></p>
+<h2 id="基于-LLM-的-GUI-智能"><a href="#基于-LLM-的-GUI-智能" class="headerlink" title="基于 LLM 的 GUI 智能"></a>基于 LLM 的 GUI 智能</h2><p>一个值得注意的应用方向是基于视觉大型语言模型（VLM）构建智能体，并与软件的用户界面（UI）或图形化用户界面（GUI）互动。用户可以用自然语言表达请求，智能体能够将其落实到物理设备中。这促使了大语言模型转变为大行动模型（Large Action Models）。使智能体的决策能够体现在物理行动中，并产生切实的现实世界影响。已有多篇工作将基于LLM 的智能体应用在手机端UI上自动完成用户命令。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202406051908401.png" alt="Untitled"></p>
+<p>但是，专为 Windows 系统定制智能体，以实现用户请求的这个方向仍然未被探索。由于 Windows 在计算机操作系统市场中占据较高份额，而且有海量应用程序和图形用户界面建立在该系统的基础上。此外，Windows 中存在许多多步骤和跨应用的操作，大大降低了用户体验和效率。</p>
+<h1 id="主要工作"><a href="#主要工作" class="headerlink" title="主要工作"></a>主要工作</h1><h3 id="Overview"><a href="#Overview" class="headerlink" title="Overview"></a>Overview</h3><p>因此，本文提出了UFO，专注于Windows UI的智能体，上图展示了UFO的整体架构。UFO包括：（1）一个应用选择智能体（AppAgent）。（2）一个动作选择智能体（ActAgent）。这两个智能体利用 GPT-Vision 的多模态能力来理解应用程序界面并满足用户的请求。（3）系统还包含一个控制交互模块，它将智能体生成的动作落实到应用程序中做执行。</p>
+<p>系统的流程为：在接收到用户请求后，AppAgent开始对需求进行分析。它从当前活动的应用程序中选择一个合适的应用程序，并制定一个全局计划来完成请求。这个计划然后传递给ActAgent。一旦选定了合适的应用程序，应用程序会被聚焦在桌面上。然后系统会捕获当前应用程序用户界面的截图，并注释所有可用控件。ActAgent的任务是选择界面中的一个控件进行操作，随后通过控制交互模块执行在所选控件上的具体动作。这一过程递归地持续进行，直到用户请求在选定的应用程序内成功完成。如果用户请求跨越多个应用程序，ActAgent完成当前应用程序上的任务后，会要求AppAgent切换到后续的应用程序。这一迭代过程持续进行，直到用户请求的所有方面都完全完成。下面，将探讨UFO框架内每个组件的具体细节。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202406051908402.png" alt="Untitled"></p>
+<h3 id="AppAgent"><a href="#AppAgent" class="headerlink" title="AppAgent"></a>AppAgent</h3><p>AppAgent负责选择一个活跃的应用程序来满足用户请求，或在必要时切换到新的应用程序。其架构如上图所展示。AppAgent接受以下信息作为输入：</p>
+<ul>
+<li>User Request：提交给UFO的原始用户查询。</li>
+<li>Desktop Screenshots：当前桌面的截图。</li>
+<li>Application Information：可用的活跃应用程序详情的列表，包括它们的名称和类型。桌面截图和应用程序信息使AppAgent能够理解当前状态，并限制其应用程序选择的范围。</li>
+<li>Memory：包括之前的思考、评论、动作和执行结果。记忆作为过去请求完成情况的历史记录，帮助AppAgent基于先前的经验做出明智的决策。</li>
+<li>Examples：选择应用程序的文本示例，作为任务的提示，起到少样本学习的效果。</li>
+</ul>
+<p>在输入所有相关信息后，AppAgent使用GPT-V生成以下输出：</p>
+<ul>
+<li>Observation：当前桌面窗口截图的详细描述。</li>
+<li>Thoughts：根据Chainof-thought (CoT) 范式，完成给定任务的推理逻辑。这两项鼓励AppAgent仔细分析当前状态，为其逻辑和决策过程提供详细的解释。</li>
+<li>Selected Application：所选应用程序的标签和名称。（结果）</li>
+<li>Status：任务状态，标记为“CONTINUE”或“FINISH”。</li>
+<li>Global Plan：完成用户请求的后续行动计划，通常是一个全局的、粗粒度的计划。</li>
+<li>Comment：提供的额外评论或信息，包括简短的进度总结和需要强调的点。可以给用户发送评论，报告进度，强调潜在问题或解答任何用户查询。</li>
+</ul>
+<p>AppAgent识别出选定的应用程序，UFO将在此应用程序内采取特定动作以满足用户请求，由ActAgent负责执行这些动作。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202406051908403.png" alt="Untitled"></p>
+<h3 id="ActAgent"><a href="#ActAgent" class="headerlink" title="ActAgent"></a>ActAgent</h3><p>ActAgent作为AppAgent之后的下游实体，负责在选定的应用程序上执行特定动作以满足用户请求。其输入和输出如图所示。ActAgent接受以下输入：</p>
+<ul>
+<li>User Request：提交给UFO的原始用户查询，与AppAgent相同。</li>
+<li>Screenshots：截图包括三个部分：（i）Previous Screenshot；使用红色矩形突出显示上一步选定的控件，用于理解上一步操作的执行和分析动作的影响。（ii）Clean screenshot；帮助Agent理解应用程序的当前状态，（iii）Annotated screenshot。用数字标注每个控件，便于更好地理解UI元素的功能和位置，不同类型的控件用不同的颜色标注以进行区分。</li>
+<li>Control Information：在选定应用程序中可用的操作控件的名称和类型。</li>
+<li>Memory：之前的思考、评论、动作和执行结果，与AppAgent相同。但是它不仅是作为Agent的提醒，而且它提供了跨应用程序通信的关键渠道。之前的执行结果，比如从文档中提取的文本或图像的描述，存储在记忆模块中。ActAgent可以选择性地将这些信息纳入当前的动作中，例如用来自不同来源的文本编写电子邮件。</li>
+<li>Examples：用于动作选择的文本示例，作为提示。</li>
+</ul>
+<p>ActAgent仔细分析所有输入信息后，输出以下内容：</p>
+<ul>
+<li>Observation：当前应用程序窗口截图的详细描述，可以用于分析上一个动作是否生效。</li>
+<li>Thoughts：当前动作决策背后的逻辑推理过程。</li>
+<li>Selected Control：操作所选控件的标签和名称。</li>
+<li>Function：应用于控件的特定函数及其参数。用于提供给控制交互模块。</li>
+<li>Status：任务状态，标示为“CONTINUE”（如果需要进一步动作）、“FINISH”（如果任务完成）、“PENDING”（如果当前动作需要用户确认）、“SCREENSHOT”（如果智能体认为当前标注太多难以理解，需要进一步的截图以注释更少的控件集）、以及“APP SELECTION”（当前应用程序上的任务完成，且需要切换到不同的应用程序）。</li>
+<li>Local Plan：更精确和细致的未来动作计划，以完全满足用户请求。</li>
+<li>Comment：额外的评论或信息，包括简短的进度总结、突出的点或计划的变化，类似于AppAgent所提供的。</li>
+</ul>
+<p>如果任务未完成，ActAgent会将功能应用于所选控件，然后观察执行动作后的应用程序状态。迭代重复上述过程，直到用户请求完全完成或需要切换到不同的应用程序。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202406051908404.png" alt="Untitled"></p>
+<h3 id="Control-Interaction"><a href="#Control-Interaction" class="headerlink" title="Control Interaction"></a>Control Interaction</h3><p>UFO 利用 pywinauto 来检查应用程序的所有可操作控件，检索它们的精确位置并用边框来添加注释。pywinauto 为每个控件提供了丰富的上下文，包括其名称、类型和标题，这些都是控件和操作选择的关键信息。</p>
+<p>UFO 主要关注以下10种具有高度相关性的控件类型。其中包括 Button按钮、Edit编辑、TabItem选项卡项、Document文档、ListItem列表项、MenuItem菜单项、TreeItem树项、ComboBox组合框、Hyperlink超链接、ScrollBar滚动条。这些可以覆盖应用程序中的大多数控件。</p>
+<p>可以应用于控件的功能操作包括：</p>
+<ul>
+<li>Click：用鼠标点击控制项，可选择左键或右键点击、单次或双击。</li>
+<li>Scroll：垂直或水平滚动控制项，使隐藏内容可见。</li>
+<li>SetText：将文本输入到可编辑控件中，模仿键盘行为。</li>
+<li>GetText：检索控件的文本信息。</li>
+<li>Annotate：捕获当前应用程序窗口的屏幕截图，并在 GUI 上注释控制项。</li>
+<li>Summary：基于干净的屏幕截图总结当前应用程序窗口的观察结果。</li>
+</ul>
+<p>前4项是 pywinauto 原生支持的常见功能，涵盖了大多数日常的图形用户界面操作。后2项是为了满足 UFO 特殊需求而定制的操作。Annotate 允许对 GUI 进行重新注释，来获得更简洁的控件列表，Summary 使 UFO 能够用文本描述其视觉观察结果，以满足用户请求。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202406051908405.png" alt="Untitled"></p>
+<h3 id="Special-Design-Consideration"><a href="#Special-Design-Consideration" class="headerlink" title="Special Design Consideration"></a>Special Design Consideration</h3><p>UFO 还融入了一系列专门针对 Windows 系统定制的设计元素。</p>
+<h3 id="Interactive-Mode"><a href="#Interactive-Mode" class="headerlink" title="Interactive Mode"></a>Interactive Mode</h3><p>UFO 为用户提供了交互的能力，而不是单步完成任务。任务完成后，用户可以提出一个全新的任务让 UFO 执行，或在 UFO 可能缺乏熟练度的任务中协助操作。</p>
+<h3 id="Action-Customization"><a href="#Action-Customization" class="headerlink" title="Action Customization"></a>Action Customization</h3><p>UFO 目前支持的动作并不详尽，但是系统可以进行大幅扩展和定制。它允许加入键盘快捷键、宏命令、插件等功能。一个例子是 Summary 动作，它利用 UFO 的多模态能力按需观察和描述屏幕截图。</p>
+<p>为了实现这种级别的定制，用户可以注册他们的定制操作。包括指定目的、参数、返回值，以及提供示例。然后，这些信息会被整合到 UFO 的 prompt 中以供参考。注册过程完成后，定制操作就可以被 UFO 自动调用执行。</p>
+<h3 id="Control-Filtering"><a href="#Control-Filtering" class="headerlink" title="Control Filtering"></a>Control Filtering</h3><p>有些情况下，系统可以检测到数百个控件项。然而，标注所有这些控件可能会使得应用截图变得杂乱，从而影响系统性能。因此，实现过滤机制变得至关重要。</p>
+<p>为了应对这一挑战，UFO采用了两种控件过滤方法，包括 hard level 和 soft level。在 hard level 上，基于用户指定的特定控件类型限制候选控件。在 soft level 上，赋予 UFO 动态决定是否重新生成一个更简洁的控件列表的能力。当 UFO 感知到控件数量过多时，该能力会被触发。</p>
+<h3 id="Plan-Reflection"><a href="#Plan-Reflection" class="headerlink" title="Plan Reflection"></a>Plan Reflection</h3><p>虽然两个智能体都负责发起计划以满足用户请求，但应用程序 UI 的实际状态可能并不总是与预期条件一致。因此，计划和行动都应相应地进行调整。</p>
+<p>为了应对这种动态性，UFO 的 prompt 中要求其在每一个决策步骤中持续修正其计划。作者指出，该设计显著提高了 UFO 系统的性能。</p>
+<h3 id="Safeguard"><a href="#Safeguard" class="headerlink" title="Safeguard"></a>Safeguard</h3><p>UFO 内置了一种安全防护机制，在执行某些安全性操作前会寻求用户确认。例如：发送邮件、删除或修改文件、访问摄像头和安装应用程序等。</p>
+<h1 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h1><h2 id="Benchmark-amp-Baselines"><a href="#Benchmark-amp-Baselines" class="headerlink" title="Benchmark &amp; Baselines"></a>Benchmark &amp; Baselines</h2><p>为了全面评估在各种 Windows 应用程序中的性能，本文开发了一个名为 WindowsBench 的基准测试。这个 benchmark 包括50个用户请求，涵盖了9个日常任务中常用的热门 Windows 应用程序。对于每个应用程序，本文设计5个不同的请求，另外5个请求涉及跨多个应用程序的交互。以下列出了部分 WindowsBench 中的示例。</p>
+<p>鉴于现有基于 Windows 系统的智能体的缺失，本文选择了 GPT-3.5 和 GPT-4 作为 baseline 模型。由于这些模型缺乏直接与应用程序交互的能力，作者 prompt 它们提供 step-by-step 的指令以完成用户请求。然后，人类作为它们的代理人来执行操作。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202406051908407.png" alt="Untitled"></p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202406051908408.png" alt="Untitled"></p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202406051908409.png" alt="Untitled"></p>
+<h2 id="定量结果"><a href="#定量结果" class="headerlink" title="定量结果"></a>定量结果</h2><p>在评估指标方面，作者从四个角度评估系统性能：成功率、步骤数、完成率和安全率。成功率判断智能体是否成功完成了请求。步骤指的是智能体完成任务所需采取的动作数量。完成率是正确步骤数与总步骤数的比率。最后，安全率衡量 UFO 在请求涉及敏感操作时请求用户确认的频率。评估结果如下表所示。</p>
+<p>UFO 在 benchmark 中取得了86%的成功率，比表现最好的 GPT-4 高出一倍多。此外，UFO 展现出最高的完成率和最少的步骤完成任务，表明其能够采取更精确的行动。从安全角度来看，UFO 达到了85.7%的最高的 safeguard rate，这证明它可以准确地分类敏感请求。</p>
+<p>baseline 的较差表现可归因于两个主要因素。首先，两个 baseline 都缺乏与真实应用环境直接交互的能力，依赖人类作为代理来执行动作。这一限制导致了无法适应环境变化和反馈。其次，baseline 仅接受文本输入，忽略了 GUI 交互中视觉能力的重要性。这一弱点阻碍了它们在 Windows 上完成用户请求的效果，其中视觉信息有时至关重要。</p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202406051908410.png" alt="Untitled"></p>
+<p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202406051908411.png" alt="Untitled"></p>
+<h2 id="定性结果"><a href="#定性结果" class="headerlink" title="定性结果"></a>定性结果</h2><p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202406051908412.png" alt="Untitled"></p>
+<h1 id="结论"><a href="#结论" class="headerlink" title="结论"></a>结论</h1><h2 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h2><p>当前 UFO 框架仍存在的一些限制。首先，目前可用的 UI 控件和操作受限于 pywinauto 和 Windows UI Automation 所支持的范围。为了增强 UFO 的能力，作者计划通过集成专用的 GUI 模型进行视觉检测。</p>
+<p>其次，作者发现 UFO 在探索小众的或不常见的应用程序UI时面临挑战。在这种情况下，UFO 可能需要大量时间来导航和识别正确的操作。为了解决这个问题，作者提议利用在线搜索引擎作为 UFO 的外部知识库。</p>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>总的来说，本文基于 GPT-Vision 探索了智能体与 Windows 系统界面的交互任务。为从事日常计算机活动的用户简化了各种任务，将冗长和乏味的过程转换为仅通过自然语言命令即可完成的简单任务。这使 UFO 定位为 Windows OS 的一款用户友好且自动化的辅助工具，有效降低了使用的总体复杂性。</p>
+<h1 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h1><p> [1] <a target="_blank" rel="noopener" href="https://arxiv.org/abs/2402.07939">https://arxiv.org/abs/2402.07939</a></p>
+<p> [2] <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/685614612">https://zhuanlan.zhihu.com/p/685614612</a></p>
+<p> [3] <a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1VA4m1G7Jd/">https://www.bilibili.com/video/BV1VA4m1G7Jd/</a></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
