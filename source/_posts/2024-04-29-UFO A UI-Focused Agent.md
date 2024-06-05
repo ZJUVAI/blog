@@ -1,12 +1,20 @@
-# UFO: A UI-Focused Agent for Windows OS Interaction
-
-```
+---
 title: "UFO : A UI-Focused Agent for Windows OS Interaction"
 tags: ["论文评述", "报告"]
 date: 2024-04-29
 author: 沈健
 mathjax: true
-```
+---
+
+# UFO: A UI-Focused Agent for Windows OS Interaction
+
+论文：UFO: A UI-Focused Agent for Windows OS Interaction
+
+作者：Chaoyun Zhang, Liqun Li, Shilin He, Xu Zhang, Bo Qiao, Si Qin, Minghua Ma, Yu Kang, Qingwei Lin, Saravan Rajmohan, Dongmei Zhang & Qi Zhang
+
+发表：arXiv 2024.05
+
+本文提出了 UFO，一种创新的以用户界面为中心（UI-Focused）的智能体，旨在满足 Windows 操作系统上应用程序的用户请求。UFO 采用双代理框架，精细地观察和分析 Windows 应用程序的图形用户界面和控制信息。这使得智能体能够无缝地在单个应用程序内部及其之间导航和操作，以满足用户请求。该框架还包含一个控制交互模块，使得智能体的行为无需人工干预就可以落地，并实现了完全自动化执行。因此，UFO 将繁琐且耗时的过程转变为仅通过自然语言命令就可实现的简单任务。我们对 UFO 进行了包含 9 个主流 Windows 应用程序的测试，涵盖了反映用户日常使用情况的各种场景。从定量指标和真实案例研究得出的结果强调了 UFO 在满足用户请求方面的卓越有效性。据我们所知，UFO 是第一个专门为 Windows OS 环境完成任务而设计的 UI 智能体。
 
 # 研究背景
 
