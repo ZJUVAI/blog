@@ -1,14 +1,14 @@
 ---
 title: "MatPlotAgent: Method and Evaluation for LLM-Based Agentic Scientific Data Visualization"
 tags: ["论文评述", "报告"]
-date: 2024-15-13
+date: 2024-05-13
 author: 杨熠
 mail: yang-yi@zju.edu.cn
 mathjax: true
 ---
 
 
-# 05.13 MatPlotAgent: Method and Evaluation for LLM-Based Agentic Scientific Data Visualization
+# MatPlotAgent: Method and Evaluation for LLM-Based Agentic Scientific Data Visualization
 
 科学数据可视化在研究中起着至关重要的作用，它能够直接显示复杂信息并帮助研究人员识别隐性模式。尽管大型语言模型 （LLM） 很重要，但使用大型语言模型 （LLM） 进行科学数据可视化仍未得到探索。此篇论文介绍了MatPlotAgent，这是一个高效的模型无关LLM代理框架，旨在自动执行科学数据可视化任务。MatPlotAgent利用代码LLM和多模态LLM的能力，由query理解、迭代调试的代码生成和纠错的可视化反馈机制三个核心模块组成。为了解决该领域缺乏基准的问题，本篇论文还提出了 MatPlotBench，这是一个由 100 个人工验证的测试用例组成的高质量基准测试。此外，本文还介绍了一种利用 GPT-4V 进行自动评估的评分方法。实验结果表明，MatPlotAgent 可以提高各种 LLM 的性能，包括商业模型和开源模型。此外，所提出的评估方法与人工注释的分数具有很强的相关性。
 
