@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#R-Tuning-Instructing-Large-Language-Models-to-Say-%E2%80%98I-Don%E2%80%99t-Know%E2%80%99-%E8%AE%BA%E6%96%87%E8%A7%A3%E8%AF%BB"><span class="toc-text">R-Tuning Instructing Large Language Models to Say ‘I Don’t Know’ 论文解读</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%BC%95%E8%A8%80"><span class="toc-text">引言</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%8A%A8%E6%9C%BA"><span class="toc-text">动机</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-text">方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E6%9E%84%E5%BB%BA"><span class="toc-text">数据构建</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%AD%E7%BB%83"><span class="toc-text">训练</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8E%A8%E7%90%86"><span class="toc-text">推理</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C"><span class="toc-text">实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AE%BE%E5%AE%9A"><span class="toc-text">设定</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="toc-text">数据集</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E4%BB%BB%E5%8A%A1"><span class="toc-text">实验任务</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%9F%BA%E7%BA%BF%E6%96%B9%E6%B3%95"><span class="toc-text">基线方法</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0"><span class="toc-text">评估</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E7%8E%B0%E7%BB%86%E8%8A%82"><span class="toc-text">实现细节</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%9E%E9%AA%8C%E7%BB%93%E6%9E%9C"><span class="toc-text">实验结果</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%8D%95%E4%BB%BB%E5%8A%A1"><span class="toc-text">单任务</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%A4%9A%E4%BB%BB%E5%8A%A1"><span class="toc-text">多任务</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Case-study"><span class="toc-text">Case study</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E5%8F%98%E4%BD%93%EF%BC%9AR-Tuning-U"><span class="toc-text">方法变体：R-Tuning-U</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#PPT"><span class="toc-text">PPT</span></a></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2024-06-05 11:09:28</span></span> -->
+        <span class="attr">发布于：<span>2024-06-05</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#undefined"
+                title="undefined">undefined</a></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <h1 id="R-Tuning-Instructing-Large-Language-Models-to-Say-‘I-Don’t-Know’-论文解读"><a href="#R-Tuning-Instructing-Large-Language-Models-to-Say-‘I-Don’t-Know’-论文解读" class="headerlink" title="R-Tuning Instructing Large Language Models to Say ‘I Don’t Know’ 论文解读"></a>R-Tuning Instructing Large Language Models to Say ‘I Don’t Know’ 论文解读</h1><hr>
+<p>title: “R-Tuning Instructing Large Language Models to Say ‘I Don’t Know’”<br>tags: [“论文评述”, “报告”]<br>date: 2024-05-27<br>author: 杨兆瑞<br>mail: zhaorui.yang@zju.edu.cn<br>mathjax: true</p>
+<hr>
+<h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><ul>
+<li>LLM倾向于捏造事实以回答知识边界外的问题</li>
+<li>其原因是LLM内部参数中包含的知识和用于指令微调的数据之间存在gap</li>
+<li>分析：<ul>
+<li>模型的几乎所有知识在预训练阶段习得</li>
+<li>指令微调使模型学会格式</li>
+<li>指令微调强迫模型补全句子，即使在面对知识边界外的问题时</li>
+</ul>
+</li>
+</ul>
+<h2 id="动机"><a href="#动机" class="headerlink" title="动机"></a>动机</h2><p>在现有的LLM指令微调过程中，训练数据仅包含确切回复。在面对不知道的问题时，LLM不会回复”I don’t know”，而是通过猜测完成回答。Motivated by this，作者提出在知识的边界处进行微调，让LLM表达自信程度，并在面对未知问题时拒绝回答。</p>
+<p><img src="./1717554249556-f01ec954-2746-43fa-9517-fffb23ccbec6.png" alt="image.png"></p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><p>方法名为<strong>R</strong>efusal-Aware Instruction <strong>Tuning</strong> (R-Tuning)，其包含两个主要步骤：</p>
+<ol>
+<li>衡量知识边界，识别出LLM不确定的问题：通过一次推理，根据回答和标签对训练数据进行二分类：Uncertain data $D_0$和 Certain data $D_1$</li>
+<li>通过在标签词后添加表示确信度的单词，构造 refusal-aware data，并在构建的数据集上微调。</li>
+</ol>
+<p>下图是方法示例</p>
+<p><img src="./1717554455228-40cde7c8-49ec-460b-819a-41a6534edd2f.png" alt="image.png"></p>
+<h2 id="数据构建"><a href="#数据构建" class="headerlink" title="数据构建"></a>数据构建</h2><p>有一个模板：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Q : &#123;Question&#125;, A : &#123;Answer&#125;. &#123;Prompt&#125;</span><br><span class="line">Prompt: Are you sure you accurately answered the question based on your internal knowledge?</span><br></pre></td></tr></table></figure>
+<p>根据回答与标签是否匹配，在后面添加两种padding：</p>
+<ul>
+<li>Certain: I am sure</li>
+<li>Uncertain: I am unsure</li>
+</ul>
+<h2 id="训练"><a href="#训练" class="headerlink" title="训练"></a>训练</h2><ul>
+<li>监督微调（Supervised Fine-Tuning）</li>
+<li>仅仅对上文的uncertainty part（即padding）计算loss</li>
+</ul>
+<p><img src="./1717554633433-ea6cc197-5e39-4d40-83d9-25b5e7715951.png" alt="image.png"></p>
+<h2 id="推理"><a href="#推理" class="headerlink" title="推理"></a>推理</h2><p>首先，将问题填入以下模板中：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Q: &#123;Question&#125;, A:</span><br></pre></td></tr></table></figure>
+<p>然后在后面添加prompt：<em>Are you sure you accurately answered the question based on your internal knowledge? I am</em></p>
+<h2 id="实验"><a href="#实验" class="headerlink" title="实验"></a>实验</h2><h3 id="设定"><a href="#设定" class="headerlink" title="设定"></a>设定</h3><h4 id="数据集"><a href="#数据集" class="headerlink" title="数据集"></a>数据集</h4><ul>
+<li><p>Question Answering</p>
+<ul>
+<li><p>ParaRel</p>
+</li>
+<li><p>HotpotQA</p>
+</li>
+<li><p>SelfAware</p>
+</li>
+<li><p>HaluEval</p>
+</li>
+<li><p>FalseQA</p>
+</li>
+<li><p>NEC</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><p>Multiple Choice</p>
+<ul>
+<li><p>MMLU</p>
+</li>
+<li><p>WiCE</p>
+</li>
+<li><p>FEVER</p>
+</li>
+</ul>
+</li>
+</ul>
+<h4 id="实验任务"><a href="#实验任务" class="headerlink" title="实验任务"></a>实验任务</h4><ul>
+<li><p>单任务（Single-task）</p>
+<ul>
+<li>在ParaRel 和 MMLU数据集上进行</li>
+<li>将数据集手工划分成三部分：<ul>
+<li>Training set</li>
+<li>In-domain test set</li>
+<li>Out-of-domain test set</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>多任务（Multi-task）</p>
+<ul>
+<li>将ParaRel, MMLU, WiCE, HotpotQA 和 FEVER 数据集混合</li>
+<li>评估时，用每个数据集相应的测试集作为In-domain test set，用HaluEval 数据集作为OOD test set</li>
+</ul>
+</li>
+</ul>
+<h3 id="基线方法"><a href="#基线方法" class="headerlink" title="基线方法"></a>基线方法</h3><ul>
+<li>Pretrain-T：使用原始模型在全部测试集上测试</li>
+<li>Pretrain-W：使用原始模型在微调后模型仍然给出答复的子集上测试</li>
+<li>Vanilla：使用传统微调方法，用问题和标签对原始模型进行微调后获得的模型</li>
+</ul>
+<h3 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h3><p><img src="./1717555114372-57fe384c-92a2-4fe1-9f8a-b02b9f8ee195.png" alt="image.png"></p>
+<p><img src="./1717555117684-796bc65b-022e-48e2-bf52-ad106aec21a4.png" alt="image.png"></p>
+<p><img src="./1717555120290-d8d1f288-bab6-442a-8f44-03d17b8b5941.png" alt="image.png"></p>
+<p>一个理想模型会对自己给出的正确答案有high confidence，而对幻觉有low confidence，从而带来高AP值。如果模型对所有答案都有high confidence，则会带来较低的AP值，从而说明AP这个指标的合理性。</p>
+<h3 id="实现细节"><a href="#实现细节" class="headerlink" title="实现细节"></a>实现细节</h3><ul>
+<li>模型：OpenLLaMA-3B，LLaMA-7B 和 LLaMA-13B</li>
+<li><p>超参数：</p>
+</li>
+<li><p>1 epoch</p>
+</li>
+<li>lr: 2e-5</li>
+<li>batch_size: 4</li>
+<li>A100-40GB GPUs</li>
+</ul>
+<h3 id="实验结果"><a href="#实验结果" class="headerlink" title="实验结果"></a>实验结果</h3><h4 id="单任务"><a href="#单任务" class="headerlink" title="单任务"></a>单任务</h4><p><img src="./1717555299005-76e6719b-0b85-4d6f-abdc-d9ed82353473.png" alt="image.png"></p>
+<h4 id="多任务"><a href="#多任务" class="headerlink" title="多任务"></a>多任务</h4><p><img src="./1717555310422-c8065eac-9980-4ded-801d-3adcef6eec56.png" alt="image.png"></p>
+<p>结论</p>
+<ul>
+<li>由R-Tuning &gt; Pretrain-W可知，R-Tuning在愿意回答部分的准确率优于各baseline</li>
+<li>模型越大，改善越明显说明随着模型增大，知识gap更大</li>
+</ul>
+<p><img src="./1717555400019-e5788791-9584-4727-8cd3-d8d0e0fa83ed.png" alt="image.png"></p>
+<p>结论</p>
+<ul>
+<li>高AP值说明模型成功地对于自己给出的正确答案相较于幻觉由更高的confidence</li>
+<li>进一步说明模型能够成功识别自己不能回答的问题</li>
+<li>由于OOD的结果也更好了，可以得出拒绝回答是一种元技能（meta skill）</li>
+</ul>
+<h3 id="Case-study"><a href="#Case-study" class="headerlink" title="Case study"></a>Case study</h3><p><img src="./1717555545562-e58e6c9d-d7d7-4844-862d-92a9c101cbe2.png" alt="image.png"></p>
+<h2 id="方法变体：R-Tuning-U"><a href="#方法变体：R-Tuning-U" class="headerlink" title="方法变体：R-Tuning-U"></a>方法变体：R-Tuning-U</h2><p>除了用标签和回复进行匹配外，本文还提出一种无监督划分的变体：同一个问题推理多次，根据多次回答之间的一致性进行划分。</p>
+<p>具体而言，推理k=10次，计算uncertainty <em>u：</em></p>
+<p><em><img src="./1717555663145-2b2d378a-dcdb-4d43-a392-8e3f6873aa13.png" alt="image.png"></em></p>
+<p>并将前50%划分为$D_0$，后50%为$D_1$</p>
+<p><img src="./1717555722328-151723dc-c840-4177-b08d-225f9a595326.png" alt="image.png"></p>
+<p>新引入的几个baseline：</p>
+<ul>
+<li>Vanilla-C：推理k次 并进行 majority vote</li>
+<li>Vanilla-C:推理k次 &amp; majority vote</li>
+</ul>
+<p>结论</p>
+<ul>
+<li>R-Tuning-U &gt; Vanilla-C 说明R-Tuning-U使得模型的回答准确率更高</li>
+<li>R-Tuning-U 结果的高AP值说明了用uncertainty 作为依据进行划分的可行性</li>
+</ul>
+<h2 id="PPT"><a href="#PPT" class="headerlink" title="PPT"></a>PPT</h2><p><a target="_blank" rel="noopener" href="https://yuque.zju.edu.cn/office/yuque/0/2024/pptx/30883/1717556108230-e14d9b57-4a2d-4cd7-a9c9-2de68c03ee2c.pptx?from=https%3A%2F%2Fyuque.zju.edu.cn%2Fzjuvag%2Fseminar%2Fli1cyi%2Fedit">组会PPT-2024.05.27-RTuning.pptx</a></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
