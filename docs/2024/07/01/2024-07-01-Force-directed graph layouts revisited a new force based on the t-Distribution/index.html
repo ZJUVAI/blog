@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Force-directed graph layouts revisited: a new force based on the t-Distribution - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="toc-text">背景介绍</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E7%9B%B8%E5%85%B3%E5%B7%A5%E4%BD%9C"><span class="toc-text">相关工作</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%96%B9%E6%B3%95"><span class="toc-text">方法</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%BC%A0%E7%BB%9F%E5%8A%9B%E5%AF%BC%E5%B8%83%E5%B1%80%E7%9A%84%E8%AE%BE%E8%AE%A1%E5%8E%9F%E5%88%99%E5%92%8C%E4%B8%8D%E8%B6%B3"><span class="toc-text">传统力导布局的设计原则和不足</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#t-force%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">t-force的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#t-model%E7%9A%84%E5%AE%9A%E4%B9%89"><span class="toc-text">t-model的定义</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%B0%83%E5%8F%82%E4%B8%BE%E4%BE%8B"><span class="toc-text">调参举例</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9F%BA%E4%BA%8E%E6%8F%92%E5%80%BC%E7%9A%84%E5%BF%AB%E9%80%9F%E5%82%85%E9%87%8C%E5%8F%B6%E5%8F%98%E6%8D%A2-ibFFT"><span class="toc-text">基于插值的快速傅里叶变换(ibFFT)</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0"><span class="toc-text">评估</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E5%9B%9B%E4%B8%AA%E9%87%8F%E5%8C%96%E6%8C%87%E6%A0%87"><span class="toc-text">四个量化指标</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E4%B8%80%EF%BC%9A-ibFFT%E5%92%8C%E5%85%B6%E4%BB%96%E8%BF%91%E4%BC%BC%E8%AE%A1%E7%AE%97%E6%96%B9%E6%B3%95%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-text">评估一： ibFFT和其他近似计算方法的比较</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#%E8%AF%84%E4%BC%B0%E4%BA%8C%EF%BC%9A%E5%9F%BA%E4%BA%8EibFFT%E7%9A%84t-FDP%E4%B8%8E%E5%85%B6%E4%BB%96%E5%B8%83%E5%B1%80%E7%AE%97%E6%B3%95%E7%9A%84%E6%AF%94%E8%BE%83"><span class="toc-text">评估二：基于ibFFT的t-FDP与其他布局算法的比较</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%8B%93%E5%B1%95"><span class="toc-text">拓展</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E6%94%AF%E6%8C%81%E5%85%A8%E5%B1%80%E8%B0%83%E6%95%B4%E5%92%8C%E5%B1%80%E9%83%A8%E8%B0%83%E6%95%B4"><span class="toc-text">支持全局调整和局部调整</span></a></li></ol></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E8%AE%A8%E8%AE%BA"><span class="toc-text">讨论</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#%E4%B8%8D%E8%B6%B3%E7%82%B9%EF%BC%9A"><span class="toc-text">不足点：</span></a></li></ol></li></ol></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Force-directed graph layouts revisited: a new force based on the t-Distribution
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2024-07-01 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2024-07-01</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#陈俊旭"
+                title="陈俊旭">陈俊旭</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Force-directed graph layouts revisited: a new force based on the t-Distribution</p>
+<p>作者：Fahai Zhong, Mingliang Xue, Jian Zhang, Fan Zhang, Rui Ban, Oliver Deussen and Yunhai Wang</p>
+<p>发表：VIS2023</p>
+<p>本文提出了一种名为t-FDP的模型，这是基于一种新颖的有界短程力（t-force）的力导向布局方法，这种力由Student’s t分布定义。该模型公式灵活，对邻近节点施加的排斥力有限，并且可以分别调整其短程和长程效应。通过在力导向图布局中使用这种力，可以比现有方法更好地保持邻域关系，同时保持较低的应力误差。作者还提到，他们使用快速傅里叶变换的高效实现比现有最先进的方法快一个数量级，在GPU上快两个数量级，这使得他们能够通过全局和局部调整t-force来实时进行复杂图的参数调优。通过数值评估与现有最先进的方法进行比较，作者展示了他们的方法在交互式探索中的扩展，证明了其方法的优越性。</p>
+<p><a target="_blank" rel="noopener" href="https://ieeexplore.ieee.org/document/10024360">论文链接</a></p>
+<h2 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h2><p><strong>现有力导图布局算法的不足点</strong></p>
+<p>• 相邻的两个连接节点之间的斥力很大，导致节点的邻域结构不能得到很好的保留</p>
+<p>• 最新的基于邻域嵌入的图布局算法tsNET可以比较好地保留2环邻域结构，但其应力误差(stress error)比较大，且不能有效保留1环邻域结构</p>
+<p><img src="./1.png" alt=""></p>
+<h2 id="相关工作"><a href="#相关工作" class="headerlink" title="相关工作"></a>相关工作</h2><p><strong>力导布局算法</strong></p>
+<p>• Spring-electric model</p>
+<p>• Stress model</p>
+<p><strong>t分布在图布局中的应用</strong></p>
+<p>• 降维领域的应用：t-SNE、LargeVis、UMAP、TriMap、tsNET</p>
+<p><strong>t分布函数：</strong></p>
+<p><img src="./2.png" alt=""></p>
+<h2 id="方法"><a href="#方法" class="headerlink" title="方法"></a>方法</h2><h4 id="传统力导布局的设计原则和不足"><a href="#传统力导布局的设计原则和不足" class="headerlink" title="传统力导布局的设计原则和不足"></a>传统力导布局的设计原则和不足</h4><p><strong>Fruchterman and Reingold(FR)算法的两个设计原则：</strong></p>
+<p>• P1：有边相连的节点应该彼此接近</p>
+<p>• P2：从全局角度看，节点之间不应该靠得太近</p>
+<p>P1和P2不能保证有边连接的两个节点之间的距离相较于其他节点来说最近</p>
+<p><strong>本文提出第三个设计原则：</strong></p>
+<p>• P3：有边连接的节点相较于没有边连接的节点，有边连接的节点应该更近传统的基于spring-electric的力导布局算法</p>
+<p>斥力和引力的计算公式：</p>
+<p><img src="./3.png" alt=""></p>
+<p>​                                            xi表示节点在二维空间中的位置，p和q均为非负</p>
+<p><strong>该算法的不足点：</strong></p>
+<ol>
+<li><p>短程的强斥力会把图论距离近的节点在欧式空间中推的比较远，</p>
+</li>
+<li><p>长程的强引力会把原本属于一个簇团的节点分开为多个小的簇团</p>
+</li>
+</ol>
+<p>举例：</p>
+<p><img src="./4.png" alt=""></p>
+<p>(a)  V1被三个非邻域节点推离其所属簇团</p>
+<p>(b)  V2被远处节点拉离其所属簇团</p>
+<h4 id="t-force的定义"><a href="#t-force的定义" class="headerlink" title="t-force的定义"></a>t-force的定义</h4><p>提出一种新的基于t分布的短程力，这种力应该满足下面三个条件：</p>
+<p><img src="./7.png" alt=""></p>
+<p>其计算函数为：</p>
+<p><img src="./5.png" alt=""></p>
+<p>其函数图形为：</p>
+<p><img src="./6.png" alt=""></p>
+<h4 id="t-model的定义"><a href="#t-model的定义" class="headerlink" title="t-model的定义"></a>t-model的定义</h4><p><strong>斥力</strong>：直接由t-force定义</p>
+<p><strong>引力</strong>：线性引力 + t-force</p>
+<p><img src="./19.png" alt=""></p>
+<h4 id="调参举例"><a href="#调参举例" class="headerlink" title="调参举例"></a>调参举例</h4><p>下图(d)，α和β在不同值下的布局效果，其中最上面的图具有更加均匀的全局结构，最下面的图保留了更多的邻域结构</p>
+<p><img src="./10.png" alt=""></p>
+<p>下图(a)中随着γ的增加，节点更加聚集</p>
+<p><img src="./11.png" alt=""></p>
+<h4 id="基于插值的快速傅里叶变换-ibFFT"><a href="#基于插值的快速傅里叶变换-ibFFT" class="headerlink" title="基于插值的快速傅里叶变换(ibFFT)"></a>基于插值的快速傅里叶变换(ibFFT)</h4><p><img src="./12.png" alt=""></p>
+<h2 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h2><p><strong>评估一：ibFFT和其他近似计算方法的比较</strong></p>
+<ol>
+<li><p>t-FDP-exact(baseline)</p>
+</li>
+<li><p>t-FDP-BH</p>
+</li>
+<li><p>t-FDP-RVS</p>
+</li>
+<li><p>t-FDP-ibFFT(CPU)</p>
+</li>
+<li><p>t-FDP-ibFFT(GPU)</p>
+</li>
+</ol>
+<p><strong>评估二：基于ibFFT的t-FDP与其他布局算法的比较</strong></p>
+<p>10个布局算法：FR, FR-RVS, SFDP, Linlog, FA2, PMDS, Maxent, SM, tsNET, DRGraph</p>
+<h4 id="四个量化指标"><a href="#四个量化指标" class="headerlink" title="四个量化指标"></a>四个量化指标</h4><p>• Normalized stress error (SE)</p>
+<p>• Neighborhood Preservation Degree (NP)</p>
+<p>• Crosslessness (CL)</p>
+<p>• Minimum Angle (MA)</p>
+<p>数值上，SE越小，NP、CL、MA越大，图质量越好</p>
+<p>相对量化指标：SE为例：X为布局，下标s为source，t为target</p>
+<p><img src="./13.png" alt=""></p>
+<h4 id="评估一：-ibFFT和其他近似计算方法的比较"><a href="#评估一：-ibFFT和其他近似计算方法的比较" class="headerlink" title="评估一： ibFFT和其他近似计算方法的比较"></a>评估一： ibFFT和其他近似计算方法的比较</h4><p>四种近似计算方法和baseline在四个指标上的比较(下图)</p>
+<p><img src="./14.png" alt=""></p>
+<p>时效性比较(下图)</p>
+<p><img src="./15.png" alt=""></p>
+<h4 id="评估二：基于ibFFT的t-FDP与其他布局算法的比较"><a href="#评估二：基于ibFFT的t-FDP与其他布局算法的比较" class="headerlink" title="评估二：基于ibFFT的t-FDP与其他布局算法的比较"></a>评估二：基于ibFFT的t-FDP与其他布局算法的比较</h4><p>11种布局算法在50个数据集上的结果比较</p>
+<p>SE, NP1, NP2三个指标上的结果展示(下图)</p>
+<p><img src="./16.png" alt=""></p>
+<p>可读性比较(下图)</p>
+<p><img src="./17.png" alt=""></p>
+<h2 id="拓展"><a href="#拓展" class="headerlink" title="拓展"></a>拓展</h2><h4 id="支持全局调整和局部调整"><a href="#支持全局调整和局部调整" class="headerlink" title="支持全局调整和局部调整"></a>支持全局调整和局部调整</h4><p><strong>全局调整</strong>：可以通过增加斥力让节点分布更均匀(a)，或减少斥力来聚集节点以显示主体结构(b)</p>
+<p><strong>局部调整</strong>：增加焦点节点之间的引力，同时增加焦点节点和其邻域节点之间的斥力，以达到类似鱼眼的效果</p>
+<p><img src="./18.png" alt=""></p>
+<h2 id="讨论"><a href="#讨论" class="headerlink" title="讨论"></a>讨论</h2><h4 id="不足点："><a href="#不足点：" class="headerlink" title="不足点："></a>不足点：</h4><p>• t-FDP在距离保持(distance preservation)的表现不如stress model，之后可以在长程力(long-range force)上做优化</p>
+<p>• 相比较于传统的力导布局算法，t-FDP算法需要设置三个参数，一定程度上增加了复杂度，后续工作可以围绕自动设置参数来展开</p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
