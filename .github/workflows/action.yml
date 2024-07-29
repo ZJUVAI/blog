@@ -34,14 +34,14 @@ jobs:
           node-version: 14.x
       - run: |
           npm i
-          npm run build
-      - name: Commit and push changes
-        run: |
-          git config --global user.name "KidsXH"
-          git config --global user.email "wlzeign@hotmail.com"
-          git add -A
-          git commit -m "New Build"
-          git push
+          npm run deploy
+      # - name: Commit and push changes
+      #   run: |
+      #     git config --global user.name "KidsXH"
+      #     git config --global user.email "wlzeign@hotmail.com"
+      #     git add -A
+      #     git commit -m "New Build"
+      #     git push
           
   # Single deploy job since we're just deploying
   deploy:
