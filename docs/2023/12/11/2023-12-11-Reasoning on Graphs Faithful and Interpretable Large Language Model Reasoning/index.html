@@ -18,17 +18,17 @@
     <!-- Custom CSS -->
     
 <link rel="stylesheet" href="/blog/css/aircloud.css">
-<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
 
     
 <link rel="stylesheet" href="/blog/css/gitment.css">
-<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
 
     <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
     <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
     <!-- ga & ba script hoook -->
     <script></script>
-<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 5.4.2"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body>
 
@@ -225,7 +225,7 @@
 </blockquote>
 <p>后一项最小化了后验和先验之间的 KL 散度，这鼓励 LLM 生成忠实的关系路径（planning optimization）。前一项最大化了检索推理模块根据关系路径和 KG 生成正确答案的期望（retrieval-reasoning optimization）。</p>
 <h4 id="planning-optimization"><a href="#planning-optimization" class="headerlink" title="planning optimization"></a>planning optimization</h4><p>通过最小化 KL 散度实现将知识图谱中的知识蒸馏进入 LLM。</p>
-<p>给定问题 q 和答案 a，我们可以在 KG 中找到连接二者的路径实例 $w_z(e_q, e_a) = e_q \xrightarrow{r_1}  e_1 \xrightarrow{r_2} …\xrightarrow{r_l} e_a$ ，相应的关系路径为 $z = \{r_1, r_2, . . . , r_l\}$ 。后验分布可以近似表示为：</p>
+<p>给定问题 q 和答案 a，我们可以在 KG 中找到连接二者的路径实例 $w_z(e_q, e_a) = e_q \xrightarrow{r_1}  e_1 \xrightarrow{r_2} …\xrightarrow{r_l} e_a$ ，相应的关系路径为 $z = {r_1, r_2, . . . , r_l}$ 。后验分布可以近似表示为：</p>
 <p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202312111053456.png" alt="image-20231209220145689" style="zoom:67%;" /></p>
 <p>因此可以 KL 散度的计算可以简化为：</p>
 <p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202312111053589.png" alt="image-20231209220152604" style="zoom:67%;" /></p>
@@ -310,8 +310,7 @@
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
-<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>
@@ -323,7 +322,7 @@
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 
 <script src="/blog/js/index.js"></script>
-<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
