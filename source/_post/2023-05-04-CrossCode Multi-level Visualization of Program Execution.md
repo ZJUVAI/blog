@@ -2,7 +2,7 @@
 title: CrossCode Multi-level Visualization of Program Execution
 author: 温圳
 date: '2023-05-04'
-type: Paper
+tags: '["其他"]'
 ---
 
 论文：CrossCode: Multi-level Visualization of Program Execution
