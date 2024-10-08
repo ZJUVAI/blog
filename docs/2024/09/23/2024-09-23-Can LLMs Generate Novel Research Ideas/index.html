@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        Can LLMs Generate Novel Research Ideas? - undefined
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#1-%E8%83%8C%E6%99%AF"><span class="toc-text">1.背景</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#2-%E9%97%AE%E9%A2%98%E8%AE%BE%E5%AE%9A"><span class="toc-text">2.问题设定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Ideation-Scope-and-Instructions%EF%BC%88%E6%9E%84%E6%83%B3%E8%8C%83%E5%9B%B4%E5%92%8C%E6%8C%87%E5%AF%BC%EF%BC%89"><span class="toc-text">Ideation Scope and Instructions（构想范围和指导）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Idea-Writeup%EF%BC%88idea%E6%92%B0%E5%86%99%EF%BC%89"><span class="toc-text">Idea Writeup（idea撰写）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Review-and-Evaluation%EF%BC%88%E5%AE%A1%E6%9F%A5%E5%92%8C%E8%AF%84%E4%BC%B0%EF%BC%89"><span class="toc-text">Review and Evaluation（审查和评估）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#3-Idea%E7%94%9F%E6%88%90Agent"><span class="toc-text">3.Idea生成Agent</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%96%87%E7%8C%AE%E6%A3%80%E7%B4%A2RAG"><span class="toc-text">文献检索RAG</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Idea%E7%94%9F%E6%88%90"><span class="toc-text">Idea生成</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Idea%E6%8E%92%E5%90%8D"><span class="toc-text">Idea排名</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#4-%E4%B8%93%E5%AE%B6%E7%9A%84Idea%E5%92%8C%E5%AE%A1%E6%9F%A5"><span class="toc-text">4.专家的Idea和审查</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%BA%E5%91%98%E6%8B%9B%E5%8B%9F"><span class="toc-text">人员招募</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Idea%E6%92%B0%E5%86%99"><span class="toc-text">Idea撰写</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Idea%E5%AE%A1%E6%9F%A5"><span class="toc-text">Idea审查</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#5-%E4%B8%BB%E8%A6%81%E5%AE%9E%E9%AA%8C"><span class="toc-text">5.主要实验</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Test-1-Treating-Each-Review-as-an-Independent-Datapoint"><span class="toc-text">Test 1: Treating Each Review as an Independent Datapoint</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Test-2-Treating-Each-Idea-as-an-Independent-Datapoint"><span class="toc-text">Test 2: Treating Each Idea as an Independent Datapoint</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Test-3-Treating-Each-Reviewer-as-an-Independent-Datapoint"><span class="toc-text">Test 3: Treating Each Reviewer as an Independent Datapoint</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#6-%E4%BA%BA%E7%B1%BB%E7%A0%94%E7%A9%B6%E7%9A%84%E6%B7%B1%E5%85%A5%E5%88%86%E6%9E%90"><span class="toc-text">6.人类研究的深入分析</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BA%BA%E7%B1%BB%E4%B8%93%E5%AE%B6%E5%8F%AF%E8%83%BD%E6%B2%A1%E6%9C%89%E7%BB%99%E5%87%BA%E4%BB%96%E4%BB%AC%E6%9C%80%E5%A5%BD%E7%9A%84Idea"><span class="toc-text">人类专家可能没有给出他们最好的Idea</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A1%E7%A8%BF%E4%BA%BA%E6%9B%B4%E6%B3%A8%E9%87%8D%E6%96%B0%E9%A2%96%E6%80%A7%E5%92%8C%E5%85%B4%E5%A5%8B%E5%BA%A6"><span class="toc-text">审稿人更注重新颖性和兴奋度</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%AE%A1%E6%9F%A5Idea%E6%9C%AC%E8%B4%A8%E4%B8%8A%E6%98%AF%E4%B8%BB%E8%A7%82%E7%9A%84"><span class="toc-text">审查Idea本质上是主观的</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#7-LLMs%E7%9A%84%E5%B1%80%E9%99%90%E6%80%A7"><span class="toc-text">7.LLMs的局限性</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#LLM%E5%9C%A8%E5%88%9B%E6%84%8F%E7%94%9F%E6%88%90%E4%B8%AD%E7%BC%BA%E4%B9%8F%E5%A4%9A%E6%A0%B7%E6%80%A7"><span class="toc-text">LLM在创意生成中缺乏多样性</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LLM%E6%97%A0%E6%B3%95%E5%8F%AF%E9%9D%A0%E5%9C%B0%E8%AF%84%E4%BC%B0Idea"><span class="toc-text">LLM无法可靠地评估Idea</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#8-%E5%AE%9A%E6%80%A7%E5%88%86%E6%9E%90"><span class="toc-text">8.定性分析</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#9-%E8%AE%A8%E8%AE%BA"><span class="toc-text">9.讨论</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        Can LLMs Generate Novel Research Ideas?
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2024-09-23 00:00:00</span></span> -->
+        <span class="attr">发布于：<span>2024-09-23</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#郑力"
+                title="郑力">郑力</a></span>
+        
+        <span class="attr">/
+            
+            <a class="tag" href="/blog/tags/#报告" title="报告">报告</a>
+            <span>/</span>
+            
+            <a class="tag" href="/blog/tags/#论文评述" title="论文评述">论文评述</a>
+            <span>/</span>
+            
+            
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：Can LLMs Generate Novel Research Ideas?</p>
+<p>作者：Chenglei Si, Diyi Yang, Tatsunori Hashimoto</p>
+<p>发表：arXiv</p>
+<p>​    近期大型语言模型（LLMs）的进步激发了人们对其加速科学发现潜力的乐观态度，越来越多的研究提出了能够自主生成和验证新想法的研究Agent。尽管如此，尚无评估显示LLM系统能够迈出产生新颖、专家级想法的第一步，更不用说执行整个研究过程，作者通过建立一个控制混杂因素的实验设计来解决这个问题。作者招募了100多名NLP研究人员撰写新颖想法，并对他们以及LLM想法进行盲审，获得了关于当前LLM研究Idea能力的首个统计显著结论：LLM生成的Idea被判定为比人类专家的Idea更具新颖性（p &lt; 0.05），而在可行性上被判定为略逊一筹。通过仔细研究作者的Agent基线，作者确定了构建和评估研究Agent中存在的问题，包括LLM自我评估的失败以及它们在生成中的多样性不足。最后，作者承认即使由专家进行，对新颖性的人类判断也可能是困难的，并提出了一个端到端的研究设计，招募研究人员将这些Idea执行为完整项目，使作者能够研究这些新颖性和可行性判断是否会导致研究结果的有意义差异。</p>
+<p><a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2409.04109">论文链接</a></p>
+<h2 id="1-背景"><a href="#1-背景" class="headerlink" title="1.背景"></a>1.背景</h2><p>​    随着大型语言模型（LLMs）在科学任务中的能力迅速提升，人们对于它们加速科学发现的潜力抱有乐观态度。这些模型已经在解决数学问题、辅助科学家撰写证明、检索相关工作、生成代码解决分析或计算任务以及在大型文本语料库中发现模式等方面展现出了潜力。然而，尽管这些应用可能提高研究人员的生产力，LLMs是否能够承担起研究过程中更具创造性和挑战性的部分仍然是一个开放的问题。本研究聚焦于衡量LLMs在研究构想能力上的表现，并提出了一个关键问题：当前的LLMs是否能够生成与专家人类相媲美的新颖idea？</p>
+<h2 id="2-问题设定"><a href="#2-问题设定" class="headerlink" title="2.问题设定"></a>2.问题设定</h2><p>​    作者工作的中心实验是将人类生成的idea与LLM生成的idea进行比较。虽然这个目标很简单，但目前还没有关于如何制定研究Idea和评估任务的共识，作者首先定义了作者实验设计的关键方面。</p>
+<p>​    作者将研究idea评估视为由三个独立部分组成：1) 根据作者的指示生成的idea本身，2) 传达idea的写作，3) 专家对写作的评估。作者在以下三个方面概述了作者的实验设计，并特别关注潜在的混杂因素，如研究领域、研究idea的格式和评估过程。</p>
+<h3 id="Ideation-Scope-and-Instructions（构想范围和指导）"><a href="#Ideation-Scope-and-Instructions（构想范围和指导）" class="headerlink" title="Ideation Scope and Instructions（构想范围和指导）"></a>Ideation Scope and Instructions（构想范围和指导）</h3><p>​    研究idea可以采取许多不同的形式，它们可以是提高模型性能的简单技巧，也可能是构成博士论文基础的大规模研究计划。任何关于Idea的实验都必须仔细平衡研究idea的现实性和有趣性与从大量人群中激发idea的实际现实之间的关系。在作者的情况下，这些权衡更加明显，因为作者设计了Idea实验，以便产生的Idea可以由专家在后续的一系列实验中执行。这些限制导致作者研究基于提示的NLP研究作为作者研究的试验场。近年来，提示研究在NLP和AI研究中一直很受欢迎。这类项目在作者的限制中取得了合理的权衡。最有影响力的提示项目，如chain-of-thought，对LLM性能产生了重大影响，并且提示项目可以在最小的计算硬件上执行。</p>
+<p>​    作者进一步结构化Idea过程，以避免Idea中的选择偏差混杂因素。如果作者简单地要求LLM和人类在“提示主题”上产生idea，可能会发现LLM和人类在他们产生的研究idea类型上存在差异（例如，LLM可能自然地建议更多关于更安全主题的项目，这可能被人类评为不那么令人感兴趣）。这将导致作者简单地测量LLM和人类之间研究主题偏好的不一致，这不是作者研究的目标。</p>
+<p>​    为了解决这种可能性，作者定义了一组七个特定的研究主题，这些主题来自最近NLP会议（如COLM）的征集论文页面。具体来说，作者的主题包括：偏见、代码能力、安全性、多语言性、事实性、数学和不确定性。</p>
+<blockquote>
+<p><strong>Title</strong>：作为论文标题使用的简洁研究问题陈述。<br><strong>Problem Statement</strong>：清晰定义你的研究旨在解决的问题。清楚解释为什么这个问题有趣且重要。<br><strong>Motivation</strong>：解释为什么现有方法不足以解决问题，并解释新提出方法背后的灵感。你还应该说明为什么提出的方案会比现有基线在问题上表现更好。<br><strong>Proposed Method</strong>：解释提出的方法如何工作，描述所有必要的步骤。<br><strong>Step-by-Step Experiment Plan</strong>：细化实验的每一步，确保每一步都是可执行的。涵盖所有必要的细节，如将使用的数据集、模型和指标。如果项目涉及提示，为每一步提供一些示例提示。<br><strong>Test Case Examples</strong>：提供至少两个具体示例。第一个示例应展示基线方法在测试案例上的失败。如果有多个基线，为所有基线提供示例。第二个示例应展示提出的方法在测试案例上的成功。对于每个测试案例，包括输入（测试示例和完整的提示）和预期输出。还应提供解释，说明为什么提出提示的输出更好。如果提出的方法有多个步骤，将其细分为中间步骤。<br><strong>Fallback Plan</strong>：如果提出的方法未能满足成功标准，提出者应该采取的一些替代计划。例如，你可以建议进行额外分析以帮助调试为什么提出的方法没有奏效，这可能有助于形成新的替代方法，或者通过提供一些有趣的消融和见解，将项目转变为分析论文。</p>
+</blockquote>
+<p>​    每个人类和LLM Idea实验的参与者都收到相同的自然语言指令，包括相同的主题描述、idea模板和示范示例，以确保公平比较。对于人类参与者，作者额外允许他们从列表中选择一个首选主题，并且对于每个选择的主题，作者都生成一个相应的LLMidea。这完全匹配了LLM和人类参与者之间的idea主题分布，同时确保了人类专家能够根据自己的专业知识选择主题。</p>
+<h3 id="Idea-Writeup（idea撰写）"><a href="#Idea-Writeup（idea撰写）" class="headerlink" title="Idea Writeup（idea撰写）"></a>Idea Writeup（idea撰写）</h3><p>​    一个idea只有在被写出来以传达时才能被评估，但这个写作过程引入了许多额外的潜在混杂因素。人类研究者可能会以微妙地暗示高质量研究的方式写作，例如包括更多的例子和实施细节。写作的格式作为一种方式来支撑应该包含哪些内容以及详细程度。理想情况下，作者希望人类和LLM参与者都为他们生成的idea提供所有必要的实施细节。具体来说，作者构建了一个模板，包括标题、问题陈述、动机、提出的方法、逐步实验计划、测试案例示例和备选计划的字段。LLMAgent和人类idea作者都被指示遵循这个模板和作者提供示范示例来产生一个idea作为输出（见原文<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2409.04109#page=27&amp;zoom=100,90,96">附录B</a>中的完整模板和<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2409.04109#page=28&amp;zoom=100,90,96">附录C</a>中的示范示例）。即使有了这些模板，也可能存在微妙的写作风格线索，这些线索会影响结果测量。例如，人类可能倾向于以更吸引人和非正式的语气写作。为了进一步减少这种可能性，作者开发了一个风格标准化模块，使用LLM将所有idea转换为相同的写作和格式化风格，而不改变原始内容。作者的小规模人类研究表明，这种标准化方法使得专家人类评委在被要求区分AI idea和人类idea时的准确率达到了50%。</p>
+<p>​    最后，使用LLM风格匿名化有可能实质性地改变idea的内容。为了排除这一点，本文的第一作者手动验证了每个人类idea提案，以确保保留了原始idea的所有内容。作者在原文<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2409.04109#page=31&amp;zoom=100,90,96">附录D</a>中展示了使用的全部提示。</p>
+<h3 id="Review-and-Evaluation（审查和评估）"><a href="#Review-and-Evaluation（审查和评估）" class="headerlink" title="Review and Evaluation（审查和评估）"></a>Review and Evaluation（审查和评估）</h3><p>​    审查研究idea是出了名的主观，所以作者想要设计一个审查表格，明确定义所有审查标准，以尽可能标准化和锚定评估。同时，作者希望作者的审查标准和测量变量能够捕捉高质量研究idea的所有理想特征。作者在设计审查表格时遵循AI会议审查的最佳实践（例如，ICLR和ACL），其中作者定义了四个分解指标，包括新颖性、兴奋度、可行性和预期有效性，除了总体分数。对于每个指标，作者要求在1-10的量表上给出数值分数以及自由文本理由。作者为每个数值量表提供明确的定义和基础，以校准所有审稿人的标准（见原文<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2409.04109#page=32&amp;zoom=100,90,96">附录E</a>中的完整审查表格）。作者对三种不同条件的idea进行盲审评估：</p>
+<ol>
+<li>人类idea：由作者招募的专家研究者撰写的idea提案。</li>
+<li>AI idea：由作者的LLMAgent生成的idea提案。作者直接从Agent的输出中获取排名靠前的idea。</li>
+<li>AI idea+人类重新排名：由作者的LLMAgent生成的idea提案。本文的第一作者手动从LLMAgent生成的所有idea中选择了排名靠前的idea，而不是依赖LLM排名器，以更好地估计AI idea的上限质量。</li>
+</ol>
+<h2 id="3-Idea生成Agent"><a href="#3-Idea生成Agent" class="headerlink" title="3.Idea生成Agent"></a>3.Idea生成Agent</h2><p>​    作者构建了一个简单但有效的大型语言模型（LLM）Idea Generation Agent，与人类专家基线进行比较。作者没有专注于创新Agent本身，而是坚持最小化设计原则，旨在了解LLM在Idea生成方面的当前能力。作者研究的Idea生成Agent有三个基本组成部分：论文检索、Idea生成和Idea排名。</p>
+<h3 id="文献检索RAG"><a href="#文献检索RAG" class="headerlink" title="文献检索RAG"></a>文献检索RAG</h3><p>​    为了为Idea生成提供基础，Agent需要检索与给定研究主题相关的论文，以便在生成新idea时能够了解相关研究。为此，作者利用了检索增强生成（RAG），它已经在许多知识密集型任务上证明了其有效性。具体来说，给定一个研究主题（例如，“能够提高大型语言模型的事实性并减少幻觉的新型提示方法”），作者提示一个LLM生成一系列对Semantic Scholar API的函数调用。作者使用claude-3-5-sonnet-20240620作为作者Agent的骨干模型，但该流程也应该能够泛化到其他LLM。论文检索动作空间包括：{KeywordQuery(keywords), PaperQuery(paperId), GetReferences(paperId)}。每个动作生成都基于先前的动作和执行结果。作者保留每个执行函数调用的前k=20篇论文，并在检索到最大N=120篇论文时停止动作生成。然后作者使用LLM根据三个标准对所有检索到的论文进行评分和重新排名：1）论文应直接与指定主题相关；2）论文应为涉及计算实验的实证论文；3）论文有趣且能激发新项目。作者提示LLM根据这些标准对每篇检索到的论文进行1到10分的评分，并使用排名靠前的论文进行下一步的Idea生成。</p>
+<h3 id="Idea生成"><a href="#Idea生成" class="headerlink" title="Idea生成"></a>Idea生成</h3><p>​    作者Idea生成的关键见解是尽可能多地生成候选Idea。作者的直觉是所有生成的Idea中只有一小部分可能是高质量的，所以应该愿意花费推理时间来生成更多的候选项，这样作者就可以使用重排器来发现”粗糙中的精品”。这与现有的结果一致，这些结果表明，通过重复抽样扩大推理计算可以提高LLM在各种编码和推理任务上的性能。具体来说，作者提示LLM在每个研究主题上生成4000个种子Idea。Idea生成提示包括示范示例和检索到的论文。作者通过手动总结示例论文制作了k=6个示范示例，以作者期望的Idea格式。对于检索增强，作者随机选择k=10篇排名靠前的检索论文，并将其标题和摘要连接起来，添加到Idea生成提示的前面。作者还在提示中附上所有先前生成Idea的标题，明确要求LLM避免重复。为了从这个大量的候选Idea中去除重复的Idea，作者首先通过使用Sentence-Transformers中的all-MiniLM-L6-v2对所有种子Idea进行编码，然后计算成对的余弦相似度来进行一轮去重。作者基于手动检查将Idea去重的相似度阈值设置为0.8。这使得大约5%的非重复Idea保留下来。</p>
+<h3 id="Idea排名"><a href="#Idea排名" class="headerlink" title="Idea排名"></a>Idea排名</h3><p>​    下一步是作者的Idea Agent对所有剩余的Idea进行排名，以便作者能够在它们中找到最好的。为了构建这样的自动Idea排名器，作者使用公开的评审数据作为Agent。具体来说，作者抓取了与LLM相关的1200份ICLR 2024提交以及它们的评审分数和接受决定。作者探索了多种预测这些提交的分数和决定的方法，发现当直接要求LLM预测最终分数或决定时，它们的校准效果很差，但在要求它们判断哪篇论文更好的成对比较中，它们可以实现非平凡的准确性。</p>
+<p>​    作者转换了ICLR提交，并将其随机配对为接受和拒绝的论文，并要求LLM预测哪一篇被接收。在这个任务上，Claude-3.5-Sonnet实现了71.4%的准确率，无需提示。相比之下，GPT-4o实现了61.1%，Claude-3-Opus实现了63.5%，作者没有观察到额外的提示技术（如少量提示或链式思考提示）带来显著增益。因此，作者选择了Claude-3.5-Sonnet zero-shot提示排名器。为了根据成对比较为所有idea获得可靠的分数，作者采用了瑞士伦赛制，所有idea都与累积分数相似的idea配对，如果被判断为更好，它们将获得额外的分数。作者重复这个过程N轮，以便每个idea的总分数将在[0, N]范围内。</p>
+<p>​    作为理智检查，作者使用Claude-3.5-Sonnet排名器对1.2K ICLR LLM相关提交进行排名，并在表1中比较排名前10位的论文和排名后10位的论文的平均评审分数。作者可以看到排名前后10位的论文之间有明显的区别，这表明LLM排名器的有效性。作者选择N=5作为作者所有实验的值，因为它在这个验证集上给出了最好的排名结果。Agent排名靠前的idea将直接用于人类研究的AI Idea条件。由于作者的AI排名器还远非完美，作者还引入了另一个实验条件，其中本文的第一作者手动对生成的idea进行了重新排名，而不是依赖LLM排名器，作者称这为AI Idea+人类重新排名条件。正如作者在表2中所示，AI Idea+人类重新排名条件中的49个idea中有17个与AI Idea条件重叠，而其他32个则不同，这表明LLM排名器和人类专家重新排名之间存在差异。</p>
+<center style="color:#000000;font-family:Arial">表1 LLM排名器对ICLR 2024提交的相关LLM论文进行排名，不同轮次（N）的成对比较的平均ICLR审查分数。顶部和底部10篇论文的分数差距</center>
+
+<p><img src=".\table1.png" alt="table1" style="zoom:50%;" /></p>
+<center style="color:#000000;font-family:Arial">表2 AI Idea与人类Idea之间的重叠</center>
+
+<p><img src=".\table12_ai评分与ai和人类评分的重叠.png" alt="table12_ai评分与ai和人类评分的重叠" style="zoom:60%;" /></p>
+<h2 id="4-专家的Idea和审查"><a href="#4-专家的Idea和审查" class="headerlink" title="4.专家的Idea和审查"></a>4.专家的Idea和审查</h2><p>在本节中，作者将重点转移到Idea生成比较的人类分支。作者介绍了作者人类研究的详细信息，包括招募的专家信息、人类Idea生成任务以及随后的审查过程。</p>
+<h3 id="人员招募"><a href="#人员招募" class="headerlink" title="人员招募"></a>人员招募</h3><p>作者们通过以下方式招募参与研究的NLP研究人员：</p>
+<ol>
+<li><p><strong>OpenNLP Slack频道</strong>：向拥有1426名来自71个机构的NLP研究人员的OpenNLP Slack频道发送报名表（得到了频道管理员的同意）。</p>
+</li>
+<li><p><strong>Twitter</strong>：通过Twitter平台进行招募。</p>
+</li>
+<li><p><strong>Slack频道</strong>：通过与NLP小组的成员直接沟通，向多个NLP相关的Slack频道发送信息。</p>
+</li>
+<li><p><strong>NAACL 2024会议的官方聊天应用</strong>：在NAACL 2024会议上通过官方聊天应用进行招募。</p>
+</li>
+<li><p><strong>NAACL 2024会议现场</strong>：在NAACL 2024会议上，通过分发带有报名链接的名片和穿着带有报名链接的T恤进行现场招募。</p>
+</li>
+<li><p><strong>NAACL 2024会议以及其他本地NLP社交活动</strong>：在NAACL 2024会议和其他各种本地NLP社交活动中进行现场招募。</p>
+</li>
+</ol>
+<p>​    作者们还确保了所有美国参与者都经过了筛选，基于他们提供的Google Scholar个人资料，设置了至少在主要AI会议上发表过一篇论文的最低要求。对于满足此要求的参与者，作者们会发送同意书，并在他们同意参与后跟进发送注释文件。最终，作者们招募了49名专家来撰写idea，并招募了79名专家进行评审。需要注意的是，79名评审中有24人也参与了idea撰写，且确保没有评审会评审他们自己的idea。这导致了总共104名参与者参与了这两项任务。每个idea撰写者被要求在10天内撰写一个idea，并为此获得300美元的补偿，对于专家评审得分最高的前5个idea，还有1000美元的奖金。每个idea评审者被分配了2到7个idea进行评审，总共收集了298份独特的评审。他们有一周的时间完成评审，并为每个撰写的评审支付25美元。</p>
+<center style="color:#000000;font-family:Arial">表3 Idea撰写参与者的机构</center>
+
+<p><img src=".\table15_idea撰写者的来源.png" alt="table15_idea撰写者的来源" style="zoom:50%;" /></p>
+<center style="color:#000000;font-family:Arial">表4 审查参与者的机构</center>
+
+<p><img src=".\table15_idea审稿者的来源.png" alt="table15_idea审稿者的来源" style="zoom:50%;" /></p>
+<p>​    参与者群体非常合格和多样化。49位idea作者来自26个不同的机构（见表3），他们大多数是当前的博士生（见图1左）。79位审稿人来自32个机构（见表4），大多数是博士生和博士后（见图1右）。作者使用他们的Google Scholar个人资料提取了几个Agent指标，包括他们提交时的论文数量、引用次数、h指数和i10指数。表2显示，作者的idea作者平均有12篇论文和477次引用，而每位审稿人至少发表了两篇论文，平均引用次数为635次，h指数为7。此外，根据他们的调查问卷回应，79位审稿人中有72位之前曾为主要AI会议或期刊审稿。这些统计数据表明作者的参与者非常合格，并且拥有丰富的研究经验。</p>
+<p><img src=".\fig3_专家资格_no.png" alt="fig3_专家资格" style="zoom:50%;" /></p>
+<center style="color:#000000;font-family:Arial">图1 idea撰写者（左侧）和idea评审者（右侧）参与者的身份</center>
+
+<h3 id="Idea撰写"><a href="#Idea撰写" class="headerlink" title="Idea撰写"></a>Idea撰写</h3><center style="color:#000000;font-family:Arial">表5 每个条件下49个idea的统计数据</center>
+
+<p><img src=".\3_专家对任务的反馈统计.png" alt="3_专家对任务的反馈统计" style="zoom:50%;" /></p>
+<p>​    作者报告了作者的idea作者的idea的统计数据，以衡量它们的质量。如表5所示，idea作者表示他们对所选主题的熟悉程度中等偏高（1到5分制为3.7分），认为任务难度适中（1到5分制为3分）。他们平均花费5.5小时完成任务，他们的idea平均长度为902字。这些表明参与者在这项任务上投入了大量的努力。作者还展示了他们选择的主题分布，如表6所示。</p>
+<center style="color:#000000;font-family:Arial">表6 idea主题分布</center>
+
+<p><img src=".\table4_主题分布.png" alt="table4_主题分布" style="zoom:50%;" /></p>
+<h3 id="Idea审查"><a href="#Idea审查" class="headerlink" title="Idea审查"></a>Idea审查</h3><p><strong>审查分配</strong> 作者让所有审稿人参与者选择他们最偏好的两个主题以及他们偏好的审查负载（从2到7）。然后作者随机将他们分配到他们选择的主题内的idea，并且所有idea都是匿名的。在分配中，作者平衡了每个审稿人每个条件的idea数量，并确保每个审稿人至少得到一个人类idea和一个AI idea。每个idea由2到4位不同的审稿人审查。作者还避免将来自同一机构的作者写的idea分配给审稿人，以避免任何潜在的污染。表7显示，每位审稿人平均写了来自2或3个条件的3.8篇审查，涵盖了1到3个主题。</p>
+<center style="color:#000000;font-family:Arial">表7 审查分配的统计数据</center>
+
+<p><img src=".\table5_review分配.png" alt="table5_review分配" style="zoom:50%;" /></p>
+<p><strong>审查质量检查</strong> 除了确保审稿人资格外，作者还计算了统计数据以衡量审查的质量，如表8所示。平均而言，审稿人表示他们对所选主题的熟悉程度为3.7（满分5分），对他们的审查有信心程度为3.7（满分5分）。这与1.2K ICLR 2024提交的与语言模型相关的审查相当，审稿人的平均信心也是5分中的3.7分。此外，审稿人平均花费32分钟在每篇审查上，每篇审查大约有232字。由于作者的审查表格与ICLR审查表格不同，作者将其与ICLR审查进行比较，其中作者移除了摘要和问题部分，只计算了优点和缺点部分的长度。这样，ICLR审查的平均长度为247，与作者收集的审查相似。</p>
+<center style="color:#000000;font-family:Arial">表8 审查分配的统计数据</center>
+
+<p><img src=".\table6_审查质量.png" alt="table6_审查质量" style="zoom:67%;" /></p>
+<h2 id="5-主要实验"><a href="#5-主要实验" class="headerlink" title="5.主要实验"></a>5.主要实验</h2><h3 id="Test-1-Treating-Each-Review-as-an-Independent-Datapoint"><a href="#Test-1-Treating-Each-Review-as-an-Independent-Datapoint" class="headerlink" title="Test 1: Treating Each Review as an Independent Datapoint"></a>Test 1: Treating Each Review as an Independent Datapoint</h3><p><img src=".\fig2条形图.png" alt="fig2条形图"></p>
+<center style="color:#000000;font-family:Arial">图2 三种实验条件在所有审查指标上的比较。红色星号表示该条件在双尾Welch's t-test和Bonferroni校正下比人类基线统计上更好。所有分数都是1到10的量表。</center>
+
+<p>​    在测试1中，作者将每个review视为一个独立数据点，并将同一条件下的所有审查汇总。作者将人类专家的idea作为基线条件，并使用双尾Welch’s t-test和Bonferroni校正与AI idea和AI idea+人类重新排名进行比较。作者在图2中展示了条形图，并在表9中展示了详细的数值结果。AI idea（µ=5.64 ±σ=1.76）和AI idea+人类重新排名（µ=5.81±σ=1.66）在新颖性评分上均显著优于人类idea（µ=4.84 ±σ=1.79）（p&lt;0.01）。在这次测试中，两种条件下的AI idea在兴奋度评分上也显著优于人类idea（p&lt;0.05），并且AI idea+人类重新排名条件在总体评分上也显著优于人类idea（p&lt;0.05）。作者没有观察到AI生成的idea和人类撰写的idea在其他指标上存在显著差异。</p>
+<center style="color:#000000;font-family:Arial">表9 将每个review视为一个数据点来评分所有条件（测试1），size是每个条件的审查数量，p值是使用双尾Welch's t-test和Bonferroni校正计算的</center>
+
+<p><img src=".\Table7_test1.png" style="zoom:50%;" /></p>
+<h3 id="Test-2-Treating-Each-Idea-as-an-Independent-Datapoint"><a href="#Test-2-Treating-Each-Idea-as-an-Independent-Datapoint" class="headerlink" title="Test 2: Treating Each Idea as an Independent Datapoint"></a>Test 2: Treating Each Idea as an Independent Datapoint</h3><p>由于作者为每个idea收集了多个审查，有人可能会认为作者不应该将每个审查视为一个独立数据点。为了解决这一潜在的混杂因素，作者进行了测试2，其中作者将每个idea的分数平均，并将其视为一个数据点。这样，每个条件下的样本量将是N=49，即idea的数量。作者将人类idea作为基线条件，并使用双尾Welch’s t-test和Bonferroni校正与AI idea和AI idea+人类重新排名进行比较。如表10所示，作者仍然看到显著的结果（p&lt;0.05），AI idea（µ=5.62 ±σ=1.39）和AI idea+人类重新排名（µ=5.78 ±σ=1.07）的新颖性评分高于人类idea（µ=4.86 ±σ=1.26）。</p>
+<center style="color:#000000;font-family:Arial">表10 将每个idea视为一个数据点来评分所有条件（测试2）</center>
+
+<p><img src=".\Table8_test2.png" style="zoom:50%;" /></p>
+<h3 id="Test-3-Treating-Each-Reviewer-as-an-Independent-Datapoint"><a href="#Test-3-Treating-Each-Reviewer-as-an-Independent-Datapoint" class="headerlink" title="Test 3: Treating Each Reviewer as an Independent Datapoint"></a>Test 3: Treating Each Reviewer as an Independent Datapoint</h3><p>​    另一个可能的混杂因素是不同的审稿人可能有不同的偏见，例如，一些审稿人可能比其他人更宽松。为了解决这样的审稿人偏见，作者进行了测试3，作者将每个reviewer视为一个数据点，并计算他们对每个条件的平均分数。然后对于每个审稿人，作者得到他们在AI idea条件与人类idea条件之间的平均分数差异，以及AI idea+人类重新排名条件与人类idea条件之间的差异。这样，作者只分析不同条件之间的差异。也就是说，如果差异在单样本t-test下显著高于零，那表明审稿人对一个条件的评分比另一个条件更高。结果显示在表11中，作者看到显著的结果（p&lt;0.05），AI idea在AI idea和AI idea+人类重新排名条件下的新颖性评分都高于人类idea。因此，作者得出结论，由Idea Agent生成的AI idea在新颖性方面被判定为比人类专家生成的idea更具新颖性，这一结论在三个不同的统计实验中一致。</p>
+<center style="color:#000000;font-family:Arial">表11 将每个reviewer视为一个数据点来评分所有条件（测试2）</center>
+
+<p><img src=".\Table9_test3.png" style="zoom:55%;" /></p>
+<h2 id="6-人类研究的深入分析"><a href="#6-人类研究的深入分析" class="headerlink" title="6.人类研究的深入分析"></a>6.人类研究的深入分析</h2><p>​    虽然上述主要结果突出了LLMs在生成新颖研究idea方面的潜力，但还有一些额外的细节。在本节中，作者不仅进行统计比较，还深入探讨作者收集数据的其他方面。具体来说，作者关注人类idea的质量、审稿人的偏好以及审稿人一致性的程度。</p>
+<h3 id="人类专家可能没有给出他们最好的Idea"><a href="#人类专家可能没有给出他们最好的Idea" class="headerlink" title="人类专家可能没有给出他们最好的Idea"></a>人类专家可能没有给出他们最好的Idea</h3><p>​    作者首先调查人类专家是否向作者提交了他们最好的idea。作者进行了一项研究后调查，以了解idea写作参与者是如何想出他们的idea的。在49名参与者中，有37人是当场想出idea的，另外12人则在研究之前就已经有idea了。此外，作者询问了调查问题：“这个idea与您过去研究idea（您实际研究过的idea）相比如何？请用百分位数回答。例如，这个idea是我前10%的idea。”作者的参与者表示，他们提交的idea平均而言是他们过去所有idea中的前43%。这意味着作者收集到的idea很可能是这些专家研究人员的中等水平idea，这是合理的，因为大多数人在任务的10天时间限制内想出了这个idea。</p>
+<h3 id="审稿人更注重新颖性和兴奋度"><a href="#审稿人更注重新颖性和兴奋度" class="headerlink" title="审稿人更注重新颖性和兴奋度"></a>审稿人更注重新颖性和兴奋度</h3><p>​    为了更深入地理解审查过程中不同指标之间的动态，作者探索审稿人在评估idea时是否关注特定方面。作者计算了表12中不同指标之间的成对相关性。总体评分主要与新颖性评分（r=0.725）和兴奋度评分（r=0.854）相关，而与可行性评分几乎没有相关性（r&lt;0.1）。这意味着审稿人在审查时可能更关注idea的新颖性和兴奋度方面。</p>
+<center style="color:#000000;font-family:Arial">表12 不同指标之间的成对相关性</center>
+
+<p><img src=".\table10_不同指标之间的相关性.png" alt="table10_不同指标之间的相关性" style="zoom:67%;" /></p>
+<h3 id="审查Idea本质上是主观的"><a href="#审查Idea本质上是主观的" class="headerlink" title="审查Idea本质上是主观的"></a>审查Idea本质上是主观的</h3><p>​    最后，作者承认审查本质上是主观的，基于idea而不是已执行的论文进行审查可能更具主观性。作者使用审稿人一致性来研究这一点。具体来说，作者随机将每篇论文的审稿人分成两半，使用一半来对所有idea的前25%和后25%进行排名，然后测量与保留的审稿人集的一致性。如表13中的第一部分所示，审稿人之间的一致性相对较低（56.1%），尽管作者在审查表格中为每个指标提供了详细的解释。作为基线比较，NeurIPS 2021审稿人一致性实验发现，在平衡设置中使用这种审稿人一致性指标的准确率为66.0%。作者还计算了与语言模型相关的1.2K ICLR 2024提交的审稿人一致性，其平衡准确率为71.9%。虽然作者的审稿人一致性高于随机（50%），但通常低于会议审查，这很可能是因为在评估没有看到实际实验结果的idea时涉及的主观性更高。</p>
+<center style="color:#000000;font-family:Arial">表13 人类审稿人之间的审稿分数一致性（第一组），人类与AI之间的一致性（第二组）</center>
+
+<p><img src=".\Table11.png" alt="Table11" style="zoom:55%;" /></p>
+<h2 id="7-LLMs的局限性"><a href="#7-LLMs的局限性" class="headerlink" title="7.LLMs的局限性"></a>7.LLMs的局限性</h2><p>​    考虑到作者从人类研究中得到的结果，作者现在转向LLM性能，以提供可能有助于未来改进idea生成系统方法的见解。作者的idea Agent受到LLM潜在优势的启发：它们能够通过生成大量idea来扩展规模（远远超过任何人类的能力），以及筛选这些idea以从大量idea中提取最佳idea的可能性。理论上，这种方法可以通过利用推理扩展来产生高质量的idea。然而，作者提供了实证证据，表明这种关于扩展idea生成的简单假设存在显著限制。</p>
+<h3 id="LLM在创意生成中缺乏多样性"><a href="#LLM在创意生成中缺乏多样性" class="headerlink" title="LLM在创意生成中缺乏多样性"></a>LLM在创意生成中缺乏多样性</h3><p>​    作者采用了过度生成和排名的范式来进行Idea生成。这引发了一个问题：LLM能够生成的新idea是否有上限？为了回答这个问题，作者仔细研究了每个主题的4000个生成种子idea。作者使用Sentence-Transformers中的all-MiniLM-L6-v2对所有原始idea进行编码。对于每个idea，作者计算它与同一主题上所有先前生成idea的余弦相似度。如果一个idea与任何先前生成的idea的相似度超过0.8，作者将其视为重复。在图3中，作者展示了随着Agent不断生成新批次的idea，新生成批次中非重复idea的百分比不断下降，累积的非重复idea最终趋于平稳。实际上，在4000个生成的种子idea中，只有200个非重复的独特idea。这限制了作者的推理时间扩展，因为增加生成idea的数量只会带来重复的idea。</p>
+<p><img src="D:\研究生阶段\实验室\组会\20240923\figs\fig4_AI生成相似idea的统计图.png" alt="fig4_AI生成相似idea的统计图"></p>
+<center style="color:#000000;font-family:Arial">图3 测量人工智能生成Idea的重复性：左侧图表显示了每个新生成Idea桶中非重复Idea的百分比；右侧图表显示了随着Agent不断生成新Idea，累积的非重复Idea。所有数据点都是跨所有主题平均的。</center>
+
+<h3 id="LLM无法可靠地评估Idea"><a href="#LLM无法可靠地评估Idea" class="headerlink" title="LLM无法可靠地评估Idea"></a>LLM无法可靠地评估Idea</h3><p>​    大多数先前的工作采用LLM作为评估研究idea的审稿人，这是基于LLM与人类评估者之间的一致性可能高于人与人之间一致性的观察。然而，作者提供了一些实证证据，表明LLM尚不能可靠地评估idea。具体来说，作者使用每个idea的平均审稿分数来对所有作者收集的人类和AI idea进行排名，并使用这个排名来基准测试各种LLM评估器。具体来说，作者获取了所有idea的LLM预测分数，并设置中位数分数作为阈值来衡量它们在作者平衡的idea排名数据上的准确性。在表13的第二组中，作者比较了几种不同的LLM评估器：1）直接给出审稿标准并提示最终分数；2）作者如第3.3节所述的成对排名器；以及 3）“AI科学家”审稿人Agent。所有这些LLM评估器的一致性都低于作者的专家审稿人的分数。即使是最好的LLM评估器——作者自己的Claude-3.5成对排名器——在作者的验证集上也只达到了53.3%的准确率。</p>
+<h2 id="8-定性分析"><a href="#8-定性分析" class="headerlink" title="8.定性分析"></a>8.定性分析</h2><p>​    遵循使用LLMs从文本语料库中提取模式的最新实践，作者使用Claude-3.5从所有审查中提取和聚类主要观点。然后作者手动验证并标记了每个聚类。许多审查强化了作者的定量发现，即AI idea往往更具新颖性。例如，审稿者指出：“[…]的idea在上下文学习设置中相当新颖。”，“使用基于LLM的迭代方法探索[…]的idea是新颖的。”，“构建提示以改进跨语言迁移时[…]的idea是我以前没有听说过的。”，“我喜欢[…]的idea，认为它将对社区中的其他研究人员有所帮助。”，“结合[…]是尝试保留信息要点的同时可能丢失特定标识符的独特方式。”，以及“使用[…]进行保护显然是新颖的。在相关工作中还没有见过类似的idea”。</p>
+<p>作者还总结了AI idea的一些常见失败模式：</p>
+<ol>
+<li><strong>在实施细节上过于模糊</strong>。例如，一位审稿者指出：“我对这个格子的细节以及模型如何被提示不太了解，所以我不太确定模型能多好地完成这些子任务，以及这种特定结构对完成整个任务的适用性。”，另一位审稿者指出：“对于分析方法的有效性，提案只提供了一个非常临时的+含糊的建议，即通过预定义的问题比较响应。”。在另一个案例中，AI idea因未考虑实际实施细节而受到批评：“我认为在每个步骤中，都有一些难以执行的事情。例如，在星座形成步骤中，作者如何做加权和？”。其他审稿者也指出：“它不清楚CLIP是如何与语言模型连接的，以及训练CLIP模型如何使LM能够理解图像。”，以及“没有提到如何提示模型生成防御策略，并使用这些策略来完善模型的响应。”</li>
+<li><strong>误用数据集</strong>。例如：“我不确定挑选的数据集。StereoSet不是一个QA数据集；它只包含陈述。另外，我不明白为什么Dialogue NLI响应需要同理心”，“我担心提议的数据集是代码安全性的正确测试案例（因为它们实际上只是ML/编程问题，而不是系统级编程）”，以及“选择的数据集可能不是展示结合多个视角效果的最佳选择，尤其是TruthfulQA和ScienceQA，它们似乎只有一个正确的解释和答案”。在另一个例子中，选择的基准数据集被审稿者认为太简单：“选择的数据集（MATH、GSM8K和MMLU）没有使用复杂的数学概念”。</li>
+<li><strong>缺少或不适当的基线</strong>。例如：“提出的方法需要与简单地要求模型在回答使用moreturns之前思考一个问题（或几个）的事实进行比较。这可能是一个额外的基线，以验证评分过程是有意义的”，“尽管提案包括了一些应该进行比较的基线，但它没有提到一些似乎与LLM表现相当好的方法”。有时，“选择的基线可能不适合”，例如，因为它们与提出的方法不直接可比。</li>
+<li><strong>做出不切实际的假设</strong>。例如：“模型能够（大部分）准确地标记自己的幻觉的假设相当棘手”，“存在一个预设的假设，即LLM中的幻觉是无根据的，与它们训练的数据无关，这通常不被认为是真的”，“提出的方法的有效性的大问题是，它对下游任务提出了非常强的假设，比如必须只存在两个极端”，“一些假设（例如，[…]）在实践中不太可能是真的，特别是当低资源语言和代表性不足的文化被包括在研究中时”，以及“这种方法的一个主要假设是模型能够[…]。然而，[…]”。</li>
+<li><strong>资源需求过高</strong>。尽管作者明确提示Agent在生成idea时考虑可行性，但一些生成的idea仍然资源需求过高。例如，一位审稿者指出：“我认为可行性的最大问题是项目要求微调BLOOM。BLOOM有176B参数，所以它将需要大量的GPU来进行微调。从系统的角度来看，我认为这会导致延迟”。在其他情况下，手动数据注释因可行性而受到批评：“如果现有的数据集不符合要求，数据集收集过程似乎是瓶颈”，以及“由母语人士或文化专家进行的手动评估可能既耗时又资源密集”。</li>
+<li><strong>动机不足</strong>。例如：“动机不足，没有清晰的直觉表明这项工作可以增加事实性”，“总的来说，这种方法动机不足，需要理由说明为什么通过使用案例或特定任务从模型本身检索是有意义的”，以及“这个idea对我来说根本说不通。鉴于当前LLMs的能力，我确信它们可以简单地背诵代码，比如插入数据到二叉搜索树中”</li>
+<li><strong>没有充分遵循现有的最佳实践</strong>。例如：“提案似乎没有意识到以前已经尝试过的内容，或者评估成功/失败的更战略性方法”。</li>
+</ol>
+<p>作者将人类idea的一些独特优势和劣势形成对比：</p>
+<ol>
+<li><strong>人类idea通常更基于现有研究和实际考虑，但可能不够创新</strong>。例如，这些idea可能会将现有技术应用于新问题：“多语言性作为去偏见方法已经在文献中考虑过，尽管不一定是在提示工程框架中”。有时人们会对现有技术进行增量更改：“程序化思维（PoT）的整体idea与已有的idea非常相似。唯一的区别是有一个额外的步骤，其中LLM被提示决定是否使用代码”。一些idea试图结合现有技术：“查询分解和RAG分别得到了很好的研究，如果没有现有工作将两者结合起来（我并不知道），那么它就相当新颖”。正如一些审稿者所指出的，人类idea倾向于建立在已知直觉和结果上：“已经有关于使用现有词典来提高LLMs在一般情况下的翻译能力的现有工作。”</li>
+<li><strong>人类idea更倾向于关注该领域的常见问题或数据集</strong>。例如：“模型不正确处理否定的问题是一个非常普遍的问题，尤其是在像claude-3-5-sonnet这样的专有LM中”，“数据存在。这个项目主要涉及将这些数据集插入到提示模板中，并进行微调。几乎没有什么未指定的，应该很容易执行”，“我没有发现使用这个idea来解决这个特定问题的任何工作，但是[…]肯定不是新的”，以及“虽然现有工作已经探索了长形式答案的校准问题（例如[…]），但特定的校准方法不同”</li>
+<li><strong>人类idea有时更优先考虑可行性和有效性，而不是新颖性和兴奋度</strong>。例如，审稿者指出：“我不认为这将是一个突破性的发现，但它可能会起作用”以及“虽然这个idea是有希望的，并且可能导致重大改进，但它可能不足以被认为是变革性的或值得获得最佳论文奖”。</li>
+</ol>
+<h2 id="9-讨论"><a href="#9-讨论" class="headerlink" title="9.讨论"></a>9.讨论</h2><p>总结来说，作者比较了由Agent生成的研究idea与专家研究人员撰写的idea，并观察到专家评审一致认为AI idea在统计上比专家idea更具新颖性。作者讨论了读者可能会有的一些高层次问题，并提出一些解决这些问题的方法。</p>
+<p><strong>问题1：这些收集到的专家Idea是否代表他们最好的Idea？</strong></p>
+<blockquote>
+<p>​    有人可能会认为，我们的Idea写作参与者提交的Idea可能并不代表他们最好的Idea，正如我们在前面讨论的，因为大多数人在短时间内当场想出了这个Idea。为了解决这个担忧，我们设计了一个实验，其中我们将比较AI Idea与顶级AI会议上接受的论文。为了避免任何可能的污染，我们针对即将到来的EMNLP 2024会议，该会议将在2024年10月发布接受的论文。我们已经在2024年7月从EMNLP征集论文页面上的23个主题中使用我们的Agent生成了AI Idea并进行了缓存。我们预先注册了我们的分析计划，其中也包括了缓存Idea的链接。除了比较这些Idea的质量外，我们还将计算AI生成的Idea与相同主题上接受的论文之间的重叠。</p>
+</blockquote>
+<p><strong>问题2：仅基于Idea的评估是否主观？</strong> </p>
+<blockquote>
+<p>​    在当前研究中，我们专注于评估Idea本身。听起来新颖和令人兴奋的Idea并不一定能够转化为成功的项目，我们的结果确实表明了AIIdea在可行性上的一些权衡。我们将当前研究视为对AI生成Idea的初步评估。在下一阶段，我们将招募研究人员将一些AI和人类生成的Idea执行为完整项目。这将使评审者能够评估完整的实验结果，为评估提供更可靠的基础。此外，它还将使我们能够分析我们最初的Idea评估是否与实际项目结果的评估一致。</p>
+</blockquote>
+<p><strong>问题3：为什么您只关注NLP中的基于提示的研究？</strong> </p>
+<blockquote>
+<p>​    我们研究的范围限于NLP中的基于提示的研究Idea。我们选择这种设计是为了便于我们执行实验的下一阶段，其中我们更倾向于资源需求较少且可以相对快速执行的研究Idea。我们相信我们建立的评估协议也应该适用于其他研究领域，尽管根据研究领域的不同，结论可能会有所不同。未来的工作应该考虑将这种人类研究扩展到其他研究领域，并且比较不同研究领域的结论差异将是有趣的。</p>
+</blockquote>
+<p><strong>问题4：您也可以自动化Idea执行吗？</strong> </p>
+<blockquote>
+<p>​    想象一个端到端自动化的研究流程，其中AI代理可以直接实现AI生成的Idea以直接评估它们的效果，这是非常诱人的。除了加速科学发现之外，人们还可以想象使用这种执行代理自动验证现有论文或新提交的实验结果。我们也探索了构建一个LLM代理来生成代码以实现生成的Idea。具体来说，我们提供了一个模板代码库，包括：（1）从Huggingface加载数据集或生成合成测试示例；（2）实现基线方法；（3）实现提出的方法；（3）加载或实现评估指标；（4）在测试集上使用基线和提出的方法运行实验，以便代理的输出将是基线性能以及提出方法的性能报告。虽然这个代理可以生成可编译和执行的代码，但我们发现自动化实验可能是误导性的，因为代理经常跳过或修改基线或提出方法中的步骤。在某些情况下，度量函数也没有正确定义。这突显了核心挑战：仅仅比较最终的实验结果是不够的；我们还得验证实现的忠实度。执行这样的实现验证并不是一项简单的任务，我们将其留作未来的工作。我们在<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2409.04109#page=90&amp;zoom=100,90,96">附录Y</a>中详细描述了我们的Idea执行代理。</p>
+</blockquote>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zju_zhengli@zju.edu.cn"><code> ✉️ zju_zhengli@zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>

@@ -18,17 +18,17 @@
     <!-- Custom CSS -->
     
 <link rel="stylesheet" href="/blog/css/aircloud.css">
-<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
 
     
 <link rel="stylesheet" href="/blog/css/gitment.css">
-<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js">
 
     <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
     <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
     <!-- ga & ba script hoook -->
     <script></script>
-<meta name="generator" content="Hexo 5.4.2"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+<meta name="generator" content="Hexo 5.4.0"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
 
 <body>
 
@@ -191,9 +191,9 @@
 <p>具体来说，StyleGAN 中的特征图分辨率随着层数增加而增加，因此将第六层的特征图 F 进行双线性插值来调整大小，使其与输出图像大小一致。</p>
 <p> 运动监督是通过优化隐空间编码 (latent code) 的损失函数来实现的。 每个优化步骤都会使得 handle point 更接近 target point；重复此优化过程，直到二者重合。 DragGAN 还允许用户有选择地绘制 Mask 以执行特定区域的编辑。</p>
 <script type="math/tex; mode=display">
-\displaystyle \mathcal{L} = \sum_{𝑖=0}^n{\sum_{𝒒_𝑖\in \Omega_1(𝒑_𝑖, 𝑟_1)}{||F(𝒒_𝑖) − F(𝒒_𝑖 + 𝒅_𝑖)||_1 + \lambda||(F − F_0)(1 − M)||_1}}</script><p>其中，$F(q)$ 表示在特征图 F 中 q 位置的特征值，$d<em>i = \frac {t_i-P_i}{||t_i-P_i||_2}$ 是从 $p</em>𝑖$ 指向 $t_𝑖$ 的归一化向量，$F_0$ 初始图像对应的特征图。</p>
+\displaystyle \mathcal{L} = \sum_{𝑖=0}^n{\sum_{𝒒_𝑖\in \Omega_1(𝒑_𝑖, 𝑟_1)}{||F(𝒒_𝑖) − F(𝒒_𝑖 + 𝒅_𝑖)||_1 + \lambda||(F − F_0)(1 − M)||_1}}</script><p>其中，$F(q)$ 表示在特征图 F 中 q 位置的特征值，$d_i = \frac {t_i-P_i}{||t_i-P_i||_2}$ 是从 $p_𝑖$ 指向 $t_𝑖$ 的归一化向量，$F_0$ 初始图像对应的特征图。</p>
 <p><img src="https://gcore.jsdelivr.net/gh/silent-shen/Online_Image/202306291638577.png" alt="img"></p>
-<h3 id="点追踪-Point-Tracking"><a href="#点追踪-Point-Tracking" class="headerlink" title="点追踪 Point Tracking"></a>点追踪 Point Tracking</h3><p>运动监督得到了新的潜在编码 $w^{‘}$、新的特征图 $F^{‘}$ 和新的图像 $I^{‘}$。由于运动监督步骤并没有直接提供处理点的精确新位置，因此点追踪的目的是更新handle point 的位置，使其跟踪物体上对应的点。点追踪通常通过光流估计模型实现。然而，这些额外的模型会显著影响效率，并且在 GAN 中可能会出现累积误差。因此，作者提出了一种适用于 GAN 的新的点追踪方法。核心在于利用 GAN 的高辨识度特征空间。可以通过特征块中的最近邻搜索来有效地进行跟踪。具体而言，将初始处理点的特征表示为 $f<em>i=F_0(p_i)$ 。$p_i$ 周围的一定区域定义为 $\Omega_2(p_i, r_2) = {(x, y)|\ |x - x</em>{p, i}| &lt; r<em>2,|y - y</em>{p, i}| &lt; r_2}$。然后通过在 $Ω_2(p_i, r_2)$ 中搜索     $f_i$ 的最近邻来获得追踪点的位置。</p>
+<h3 id="点追踪-Point-Tracking"><a href="#点追踪-Point-Tracking" class="headerlink" title="点追踪 Point Tracking"></a>点追踪 Point Tracking</h3><p>运动监督得到了新的潜在编码 $w^{‘}$、新的特征图 $F^{‘}$ 和新的图像 $I^{‘}$。由于运动监督步骤并没有直接提供处理点的精确新位置，因此点追踪的目的是更新handle point 的位置，使其跟踪物体上对应的点。点追踪通常通过光流估计模型实现。然而，这些额外的模型会显著影响效率，并且在 GAN 中可能会出现累积误差。因此，作者提出了一种适用于 GAN 的新的点追踪方法。核心在于利用 GAN 的高辨识度特征空间。可以通过特征块中的最近邻搜索来有效地进行跟踪。具体而言，将初始处理点的特征表示为 $f_i=F_0(p_i)$ 。$p_i$ 周围的一定区域定义为 $\Omega_2(p_i, r_2) = \{(x, y)| |x - x_{p, i}| &lt; r_2,|y - y_{p, i}| &lt; r_2\}$。然后通过在 $Ω_2(p_i, r_2)$ 中搜索     $f_i$ 的最近邻来获得追踪点的位置。</p>
 <script type="math/tex; mode=display">
 \displaystyle 𝒑_𝑖 := \arg\min _{𝒒_𝑖 ∈\Omega_2(p_i, r_2)} ||F^{′} (𝒒_𝑖) − 𝒇_𝑖||_1</script><h2 id="评估"><a href="#评估" class="headerlink" title="评估"></a>评估</h2><p>由于 DragGAN 不依赖任何额外的网络，它实现了高效的操作，在大多数情况下，在比如单个 RTX 3090 GPU 上只需要几秒钟。 这允许进行实时的交互式编辑，用户可以在其中快速迭代不同的布局，直到获得所需的输出。 </p>
 <h3 id="qualitative"><a href="#qualitative" class="headerlink" title="qualitative"></a>qualitative</h3><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1La4y1g7AH/?spm_id_from=333.1007.top_right_bar_window_history.content.click&amp;vd_source=8bd334c4a9019e98f6b25c29e9dd492a">demo showcase</a></p>
@@ -270,7 +270,8 @@
             all[i].SourceElement().parentNode.className += ' has-jax';
     });
 </script>
-<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+<script src="https://cdn.bootcdn.net/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+<!-- <script src="/blog/js/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script> --><!-- hexo-inject:begin --><!-- hexo-inject:end -->
 </body>
 
 <script>
@@ -282,7 +283,7 @@
 <script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
 
 <script src="/blog/js/index.js"></script>
-<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/blog/.js"></script>
 
 <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
 
