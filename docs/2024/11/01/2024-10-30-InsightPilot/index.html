@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- hexo-inject:begin --><!-- hexo-inject:end --><meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="keyword"  content="">
+    <link rel="shortcut icon" href="/blog/img/favicon.ico">
+
+    <title>
+        
+        
+        
+    </title>
+
+    <!-- Custom CSS -->
+    
+<link rel="stylesheet" href="/blog/css/aircloud.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/.css" src="/blog/blog/.js">
+
+    
+<link rel="stylesheet" href="/blog/css/gitment.css">
+<link rel="stylesheet" href="/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/.js">
+
+    <!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+    <link href="//at.alicdn.com/t/font_620856_pl6z7sid89qkt9.css" rel="stylesheet" type="text/css">
+    <!-- ga & ba script hoook -->
+    <script></script>
+<meta name="generator" content="Hexo 5.4.2"><!-- hexo-inject:begin --><!-- hexo-inject:end --></head>
+
+<body>
+
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><div class="site-nav-toggle" id="site-nav-toggle">
+    <button>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+        <span class="btn-bar"></span>
+    </button>
+</div>
+
+<div class="index-about">
+    <i> 浙江大学可视分析小组博客 </i>
+</div>
+
+<div class="index-container">
+    
+    <div class="index-left">
+        <div class="nav" id="nav">
+    <div class="avatar-name">
+        <div class="avatar ">
+            <a href="/"><img
+                    src="/img/avatar.png" /></a>
+        </div>
+        <div class="name">
+            <a href="/">
+                <i>ZJU VAI</i>
+            </a>
+        </div>
+    </div>
+    <div class="contents" id="nav-content">
+        <ul>
+            <li >
+                <a
+                    href="/">
+                    <!-- <a href="/blog/about/"> -->
+                    <!-- <i class="iconfont icon-fanhui"></i> -->
+                    <span>🏠 小组主页</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/">
+                    <!-- <i class="iconfont icon-shouye1"></i> -->
+                    <span>⌨️ 小组博客</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/tags">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📌 博客标签</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/author">
+                    <!-- <i class="iconfont icon-guanyu2"></i> -->
+                    <span>👨‍🎓 作者存档</span>
+                </a>
+            </li>
+            <li >
+                <a href="/blog/archives">
+                    <!-- <i class="iconfont icon-guidang2"></i> -->
+                    <span>📅 时间存档</span>
+                </a>
+            </li>
+
+            <li >
+                <a href="/blog/textbook">
+                    <!-- <i class="iconfont icon-biaoqian1"></i> -->
+                    <span>📚 教材下载</span>
+                </a>
+            </li>
+            
+            <li>
+                <a id="search">
+                    <!-- <i class="iconfont icon-sousuo1"></i> -->
+                    <span>🔎 博客搜索</span>
+                </a>
+            </li>
+            
+
+            <br />
+            
+            <li >
+                <a target="_blank" rel="noopener" href="https://zjuvag.gitee.io/blog/">
+                    <!-- <i class="iconfont icon-biaoqian2"></i> -->
+                    <!-- <span style="color:#536589;font-weight:bold;">nav.mirror</span> -->
+                </a>
+            </li>
+        </ul>
+    </div>
+    
+    <div id="toc" class="toc-article">
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%83%8C%E6%99%AF%E4%BB%8B%E7%BB%8D"><span class="toc-text">背景介绍</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF%E6%8E%A2%E7%B4%A2%E6%80%A7%E6%95%B0%E6%8D%AE%E5%88%86%E6%9E%90%EF%BC%88EDA%EF%BC%89%EF%BC%9F"><span class="toc-text">什么是探索性数据分析（EDA）？</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E4%B8%80%E4%B8%AAEDA%E7%9A%84%E6%A1%88%E4%BE%8B%EF%BC%9A"><span class="toc-text">一个EDA的案例：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#EDA%E5%AD%98%E5%9C%A8%E7%9A%84%E6%8C%91%E6%88%98%EF%BC%9A"><span class="toc-text">EDA存在的挑战：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%85%88%E5%89%8D%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88%EF%BC%9A"><span class="toc-text">先前解决方案：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#LLM%E5%B8%A6%E6%9D%A5%E4%BA%86%E6%96%B0%E7%9A%84%E6%9C%BA%E4%BC%9A%EF%BC%9A"><span class="toc-text">LLM带来了新的机会：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%9C%AC%E6%96%87%E6%96%B9%E6%B3%95%EF%BC%9A"><span class="toc-text">本文方法：</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%95%B4%E4%BD%93%E6%A1%86%E6%9E%B6"><span class="toc-text">整体框架</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E6%B4%9E%E5%AF%9F%E5%BC%95%E6%93%8E%EF%BC%9A"><span class="toc-text">洞察引擎：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E5%85%B71-QuickInsight-%EF%BC%88Understand%EF%BC%89"><span class="toc-text">工具1: QuickInsight （Understand）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E5%85%B72-MetaInsight%EF%BC%88Summarize%EF%BC%89"><span class="toc-text">工具2: MetaInsight（Summarize）</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%B7%A5%E5%85%B73-XInsight%EF%BC%88Explain%EF%BC%89"><span class="toc-text">工具3: XInsight（Explain）</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%85%B7%E4%BD%93%E6%B5%81%E7%A8%8B%EF%BC%9A%E5%88%9D%E5%A7%8B%E6%B4%9E%E5%AF%9F%E7%94%9F%E6%88%90-gt-%E6%B4%9E%E5%AF%9F%E9%80%89%E6%8B%A9-gt-%E5%88%86%E6%9E%90%E5%8A%A8%E4%BD%9C%E9%80%89%E6%8B%A9-gt-%E6%B4%9E%E5%AF%9F%E9%80%89%E6%8B%A9-gt-%E5%88%86%E6%9E%90%E5%8A%A8%E4%BD%9C%E9%80%89%E6%8B%A9%E2%80%A6-gt-%E6%9C%80%E7%BB%88%E6%B4%9E%E5%AF%9F%E6%8E%92%E5%BA%8F-gt-%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A%E7%94%9F%E6%88%90"><span class="toc-text">具体流程：初始洞察生成-&gt;洞察选择-&gt;分析动作选择-&gt;洞察选择-&gt;分析动作选择…-&gt;最终洞察排序-&gt;最终报告生成</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#stepA-%E5%88%9D%E5%A7%8B%E6%B4%9E%E5%AF%9F%E7%94%9F%E6%88%90"><span class="toc-text">[stepA] 初始洞察生成:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stepB-%E6%B4%9E%E5%AF%9F%E9%80%89%E6%8B%A9%EF%BC%9A"><span class="toc-text">[stepB] 洞察选择：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stepC-%E5%88%86%E6%9E%90%E5%8A%A8%E4%BD%9C%E9%80%89%E6%8B%A9%EF%BC%9A"><span class="toc-text">[stepC] 分析动作选择：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%BE%AA%E7%8E%AFstepB%E5%92%8CstepC-%E2%80%A6"><span class="toc-text">(循环stepB和stepC) …</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stepD-%E6%9C%80%E7%BB%88%E6%B4%9E%E5%AF%9F%E6%8E%92%E5%BA%8F%EF%BC%9A"><span class="toc-text">[stepD] 最终洞察排序：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#stepE-%E6%9C%80%E7%BB%88%E6%8A%A5%E5%91%8A%E7%94%9F%E6%88%90%EF%BC%9A"><span class="toc-text">[stepE] 最终报告生成：</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%87%E4%B8%AD%E6%A1%88%E4%BE%8B%EF%BC%9A"><span class="toc-text">文中案例：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%96%B9%E6%B3%95%E8%AF%84%E4%BC%B0%EF%BC%9A"><span class="toc-text">方法评估：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E8%AE%A8%E8%AE%BA%EF%BC%9A"><span class="toc-text">讨论：</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99%EF%BC%9A"><span class="toc-text">参考资料：</span></a></li></ol>
+</div>
+    
+</div>
+
+
+<div class="search-field" id="search-field">
+    <div class="search-container">
+        <div class="search-input">
+            <span id="esc-search"> <i class="icon-fanhui iconfont"></i></span>
+            <input id="search-input" />
+            <span id="begin-search">搜索</span>
+        </div>
+        <div class="search-result-container" id="search-result-container">
+
+        </div>
+    </div>
+</div>
+        <div class="index-about-mobile">
+            <i> 浙江大学可视分析小组博客 </i>
+        </div>
+    </div>
+    
+    <div class="index-middle">
+        <!-- Main Content -->
+        <div class="post-container">
+    <div class="post-title">
+        
+    </div>
+
+    <div class="post-meta">
+        <!-- <span
+            class="attr">发布于：<span>2024-11-01 04:50:01</span></span> -->
+        <span class="attr">发布于：<span>2024-11-01</span></span>
+        <span class="attr"><a class="tag" href="/blog/author/#undefined"
+                title="undefined">undefined</a></span>
+        
+        </span>
+        <span class="attr">访问：<span id="busuanzi_value_page_pv"></span>
+        </span>
+        </span>
+    </div>
+    <div class="post-content ">
+        <p>论文：InsightPilot: An LLM-Empowered Automated Data Exploration System</p>
+<p>作者：<a target="_blank" rel="noopener" href="https://arxiv.org/search/cs?searchtype=author\&amp;query=Ma,+P">Pingchuan Ma</a>, <a target="_blank" rel="noopener" href="https://arxiv.org/search/cs?searchtype=author\&amp;query=Ding,+R">Rui Ding</a>, <a target="_blank" rel="noopener" href="https://arxiv.org/search/cs?searchtype=author\&amp;query=Wang,+S">Shuai Wang</a>, <a target="_blank" rel="noopener" href="https://arxiv.org/search/cs?searchtype=author\&amp;query=Han,+S">Shi Han</a>, <a target="_blank" rel="noopener" href="https://arxiv.org/search/cs?searchtype=author\&amp;query=Zhang,+D">Dongmei Zhang</a></p>
+<p>发表：EMNLP 2023</p>
+<p>简介：数据探索是帮助用户更好理解和解释数据的关键步骤。然而，分析者只有在对数据集、用户意图以及数据分析技术有深入了解的情况下才能进行有效的数据探索，否则分析过程往往耗时且困难。本文提出了一个基于大型语言模型的自动化数据探索系统 (InsightPilot) 来简化数据探索过程。InsightPilot 提供了一系列精心设计的分析动作来流程化数据探索过程。给定一个自然语言问题，InsightPilot通过与 LLM 协作来执行一系列分析操作，探索数据并生成见解。本文通过用户研究和案例研究展示了 InsightPilot如何有效帮助用户从其数据集中获得有价值的见解。</p>
+<h1 id="背景介绍"><a href="#背景介绍" class="headerlink" title="背景介绍"></a>背景介绍</h1><h3 id="什么是探索性数据分析（EDA）？"><a href="#什么是探索性数据分析（EDA）？" class="headerlink" title="什么是探索性数据分析（EDA）？"></a>什么是探索性数据分析（EDA）？</h3><p>从数据中提取有意义见解的任务。通常涉及一系列数据分析操作，如过滤、排序和分组，以发现数据中的模式。</p>
+<h3 id="一个EDA的案例："><a href="#一个EDA的案例：" class="headerlink" title="一个EDA的案例："></a>一个EDA的案例：</h3><p><img src="./image-1.png" alt=""></p>
+<p>使用来自多所学校的学绩数据集，教育分析师Alice进行探索性数据分析（EDA）以理解数学成绩的趋势。经过大量的手动数据过滤和排序，Alice通过绘制数学成绩随时间的变化图捕捉到了上升趋势。然后，Alice进一步努力进行手动数据过滤，以比较学校A、B和C的学生表现。最终，她观察到学校A和B都呈现出上升趋势，而学校C在2020年有一个异常值。Alice对此感到好奇，决定调查这个异常值。她花费更多时间反复探索数据，通过各种变量进行过滤和分组，直到她最终发现，当排除“带回家”考试时，学校C在2020年的异常值不再存在。Alice记录下这一发现，并得出结论，该异常值是由于学校C在2020年考试形式的政策变化所导致的。</p>
+<h3 id="EDA存在的挑战："><a href="#EDA存在的挑战：" class="headerlink" title="EDA存在的挑战："></a>EDA存在的挑战：</h3><p>从案例中我们可以看出，EDA过程通常是迭代和交互的，用户需要手动反复探索数据以获得见解。这一过程往往耗时且需要大量的领域知识和专业技能。</p>
+<h3 id="先前解决方案："><a href="#先前解决方案：" class="headerlink" title="先前解决方案："></a>先前解决方案：</h3><p>利用启发式评分函数来识别“最佳”数据探索序列（一系列数据分析操作），然而，这样的方法存在两大关键问题。</p>
+<p><strong>问题1: 忽略用户意图</strong></p>
+<p>现有的工具设计用于一般探索，通常无法结合用户意图。例如，分析师可能对理解与经济相关的因素感兴趣，但收到的见解却是关于人口统计学的。</p>
+<p><strong>问题2: 忽略数据集的特征</strong></p>
+<p>现有的工具忽略了数据集的特征，通常提供无关的洞察。例如，在航班延误数据集中，航班延误与天气之间的相关性可能是合理的，但在该背景下，时间与天气之间的相关性不太合理。</p>
+<h3 id="LLM带来了新的机会："><a href="#LLM带来了新的机会：" class="headerlink" title="LLM带来了新的机会："></a>LLM带来了新的机会：</h3><p>LLM能够理解用户的分析意图并执行一系列动作完成目标，并且具有通用的常识和推理能力。然而之间让LLM去执行EDA也存在一系列问题，例如幻觉和有限的上下文窗口（难以处理较大的数据集）。</p>
+<h1 id="本文方法："><a href="#本文方法：" class="headerlink" title="本文方法："></a>本文方法：</h1><h2 id="整体框架"><a href="#整体框架" class="headerlink" title="整体框架"></a>整体框架</h2><p><img src="./image-2.png" alt=""></p>
+<p>提出了InsightPilot，一个用LLM来做EDA的系统，核心思想是让LLM通过和一个洞察引擎（包含三个先前的洞察发现工具，QuickInsight，MetaInsight和XInsight）不断交互来根据用户的分析意图进行EDA，并最后生成相应报告。洞察引擎对数据集提高了精确合理的抽象，从而缓解了LLM幻觉和上下文窗口有限的问题。</p>
+<h2 id="洞察引擎："><a href="#洞察引擎：" class="headerlink" title="洞察引擎："></a>洞察引擎：</h2><p>洞察引擎其实就可以理解为一个可供调用的tool集，包含了微软之前三个先前的洞察发现工具，QuickInsight，MetaInsight和XInsight。</p>
+<h3 id="工具1-QuickInsight-（Understand）"><a href="#工具1-QuickInsight-（Understand）" class="headerlink" title="工具1: QuickInsight （Understand）"></a>工具1: QuickInsight （Understand）</h3><p>QuickInisght 是最早也是功能最基础的数据分析工具，它能快速发现多维数据中的 pattern。它的洞察数据单元由三个要素组成subject = {subspace数据空间, breakdown 拆分维度, measure观察指标}， 以下是{Los Angeles，Month，Sales}产生的数据洞察</p>
+<p><img src="./image-3.png" alt=""></p>
+<p>QuickInsight，会先按不同维度，计算不同指标得到多组数据。洞察部分则是预定了 12 种不同的数据分析方式，例如异常值，突变点，趋势，季节性，相关性等等。每种洞察类型会基于显著性和贡献度进行综合打分，排名靠前的应该是单维度数据变化最显著，且对整体影响较大的。</p>
+<h3 id="工具2-MetaInsight（Summarize）"><a href="#工具2-MetaInsight（Summarize）" class="headerlink" title="工具2: MetaInsight（Summarize）"></a>工具2: MetaInsight（Summarize）</h3><p>QuickInsight的洞察主要基于单个洞察数据单元进行，MetaInsight可以聚合关联多个洞察数据单元，产出更复杂，高级的数据洞察。简单来说是在以上三元组数据洞察的基础上，搜索不同的subsapce，以及measure，寻找具有相似数据洞察的三元组，并进行组合分析。继续以上洛杉矶销量数据的洞察，当我们扩展subspace到其他城市的销售数据时，MetaInsight会产出以下关联分析。</p>
+<p><img src="./image-4.png" alt=""></p>
+<h3 id="工具3-XInsight（Explain）"><a href="#工具3-XInsight（Explain）" class="headerlink" title="工具3: XInsight（Explain）"></a>工具3: XInsight（Explain）</h3><p>以上QuickInsight和MetaInsight都还停留在相关性数据分析的领域，而XInsight着眼在因果性分析。以下的案例中，同样是按月份维度进行拆分，航班延误时间作为指标。当在整个数据上进行洞察时会发现5月的延误时间比11月高了很多，但当控制变量当日是否下雨时，会发现在下雨天5月的航班延误时间是要低于11月的，因此5月份更高的降雨率可能可以解释5月更高的航班延误时间。</p>
+<p><img src="./image-5.png" alt=""></p>
+<h2 id="具体流程：初始洞察生成-gt-洞察选择-gt-分析动作选择-gt-洞察选择-gt-分析动作选择…-gt-最终洞察排序-gt-最终报告生成"><a href="#具体流程：初始洞察生成-gt-洞察选择-gt-分析动作选择-gt-洞察选择-gt-分析动作选择…-gt-最终洞察排序-gt-最终报告生成" class="headerlink" title="具体流程：初始洞察生成-&gt;洞察选择-&gt;分析动作选择-&gt;洞察选择-&gt;分析动作选择…-&gt;最终洞察排序-&gt;最终报告生成"></a>具体流程：初始洞察生成-&gt;洞察选择-&gt;分析动作选择-&gt;洞察选择-&gt;分析动作选择…-&gt;最终洞察排序-&gt;最终报告生成</h2><h3 id="stepA-初始洞察生成"><a href="#stepA-初始洞察生成" class="headerlink" title="[stepA] 初始洞察生成:"></a>[stepA] 初始洞察生成:</h3><p>先调用QuickInsight生成数据集的基础洞察。</p>
+<h3 id="stepB-洞察选择："><a href="#stepB-洞察选择：" class="headerlink" title="[stepB] 洞察选择："></a>[stepB] 洞察选择：</h3><p>使用Prompt，让LLM基于Agent返回的多条数据洞察，用户Query，和数据集的描述（类似DB Schema）,来选择一条洞察结果来进行进一步分析。</p>
+<h3 id="stepC-分析动作选择："><a href="#stepC-分析动作选择：" class="headerlink" title="[stepC] 分析动作选择："></a>[stepC] 分析动作选择：</h3><p>大模型会基于用户query，已有洞察内容，来选择一个分析动作（Understand-QuickInsight, Summarize-MetaInsight, Explain-XInsight）来继续分析，生成新的洞察。</p>
+<h3 id="循环stepB和stepC-…"><a href="#循环stepB和stepC-…" class="headerlink" title="(循环stepB和stepC) …"></a>(循环stepB和stepC) …</h3><h3 id="stepD-最终洞察排序："><a href="#stepD-最终洞察排序：" class="headerlink" title="[stepD] 最终洞察排序："></a>[stepD] 最终洞察排序：</h3><p>最后基于TopK数据洞察生成报告来解答用户问题。在最后筛选保留Top-K洞察的部分，论文还加入了Ranking环节：</p>
+<p>首先洞察之间两两消重，如果A洞察包含B洞察的内容，则删除B洞察。</p>
+<p>其次是相似度过滤，会过滤和用户提问关联较低的洞察。</p>
+<p>最后是打散策略，是为了降低洞察之间的相似度，提高最终内容的丰富度。这里使用了以下的二阶近似打分的策略如下，其中|I|是每条洞察的有用性打分，交集打分是两条洞察有用性的最小值*洞察重叠度，整体策略是为了提高TopK洞察整体包含的信息量。</p>
+<p><img src="./image-6.png" alt=""></p>
+<h3 id="stepE-最终报告生成："><a href="#stepE-最终报告生成：" class="headerlink" title="[stepE] 最终报告生成："></a>[stepE] 最终报告生成：</h3><p>最终是InsightPilot生成的报告效果，以及支持用户对报告内容的每个段落，进行数据验证，当点击第一个段落Inspire Me时会生成对应段落相关的数据图表（下图）。</p>
+<p><img src="./image-7.png" alt=""></p>
+<h1 id="文中案例："><a href="#文中案例：" class="headerlink" title="文中案例："></a>文中案例：</h1><p>文中给了一个比较简单的且不太完整案例输出作为展示，且只是对着最终report泛泛而谈，并没有结合前文提到的具体流程展示如何一步步得到最后的report：</p>
+<p>用户上传一个汽车销售数据集，并询问“我想知道丰田的整体趋势”。首先，InsightPilot识别出“丰田在其年销售量上呈现下降趋势”，然后深入研究丰田的两个代表性车型，即“丰田卡罗拉”和“丰田凯美瑞”。系统识别出“卡罗拉”和“凯美瑞”是丰田的两个畅销车型，并且“凯美瑞”的销售与丰田的整体销售有很强的相关性。因此，InsightPilot得出结论，凯美瑞是丰田销售的关键驱动力。之后，InsightPilot进一步将丰田与本田进行比较，并识别出它们是小型车市场的前两大品牌，而丰田领先。此外，InsightPilot还研究了丰田在不同年份的销售情况，并获得了其他一些见解（未展开说）。</p>
+<h1 id="方法评估："><a href="#方法评估：" class="headerlink" title="方法评估："></a>方法评估：</h1><p><img src="./image-8.png" alt=""></p>
+<p>使用“gpt-3.5-turbo”作为评估使用的语言模型，并使用“text-embedding-ada-002”来生成嵌入。我们进行了一项用户研究，以模拟InsightPilot在现实世界中的应用，对比两个现有Baseline（OpenAI Code Interpreter（和Langchain Pandas Agent）。评估中用户被给予两个数据集，并被要求在InsightPilot应用程序范围内提出三个问题，结果产生了24组比较（4名参与者×2个数据集×3个问题）。用户根据相关性、完整性和可理解性（1到5分）对系统进行评分。</p>
+<h1 id="讨论："><a href="#讨论：" class="headerlink" title="讨论："></a>讨论：</h1><p>本文最后的效果还是很不错的，用LLM控制整个探索流程也是一个不错的思路，不过主要是先前的三个Insight工具提供了非常强的基础能力，给数据集的探索做了很好的抽象，提供了一个很好的探索环境。</p>
+<p>本文LLM部分和评估部分都还做得比较简单，接下来还是有深挖的空间的：1. 比如目前agent的探索是线性的，其实是可以做多线探索、推理和回溯的，甚至可以做多智能体/多用户的协作探索，可能还可以结合最近o1相关的进展。2. 客观评估指标的定义以及中间过程奖励的设计也值得探索。3. 此外，先前的三个Insight工具是在LLM没有兴起的时代设计的，不一定是对数据集最合理的抽象，如何设计更合理的对数据集的抽象来提高探索的自由度、效率、可拓展性等也是值得思考的问题。</p>
+<h1 id="参考资料："><a href="#参考资料：" class="headerlink" title="参考资料："></a>参考资料：</h1><p>论文原文：<a target="_blank" rel="noopener" href="https://arxiv.org/pdf/2304.00477">https://arxiv.org/pdf/2304.00477</a></p>
+<p>作者博客：<a target="_blank" rel="noopener" href="https://www.msra.cn/zh-cn/news/features/exploratory-data-analysis">https://www.msra.cn/zh-cn/news/features/exploratory-data-analysis</a></p>
+<p>第三方博客：<a target="_blank" rel="noopener" href="https://blog.csdn.net/2401\_82469710/article/details/135882170">https://blog.csdn.net/2401\_82469710/article/details/135882170</a></p>
+
+        
+        <br />
+        <div id="comment-container">
+        </div>
+        <div id="disqus_thread"></div>
+        <hr/>
+        <div id="lv-container">
+            Questions & Discussion：<a href="mailto:zjuvis@cad.zju.edu.cn"><code> ✉️ zjuvis@cad.zju.edu.cn </code> </a>
+        </div>
+        <hr/>
+    </div>
+</div>
+    </div>
+</div>
+
+<footer class="footer">
+    <ul class="list-inline text-center">
+             
+    </ul>
+    
+    <p>
+        Created By <a target="_blank" rel="noopener" href="https://hexo.io/">Hexo</a> Theme
+        <a target="_blank" rel="noopener" href="https://github.com/aircloud/hexo-theme-aircloud">AirCloud</a>
+    </p>
+</footer>
+
+
+<script type="text/x-mathjax-config">
+    MathJax.Hub.Config({
+        tex2jax: {
+            inlineMath: [ ["$","$"], ["\\(","\\)"] ],
+            skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code'],
+            processEscapes: true
+        }
+    });
+    MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax();
+        for (var i = 0; i < all.length; ++i)
+            all[i].SourceElement().parentNode.className += ' has-jax';
+    });
+</script>
+<script src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script><!-- hexo-inject:begin --><!-- hexo-inject:end -->
+</body>
+
+<script>
+    // We expose some of the variables needed by the front end
+    window.hexo_search_path = "search.json"
+    window.hexo_root = "/blog/"
+    window.isPost = true
+</script>
+<script src="https://cdn.bootcss.com/jquery/3.3.1/jquery.min.js"></script>
+
+<script src="/blog/js/index.js"></script>
+<script href="/blog/blog/blog/blog/blog/blog/.css" src="/blog/blog/blog/.js"></script>
+
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
+
+
+
+</html>
